@@ -1,14 +1,14 @@
 /* ===== Tokens ===== */
 :root{
-  --bg: #F7F8FA;
-  --bg-alt: #EFF2F4;
-  --ink: #1C2430;
-  --ink-soft: #5C6570;
-  --border: #E2E5E9;
-  --accent: #2A6F6A;
-  --accent-soft: #DCEAE8;
-  --warm: #B87C8C;
-  --warm-soft: #F3E4E7;
+  --bg: #F5F3F7;
+  --bg-alt: #ECE9F0;
+  --ink: #211F2E;
+  --ink-soft: #6E6980;
+  --border: #DEDAE6;
+  --accent: #4A3F7A;
+  --accent-soft: #E4E1F0;
+  --warm: #D9A441;
+  --warm-soft: #FBEDD3;
   --radius: 6px;
   --max-width: 880px;
   --font-display: "Fraunces", serif;
@@ -89,14 +89,14 @@ button:focus-visible{
 }
 nav{
   display:flex;
-  gap:24px;
+  gap:12px;
   align-items:center;
 }
 nav a{
   position:relative;
   color:var(--ink-soft);
   text-decoration:none;
-  font-size:0.92rem;
+  font-size:0.82rem;
   font-weight:500;
   transition:color .2s ease;
 }
@@ -122,15 +122,11 @@ nav a.active:not(.nav-cta)::after{ transform:scaleX(1); }
   padding:8px 16px;
   border-radius:999px;
 }
-.nav-cta:hover{ background:#245d59; }
+.nav-cta:hover{ background:#3F3567; }
 
 @media (max-width:640px){
   nav{ gap:14px; }
   nav a:not(.nav-cta){ display:none; }
-}
-
-@media (min-width:641px) and (max-width:900px){
-  nav{ gap:14px; }
 }
 
 /* ===== Hero ===== */
@@ -312,7 +308,7 @@ h1{
   font-size:0.76rem;
   background:var(--accent-soft);
   border-color:transparent;
-  color:#1a4744;
+  color:#2E2650;
 }
 .tools-secondary-label{
   font-style:italic;
@@ -339,7 +335,7 @@ h1{
   text-transform:uppercase;
   letter-spacing:0.04em;
   background:var(--warm-soft);
-  color:#7a4655;
+  color:#6B4A08;
   padding:4px 9px;
   border-radius:4px;
 }
