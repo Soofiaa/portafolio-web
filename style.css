@@ -314,6 +314,17 @@ h1{
   border-color:transparent;
   color:#1a4744;
 }
+.tools-secondary-label{
+  font-style:italic;
+  font-size:0.8rem;
+  color:var(--ink-soft);
+  margin:14px 0 4px;
+}
+.tools-secondary{
+  font-size:0.85rem;
+  color:var(--ink-soft);
+  margin:0;
+}
 .lang-note{
   font-size:0.92rem;
   color:var(--ink-soft);
@@ -370,6 +381,11 @@ h1{
   font-size:0.68rem;
   text-transform:uppercase;
   color:var(--accent);
+}
+.project-meta{
+  font-size:0.8rem;
+  color:var(--ink-soft);
+  margin:-4px 0 0;
 }
 .project-problem, .project-solution{
   font-size:0.92rem;
