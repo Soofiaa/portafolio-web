@@ -129,6 +129,10 @@ nav a.active:not(.nav-cta)::after{ transform:scaleX(1); }
   nav a:not(.nav-cta){ display:none; }
 }
 
+@media (min-width:641px) and (max-width:900px){
+  nav{ gap:14px; }
+}
+
 /* ===== Hero ===== */
 .hero{
   padding:88px 24px 72px;
