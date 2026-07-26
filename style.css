@@ -1,23 +1,27 @@
 /* ===== Tokens ===== */
 :root{
-  --bg: #F5F3F7;
-  --bg-alt: #ECE9F0;
-  --ink: #211F2E;
-  --ink-soft: #6E6980;
-  --border: #DEDAE6;
-  --accent: #4A3F7A;
-  --accent-soft: #E4E1F0;
-  --warm: #D9A441;
-  --warm-soft: #FBEDD3;
+  --bg: #FBF6F1;
+  --bg-alt: #F3EBE3;
+  --ink: #2E2440;
+  --ink-soft: #6E617A;
+  --border: #E5DCD3;
+  --accent: #5B4A87;
+  --accent-soft: #E9E4F3;
+  --warm: #C97B8C;
+  --warm-soft: #FBE7EC;
   --radius: 6px;
   --max-width: 880px;
   --font-display: "Fraunces", serif;
   --font-body: "Manrope", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+  --chip-mono-text: #2E2650;
+  --mono-tag-text: #6B3040;
+  --card-bg: #fff;
+  --header-bg: rgba(251,246,241,0.88);
 }
 
 @media (prefers-color-scheme: dark){
-  :root{
+  :root:not([data-theme="light"]){
     --bg: #17151F;
     --bg-alt: #201C2B;
     --ink: #ECE9F5;
@@ -25,9 +29,29 @@
     --border: #362F45;
     --accent: #7466CC;
     --accent-soft: #302A4A;
-    --warm: #E3B15E;
-    --warm-soft: #493A1C;
+    --warm: #E8A0B0;
+    --warm-soft: #452330;
+    --chip-mono-text: #E3DDF7;
+    --mono-tag-text: #F2C7D3;
+    --card-bg: #201C2B;
+    --header-bg: rgba(23,21,31,0.88);
   }
+}
+
+:root[data-theme="dark"]{
+  --bg: #17151F;
+  --bg-alt: #201C2B;
+  --ink: #ECE9F5;
+  --ink-soft: #A79FBD;
+  --border: #362F45;
+  --accent: #7466CC;
+  --accent-soft: #302A4A;
+  --warm: #E8A0B0;
+  --warm-soft: #452330;
+  --chip-mono-text: #E3DDF7;
+  --mono-tag-text: #F2C7D3;
+  --card-bg: #201C2B;
+  --header-bg: rgba(23,21,31,0.88);
 }
 
 *{box-sizing:border-box;}
@@ -76,12 +100,9 @@ button:focus-visible{
   position:sticky;
   top:0;
   z-index:50;
-  background:rgba(245,243,247,0.88);
+  background:var(--header-bg);
   backdrop-filter:blur(8px);
   border-bottom:1px solid var(--border);
-}
-@media (prefers-color-scheme: dark){
-  .site-header{ background:rgba(23,21,31,0.88); }
 }
 .header-inner{
   display:flex;
@@ -106,14 +127,14 @@ button:focus-visible{
 }
 nav{
   display:flex;
-  gap:12px;
+  gap:8px;
   align-items:center;
 }
 nav a{
   position:relative;
   color:var(--ink-soft);
   text-decoration:none;
-  font-size:0.82rem;
+  font-size:0.78rem;
   font-weight:500;
   transition:color .2s ease;
 }
@@ -140,6 +161,27 @@ nav a.active:not(.nav-cta)::after{ transform:scaleX(1); }
   border-radius:999px;
 }
 .nav-cta:hover{ background:#3F3567; }
+
+.theme-toggle{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  padding:0;
+  border:1px solid var(--border);
+  border-radius:50%;
+  background:transparent;
+  color:var(--ink-soft);
+  cursor:pointer;
+  flex-shrink:0;
+  transition:color .2s ease, border-color .2s ease;
+}
+.theme-toggle:hover{ color:var(--ink); border-color:var(--ink); }
+.theme-toggle svg{ width:16px; height:16px; }
+.theme-toggle .icon-moon{ display:none; }
+.theme-toggle[aria-pressed="true"] .icon-sun{ display:none; }
+.theme-toggle[aria-pressed="true"] .icon-moon{ display:block; }
 
 @media (max-width:640px){
   nav{ gap:14px; }
@@ -325,21 +367,7 @@ h1{
   font-size:0.76rem;
   background:var(--accent-soft);
   border-color:transparent;
-  color:#2E2650;
-}
-@media (prefers-color-scheme: dark){
-  .chips-mono li{ color:#E3DDF7; }
-}
-.tools-secondary-label{
-  font-style:italic;
-  font-size:0.8rem;
-  color:var(--ink-soft);
-  margin:14px 0 4px;
-}
-.tools-secondary{
-  font-size:0.85rem;
-  color:var(--ink-soft);
-  margin:0;
+  color:var(--chip-mono-text);
 }
 .lang-note{
   font-size:0.92rem;
@@ -355,12 +383,9 @@ h1{
   text-transform:uppercase;
   letter-spacing:0.04em;
   background:var(--warm-soft);
-  color:#6B4A08;
+  color:var(--mono-tag-text);
   padding:4px 9px;
   border-radius:4px;
-}
-@media (prefers-color-scheme: dark){
-  .mono-tag{ color:#F2D48F; }
 }
 
 /* ===== Projects ===== */
@@ -370,7 +395,7 @@ h1{
   gap:20px;
 }
 .project-card{
-  background:#fff;
+  background:var(--card-bg);
   border:1px solid var(--border);
   border-radius:var(--radius);
   padding:24px;
@@ -379,9 +404,6 @@ h1{
   gap:10px;
   transition:border-color .15s ease, transform .15s ease;
   will-change:transform;
-}
-@media (prefers-color-scheme: dark){
-  .project-card{ background:var(--bg-alt); }
 }
 .project-card:hover{
   border-color:var(--accent);
