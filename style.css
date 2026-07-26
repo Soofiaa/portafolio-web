@@ -160,7 +160,7 @@ nav a.active:not(.nav-cta)::after{ transform:scaleX(1); }
   padding:8px 16px;
   border-radius:999px;
 }
-.nav-cta:hover{ background:#3F3567; }
+.nav-cta:hover{ background:#4B3D6F; }
 
 .theme-toggle{
   display:flex;
