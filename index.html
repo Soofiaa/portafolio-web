@@ -17,18 +17,22 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main">Saltar al contenido</a>
+<a class="skip-link" href="#main" data-i18n="skipLink">Saltar al contenido</a>
 
 <header class="site-header">
   <div class="wrap header-inner">
     <a href="#hero" class="mark">SM</a>
     <nav aria-label="Navegación principal">
-      <a href="#about">Sobre mí</a>
-      <a href="#experience">Experiencia</a>
-      <a href="#projects">Proyectos</a>
-      <a href="#stack">Stack</a>
-      <a href="#certifications">Certificaciones</a>
-      <a href="#contact" class="nav-cta">Contacto</a>
+      <a href="#about" data-i18n="nav.about">Sobre mí</a>
+      <a href="#experience" data-i18n="nav.experience">Experiencia</a>
+      <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+      <a href="#stack" data-i18n="nav.stack">Stack</a>
+      <a href="#certifications" data-i18n="nav.certifications">Certificaciones</a>
+      <a href="#contact" class="nav-cta" data-i18n="nav.contact">Contacto</a>
+      <div class="lang-toggle" role="group" aria-label="Selector de idioma">
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
       <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Cambiar a modo oscuro" aria-pressed="false">
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -41,51 +45,51 @@
 
   <!-- HERO -->
   <section id="hero" class="hero wrap">
-    <p class="status-badge"><span class="dot" aria-hidden="true"></span>Disponible — Remoto / Híbrido · Viña del Mar &amp; Valparaíso · Santiago</p>
+    <p class="status-badge"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.badge">Disponible — Remoto / Híbrido · Viña del Mar &amp; Valparaíso · Santiago</span></p>
     <h1>Sofía Menzel</h1>
-    <p class="role-statement">Ingeniera en Ejecución Informática — Análisis funcional, QA &amp; testing, automatización de procesos y desarrollo backend.</p>
+    <p class="role-statement" data-i18n="hero.role">Ingeniera en Ejecución Informática — Análisis funcional, QA &amp; testing, automatización de procesos y desarrollo backend.</p>
     <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary">Ver proyectos</a>
-      <a href="#contact" class="btn btn-ghost">Contactar</a>
+      <a href="#projects" class="btn btn-primary" data-i18n="hero.viewProjects">Ver proyectos</a>
+      <a href="#contact" class="btn btn-ghost" data-i18n="hero.getInTouch">Contactar</a>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about" class="section wrap">
     <div class="node" aria-hidden="true"></div>
-    <p class="eyebrow">Sobre mí</p>
-    <h2>Traducir procesos de negocio en sistemas que funcionan</h2>
-    <p class="lead">
+    <p class="eyebrow" data-i18n="about.eyebrow">Sobre mí</p>
+    <h2 data-i18n="about.h2">Traducir procesos de negocio en sistemas que funcionan</h2>
+    <p class="lead" data-i18n="about.p1">
       Egresé de Ingeniería en Ejecución Informática de la Pontificia Universidad Católica de Valparaíso (PUCV) en 2025.
       Mi formación en pasantía en Dental Laval me confirmó lo que más disfruto: entender cómo funciona realmente un proceso
       , conversarlo con quienes lo ejecutan, revisarlo en la base de datos, encontrar dónde se rompe y luego construir
       o documentar la solución técnica correspondiente.
     </p>
-    <p class="lead">
+    <p class="lead" data-i18n="about.p2">
       Soy una persona analítica y perfeccionista: prefiero entender el porqué de un problema antes de resolverlo, y me
       importa que la documentación y el código queden tan claros como el razonamiento detrás de ellos. Actualmente busco
       mi primera oportunidad formal en análisis funcional, QA/testing, automatización de procesos o desarrollo backend.
     </p>
-    <p class="lang-note"><span class="mono-tag">2019 – 2025</span> Ingeniera en Ejecución Informática — PUCV</p>
+    <p class="lang-note"><span class="mono-tag" data-i18n="about.eduDate">2019 – 2025</span> <span data-i18n="about.eduLine">Ingeniera en Ejecución Informática — PUCV</span></p>
   </section>
 
   <!-- EXPERIENCE -->
   <section id="experience" class="section wrap">
     <div class="node" aria-hidden="true"></div>
-    <p class="eyebrow">Experiencia</p>
-    <h2>Trayectoria</h2>
+    <p class="eyebrow" data-i18n="experience.eyebrow">Experiencia</p>
+    <h2 data-i18n="experience.h2">Trayectoria</h2>
 
     <div class="timeline-item">
       <div class="timeline-meta">
-        <span class="mono-tag">Práctica profesional · Ene – Feb 2025</span>
+        <span class="mono-tag" data-i18n="experience.roleMeta">Práctica profesional · Ene – Feb 2025</span>
       </div>
       <h3>Dental Laval Ltda.</h3>
       <ul class="outcome-list">
-        <li>Análisis funcional de procesos administrativos internos.</li>
-        <li>Levantamiento y validación de datos mediante consultas SQL sobre el ERP Softland.</li>
-        <li>Documentación de procesos de negocio para el equipo.</li>
-        <li>Automatización del cálculo de comisiones con Python para estimar reducciones en el tiempo de proceso manual.</li>
-        <li>Analicé la lógica de negocio del ERP, identificando 3+ riesgos operacionales documentados que permitieron anticipar puntos de falla antes de la implementación.</li>
+        <li data-i18n="experience.bullets.0">Análisis funcional de procesos administrativos internos.</li>
+        <li data-i18n="experience.bullets.1">Levantamiento y validación de datos mediante consultas SQL sobre el ERP Softland.</li>
+        <li data-i18n="experience.bullets.2">Documentación de procesos de negocio para el equipo.</li>
+        <li data-i18n="experience.bullets.3">Automatización del cálculo de comisiones con Python para estimar reducciones en el tiempo de proceso manual.</li>
+        <li data-i18n="experience.bullets.4">Analicé la lógica de negocio del ERP, identificando 3+ riesgos operacionales documentados que permitieron anticipar puntos de falla antes de la implementación.</li>
       </ul>
     </div>
   </section>
@@ -93,40 +97,40 @@
   <!-- PROJECTS -->
   <section id="projects" class="section wrap">
     <div class="node" aria-hidden="true"></div>
-    <p class="eyebrow">Proyectos</p>
-    <h2>Proyectos personales</h2>
+    <p class="eyebrow" data-i18n="projects.eyebrow">Proyectos</p>
+    <h2 data-i18n="projects.h2">Proyectos personales</h2>
 
     <div class="project-grid">
 
       <article class="project-card">
         <div class="project-head">
           <h3>PetPal</h3>
-          <span class="project-status">En desarrollo activo</span>
+          <span class="project-status" data-i18n="projects.petpal.status">En desarrollo activo</span>
         </div>
-        <p class="project-problem"><strong>Problema:</strong> los dueños de mascotas suelen perder el control de calendarios de vacunación y controles veterinarios.</p>
-        <p class="project-solution"><strong>Solución:</strong> app móvil para llevar el registro digital de vacunas y recordatorios de una mascota.</p>
+        <p class="project-problem" data-i18n-html="projects.petpal.problem"><strong>Problema:</strong> los dueños de mascotas suelen perder el control de calendarios de vacunación y controles veterinarios.</p>
+        <p class="project-solution" data-i18n-html="projects.petpal.solution"><strong>Solución:</strong> app móvil para llevar el registro digital de vacunas y recordatorios de una mascota.</p>
         <ul class="chips chips-mono">
           <li>Flutter</li>
           <li>Dart</li>
         </ul>
-        <a href="https://github.com/Soofiaa/pet_pal" class="project-link" target="_blank" rel="noopener">Ver en GitHub →</a>
+        <a href="https://github.com/Soofiaa/pet_pal" class="project-link" target="_blank" rel="noopener" data-i18n="projects.viewGithub">Ver en GitHub →</a>
       </article>
 
       <article class="project-card">
         <div class="project-head">
           <h3>Plataforma de finanzas personales</h3>
-          <span class="project-status">Finalizado y aprobado</span>
+          <span class="project-status" data-i18n="projects.finance.status">Finalizado y aprobado</span>
         </div>
-        <p class="project-meta">Proyecto de título · Mar – Jul 2025</p>
-        <p class="project-problem"><strong>Problema:</strong> el seguimiento manual de ingresos y gastos personales es propenso a errores y poco visual.</p>
-        <p class="project-solution"><strong>Solución:</strong> plataforma web para registrar movimientos y visualizar el estado financiero personal.</p>
+        <p class="project-meta" data-i18n="projects.finance.meta">Proyecto de título · Mar – Jul 2025</p>
+        <p class="project-problem" data-i18n-html="projects.finance.problem"><strong>Problema:</strong> el seguimiento manual de ingresos y gastos personales es propenso a errores y poco visual.</p>
+        <p class="project-solution" data-i18n-html="projects.finance.solution"><strong>Solución:</strong> plataforma web para registrar movimientos y visualizar el estado financiero personal.</p>
         <ul class="chips chips-mono">
           <li>React</li>
           <li>Flask</li>
         </ul>
         <div class="project-links">
-          <a href="https://github.com/Soofiaa/All-Too-Accountable" class="project-link" target="_blank" rel="noopener">Frontend →</a>
-          <a href="https://github.com/Soofiaa/BackEnd-All-Too-Accountable" class="project-link" target="_blank" rel="noopener">Backend →</a>
+          <a href="https://github.com/Soofiaa/All-Too-Accountable" class="project-link" target="_blank" rel="noopener" data-i18n="projects.frontend">Frontend →</a>
+          <a href="https://github.com/Soofiaa/BackEnd-All-Too-Accountable" class="project-link" target="_blank" rel="noopener" data-i18n="projects.backend">Backend →</a>
         </div>
       </article>
 
@@ -134,44 +138,44 @@
         <div class="project-head">
           <h3>POS para cervecería</h3>
         </div>
-        <p class="project-meta">Entregado a cliente real · actualmente en uso</p>
-        <p class="project-problem"><strong>Problema:</strong> negocios pequeños necesitan un punto de venta simple, sin la complejidad de un sistema comercial.</p>
-        <p class="project-solution"><strong>Solución:</strong> sistema de punto de venta liviano para gestionar ventas e inventario.</p>
+        <p class="project-meta" data-i18n="projects.pos.meta">Entregado a cliente real · actualmente en uso</p>
+        <p class="project-problem" data-i18n-html="projects.pos.problem"><strong>Problema:</strong> negocios pequeños necesitan un punto de venta simple, sin la complejidad de un sistema comercial.</p>
+        <p class="project-solution" data-i18n-html="projects.pos.solution"><strong>Solución:</strong> sistema de punto de venta liviano para gestionar ventas e inventario.</p>
         <ul class="chips chips-mono">
           <li>Python</li>
           <li>SQLite</li>
         </ul>
-        <a href="https://github.com/Soofiaa/cerveceria_pos" class="project-link" target="_blank" rel="noopener">Ver en GitHub →</a>
+        <a href="https://github.com/Soofiaa/cerveceria_pos" class="project-link" target="_blank" rel="noopener" data-i18n="projects.viewGithub">Ver en GitHub →</a>
       </article>
 
       <article class="project-card">
         <div class="project-head">
           <h3>Jobbi</h3>
         </div>
-        <p class="project-problem"><strong>Problema:</strong> llevar el registro de postulaciones laborales (empresas, estados, fechas de seguimiento) de forma manual es desordenado y fácil de perder.</p>
-        <p class="project-solution"><strong>Solución:</strong> aplicación de escritorio para centralizar y dar seguimiento ordenado a todas las postulaciones laborales.</p>
+        <p class="project-problem" data-i18n-html="projects.jobbi.problem"><strong>Problema:</strong> llevar el registro de postulaciones laborales (empresas, estados, fechas de seguimiento) de forma manual es desordenado y fácil de perder.</p>
+        <p class="project-solution" data-i18n-html="projects.jobbi.solution"><strong>Solución:</strong> aplicación de escritorio para centralizar y dar seguimiento ordenado a todas las postulaciones laborales.</p>
         <ul class="chips chips-mono">
           <li>Python</li>
           <li>CustomTkinter</li>
           <li>Supabase</li>
           <li>PostgreSQL</li>
         </ul>
-        <a href="https://github.com/Soofiaa/Jobbi" class="project-link" target="_blank" rel="noopener">Ver en GitHub →</a>
+        <a href="https://github.com/Soofiaa/Jobbi" class="project-link" target="_blank" rel="noopener" data-i18n="projects.viewGithub">Ver en GitHub →</a>
       </article>
 
       <article class="project-card">
         <div class="project-head">
           <h3>BudgetDesk</h3>
         </div>
-        <p class="project-problem"><strong>Problema:</strong> gestionar gastos personales sin depender de una conexión a internet ni de planillas dispersas, con reportes que se puedan compartir fácilmente.</p>
-        <p class="project-solution"><strong>Solución:</strong> aplicación de escritorio para gestión de gastos personales, con visualización de estadísticas y exportación de reportes a Excel.</p>
+        <p class="project-problem" data-i18n-html="projects.budgetdesk.problem"><strong>Problema:</strong> gestionar gastos personales sin depender de una conexión a internet ni de planillas dispersas, con reportes que se puedan compartir fácilmente.</p>
+        <p class="project-solution" data-i18n-html="projects.budgetdesk.solution"><strong>Solución:</strong> aplicación de escritorio para gestión de gastos personales, con visualización de estadísticas y exportación de reportes a Excel.</p>
         <ul class="chips chips-mono">
           <li>Python</li>
           <li>CustomTkinter</li>
           <li>SQLite</li>
           <li>Matplotlib</li>
         </ul>
-        <a href="https://github.com/Soofiaa/BudgetDesk" class="project-link" target="_blank" rel="noopener">Ver en GitHub →</a>
+        <a href="https://github.com/Soofiaa/BudgetDesk" class="project-link" target="_blank" rel="noopener" data-i18n="projects.viewGithub">Ver en GitHub →</a>
       </article>
 
     </div>
@@ -180,12 +184,12 @@
   <!-- STACK -->
   <section id="stack" class="section wrap">
     <div class="node" aria-hidden="true"></div>
-    <p class="eyebrow">Stack técnico</p>
-    <h2>Lo que uso para construir soluciones</h2>
+    <p class="eyebrow" data-i18n="stack.eyebrow">Stack técnico</p>
+    <h2 data-i18n="stack.h2">Lo que uso para construir soluciones</h2>
 
     <div class="stack-grid">
       <div class="stack-group">
-        <h3>Lenguajes</h3>
+        <h3 data-i18n="stack.groups.languages">Lenguajes</h3>
         <ul class="chips">
           <li>Python</li>
           <li>SQL</li>
@@ -194,7 +198,7 @@
         </ul>
       </div>
       <div class="stack-group">
-        <h3>Frameworks &amp; librerías</h3>
+        <h3 data-i18n="stack.groups.frameworks">Frameworks &amp; librerías</h3>
         <ul class="chips">
           <li>Flask</li>
           <li>React</li>
@@ -202,7 +206,7 @@
         </ul>
       </div>
       <div class="stack-group">
-        <h3>Bases de datos</h3>
+        <h3 data-i18n="stack.groups.databases">Bases de datos</h3>
         <ul class="chips">
           <li>SQL Server</li>
           <li>PostgreSQL</li>
@@ -211,7 +215,7 @@
         </ul>
       </div>
       <div class="stack-group">
-        <h3>Herramientas &amp; metodologías</h3>
+        <h3 data-i18n="stack.groups.tools">Herramientas &amp; metodologías</h3>
         <ul class="chips">
           <li>Git</li>
           <li>Bizagi</li>
@@ -227,47 +231,47 @@
       </div>
     </div>
     
-    <p class="lang-note"><span class="mono-tag">ES · Nativo</span></p>
-    <p class="lang-note"><span class="mono-tag">EN · B2</span> Inglés en desarrollo continuo, cómodo leyendo documentación técnica y en comunicación escrita.</p>
+    <p class="lang-note"><span class="mono-tag" data-i18n="stack.langNative">ES · Nativo</span></p>
+    <p class="lang-note"><span class="mono-tag" data-i18n="stack.langEnglishTag">EN · B2</span> <span data-i18n="stack.langEnglishText">Inglés en desarrollo continuo, cómodo leyendo documentación técnica y en comunicación escrita.</span></p>
   </section>
 
   <!-- CERTIFICATIONS -->
   <section id="certifications" class="section wrap">
     <div class="node" aria-hidden="true"></div>
-    <p class="eyebrow">Certificaciones</p>
-    <h2>Aprendizaje continuo</h2>
+    <p class="eyebrow" data-i18n="certifications.eyebrow">Certificaciones</p>
+    <h2 data-i18n="certifications.h2">Aprendizaje continuo</h2>
 
     <div class="timeline-item">
       <div class="timeline-meta">
-        <span class="mono-tag">Santander Open Academy · 2025</span>
+        <span class="mono-tag" data-i18n="certifications.item1Meta">Santander Open Academy · 2025</span>
       </div>
-      <h3>Certificaciones en Data Science, Power BI, Excel, IA y Gestión de Proyectos</h3>
+      <h3 data-i18n="certifications.item1Title">Certificaciones en Data Science, Power BI, Excel, IA y Gestión de Proyectos</h3>
     </div>
 
     <div class="timeline-item">
       <div class="timeline-meta">
-        <span class="mono-tag">SENCE · 30 horas · 2025</span>
+        <span class="mono-tag" data-i18n="certifications.item2Meta">SENCE · 30 horas · 2025</span>
       </div>
-      <h3>Diseño Web con HTML5 + CSS</h3>
+      <h3 data-i18n="certifications.item2Title">Diseño Web con HTML5 + CSS</h3>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="section wrap contact-section">
     <div class="node" aria-hidden="true"></div>
-    <p class="eyebrow">Contacto</p>
-    <h2>Conversemos</h2>
-    <p class="lead">Estoy buscando activamente mi primera oportunidad formal. Si mi perfil calza con lo que necesitas, escríbeme.</p>
+    <p class="eyebrow" data-i18n="contact.eyebrow">Contacto</p>
+    <h2 data-i18n="contact.h2">Conversemos</h2>
+    <p class="lead" data-i18n="contact.lead">Estoy buscando activamente mi primera oportunidad formal. Si mi perfil calza con lo que necesitas, escríbeme.</p>
 
     <div class="contact-links">
       <a href="mailto:soofiaa.menzel@gmail.com" class="contact-link">
-        <span class="mono-tag">Email</span> soofiaa.menzel@gmail.com
+        <span class="mono-tag" data-i18n="contact.emailLabel">Email</span> soofiaa.menzel@gmail.com
       </a>
       <a href="https://www.linkedin.com/in/sofia-menzel-madrid/" class="contact-link" target="_blank" rel="noopener">
-        <span class="mono-tag">LinkedIn</span> /in/sofia-menzel-madrid
+        <span class="mono-tag" data-i18n="contact.linkedinLabel">LinkedIn</span> /in/sofia-menzel-madrid
       </a>
       <a href="https://github.com/Soofiaa" class="contact-link" target="_blank" rel="noopener">
-        <span class="mono-tag">GitHub</span> /Soofiaa
+        <span class="mono-tag" data-i18n="contact.githubLabel">GitHub</span> /Soofiaa
       </a>
     </div>
   </section>
@@ -275,9 +279,10 @@
 </main>
 
 <footer class="site-footer wrap">
-  <p>Sofía Menzel — hecho con atención al detalle.</p>
+  <p data-i18n="footer">Sofía Menzel — hecho con atención al detalle.</p>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="script.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>

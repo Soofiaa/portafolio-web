@@ -186,6 +186,34 @@ nav a.active:not(.nav-cta)::after{ transform:scaleX(1); }
 .theme-toggle[aria-pressed="true"] .icon-sun{ display:none; }
 .theme-toggle[aria-pressed="true"] .icon-moon{ display:block; }
 
+.lang-toggle{
+  display:flex;
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:2px;
+  gap:2px;
+  flex-shrink:0;
+}
+.lang-btn{
+  border:none;
+  background:transparent;
+  color:var(--ink-soft);
+  font-family:var(--font-mono);
+  font-size:0.66rem;
+  font-weight:600;
+  letter-spacing:0.02em;
+  padding:4px 7px;
+  border-radius:999px;
+  line-height:1;
+  cursor:pointer;
+  transition:background .2s ease, color .2s ease;
+}
+.lang-btn:hover:not([aria-pressed="true"]){ color:var(--ink); }
+.lang-btn[aria-pressed="true"]{
+  background:var(--accent-muted);
+  color:#fff;
+}
+
 @media (max-width:640px){
   nav{ gap:14px; }
   nav a:not(.nav-cta){ display:none; }

@@ -32,10 +32,16 @@ const isEffectivelyDark = () => {
   return darkSchemeQuery.matches;
 };
 
+const THEME_TOGGLE_LABELS = {
+  es: { toDark: 'Cambiar a modo oscuro', toLight: 'Cambiar a modo claro' },
+  en: { toDark: 'Switch to dark mode', toLight: 'Switch to light mode' },
+};
+
 const updateToggleUI = () => {
   const dark = isEffectivelyDark();
+  const lang = document.documentElement.lang === 'en' ? 'en' : 'es';
   themeToggle.setAttribute('aria-pressed', String(dark));
-  themeToggle.setAttribute('aria-label', dark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+  themeToggle.setAttribute('aria-label', dark ? THEME_TOGGLE_LABELS[lang].toLight : THEME_TOGGLE_LABELS[lang].toDark);
 };
 
 if (themeToggle) {
@@ -55,6 +61,9 @@ if (themeToggle) {
   darkSchemeQuery.addEventListener('change', () => {
     if (!localStorage.getItem(THEME_KEY)) updateToggleUI();
   });
+
+  // El idioma activo cambia el aria-label del toggle de tema
+  document.addEventListener('i18n:changed', updateToggleUI);
 }
 
 // Revela secciones y "dibuja" la columna de proceso a medida que entran en pantalla
