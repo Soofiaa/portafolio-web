@@ -83,6 +83,89 @@ if ('IntersectionObserver' in window && revealTargets.length) {
   revealTargets.forEach(target => target.classList.add('in-view'));
 }
 
+// Parallax sutil de los nodos de la columna de proceso según el scroll
+if (!prefersReducedMotion && sections.length) {
+  const parallaxItems = Array.from(sections)
+    .map(section => ({ section, node: section.querySelector('.node') }))
+    .filter(item => item.node);
+
+  const PARALLAX_RANGE = 18;
+  let ticking = false;
+
+  const updateParallax = () => {
+    const vh = window.innerHeight;
+    parallaxItems.forEach(({ section, node }) => {
+      const rect = section.getBoundingClientRect();
+      const progress = Math.min(1, Math.max(0, (vh - rect.top) / (vh + rect.height)));
+      const offset = (progress - 0.5) * PARALLAX_RANGE * 2;
+      node.style.setProperty('--parallax-y', `${offset.toFixed(1)}px`);
+    });
+    ticking = false;
+  };
+
+  const onScroll = () => {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  updateParallax();
+}
+
+// Envío del formulario de contacto vía fetch (Formspree), con fallback nativo sin JS
+const CONTACT_FORM_LABELS = {
+  es: {
+    sending: 'Enviando...',
+    success: '¡Gracias! Tu mensaje fue enviado, te responderé pronto.',
+    error: 'Algo salió mal. Intenta de nuevo o escríbeme directo a soofiaa.menzel@gmail.com.',
+  },
+  en: {
+    sending: 'Sending...',
+    success: "Thanks! Your message was sent, I'll get back to you soon.",
+    error: 'Something went wrong. Please try again or email me directly at soofiaa.menzel@gmail.com.',
+  },
+};
+
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  const statusEl = document.getElementById('form-status');
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'es';
+    const labels = CONTACT_FORM_LABELS[lang];
+
+    statusEl.textContent = labels.sending;
+    statusEl.classList.remove('form-status-success', 'form-status-error');
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { Accept: 'application/json' },
+      });
+
+      if (response.ok) {
+        statusEl.textContent = labels.success;
+        statusEl.classList.add('form-status-success');
+        contactForm.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (err) {
+      statusEl.textContent = labels.error;
+      statusEl.classList.add('form-status-error');
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+}
+
 // Inclinación sutil de las tarjetas de proyecto según la posición del cursor
 if (!prefersReducedMotion) {
   document.querySelectorAll('.project-card').forEach(card => {

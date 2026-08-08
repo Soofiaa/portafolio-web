@@ -96,7 +96,17 @@
     "lead": "I'm actively looking for my first formal role. If my profile fits what you need, reach out.",
     "emailLabel": "Email",
     "linkedinLabel": "LinkedIn",
-    "githubLabel": "GitHub"
+    "githubLabel": "GitHub",
+    "form": {
+      "lead": "Have a proposal or an opening? Reach out directly from here.",
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@email.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Briefly tell me about your proposal...",
+      "submit": "Send message"
+    }
   },
   "footer": "Sofía Menzel — built with attention to detail.",
   "themeToggle": {

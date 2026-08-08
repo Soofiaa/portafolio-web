@@ -96,7 +96,17 @@
     "lead": "Estoy buscando activamente mi primera oportunidad formal. Si mi perfil calza con lo que necesitas, escríbeme.",
     "emailLabel": "Email",
     "linkedinLabel": "LinkedIn",
-    "githubLabel": "GitHub"
+    "githubLabel": "GitHub",
+    "form": {
+      "lead": "¿Tienes una propuesta o vacante? Escríbeme directamente desde aquí.",
+      "nameLabel": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "emailLabel": "Email",
+      "emailPlaceholder": "tu@email.com",
+      "messageLabel": "Mensaje",
+      "messagePlaceholder": "Cuéntame brevemente tu propuesta...",
+      "submit": "Enviar mensaje"
+    }
   },
   "footer": "Sofía Menzel — hecho con atención al detalle.",
   "themeToggle": {

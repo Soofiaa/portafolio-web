@@ -25,6 +25,11 @@
       if (typeof value === 'string') el.innerHTML = value;
     });
 
+    document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+      const value = getNested(dict, el.getAttribute('data-i18n-placeholder'));
+      if (typeof value === 'string') el.setAttribute('placeholder', value);
+    });
+
     if (dict.meta) {
       document.title = dict.meta.title;
       const setMetaContent = (selector, value) => {
