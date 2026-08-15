@@ -1,6 +1,6 @@
 # Auditoría Lighthouse
 
-## Run del 2026-08-15
+## Run #1 — 2026-08-15
 
 Corrido en Chrome DevTools contra `localhost:8000` (modo Navigation, Desktop).
 
@@ -40,10 +40,45 @@ por el layout shift ajeno; el número real en una corrida limpia
 | 4 | 404 de `/_vercel/insights/script.js` en local | Best Practices | **Esperado** — ese script solo existe corriendo en infraestructura de Vercel, no es un bug |
 | 5 | CSS/JS sin minificar | Performance | **Decisión pendiente** — el proyecto es intencionalmente "sin build step" (ver README). Minificar implicaría introducir una herramienta de build. Evaluar como ticket aparte si el ahorro justifica la complejidad |
 
+---
+
+## Run #2 — 2026-08-15, ~15 min después
+
+Mismo entorno (`localhost:8000`, navegador normal con extensiones activas),
+corrido para verificar los fixes del Run #1.
+
+| Categoría | Puntaje | vs. Run #1 |
+|---|---|---|
+| Performance | 87 | +32 |
+| Accessibility | — | `color-contrast` en 1 (0 elementos fallando) |
+| Best Practices | — | sin cambios reales (el ruido de extensiones sigue igual) |
+| SEO | — | sin cambios |
+
+**Confirmado por datos del reporte:**
+- `render-blocking-insight` ya no incluye `script.js` ni `i18n.js` — el
+  `defer` del Run #1 funcionó.
+- `i18n.js` sigue haciendo un único fetch a `i18n/i18n.json` (ARQ-02
+  se mantiene resuelto).
+- El fix de contraste del botón de idioma quedó confirmado: `color-contrast`
+  pasa a score 1, sin elementos fallando.
+- El CLS (0.159) y los errores de consola siguen siendo 100% ruido de las
+  mismas extensiones de Chrome documentadas en el Run #1 (overlay de
+  "Fitly" y el `CVService` apuntando a `/api/cvs`, que no existe en este
+  sitio) — no se tocó nada relacionado a eso, es ruido del entorno de
+  testing, no un bug del sitio.
+
+**Hallazgo nuevo:**
+
+| # | Hallazgo | Categoría | Estado |
+|---|---|---|---|
+| 6 | `style.css` seguía siendo el único recurso render-blocking restante | Performance | **Corregido** — la hoja de estilos completa (700 líneas) se incrustó como `<style>` en `<head>` de `index.html`, eliminando el request de red por completo. A diferencia de Google Fonts, diferir el CSS propio del sitio sí hubiera causado un flash real de contenido sin estilo (sin layout, sin modo oscuro), así que no se usó el patrón preload+swap acá — se evaluó con la usuaria y se optó por inline completo sobre un split de critical CSS, priorizando cero riesgo de FOUC. `style.css` se eliminó del repo; `index.html` es ahora la única fuente de verdad para los estilos |
+
 ### Próximos pasos sugeridos
 
 - Re-correr Lighthouse en Incógnito (o perfil limpio) contra la URL de
   producción para obtener un número de Performance sin ruido de
-  extensiones ni de servidor de desarrollo, y actualizar esta tabla.
+  extensiones ni de servidor de desarrollo, y actualizar esta tabla con
+  ese número "limpio" de referencia — en curso.
 - Si el cache-headers finding persiste en producción, agregar
-  `vercel.json` con `Cache-Control` explícito para `*.css`/`*.js`.
+  `vercel.json` con `Cache-Control` explícito para `*.js` (ya no aplica a
+  `style.css`, que ahora va inline en el HTML).
