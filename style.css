@@ -262,7 +262,7 @@ nav a.active:not(.nav-cta)::after{ transform:scaleX(1); }
 }
 .lang-btn:hover:not([aria-pressed="true"]){ color:var(--ink); }
 .lang-btn[aria-pressed="true"]{
-  background:var(--accent-muted);
+  background:var(--accent);
   color:#fff;
 }
 
