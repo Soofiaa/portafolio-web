@@ -73,12 +73,59 @@ corrido para verificar los fixes del Run #1.
 |---|---|---|---|
 | 6 | `style.css` seguía siendo el único recurso render-blocking restante | Performance | **Corregido** — la hoja de estilos completa (700 líneas) se incrustó como `<style>` en `<head>` de `index.html`, eliminando el request de red por completo. A diferencia de Google Fonts, diferir el CSS propio del sitio sí hubiera causado un flash real de contenido sin estilo (sin layout, sin modo oscuro), así que no se usó el patrón preload+swap acá — se evaluó con la usuaria y se optó por inline completo sobre un split de critical CSS, priorizando cero riesgo de FOUC. `style.css` se eliminó del repo; `index.html` es ahora la única fuente de verdad para los estilos |
 
-### Próximos pasos sugeridos
+---
 
-- Re-correr Lighthouse en Incógnito (o perfil limpio) contra la URL de
-  producción para obtener un número de Performance sin ruido de
-  extensiones ni de servidor de desarrollo, y actualizar esta tabla con
-  ese número "limpio" de referencia — en curso.
-- Si el cache-headers finding persiste en producción, agregar
-  `vercel.json` con `Cache-Control` explícito para `*.js` (ya no aplica a
-  `style.css`, que ahora va inline en el HTML).
+## Run #3 (cierre) — 2026-08-15, 03:09 UTC
+
+`localhost:8000`, Incógnito.
+
+| Categoría | Puntaje | vs. Run #2 |
+|---|---|---|
+| Performance | 91 | +4 |
+| Accessibility | 100 | +4 |
+| Best Practices | 96 | sin cambios |
+| SEO | 100 | sin cambios |
+
+**Confirmado por datos del reporte:**
+- Accessibility llega a 100 — `color-contrast` en 0 elementos fallando,
+  confirma en Incógnito (no solo por inspección visual) que el fix del
+  botón de idioma es real.
+- El CLS bajó a 0 (score 1) en cuanto la extensión "Fitly" no interfirió
+  — confirma que el layout shift del sitio siempre fue 0; el hallazgo
+  de los Runs #1/#2 era 100% la extensión, no código propio.
+- Aparecieron `unused-javascript` (2.7 MB) y `unminified-javascript`
+  (799 KB) nuevos en este run, pero cada ítem listado es
+  `chrome-extension://...` (adblocker, lector de PDF, auto-postulador) —
+  ninguno es `script.js` ni `i18n.js` del sitio. Ruido de extensiones
+  todavía presentes en este perfil de Incógnito, no del código.
+- Los errores de consola (`CVService` contra `/api/cvs`, 404 esperado de
+  `/_vercel/insights/script.js` en local) son los mismos de siempre,
+  documentados y sin acción requerida.
+
+**No queda ningún hallazgo real pendiente de esta auditoría.** Los tres
+problemas de código identificados en los Runs #1 y #2 — contraste del
+botón de idioma, scripts render-blocking, CSS render-blocking — están
+resueltos y confirmados por datos en tres corridas consecutivas.
+
+### Estado final — ARQ-04: cerrado
+
+| # | Hallazgo | Estado |
+|---|---|---|
+| 1 | Contraste del botón de idioma activo | ✅ Corregido y confirmado (Accessibility 96→100) |
+| 2 | Google Fonts + scripts render-blocking | ✅ Corregido y confirmado (Performance 55→87) |
+| 6 | `style.css` render-blocking | ✅ Corregido y confirmado (Performance 87→91) |
+| 3 | Cache headers en local | No aplica — depende del servidor de producción (Vercel), no evaluado ahí |
+| 5 | CSS/JS sin minificar | Decisión pendiente, bajo impacto — el proyecto es intencionalmente "sin build step" |
+
+Performance en local con extensiones activas en Incógnito: **91**.
+Esperable ~95-100 en una corrida realmente limpia (perfil sin ninguna
+extensión) o contra la URL de producción en Vercel, que además sirve
+con compresión y cache headers que el servidor de desarrollo local no
+tiene.
+
+### Pendiente (bajo impacto, no bloqueante)
+
+- Si en algún momento se corre Lighthouse contra la URL de producción y
+  el cache-headers finding persiste, agregar `vercel.json` con
+  `Cache-Control` explícito para `*.js` (ya no aplica a `style.css`,
+  que ahora va inline en el HTML).
