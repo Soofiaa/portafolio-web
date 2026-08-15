@@ -68,3 +68,4 @@ resuelto — ver tablas arriba.
 ## Fuera de backlog original (agregado durante la sesión)
 
 - **Sección "Personal"** — nueva sección `#personal` entre Hero y "Sobre mí" (Mascota, Juego favorito, Música), con link de nav "Personal" primero en el `<nav>`. Reutiliza el patrón visual de Stack técnico (`stack-grid` + `stack-group`), sin CSS nuevo salvo `.stack-group p`. ✅
+- **Íconos en sección "Personal"** — huella/mira/nota musical, mismo tratamiento SVG que `.theme-toggle`/`.contact-icon` (stroke + `currentColor`). Nuevo token de estilo `.stack-group-icon` (reusa `--accent-muted`). Verificado en navegador: peso visual parejo entre los 3, color correcto en ambos temas, ambos idiomas OK, nav highlight funcionando. ✅
