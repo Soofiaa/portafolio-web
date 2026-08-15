@@ -82,6 +82,7 @@
       "databases": "Bases de datos",
       "tools": "Herramientas & metodologías"
     },
+    "conceptualTag": "curso",
     "langNative": "ES · Nativo",
     "langEnglishTag": "EN · B2",
     "langEnglishText": "Inglés en desarrollo continuo, cómodo leyendo documentación técnica y en comunicación escrita."

@@ -452,6 +452,21 @@ h1{
   border-color:transparent;
   color:var(--chip-mono-text);
 }
+.chip-conceptual{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  background:transparent!important;
+  border-style:dashed!important;
+  color:var(--ink-soft)!important;
+}
+.chip-tag{
+  font-family:var(--font-mono);
+  font-size:0.62rem;
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+  color:var(--ink-soft);
+}
 .lang-note{
   font-size:0.92rem;
   color:var(--ink-soft);
