@@ -63,7 +63,8 @@
     },
     "jobbi": {
       "problem": "<strong>Problema:</strong> llevar el registro de postulaciones laborales (empresas, estados, fechas de seguimiento) de forma manual es desordenado y fácil de perder.",
-      "solution": "<strong>Solución:</strong> aplicación de escritorio para centralizar y dar seguimiento ordenado a todas las postulaciones laborales."
+      "solution": "<strong>Solución:</strong> aplicación de escritorio para centralizar y dar seguimiento ordenado a todas las postulaciones laborales.",
+      "process": "<strong>Proceso:</strong> revisión de código con corrección de bugs en grilla, ordenamiento, timestamps y manejo de <code>.env</code>"
     },
     "budgetdesk": {
       "problem": "<strong>Problema:</strong> gestionar gastos personales sin depender de una conexión a internet ni de planillas dispersas, con reportes que se puedan compartir fácilmente.",

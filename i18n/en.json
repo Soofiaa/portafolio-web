@@ -63,7 +63,8 @@
     },
     "jobbi": {
       "problem": "<strong>Problem:</strong> tracking job applications — companies, stages, follow-up dates — by hand gets messy fast, and things fall through the cracks.",
-      "solution": "<strong>Solution:</strong> a desktop app to centralize and track every job application in one organized place."
+      "solution": "<strong>Solution:</strong> a desktop app to centralize and track every job application in one organized place.",
+      "process": "<strong>Process:</strong> code review with bug fixes to the grid, sorting, timestamps, and <code>.env</code> handling"
     },
     "budgetdesk": {
       "problem": "<strong>Problem:</strong> personal expense tracking often depends on an internet connection or scattered spreadsheets, with reports that are a hassle to share.",
