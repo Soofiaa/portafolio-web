@@ -14,6 +14,7 @@
     if (!dict) return;
 
     document.documentElement.lang = lang;
+    document.documentElement.removeAttribute('data-lang-loading');
 
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const value = getNested(dict, el.getAttribute('data-i18n'));
@@ -71,5 +72,6 @@
     })
     .catch((err) => {
       console.error('No se pudieron cargar las traducciones:', err);
+      document.documentElement.removeAttribute('data-lang-loading');
     });
 })();

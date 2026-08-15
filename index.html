@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function () {
+  try {
+    if (localStorage.getItem('lang-preference') === 'en') {
+      document.documentElement.setAttribute('data-lang-loading', 'en');
+    }
+  } catch (e) {}
+})();
+</script>
+<style>html[data-lang-loading="en"] body{visibility:hidden}</style>
 <title>Sofía Menzel — Análisis Funcional · QA · Automatización</title>
 <meta name="description" content="Portafolio de Sofía Menzel, Ingeniera en Ejecución Informática. Análisis funcional, QA, automatización de procesos y desarrollo backend.">
 <meta property="og:type" content="website">
