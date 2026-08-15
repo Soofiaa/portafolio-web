@@ -29,7 +29,8 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%234A3F7A'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='42' font-weight='600' fill='white' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
@@ -354,8 +355,8 @@
   <p data-i18n="footer">Sofía Menzel — hecho con atención al detalle.</p>
 </footer>
 
-<script src="i18n.js"></script>
-<script src="script.js"></script>
+<script defer src="i18n.js"></script>
+<script defer src="script.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
