@@ -125,6 +125,7 @@
       "githubLabel": "GitHub",
       "cvLabel": "CV",
       "form": {
+        "fileLabel": "contacto.form",
         "lead": "¿Tienes una propuesta o vacante? Escríbeme directamente desde aquí.",
         "nameLabel": "Nombre",
         "namePlaceholder": "Tu nombre",
@@ -270,6 +271,7 @@
       "githubLabel": "GitHub",
       "cvLabel": "CV",
       "form": {
+        "fileLabel": "contact.form",
         "lead": "Have a proposal or an opening? Reach out directly from here.",
         "nameLabel": "Name",
         "namePlaceholder": "Your name",

@@ -705,8 +705,34 @@ li.chip-conceptual{
 .contact-form{
   margin-top:40px;
   max-width:480px;
-  padding-top:32px;
-  border-top:1px solid var(--border);
+  overflow:hidden;
+  padding-top:0;
+}
+.form-titlebar{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 16px;
+  margin:0 -1px 20px;
+  background:var(--bg-alt);
+  border:1px solid var(--border);
+  border-radius:var(--radius) var(--radius) 0 0;
+}
+.form-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  display:inline-block;
+}
+.form-dot-a{ background:var(--warm-soft); border:1px solid var(--warm); }
+.form-dot-b{ background:var(--accent-soft); border:1px solid var(--accent); }
+.form-dot-c{ background:var(--bg-alt); border:1px solid var(--ink-soft); }
+.form-titlebar-label{
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:0.04em;
+  color:var(--ink-soft);
+  margin-left:4px;
 }
 .contact-form-lead{
   color:var(--ink-soft);
@@ -1094,6 +1120,12 @@ li.chip-conceptual{
     </div>
 
     <form id="contact-form" class="contact-form" action="https://formspree.io/f/mnpajopr" method="POST">
+      <div class="form-titlebar">
+        <span class="form-dot form-dot-a"></span>
+        <span class="form-dot form-dot-b"></span>
+        <span class="form-dot form-dot-c"></span>
+        <span class="form-titlebar-label" data-i18n="contact.form.fileLabel">contacto.form</span>
+      </div>
       <p class="contact-form-lead" data-i18n="contact.form.lead">¿Tienes una propuesta o vacante? Escríbeme directamente desde aquí.</p>
 
       <div class="form-field">
