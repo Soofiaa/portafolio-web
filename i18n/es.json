@@ -95,7 +95,8 @@
     "item1Meta": "Santander Open Academy · 2025",
     "item1Title": "Certificaciones en Data Science, Power BI, Excel, IA y Gestión de Proyectos",
     "item2Meta": "SENCE · 30 horas · 2025",
-    "item2Title": "Diseño Web con HTML5 + CSS"
+    "item2Title": "Diseño Web con HTML5 + CSS",
+    "item2Note": "Base técnica que usé para construir este mismo portafolio, no una competencia de desarrollo front-end independiente."
   },
   "contact": {
     "eyebrow": "Contacto",
