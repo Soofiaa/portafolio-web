@@ -73,7 +73,8 @@
         "status": "Finalizado y aprobado",
         "meta": "Proyecto de título · Mar – Jul 2025",
         "problem": "<strong>Problema:</strong> el seguimiento manual de ingresos y gastos personales es propenso a errores y poco visual.",
-        "solution": "<strong>Solución:</strong> plataforma web para registrar movimientos y visualizar el estado financiero personal."
+        "solution": "<strong>Solución:</strong> plataforma web para registrar movimientos y visualizar el estado financiero personal.",
+        "process": "<strong>Proceso:</strong> remediación de credenciales hardcodeadas y documentación técnica agregada al proyecto."
       },
       "pos": {
         "meta": "Entregado a cliente real · actualmente en uso",
@@ -127,13 +128,13 @@
       "form": {
         "fileLabel": "contacto.form",
         "lead": "¿Tienes una propuesta o vacante? Escríbeme directamente desde aquí.",
-        "nameLabel": "Nombre",
+        "nameLabel": "nombre:",
         "namePlaceholder": "Tu nombre",
-        "emailLabel": "Email",
+        "emailLabel": "email:",
         "emailPlaceholder": "tu@email.com",
-        "messageLabel": "Mensaje",
+        "messageLabel": "mensaje:",
         "messagePlaceholder": "Cuéntame brevemente tu propuesta...",
-        "submit": "Enviar mensaje"
+        "submit": "> Enviar mensaje"
       }
     },
     "footer": "Sofía Menzel — hecho con atención al detalle.",
@@ -219,7 +220,8 @@
         "status": "Completed & approved",
         "meta": "Capstone project · Mar – Jul 2025",
         "problem": "<strong>Problem:</strong> manually tracking personal income and expenses is error-prone and hard to visualize.",
-        "solution": "<strong>Solution:</strong> a web platform for logging transactions and visualizing overall financial health."
+        "solution": "<strong>Solution:</strong> a web platform for logging transactions and visualizing overall financial health.",
+        "process": "<strong>Process:</strong> remediation of hardcoded credentials and added technical documentation to the project."
       },
       "pos": {
         "meta": "Delivered to a real client · currently in use",
@@ -273,13 +275,13 @@
       "form": {
         "fileLabel": "contact.form",
         "lead": "Have a proposal or an opening? Reach out directly from here.",
-        "nameLabel": "Name",
+        "nameLabel": "name:",
         "namePlaceholder": "Your name",
-        "emailLabel": "Email",
+        "emailLabel": "email:",
         "emailPlaceholder": "you@email.com",
-        "messageLabel": "Message",
+        "messageLabel": "message:",
         "messagePlaceholder": "Briefly tell me about your proposal...",
-        "submit": "Send message"
+        "submit": "> Send message"
       }
     },
     "footer": "Sofía Menzel — built with attention to detail.",

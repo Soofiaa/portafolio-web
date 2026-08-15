@@ -747,7 +747,6 @@ li.chip-conceptual{
 .form-field label{
   font-family:var(--font-mono);
   font-size:0.78rem;
-  text-transform:uppercase;
   letter-spacing:0.08em;
   color:var(--accent-muted);
 }
@@ -782,11 +781,12 @@ li.chip-conceptual{
 .contact-form .btn{
   border:none;
   cursor:pointer;
-  font-family:inherit;
+  font-family:var(--font-mono);
 }
 .form-status{
   margin:14px 0 0;
   font-size:0.9rem;
+  font-family:var(--font-mono);
   min-height:1.2em;
 }
 .form-status-success{ color:var(--mono-tag-text); }
@@ -957,6 +957,7 @@ li.chip-conceptual{
         <p class="project-meta" data-i18n="projects.finance.meta">Proyecto de título · Mar – Jul 2025</p>
         <p class="project-problem" data-i18n-html="projects.finance.problem"><strong>Problema:</strong> el seguimiento manual de ingresos y gastos personales es propenso a errores y poco visual.</p>
         <p class="project-solution" data-i18n-html="projects.finance.solution"><strong>Solución:</strong> plataforma web para registrar movimientos y visualizar el estado financiero personal.</p>
+        <p class="project-process" data-i18n-html="projects.finance.process"><strong>Proceso:</strong> remediación de credenciales hardcodeadas y documentación técnica agregada al proyecto.</p>
         <ul class="chips chips-mono">
           <li>React</li>
           <li>Flask</li>
@@ -1129,24 +1130,24 @@ li.chip-conceptual{
       <p class="contact-form-lead" data-i18n="contact.form.lead">¿Tienes una propuesta o vacante? Escríbeme directamente desde aquí.</p>
 
       <div class="form-field">
-        <label for="contact-name" data-i18n="contact.form.nameLabel">Nombre</label>
+        <label for="contact-name" data-i18n="contact.form.nameLabel">nombre:</label>
         <input type="text" id="contact-name" name="name" autocomplete="name" required data-i18n-placeholder="contact.form.namePlaceholder" placeholder="Tu nombre">
       </div>
 
       <div class="form-field">
-        <label for="contact-email" data-i18n="contact.form.emailLabel">Email</label>
+        <label for="contact-email" data-i18n="contact.form.emailLabel">email:</label>
         <input type="email" id="contact-email" name="email" autocomplete="email" required data-i18n-placeholder="contact.form.emailPlaceholder" placeholder="tu@email.com">
       </div>
 
       <div class="form-field">
-        <label for="contact-message" data-i18n="contact.form.messageLabel">Mensaje</label>
+        <label for="contact-message" data-i18n="contact.form.messageLabel">mensaje:</label>
         <textarea id="contact-message" name="message" rows="5" required data-i18n-placeholder="contact.form.messagePlaceholder" placeholder="Cuéntame brevemente tu propuesta..."></textarea>
       </div>
 
       <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio">
 
-      <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Enviar mensaje</button>
+      <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">&gt; Enviar mensaje</button>
       <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
     </form>
   </section>

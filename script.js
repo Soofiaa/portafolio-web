@@ -151,14 +151,14 @@ if (contactForm) {
       });
 
       if (response.ok) {
-        statusEl.textContent = labels.success;
+        statusEl.textContent = `> ${labels.success}`;
         statusEl.classList.add('form-status-success');
         contactForm.reset();
       } else {
         throw new Error('Form submission failed');
       }
     } catch (err) {
-      statusEl.textContent = labels.error;
+      statusEl.textContent = `> ${labels.error}`;
       statusEl.classList.add('form-status-error');
     } finally {
       submitBtn.disabled = false;
