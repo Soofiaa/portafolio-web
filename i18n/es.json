@@ -59,7 +59,8 @@
     "pos": {
       "meta": "Entregado a cliente real · actualmente en uso",
       "problem": "<strong>Problema:</strong> negocios pequeños necesitan un punto de venta simple, sin la complejidad de un sistema comercial.",
-      "solution": "<strong>Solución:</strong> sistema de punto de venta liviano para gestionar ventas e inventario."
+      "solution": "<strong>Solución:</strong> sistema de punto de venta liviano para gestionar ventas e inventario.",
+      "process": "<strong>Proceso:</strong> 6 fases de revisión (integridad de auditoría, testing scaffolding y más) antes de la entrega"
     },
     "jobbi": {
       "problem": "<strong>Problema:</strong> llevar el registro de postulaciones laborales (empresas, estados, fechas de seguimiento) de forma manual es desordenado y fácil de perder.",

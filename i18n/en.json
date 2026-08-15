@@ -59,7 +59,8 @@
     "pos": {
       "meta": "Delivered to a real client · currently in use",
       "problem": "<strong>Problem:</strong> small businesses need a simple point-of-sale system, without the overhead of a full commercial platform.",
-      "solution": "<strong>Solution:</strong> a lightweight point-of-sale system for managing sales and inventory."
+      "solution": "<strong>Solution:</strong> a lightweight point-of-sale system for managing sales and inventory.",
+      "process": "<strong>Process:</strong> 6 review phases (audit integrity, testing scaffolding, and more) before delivery"
     },
     "jobbi": {
       "problem": "<strong>Problem:</strong> tracking job applications — companies, stages, follow-up dates — by hand gets messy fast, and things fall through the cracks.",
