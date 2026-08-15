@@ -6,6 +6,7 @@
     },
     "skipLink": "Saltar al contenido",
     "nav": {
+      "personal": "Personal",
       "about": "Sobre mí",
       "experience": "Experiencia",
       "projects": "Proyectos",
@@ -19,6 +20,22 @@
       "viewProjects": "Ver proyectos",
       "getInTouch": "Contactar",
       "downloadCv": "Descargar CV"
+    },
+    "personal": {
+      "eyebrow": "Tiempo libre",
+      "h2": "Un poco de mí, fuera del trabajo",
+      "pet": {
+        "label": "Mascota",
+        "text": "Olivia, mi perrita, actualmente en entrenamiento activo."
+      },
+      "game": {
+        "label": "Juego favorito",
+        "text": "Overwatch."
+      },
+      "music": {
+        "label": "Música",
+        "text": "Escucho principalmente a Ariana Grande."
+      }
     },
     "about": {
       "eyebrow": "Sobre mí",
@@ -106,6 +123,7 @@
       "emailLabel": "Email",
       "linkedinLabel": "LinkedIn",
       "githubLabel": "GitHub",
+      "cvLabel": "CV",
       "form": {
         "lead": "¿Tienes una propuesta o vacante? Escríbeme directamente desde aquí.",
         "nameLabel": "Nombre",
@@ -133,6 +151,7 @@
     },
     "skipLink": "Skip to content",
     "nav": {
+      "personal": "Personal",
       "about": "About",
       "experience": "Experience",
       "projects": "Projects",
@@ -146,6 +165,22 @@
       "viewProjects": "View projects",
       "getInTouch": "Get in touch",
       "downloadCv": "Download CV"
+    },
+    "personal": {
+      "eyebrow": "Free time",
+      "h2": "A bit about me, outside of work",
+      "pet": {
+        "label": "Pet",
+        "text": "Olivia, my dog, currently in active training."
+      },
+      "game": {
+        "label": "Favorite game",
+        "text": "Overwatch."
+      },
+      "music": {
+        "label": "Music",
+        "text": "Mostly Ariana Grande."
+      }
     },
     "about": {
       "eyebrow": "About me",
@@ -233,6 +268,7 @@
       "emailLabel": "Email",
       "linkedinLabel": "LinkedIn",
       "githubLabel": "GitHub",
+      "cvLabel": "CV",
       "form": {
         "lead": "Have a proposal or an opening? Reach out directly from here.",
         "nameLabel": "Name",
