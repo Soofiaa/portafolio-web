@@ -67,7 +67,8 @@
     },
     "budgetdesk": {
       "problem": "<strong>Problema:</strong> gestionar gastos personales sin depender de una conexión a internet ni de planillas dispersas, con reportes que se puedan compartir fácilmente.",
-      "solution": "<strong>Solución:</strong> aplicación de escritorio para gestión de gastos personales, con visualización de estadísticas y exportación de reportes a Excel."
+      "solution": "<strong>Solución:</strong> aplicación de escritorio para gestión de gastos personales, con visualización de estadísticas y exportación de reportes a Excel.",
+      "process": "<strong>Proceso:</strong> auditoría de código con hallazgos documentados y remediación aplicada"
     }
   },
   "stack": {
