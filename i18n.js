@@ -1,6 +1,6 @@
 // Sistema de traducción ES/EN — carga i18n/i18n.json (ambos idiomas en un
-// solo archivo), aplica el idioma activo a [data-i18n] / [data-i18n-html],
-// meta tags y <html lang>.
+// solo archivo), aplica el idioma activo a [data-i18n] / [data-i18n-html] /
+// [data-i18n-placeholder] / [data-i18n-alt], meta tags y <html lang>.
 (function () {
   const STORAGE_KEY = 'lang-preference';
   const DEFAULT_LANG = 'es';
@@ -30,6 +30,11 @@
     document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
       const value = getNested(dict, el.getAttribute('data-i18n-placeholder'));
       if (typeof value === 'string') el.setAttribute('placeholder', value);
+    });
+
+    document.querySelectorAll('[data-i18n-alt]').forEach((el) => {
+      const value = getNested(dict, el.getAttribute('data-i18n-alt'));
+      if (typeof value === 'string') el.setAttribute('alt', value);
     });
 
     if (dict.meta) {
