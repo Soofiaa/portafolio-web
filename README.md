@@ -1,5 +1,7 @@
 # Portafolio — Sofía Menzel
 
+[![CI](https://github.com/Soofiaa/portafolio-web/actions/workflows/ci.yml/badge.svg?branch=dev)](https://github.com/Soofiaa/portafolio-web/actions/workflows/ci.yml)
+
 Sitio estático (HTML, CSS y JavaScript puro, sin framework ni build step) con mi
 portafolio profesional: sobre mí, stack técnico, proyectos personales, experiencia y contacto.
 

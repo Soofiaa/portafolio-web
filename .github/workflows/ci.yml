@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [dev, master]
+  pull_request:
+    branches: [dev, master]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Validate HTML
+        run: npx --yes html-validate index.html
+
+      - name: Validate i18n JSON
+        run: |
+          python -c "
+          import json
+          for f in ['i18n/es.json', 'i18n/en.json']:
+              json.load(open(f, encoding='utf-8'))
+              print(f, 'OK')
+          "
+
+      - name: Check local links resolve
+        run: python scripts/check_links.py
