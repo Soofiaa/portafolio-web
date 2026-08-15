@@ -119,13 +119,13 @@ if (!prefersReducedMotion && sections.length) {
 const CONTACT_FORM_LABELS = {
   es: {
     sending: 'Enviando...',
-    success: '¡Gracias! Tu mensaje fue enviado, te responderé pronto.',
-    error: 'Algo salió mal. Intenta de nuevo o escríbeme directo a soofiaa.menzel@gmail.com.',
+    success: '> ¡Gracias! Tu mensaje fue enviado, te responderé pronto.',
+    error: '> Algo salió mal. Intenta de nuevo o escríbeme directo a soofiaa.menzel@gmail.com.',
   },
   en: {
     sending: 'Sending...',
-    success: "Thanks! Your message was sent, I'll get back to you soon.",
-    error: 'Something went wrong. Please try again or email me directly at soofiaa.menzel@gmail.com.',
+    success: "> Thanks! Your message was sent, I'll get back to you soon.",
+    error: '> Something went wrong. Please try again or email me directly at soofiaa.menzel@gmail.com.',
   },
 };
 
@@ -151,14 +151,14 @@ if (contactForm) {
       });
 
       if (response.ok) {
-        statusEl.textContent = `> ${labels.success}`;
+        statusEl.textContent = labels.success;
         statusEl.classList.add('form-status-success');
         contactForm.reset();
       } else {
         throw new Error('Form submission failed');
       }
     } catch (err) {
-      statusEl.textContent = `> ${labels.error}`;
+      statusEl.textContent = labels.error;
       statusEl.classList.add('form-status-error');
     } finally {
       submitBtn.disabled = false;
