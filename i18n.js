@@ -1,5 +1,6 @@
-// Sistema de traducción ES/EN — carga i18n/es.json e i18n/en.json,
-// aplica el idioma activo a [data-i18n] / [data-i18n-html], meta tags y <html lang>.
+// Sistema de traducción ES/EN — carga i18n/i18n.json (ambos idiomas en un
+// solo archivo), aplica el idioma activo a [data-i18n] / [data-i18n-html],
+// meta tags y <html lang>.
 (function () {
   const STORAGE_KEY = 'lang-preference';
   const DEFAULT_LANG = 'es';
@@ -59,12 +60,10 @@
     });
   }
 
-  Promise.all([
-    fetch('i18n/es.json').then((r) => r.json()),
-    fetch('i18n/en.json').then((r) => r.json()),
-  ])
-    .then(([es, en]) => {
-      translations = { es, en };
+  fetch('i18n/i18n.json')
+    .then((r) => r.json())
+    .then((data) => {
+      translations = data;
       const stored = localStorage.getItem(STORAGE_KEY);
       const initialLang = stored === 'en' || stored === 'es' ? stored : DEFAULT_LANG;
       initLangToggle();

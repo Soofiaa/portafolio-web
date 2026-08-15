@@ -30,9 +30,9 @@ jobs:
         run: |
           python -c "
           import json
-          for f in ['i18n/es.json', 'i18n/en.json']:
-              json.load(open(f, encoding='utf-8'))
-              print(f, 'OK')
+          data = json.load(open('i18n/i18n.json', encoding='utf-8'))
+          assert 'es' in data and 'en' in data, 'missing es/en top-level keys'
+          print('i18n/i18n.json OK')
           "
 
       - name: Check local links resolve
