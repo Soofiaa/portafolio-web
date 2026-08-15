@@ -47,7 +47,8 @@
     "petpal": {
       "status": "In active development",
       "problem": "<strong>Problem:</strong> pet owners often lose track of vaccination schedules and vet checkups.",
-      "solution": "<strong>Solution:</strong> a mobile app for keeping a digital record of a pet's vaccines and reminders."
+      "solution": "<strong>Solution:</strong> a mobile app for keeping a digital record of a pet's vaccines and reminders.",
+      "process": "<strong>Process:</strong> 80+ automated tests · CI with GitHub Actions"
     },
     "finance": {
       "status": "Completed & approved",

@@ -47,7 +47,8 @@
     "petpal": {
       "status": "En desarrollo activo",
       "problem": "<strong>Problema:</strong> los dueños de mascotas suelen perder el control de calendarios de vacunación y controles veterinarios.",
-      "solution": "<strong>Solución:</strong> app móvil para llevar el registro digital de vacunas y recordatorios de una mascota."
+      "solution": "<strong>Solución:</strong> app móvil para llevar el registro digital de vacunas y recordatorios de una mascota.",
+      "process": "<strong>Proceso:</strong> 80+ tests automatizados · CI con GitHub Actions"
     },
     "finance": {
       "status": "Finalizado y aprobado",

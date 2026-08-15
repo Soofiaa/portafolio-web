@@ -522,6 +522,21 @@ h1{
 .project-solution strong, .project-problem strong{
   color:var(--ink);
 }
+.project-process{
+  font-family:var(--font-mono);
+  font-size:0.78rem;
+  color:var(--ink-soft);
+  margin:0;
+}
+.project-process strong{
+  color:var(--accent-muted);
+}
+.project-process code{
+  font-family:inherit;
+  background:var(--bg-alt);
+  padding:1px 5px;
+  border-radius:3px;
+}
 .project-link{
   margin-top:auto;
   padding-top:6px;
