@@ -26,17 +26,17 @@
       "h2": "Un poco de mí, fuera del trabajo",
       "pet": {
         "label": "Mascota",
-        "text": "Olivia, mi perrita, actualmente en entrenamiento activo.",
+        "text": "Olivia, mi perrita. La amo profundamente y es una de mis grandes inspiraciones.",
         "imageAlt": "Foto de Olivia"
       },
       "game": {
         "label": "Juego favorito",
-        "text": "Overwatch.",
+        "text": "Juego videojuegos habitualmente; mi favorito es Overwatch.",
         "imageAlt": "Captura de Overwatch"
       },
       "music": {
         "label": "Música",
-        "text": "Escucho principalmente a Ariana Grande.",
+        "text": "Me gusta el pop; mi artista favorita es Ariana Grande.",
         "imageAlt": "Foto relacionada con música"
       }
     },
@@ -176,17 +176,17 @@
       "h2": "A bit about me, outside of work",
       "pet": {
         "label": "Pet",
-        "text": "Olivia, my dog, currently in active training.",
+        "text": "Olivia, my dog. I love her deeply and she's one of my biggest inspirations.",
         "imageAlt": "Photo of Olivia"
       },
       "game": {
         "label": "Favorite game",
-        "text": "Overwatch.",
+        "text": "I play video games regularly; my favorite is Overwatch.",
         "imageAlt": "Overwatch screenshot"
       },
       "music": {
         "label": "Music",
-        "text": "Mostly Ariana Grande.",
+        "text": "I like pop; my favorite artist is Ariana Grande.",
         "imageAlt": "Music-related photo"
       }
     },
