@@ -180,3 +180,24 @@ if (!prefersReducedMotion) {
     });
   });
 }
+
+// Fachada del embed de Spotify: el iframe real solo se inserta al hacer clic
+function initSpotifyFacade() {
+  const facade = document.getElementById('spotify-facade');
+  if (!facade) return;
+  facade.addEventListener('click', () => {
+    const iframe = document.createElement('iframe');
+    iframe.src = facade.dataset.embedSrc;
+    iframe.width = '100%';
+    iframe.height = '152';
+    iframe.frameBorder = '0';
+    iframe.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+    iframe.allowFullscreen = true;
+    iframe.title = facade.dataset.embedTitle;
+    const wrapper = document.createElement('div');
+    wrapper.className = 'spotify-embed';
+    wrapper.appendChild(iframe);
+    facade.replaceWith(wrapper);
+  });
+}
+initSpotifyFacade();

@@ -507,6 +507,49 @@ h1{
   display:block;
 }
 .personal-image--square{ aspect-ratio:1/1; }
+.spotify-facade{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  width:100%;
+  margin-top:12px;
+  padding:10px 14px;
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  cursor:pointer;
+  text-align:left;
+  font-family:inherit;
+}
+.spotify-facade:hover{ border-color:var(--accent-muted); }
+.spotify-facade-art{
+  width:44px;
+  height:44px;
+  border-radius:4px;
+  flex-shrink:0;
+  object-fit:cover;
+}
+.spotify-facade-text{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  min-width:0;
+}
+.spotify-facade-title{
+  font-size:0.9rem;
+  font-weight:600;
+  color:var(--ink);
+}
+.spotify-facade-artist{
+  font-size:0.8rem;
+  color:var(--ink-soft);
+}
+.spotify-facade-play{
+  width:28px;
+  height:28px;
+  color:var(--accent);
+  flex-shrink:0;
+}
 .spotify-embed{
   margin-top:12px;
   border-radius:var(--radius);
@@ -908,18 +951,14 @@ li.chip-conceptual{
         <svg class="stack-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
         <h3 data-i18n="personal.music.label">Música</h3>
         <p data-i18n="personal.music.text">Escucho principalmente a Ariana Grande.</p>
-        <div class="spotify-embed">
-          <iframe
-            src="https://open.spotify.com/embed/album/2k4FmEtXR0WiDW0Ac2QArT?utm_source=generator"
-            width="100%"
-            height="152"
-            frameborder="0"
-            allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-            title="Reproductor de Spotify: petal — Ariana Grande">
-          </iframe>
-        </div>
+        <button type="button" class="spotify-facade" id="spotify-facade" aria-label="Reproducir petal de Ariana Grande en Spotify" data-embed-src="https://open.spotify.com/embed/album/2k4FmEtXR0WiDW0Ac2QArT?utm_source=generator" data-embed-title="Reproductor de Spotify: petal — Ariana Grande">
+          <img class="spotify-facade-art" src="https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e028baf677ee2d8dda6cc9fcbd7" alt="" loading="lazy" width="64" height="64">
+          <span class="spotify-facade-text">
+            <span class="spotify-facade-title" data-i18n="personal.music.spotifyTitle">petal</span>
+            <span class="spotify-facade-artist" data-i18n="personal.music.spotifyArtist">Ariana Grande · Spotify</span>
+          </span>
+          <svg class="spotify-facade-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
       </div>
     </div>
   </section>

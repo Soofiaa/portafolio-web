@@ -32,7 +32,9 @@
       "music": {
         "label": "Música",
         "text": "Me gusta el pop; mi artista favorita es Ariana Grande.",
-        "imageAlt": "Foto relacionada con música"
+        "imageAlt": "Foto relacionada con música",
+        "spotifyTitle": "petal",
+        "spotifyArtist": "Ariana Grande · Spotify"
       }
     },
     "about": {
@@ -177,7 +179,9 @@
       "music": {
         "label": "Music",
         "text": "I like pop; my favorite artist is Ariana Grande.",
-        "imageAlt": "Music-related photo"
+        "imageAlt": "Music-related photo",
+        "spotifyTitle": "petal",
+        "spotifyArtist": "Ariana Grande · Spotify"
       }
     },
     "about": {
