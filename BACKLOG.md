@@ -65,6 +65,24 @@ resuelto — ver tablas arriba.
 
 ---
 
+## Ronda de revisión front-end (segunda pasada)
+
+| ID | Título | Estado |
+|----|--------|--------|
+| PERF-01 | `loading="lazy"` en imagen de Overwatch (LCP) | ✅ — quitado; la sección queda muy arriba y Lighthouse la marcó como elemento LCP |
+| A11Y-01 | Foco perdido al activar la fachada de Spotify | ✅ — el wrapper del iframe recibe `tabindex="-1"` + `.focus()` explícito, con estilo `:focus` visible a juego con el resto del sitio |
+| CI-01 | Smoke tests de comportamiento (Playwright) | ✅ — `tests/e2e/site.spec.js` cubre formulario/validación nativa, persistencia de tema, cambio de idioma y fachada de Spotify; job `e2e` nuevo en `ci.yml`, no afecta el deploy (sigue sin build step) |
+| ARQ-07 | CSS inline en `index.html` (~1240 líneas) | ⏳ — sin acción por ahora; ver nota abajo |
+
+**Nota ARQ-07:** si se agrega otra sección grande o componente interactivo
+nuevo, evaluar separar el CSS a un archivo aparte con estrategia de critical
+CSS (inline solo lo del primer viewport, resto cargado de forma diferida) en
+vez de seguir creciendo el `<style>` inline. Al tamaño actual, mantenerlo
+inline para evitar una request de CSS bloqueante sigue siendo la decisión
+correcta.
+
+---
+
 ## Fuera de backlog original (agregado durante la sesión)
 
 - **Sección "Personal"** — nueva sección `#personal` entre Hero y "Sobre mí" (Mascota, Juego favorito, Música), con link de nav "Personal" primero en el `<nav>`. Reutiliza el patrón visual de Stack técnico (`stack-grid` + `stack-group`), sin CSS nuevo salvo `.stack-group p`. ✅

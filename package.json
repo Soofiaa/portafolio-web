@@ -1,0 +1,12 @@
+{
+  "name": "portafolio-web",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Testing tooling for the portfolio site. No build step is used to serve the site in production.",
+  "scripts": {
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0"
+  }
+}

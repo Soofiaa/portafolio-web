@@ -196,8 +196,10 @@ function initSpotifyFacade() {
     iframe.title = facade.dataset.embedTitle;
     const wrapper = document.createElement('div');
     wrapper.className = 'spotify-embed';
+    wrapper.setAttribute('tabindex', '-1');
     wrapper.appendChild(iframe);
     facade.replaceWith(wrapper);
+    wrapper.focus();
   });
 }
 initSpotifyFacade();
