@@ -24,11 +24,6 @@
     "personal": {
       "eyebrow": "Tiempo libre",
       "h2": "Un poco de mí, fuera del trabajo",
-      "pet": {
-        "label": "Mascota",
-        "text": "Olivia, mi perrita. La amo profundamente y es una de mis grandes inspiraciones.",
-        "imageAlt": "Foto de Olivia"
-      },
       "game": {
         "label": "Juego favorito",
         "text": "Juego videojuegos habitualmente; mi favorito es Overwatch.",
@@ -174,11 +169,6 @@
     "personal": {
       "eyebrow": "Free time",
       "h2": "A bit about me, outside of work",
-      "pet": {
-        "label": "Pet",
-        "text": "Olivia, my dog. I love her deeply and she's one of my biggest inspirations.",
-        "imageAlt": "Photo of Olivia"
-      },
       "game": {
         "label": "Favorite game",
         "text": "I play video games regularly; my favorite is Overwatch.",
