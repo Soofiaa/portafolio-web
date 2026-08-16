@@ -506,7 +506,12 @@ h1{
   object-fit:cover;
   display:block;
 }
-.personal-image--square{ aspect-ratio:1/1; }
+/* 75% width matches the 4/3 sibling's height (width * 3/4) so both stay the same height while this one stays square */
+.personal-image--square{
+  width:75%;
+  aspect-ratio:1/1;
+  margin-inline:auto;
+}
 .spotify-facade{
   display:flex;
   align-items:center;
