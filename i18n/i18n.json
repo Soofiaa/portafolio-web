@@ -15,23 +15,23 @@
       "contact": "Contacto"
     },
     "hero": {
-      "badge": "Disponible — Remoto / Híbrido · Viña del Mar & Valparaíso · Santiago",
-      "role": "Ingeniera en Ejecución Informática — Análisis funcional, QA & testing, automatización de procesos y desarrollo backend.",
+      "badge": "📌 Buscando oportunidad — Remoto / Híbrido · Viña del Mar · Santiago",
+      "role": "Ingeniera en Ejecución Informática con enfoque en resultados: automatización, análisis funcional y QA.",
       "viewProjects": "Ver proyectos",
-      "getInTouch": "Contactar",
+      "getInTouch": "Hablemos",
       "downloadCv": "Descargar CV"
     },
     "personal": {
-      "eyebrow": "Tiempo libre",
-      "h2": "Un poco de mí, fuera del trabajo",
+      "eyebrow": "Sobre mí",
+      "h2": "Más allá del código",
       "game": {
-        "label": "Juego favorito",
-        "text": "Juego videojuegos habitualmente; mi favorito es Overwatch.",
+        "label": "Estrategia en equipo",
+        "text": "Disfruto de juegos que exigen <strong>toma de decisiones rápida, adaptación al cambio y coordinación en equipo</strong>. Habilidades que aplico directamente al trabajar en proyectos de software con plazos ajustados.",
         "imageAlt": "Captura de Overwatch"
       },
       "music": {
-        "label": "Música",
-        "text": "Me gusta el pop; mi artista favorita es Ariana Grande.",
+        "label": "Disciplina creativa",
+        "text": "La música pop (especialmente Ariana Grande) me inspira por su <strong>disciplina, evolución constante y atención al detalle</strong>. Cualidades que también busco en mi desarrollo profesional, donde la creatividad y la precisión van de la mano.",
         "imageAlt": "Foto relacionada con música",
         "spotifyTitle": "petal",
         "spotifyArtist": "Ariana Grande · Spotify"
@@ -40,8 +40,8 @@
     "about": {
       "eyebrow": "Sobre mí",
       "h2": "Traducir procesos de negocio en sistemas que funcionan",
-      "p1": "Egresé de Ingeniería en Ejecución Informática de la Pontificia Universidad Católica de Valparaíso (PUCV) en 2025. Mi formación en pasantía en Dental Laval me confirmó lo que más disfruto: entender cómo funciona realmente un proceso, conversarlo con quienes lo ejecutan, revisarlo en la base de datos, encontrar dónde se rompe y luego construir o documentar la solución técnica correspondiente.",
-      "p2": "Soy una persona analítica y perfeccionista: prefiero entender el porqué de un problema antes de resolverlo, y me importa que la documentación y el código queden tan claros como el razonamiento detrás de ellos. Actualmente busco mi primera oportunidad formal en análisis funcional, QA/testing, automatización de procesos o desarrollo backend.",
+      "p1": "Egresé de Ingeniería en Ejecución Informática (PUCV, 2025). Mi experiencia en Dental Laval me enseñó que lo que más disfruto es entender procesos de negocio, conversar con quienes los ejecutan, revisar datos en la base de datos y construir soluciones técnicas que realmente resuelvan problemas.",
+      "p2": "Soy analítica y detallista: prefiero entender el 'por qué' antes de resolver. Me importa que la documentación y el código queden tan claros como el razonamiento detrás de ellos. Busco mi primera oportunidad en análisis funcional, QA o backend.",
       "eduDate": "2019 – 2025",
       "eduLine": "Ingeniera en Ejecución Informática — PUCV"
     },
@@ -50,11 +50,11 @@
       "h2": "Trayectoria",
       "roleMeta": "Práctica profesional · Ene – Feb 2025",
       "bullets": [
-        "Análisis funcional de procesos administrativos internos.",
-        "Levantamiento y validación de datos mediante consultas SQL sobre el ERP Softland.",
-        "Documentación de procesos de negocio para el equipo.",
-        "Automatización del cálculo de comisiones con Python para estimar reducciones en el tiempo de proceso manual.",
-        "Analicé la lógica de negocio del ERP, identificando 3+ riesgos operacionales documentados que permitieron anticipar puntos de falla antes de la implementación."
+        "Realicé análisis funcional de procesos administrativos internos.",
+        "Validé datos mediante consultas SQL sobre el ERP Softland.",
+        "Documenté procesos de negocio para el equipo.",
+        "Automaticé el cálculo de comisiones con Python, reduciendo el tiempo de 1 semana a ~3 minutos.",
+        "Audité la lógica del ERP, identificando 3+ riesgos operacionales que permitieron anticipar fallos antes de producción."
       ]
     },
     "projects": {
@@ -67,20 +67,20 @@
         "status": "En desarrollo activo",
         "problem": "<strong>Problema:</strong> los dueños de mascotas suelen perder el control de calendarios de vacunación y controles veterinarios.",
         "solution": "<strong>Solución:</strong> app móvil para llevar el registro digital de vacunas y recordatorios de una mascota.",
-        "process": "<strong>Proceso:</strong> 80+ tests automatizados · CI con GitHub Actions"
+        "process": "<strong>Proceso:</strong> +180 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas"
       },
       "finance": {
         "status": "Finalizado y aprobado",
         "meta": "Proyecto de título · Mar – Jul 2025",
         "problem": "<strong>Problema:</strong> el seguimiento manual de ingresos y gastos personales es propenso a errores y poco visual.",
         "solution": "<strong>Solución:</strong> plataforma web para registrar movimientos y visualizar el estado financiero personal.",
-        "process": "<strong>Proceso:</strong> remediación de credenciales hardcodeadas y documentación técnica agregada al proyecto."
+        "process": "<strong>Proceso:</strong> API REST desacoplada (React + Flask + PostgreSQL) · Proyecto de título aprobado"
       },
       "pos": {
         "meta": "Entregado a cliente real · actualmente en uso",
         "problem": "<strong>Problema:</strong> negocios pequeños necesitan un punto de venta simple, sin la complejidad de un sistema comercial.",
         "solution": "<strong>Solución:</strong> sistema de punto de venta liviano para gestionar ventas e inventario.",
-        "process": "<strong>Proceso:</strong> 6 fases de revisión (integridad de auditoría, testing scaffolding y más) antes de la entrega"
+        "process": "<strong>Proceso:</strong> 6 fases de QA · Entregado a cliente real · En uso productivo"
       },
       "jobbi": {
         "problem": "<strong>Problema:</strong> llevar el registro de postulaciones laborales (empresas, estados, fechas de seguimiento) de forma manual es desordenado y fácil de perder.",
@@ -112,7 +112,7 @@
       "eyebrow": "Certificaciones",
       "h2": "Aprendizaje continuo",
       "item1Meta": "Santander Open Academy · 2025",
-      "item1Title": "Certificaciones en Data Science, Power BI, Excel, IA y Gestión de Proyectos",
+      "item1Title": "Data Science · Power BI · Excel · IA · Gestión de Proyectos (Santander, 2025)",
       "item2Meta": "SENCE · 30 horas · 2025",
       "item2Title": "Diseño Web con HTML5 + CSS",
       "item2Note": "Base técnica que usé para construir este mismo portafolio, no una competencia de desarrollo front-end independiente."
@@ -120,7 +120,7 @@
     "contact": {
       "eyebrow": "Contacto",
       "h2": "Conversemos",
-      "lead": "Estoy buscando activamente mi primera oportunidad formal. Si mi perfil calza con lo que necesitas, escríbeme.",
+      "lead": "¿Buscas a alguien que entienda el negocio, documente con claridad y construya soluciones que funcionen? Escríbeme.",
       "emailLabel": "Email",
       "linkedinLabel": "LinkedIn",
       "githubLabel": "GitHub",
@@ -162,23 +162,23 @@
       "contact": "Contact"
     },
     "hero": {
-      "badge": "Available — Remote / Hybrid · Viña del Mar & Valparaíso · Santiago",
-      "role": "Computer Systems Engineer — Functional analysis, QA & testing, process automation, and backend development.",
+      "badge": "📌 Open to work — Remote / Hybrid · Viña del Mar · Santiago",
+      "role": "Computer Systems Engineer with a results-driven approach: automation, functional analysis & QA.",
       "viewProjects": "View projects",
-      "getInTouch": "Get in touch",
+      "getInTouch": "Let's talk",
       "downloadCv": "Download CV"
     },
     "personal": {
-      "eyebrow": "Free time",
-      "h2": "A bit about me, outside of work",
+      "eyebrow": "About me",
+      "h2": "Beyond the code",
       "game": {
-        "label": "Favorite game",
-        "text": "I play video games regularly; my favorite is Overwatch.",
+        "label": "Team strategy",
+        "text": "I enjoy games that require <strong>quick decision-making, adaptability to change, and team coordination</strong>. Skills I apply directly when working on software projects with tight deadlines.",
         "imageAlt": "Overwatch screenshot"
       },
       "music": {
-        "label": "Music",
-        "text": "I like pop; my favorite artist is Ariana Grande.",
+        "label": "Creative discipline",
+        "text": "Pop music (especially Ariana Grande) inspires me through its <strong>discipline, constant evolution, and attention to detail</strong>. Qualities I also seek in my professional development, where creativity and precision go hand in hand.",
         "imageAlt": "Music-related photo",
         "spotifyTitle": "petal",
         "spotifyArtist": "Ariana Grande · Spotify"
@@ -187,8 +187,8 @@
     "about": {
       "eyebrow": "About me",
       "h2": "Turning business processes into systems that work",
-      "p1": "I graduated in Computer Systems Engineering from Pontificia Universidad Católica de Valparaíso (PUCV) in 2025. My internship at Dental Laval confirmed what I enjoy most: understanding how a process actually works — talking it through with the people who run it, digging into the database, finding where it breaks, and then building or documenting the right technical solution.",
-      "p2": "I'm analytical and detail-oriented: I'd rather understand the why behind a problem before solving it, and I care that documentation and code stay as clear as the reasoning behind them. I'm currently looking for my first formal role in functional analysis, QA/testing, process automation, or backend development.",
+      "p1": "I graduated in Computer Systems Engineering (PUCV, 2025). My internship at Dental Laval confirmed what I enjoy most: understanding business processes, talking with the people who run them, digging into the database, and building solutions that actually solve problems.",
+      "p2": "I'm analytical and detail-oriented: I'd rather understand the 'why' before solving. I care that documentation and code are as clear as the reasoning behind them. I'm looking for my first role in functional analysis, QA or backend.",
       "eduDate": "2019 – 2025",
       "eduLine": "Computer Systems Engineering — PUCV"
     },
@@ -197,11 +197,11 @@
       "h2": "Track record",
       "roleMeta": "Professional internship · Jan – Feb 2025",
       "bullets": [
-        "Functional analysis of internal administrative processes.",
-        "Gathered and validated data through SQL queries against the Softland ERP.",
+        "Performed functional analysis of internal administrative processes.",
+        "Validated data through SQL queries against the Softland ERP.",
         "Documented business processes for the team.",
-        "Automated commission calculations with Python to estimate reductions in manual processing time.",
-        "Analyzed the ERP's business logic, identifying 3+ documented operational risks that helped anticipate failure points ahead of implementation."
+        "Automated commission calculations with Python, reducing time from 1 week to ~3 minutes.",
+        "Audited the ERP's business logic, identifying 3+ operational risks that helped anticipate failure points before production."
       ]
     },
     "projects": {
@@ -214,20 +214,20 @@
         "status": "In active development",
         "problem": "<strong>Problem:</strong> pet owners often lose track of vaccination schedules and vet checkups.",
         "solution": "<strong>Solution:</strong> a mobile app for keeping a digital record of a pet's vaccines and reminders.",
-        "process": "<strong>Process:</strong> 80+ automated tests · CI with GitHub Actions"
+        "process": "<strong>Process:</strong> +180 automated tests · CI/CD with GitHub Actions · Layered architecture"
       },
       "finance": {
         "status": "Completed & approved",
         "meta": "Capstone project · Mar – Jul 2025",
         "problem": "<strong>Problem:</strong> manually tracking personal income and expenses is error-prone and hard to visualize.",
         "solution": "<strong>Solution:</strong> a web platform for logging transactions and visualizing overall financial health.",
-        "process": "<strong>Process:</strong> remediation of hardcoded credentials and added technical documentation to the project."
+        "process": "<strong>Process:</strong> Decoupled REST API (React + Flask + PostgreSQL) · Approved capstone project"
       },
       "pos": {
         "meta": "Delivered to a real client · currently in use",
         "problem": "<strong>Problem:</strong> small businesses need a simple point-of-sale system, without the overhead of a full commercial platform.",
         "solution": "<strong>Solution:</strong> a lightweight point-of-sale system for managing sales and inventory.",
-        "process": "<strong>Process:</strong> 6 review phases (audit integrity, testing scaffolding, and more) before delivery"
+        "process": "<strong>Process:</strong> 6 QA phases · Delivered to a real client · In production use"
       },
       "jobbi": {
         "problem": "<strong>Problem:</strong> tracking job applications — companies, stages, follow-up dates — by hand gets messy fast, and things fall through the cracks.",
@@ -259,7 +259,7 @@
       "eyebrow": "Certifications",
       "h2": "Always learning",
       "item1Meta": "Santander Open Academy · 2025",
-      "item1Title": "Certifications in Data Science, Power BI, Excel, AI, and Project Management",
+      "item1Title": "Data Science · Power BI · Excel · AI · Project Management (Santander, 2025)",
       "item2Meta": "SENCE · 30 hours · 2025",
       "item2Title": "Web Design with HTML5 + CSS",
       "item2Note": "The technical foundation I used to build this very portfolio, not a standalone front-end development competency."
@@ -267,7 +267,7 @@
     "contact": {
       "eyebrow": "Contact",
       "h2": "Let's talk",
-      "lead": "I'm actively looking for my first formal role. If my profile fits what you need, reach out.",
+      "lead": "Looking for someone who understands the business, documents clearly, and builds solutions that work? Reach out.",
       "emailLabel": "Email",
       "linkedinLabel": "LinkedIn",
       "githubLabel": "GitHub",
