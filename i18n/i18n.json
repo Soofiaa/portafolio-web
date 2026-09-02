@@ -15,7 +15,7 @@
       "contact": "Contacto"
     },
     "hero": {
-      "badge": "📌 Buscando oportunidad — Remoto / Híbrido · Viña del Mar · Santiago",
+      "badge": "📌 Buscando oportunidad — Remoto / Híbrido · Viña del Mar & Valparaíso · Santiago",
       "role": "Ingeniera en Ejecución Informática con enfoque en resultados: automatización, análisis funcional y QA.",
       "viewProjects": "Ver proyectos",
       "getInTouch": "Hablemos",
@@ -67,7 +67,7 @@
         "status": "En desarrollo activo",
         "problem": "<strong>Problema:</strong> los dueños de mascotas suelen perder el control de calendarios de vacunación y controles veterinarios.",
         "solution": "<strong>Solución:</strong> app móvil para llevar el registro digital de vacunas y recordatorios de una mascota.",
-        "process": "<strong>Proceso:</strong> +180 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas"
+        "process": "<strong>Proceso:</strong> 105 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas"
       },
       "finance": {
         "status": "Finalizado y aprobado",
@@ -162,7 +162,7 @@
       "contact": "Contact"
     },
     "hero": {
-      "badge": "📌 Open to work — Remote / Hybrid · Viña del Mar · Santiago",
+      "badge": "📌 Open to work — Remote / Hybrid · Viña del Mar & Valparaíso · Santiago",
       "role": "Computer Systems Engineer with a results-driven approach: automation, functional analysis & QA.",
       "viewProjects": "View projects",
       "getInTouch": "Let's talk",
@@ -214,7 +214,7 @@
         "status": "In active development",
         "problem": "<strong>Problem:</strong> pet owners often lose track of vaccination schedules and vet checkups.",
         "solution": "<strong>Solution:</strong> a mobile app for keeping a digital record of a pet's vaccines and reminders.",
-        "process": "<strong>Process:</strong> +180 automated tests · CI/CD with GitHub Actions · Layered architecture"
+        "process": "<strong>Process:</strong> 105 automated tests · CI/CD with GitHub Actions · Layered architecture"
       },
       "finance": {
         "status": "Completed & approved",
