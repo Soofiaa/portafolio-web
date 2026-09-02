@@ -38,6 +38,9 @@ jobs:
       - name: Check local links resolve
         run: python scripts/check_links.py
 
+      - name: Check HTML/i18n content sync
+        run: python scripts/check_i18n_sync.py
+
   e2e:
     runs-on: ubuntu-latest
     steps:
