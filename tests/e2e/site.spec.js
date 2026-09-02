@@ -41,6 +41,34 @@ test('el selector de idioma cambia el texto visible', async ({ page }) => {
   await expect(viewProjects).toHaveText('View projects');
 });
 
+test('el modo oscuro guardado se aplica antes de que corra script.js, sin depender del esquema del SO', async ({ browser }, testInfo) => {
+  // Simula: SO en modo claro, pero la persona eligió "oscuro" manualmente en una visita anterior.
+  const context = await browser.newContext({
+    colorScheme: 'light',
+    baseURL: testInfo.project.use.baseURL,
+  });
+  await context.addInitScript(() => {
+    localStorage.setItem('theme-preference', 'dark');
+    // readyState pasa a "interactive" justo cuando termina el parseo del HTML,
+    // ANTES de que se ejecuten los scripts con defer (como script.js). Si
+    // data-theme ya está en "dark" en ese momento, quedó seteado por el script
+    // inline del <head> y no por script.js -> no hay flash de tema incorrecto.
+    document.addEventListener('readystatechange', () => {
+      if (document.readyState === 'interactive' && window.__themeAtInteractive === undefined) {
+        window.__themeAtInteractive = document.documentElement.getAttribute('data-theme');
+      }
+    });
+  });
+
+  const page = await context.newPage();
+  await page.goto('/');
+
+  const themeAtInteractive = await page.evaluate(() => window.__themeAtInteractive);
+  expect(themeAtInteractive).toBe('dark');
+
+  await context.close();
+});
+
 test('la fachada de Spotify se reemplaza por un iframe al hacer clic', async ({ page }) => {
   const facade = page.locator('#spotify-facade');
   await expect(facade).toBeVisible();

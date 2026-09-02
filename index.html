@@ -9,6 +9,10 @@
     if (localStorage.getItem('lang-preference') === 'en') {
       document.documentElement.setAttribute('data-lang-loading', 'en');
     }
+    const storedTheme = localStorage.getItem('theme-preference');
+    if (storedTheme === 'dark' || storedTheme === 'light') {
+      document.documentElement.setAttribute('data-theme', storedTheme);
+    }
   } catch (e) {}
 })();
 </script>

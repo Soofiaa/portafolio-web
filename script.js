@@ -45,10 +45,6 @@ const updateToggleUI = () => {
 };
 
 if (themeToggle) {
-  const stored = localStorage.getItem(THEME_KEY);
-  if (stored === 'dark' || stored === 'light') {
-    document.documentElement.setAttribute('data-theme', stored);
-  }
   updateToggleUI();
 
   themeToggle.addEventListener('click', () => {
