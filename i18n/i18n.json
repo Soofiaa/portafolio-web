@@ -35,6 +35,10 @@
         "imageAlt": "Foto relacionada con música",
         "spotifyTitle": "petal",
         "spotifyArtist": "Ariana Grande · Spotify"
+      },
+      "docker": {
+        "label": "Curiosidad autodidacta",
+        "text": "Fuera de los proyectos formales, exploro herramientas de IA autohospedadas (Open WebUI, LibreChat) con contenedores Docker. Es <strong>aprendizaje autodirigido, más cercano a la curiosidad que a la certificación</strong>: cuando algo se desconfigura, entender por qué me enseña más que cualquier tutorial."
       }
     },
     "about": {
@@ -182,6 +186,10 @@
         "imageAlt": "Music-related photo",
         "spotifyTitle": "petal",
         "spotifyArtist": "Ariana Grande · Spotify"
+      },
+      "docker": {
+        "label": "Self-taught curiosity",
+        "text": "Outside formal projects, I explore self-hosted AI tooling (Open WebUI, LibreChat) with Docker containers. It's <strong>self-directed learning driven by curiosity rather than certification</strong>: when something breaks, figuring out why teaches me more than any tutorial."
       }
     },
     "about": {
