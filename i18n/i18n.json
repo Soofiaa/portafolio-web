@@ -71,29 +71,29 @@
         "status": "En desarrollo activo",
         "problem": "<strong>Problema:</strong> los dueños de mascotas suelen perder el control de calendarios de vacunación y controles veterinarios.",
         "solution": "<strong>Solución:</strong> app móvil para llevar el registro digital de vacunas y recordatorios de una mascota.",
-        "process": "<strong>Proceso:</strong> 105 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas"
+        "process": "<strong>Proceso:</strong> +180 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas"
       },
       "finance": {
         "status": "Finalizado y aprobado",
         "meta": "Proyecto de título · Mar – Jul 2025",
         "problem": "<strong>Problema:</strong> el seguimiento manual de ingresos y gastos personales es propenso a errores y poco visual.",
         "solution": "<strong>Solución:</strong> plataforma web para registrar movimientos y visualizar el estado financiero personal.",
-        "process": "<strong>Proceso:</strong> API REST desacoplada (React + Flask + PostgreSQL) · Proyecto de título aprobado"
+        "process": "<strong>Proceso:</strong> API REST desacoplada (React + Flask + MySQL) · Proyecto de título aprobado"
       },
       "pos": {
         "meta": "Entregado a cliente real · actualmente en uso",
         "problem": "<strong>Problema:</strong> negocios pequeños necesitan un punto de venta simple, sin la complejidad de un sistema comercial.",
         "solution": "<strong>Solución:</strong> sistema de punto de venta liviano para gestionar ventas e inventario.",
-        "process": "<strong>Proceso:</strong> 6 fases de QA · Entregado a cliente real · En uso productivo"
+        "process": "<strong>Proceso:</strong> cobertura de tests dirigida por riesgo de negocio, con criterio explícito de qué NO testear y por qué · Entregado a cliente real, en uso productivo"
       },
       "jobbi": {
         "problem": "<strong>Problema:</strong> llevar el registro de postulaciones laborales (empresas, estados, fechas de seguimiento) de forma manual es desordenado y fácil de perder.",
-        "solution": "<strong>Solución:</strong> aplicación de escritorio para centralizar y dar seguimiento ordenado a todas las postulaciones laborales.",
-        "process": "<strong>Proceso:</strong> revisión de código con corrección de bugs en grilla, ordenamiento, timestamps y manejo de <code>.env</code>"
+        "solution": "<strong>Solución:</strong> aplicación de escritorio para centralizar y dar seguimiento ordenado a todas las postulaciones laborales, con dashboard de métricas y exportación a Excel.",
+        "process": "<strong>Proceso:</strong> empaquetado standalone (.exe + instalador Inno Setup), autodetección de 10 portales de empleo, y decisión de seguridad documentada (uso exclusivo de anon key de Supabase)."
       },
       "budgetdesk": {
-        "problem": "<strong>Problema:</strong> gestionar gastos personales sin depender de una conexión a internet ni de planillas dispersas, con reportes que se puedan compartir fácilmente.",
-        "solution": "<strong>Solución:</strong> aplicación de escritorio para gestión de gastos personales, con visualización de estadísticas y exportación de reportes a Excel.",
+        "problem": "<strong>Problema:</strong> gestionar ingresos y gastos personales sin depender de una conexión a internet ni de planillas dispersas, con reportes que se puedan compartir fácilmente.",
+        "solution": "<strong>Solución:</strong> aplicación de escritorio para gestión de finanzas personales (ingresos y gastos), con balance neto automático, visualización de estadísticas y exportación de reportes a Excel.",
         "process": "<strong>Proceso:</strong> auditoría de código con hallazgos documentados y remediación aplicada"
       }
     },
@@ -222,29 +222,29 @@
         "status": "In active development",
         "problem": "<strong>Problem:</strong> pet owners often lose track of vaccination schedules and vet checkups.",
         "solution": "<strong>Solution:</strong> a mobile app for keeping a digital record of a pet's vaccines and reminders.",
-        "process": "<strong>Process:</strong> 105 automated tests · CI/CD with GitHub Actions · Layered architecture"
+        "process": "<strong>Process:</strong> +180 automated tests · CI/CD with GitHub Actions · Layered architecture"
       },
       "finance": {
         "status": "Completed & approved",
         "meta": "Capstone project · Mar – Jul 2025",
         "problem": "<strong>Problem:</strong> manually tracking personal income and expenses is error-prone and hard to visualize.",
         "solution": "<strong>Solution:</strong> a web platform for logging transactions and visualizing overall financial health.",
-        "process": "<strong>Process:</strong> Decoupled REST API (React + Flask + PostgreSQL) · Approved capstone project"
+        "process": "<strong>Process:</strong> Decoupled REST API (React + Flask + MySQL) · Approved capstone project"
       },
       "pos": {
         "meta": "Delivered to a real client · currently in use",
         "problem": "<strong>Problem:</strong> small businesses need a simple point-of-sale system, without the overhead of a full commercial platform.",
         "solution": "<strong>Solution:</strong> a lightweight point-of-sale system for managing sales and inventory.",
-        "process": "<strong>Process:</strong> 6 QA phases · Delivered to a real client · In production use"
+        "process": "<strong>Process:</strong> risk-driven test coverage, with explicit reasoning for what was deliberately left untested · Delivered to a real client, in production use"
       },
       "jobbi": {
         "problem": "<strong>Problem:</strong> tracking job applications — companies, stages, follow-up dates — by hand gets messy fast, and things fall through the cracks.",
-        "solution": "<strong>Solution:</strong> a desktop app to centralize and track every job application in one organized place.",
-        "process": "<strong>Process:</strong> code review with bug fixes to the grid, sorting, timestamps, and <code>.env</code> handling"
+        "solution": "<strong>Solution:</strong> a desktop app to centralize and track every job application in one organized place, with a metrics dashboard and Excel export.",
+        "process": "<strong>Process:</strong> standalone packaging (.exe + Inno Setup installer), auto-detection across 10 job portals, and a documented security decision (Supabase anon key only, never the service role key)."
       },
       "budgetdesk": {
-        "problem": "<strong>Problem:</strong> personal expense tracking often depends on an internet connection or scattered spreadsheets, with reports that are a hassle to share.",
-        "solution": "<strong>Solution:</strong> a desktop app for managing personal expenses, with visual statistics and one-click Excel report exports.",
+        "problem": "<strong>Problem:</strong> personal income and expense tracking often depends on an internet connection or scattered spreadsheets, with reports that are a hassle to share.",
+        "solution": "<strong>Solution:</strong> a desktop app for managing personal finances (income and expenses), with automatic net balance calculation, visual statistics, and one-click Excel report exports.",
         "process": "<strong>Process:</strong> code audit with documented findings and applied remediation"
       }
     },
