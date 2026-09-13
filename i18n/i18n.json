@@ -69,8 +69,8 @@
       "backend": "Backend →",
       "petpal": {
         "status": "En desarrollo activo",
-        "problem": "<strong>Problema:</strong> los dueños de mascotas suelen perder el control de calendarios de vacunación y controles veterinarios.",
-        "solution": "<strong>Solución:</strong> app móvil para llevar el registro digital de vacunas y recordatorios de una mascota.",
+        "problem": "<strong>Problema:</strong> los dueños de mascotas pierden el control de vacunas, tratamientos y controles veterinarios — información que termina dispersa entre papeles, mensajes y la memoria, especialmente con más de una mascota.",
+        "solution": "<strong>Solución:</strong> app móvil multi-mascota que centraliza el historial médico completo (vacunas, medicación, desparasitación, signos vitales), con recordatorios confiables y una ficha clínica exportable en PDF para la consulta veterinaria.",
         "process": "<strong>Proceso:</strong> +180 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas"
       },
       "finance": {
@@ -220,8 +220,8 @@
       "backend": "Backend →",
       "petpal": {
         "status": "In active development",
-        "problem": "<strong>Problem:</strong> pet owners often lose track of vaccination schedules and vet checkups.",
-        "solution": "<strong>Solution:</strong> a mobile app for keeping a digital record of a pet's vaccines and reminders.",
+        "problem": "<strong>Problem:</strong> pet owners lose track of vaccines, treatments, and vet checkups — information that ends up scattered across paper records, messages, and memory, especially with more than one pet.",
+        "solution": "<strong>Solution:</strong> a multi-pet mobile app that centralizes the complete medical history (vaccines, medication, deworming, vital signs), with reliable reminders and an exportable PDF clinical record for the vet visit.",
         "process": "<strong>Process:</strong> +180 automated tests · CI/CD with GitHub Actions · Layered architecture"
       },
       "finance": {
