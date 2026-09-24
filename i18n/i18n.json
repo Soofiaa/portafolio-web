@@ -8,6 +8,7 @@
     "nav": {
       "personal": "Personal",
       "about": "Sobre mí",
+      "educacion": "Educación",
       "experience": "Experiencia",
       "projects": "Proyectos",
       "stack": "Stack",
@@ -19,7 +20,21 @@
       "role": "Ingeniera en Ejecución Informática con enfoque en resultados: automatización, análisis funcional y QA.",
       "viewProjects": "Ver proyectos",
       "getInTouch": "Hablemos",
-      "downloadCv": "Descargar CV"
+      "downloadCv": "Descargar CV",
+      "tags": {
+        "functional": "Análisis funcional",
+        "qa": "QA & Automatización",
+        "backend": "Backend junior"
+      },
+      "metric": {
+        "eyebrow": "Estado del proyecto",
+        "from": "Prototipo",
+        "toSr": "hasta",
+        "to": "Producción",
+        "caption": "Sistema de punto de venta entregado a un cliente real.",
+        "check1": "Cliente real, en uso operativo activo",
+        "check2": "Desarrollado en menos de 2 meses"
+      }
     },
     "personal": {
       "eyebrow": "Sobre mí",
@@ -45,9 +60,15 @@
       "eyebrow": "Sobre mí",
       "h2": "Traducir procesos de negocio en sistemas que funcionan",
       "p1": "Egresé de Ingeniería en Ejecución Informática (PUCV, 2025). Mi experiencia en Dental Laval me enseñó que lo que más disfruto es entender procesos de negocio, conversar con quienes los ejecutan, revisar datos en la base de datos y construir soluciones técnicas que realmente resuelvan problemas.",
-      "p2": "Soy analítica y detallista: prefiero entender el 'por qué' antes de resolver. Me importa que la documentación y el código queden tan claros como el razonamiento detrás de ellos. Busco mi primera oportunidad en análisis funcional, QA o backend.",
-      "eduDate": "2019 – 2025",
-      "eduLine": "Ingeniera en Ejecución Informática — PUCV"
+      "p2": "Soy analítica y detallista: prefiero entender el 'por qué' antes de resolver. Me importa que la documentación y el código queden tan claros como el razonamiento detrás de ellos. Busco mi primera oportunidad en análisis funcional, QA o backend."
+    },
+    "educacion": {
+      "eyebrow": "Educación",
+      "h2": "Formación y trayectoria",
+      "m1": { "date": "2019", "title": "Inicio Ingeniería en Ejecución Informática", "desc": "Pontificia Universidad Católica de Valparaíso (PUCV)." },
+      "m2": { "date": "Ene – Feb 2025", "title": "Práctica profesional — Dental Laval", "desc": "Análisis funcional, documentación UML, SQL sobre ERP Softland y automatización en Python." },
+      "m3": { "date": "Julio 2025", "title": "Titulación", "desc": "Ingeniera en Ejecución Informática, PUCV." },
+      "m4": { "date": "2025 — hoy", "title": "Portafolio propio & búsqueda activa", "desc": "POS para cervecería entregado a cliente real, más proyectos personales. En búsqueda de mi primer rol formal en análisis funcional, QA o backend junior." }
     },
     "experience": {
       "eyebrow": "Experiencia",
@@ -159,6 +180,7 @@
     "nav": {
       "personal": "Personal",
       "about": "About",
+      "educacion": "Education",
       "experience": "Experience",
       "projects": "Projects",
       "stack": "Stack",
@@ -170,7 +192,21 @@
       "role": "Computer Systems Engineer with a results-driven approach: automation, functional analysis & QA.",
       "viewProjects": "View projects",
       "getInTouch": "Let's talk",
-      "downloadCv": "Download CV"
+      "downloadCv": "Download CV",
+      "tags": {
+        "functional": "Functional analysis",
+        "qa": "QA & Automation",
+        "backend": "Junior backend"
+      },
+      "metric": {
+        "eyebrow": "Project status",
+        "from": "Prototype",
+        "toSr": "through to",
+        "to": "Production",
+        "caption": "Point-of-sale system delivered to a real client.",
+        "check1": "Real client, in active operational use",
+        "check2": "Built in under 2 months"
+      }
     },
     "personal": {
       "eyebrow": "About me",
@@ -196,9 +232,15 @@
       "eyebrow": "About me",
       "h2": "Turning business processes into systems that work",
       "p1": "I graduated in Computer Systems Engineering (PUCV, 2025). My internship at Dental Laval confirmed what I enjoy most: understanding business processes, talking with the people who run them, digging into the database, and building solutions that actually solve problems.",
-      "p2": "I'm analytical and detail-oriented: I'd rather understand the 'why' before solving. I care that documentation and code are as clear as the reasoning behind them. I'm looking for my first role in functional analysis, QA or backend.",
-      "eduDate": "2019 – 2025",
-      "eduLine": "Computer Systems Engineering — PUCV"
+      "p2": "I'm analytical and detail-oriented: I'd rather understand the 'why' before solving. I care that documentation and code are as clear as the reasoning behind them. I'm looking for my first role in functional analysis, QA or backend."
+    },
+    "educacion": {
+      "eyebrow": "Education",
+      "h2": "Education & background",
+      "m1": { "date": "2019", "title": "Started Computer Systems Engineering", "desc": "Pontificia Universidad Católica de Valparaíso (PUCV)." },
+      "m2": { "date": "Jan – Feb 2025", "title": "Professional internship — Dental Laval", "desc": "Functional analysis, UML documentation, SQL against the Softland ERP, and Python automation." },
+      "m3": { "date": "July 2025", "title": "Graduated", "desc": "Computer Systems Engineering, PUCV." },
+      "m4": { "date": "2025 — now", "title": "Own portfolio & active job search", "desc": "Point-of-sale system delivered to a real client, plus personal projects. Looking for my first formal role in functional analysis, QA, or junior backend." }
     },
     "experience": {
       "eyebrow": "Experience",

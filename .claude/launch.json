@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "static",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\sebas\\AppData\\Local\\Temp\\claude\\C--Users-sebas-Downloads-Sofia-portafolio-web\\a62a1139-91b9-4069-8d56-4b6127c737d6\\scratchpad\\serve.ps1", "-Root", "C:\\Users\\sebas\\Downloads\\Sofia\\portafolio-web"],
+      "port": 8080
+    }
+  ]
+}

@@ -40,53 +40,47 @@
 <style>
 /* ===== Tokens ===== */
 :root{
-  --bg: #FBF6F1;
-  --bg-alt: #F3EBE3;
-  --ink: #2E2440;
-  --ink-soft: #6E617A;
-  --border: #E5DCD3;
-  --accent: #5B4A87;
-  --accent-soft: #E9E4F3;
-  --warm: #C97B8C;
-  --warm-soft: #FBE7EC;
+  --bg: #F5EFE6;
+  --bg-alt: #EDE1D3;
+  --ink: #3B2A1E;
+  --ink-soft: #7A6653;
+  --border: #DDD0BC;
+  --accent: #A45C33;
+  --accent-soft: #F0DCC9;
+  --warm: #6B7A4F;
+  --warm-soft: #E4E8D9;
   --radius: 6px;
   --max-width: 880px;
   --font-display: "Fraunces", serif;
   --font-body: "Manrope", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-  --chip-mono-text: #2E2650;
-  --mono-tag-text: #6B3040;
+  --chip-mono-text: #4A2E14;
+  --mono-tag-text: #4A5738;
   --card-bg: #fff;
-  --header-bg: rgba(251,246,241,0.88);
-  --accent-muted: #6F6090;
-  --glow-a: rgba(91,74,135,0.14);
-  --glow-b: rgba(201,123,140,0.26);
-  --grid-dot: rgba(46,36,64,0.08);
-  --error: #B3261E;
-  --accent-strong: #4B3D6F;
+  --header-bg: rgba(245,239,230,0.88);
+  --accent-muted: #8C6B4A;
+  --error: #B3402A;
+  --accent-strong: #8B4A28;
 
   /* Dark palette — single source of truth, referenced by both the
      prefers-color-scheme block and the [data-theme="dark"] override
      below instead of duplicating hex values in each. */
-  --dark-bg: #17151F;
-  --dark-bg-alt: #201C2B;
-  --dark-ink: #ECE9F5;
-  --dark-ink-soft: #A79FBD;
-  --dark-border: #362F45;
-  --dark-accent: #7466CC;
-  --dark-accent-soft: #302A4A;
-  --dark-warm: #E8A0B0;
-  --dark-warm-soft: #452330;
-  --dark-chip-mono-text: #E3DDF7;
-  --dark-mono-tag-text: #F2C7D3;
-  --dark-card-bg: #201C2B;
-  --dark-header-bg: rgba(23,21,31,0.88);
-  --dark-accent-muted: #A79BDD;
-  --dark-glow-a: rgba(116,102,204,0.32);
-  --dark-glow-b: rgba(232,160,176,0.26);
-  --dark-grid-dot: rgba(236,233,245,0.07);
-  --dark-error: #F2A6A6;
-  --dark-accent-strong: #6054A8;
+  --dark-bg: #1E1710;
+  --dark-bg-alt: #2A2117;
+  --dark-ink: #F1E7DA;
+  --dark-ink-soft: #C2AF9A;
+  --dark-border: #453424;
+  --dark-accent: #D98A54;
+  --dark-accent-soft: #3D2E1E;
+  --dark-warm: #9AAD79;
+  --dark-warm-soft: #333B26;
+  --dark-chip-mono-text: #F3D9BE;
+  --dark-mono-tag-text: #C7D6A8;
+  --dark-card-bg: #2A2117;
+  --dark-header-bg: rgba(30,23,16,0.88);
+  --dark-accent-muted: #C99A6E;
+  --dark-error: #E8A08C;
+  --dark-accent-strong: #C4713C;
 }
 
 @media (prefers-color-scheme: dark){
@@ -105,9 +99,6 @@
     --card-bg: var(--dark-card-bg);
     --header-bg: var(--dark-header-bg);
     --accent-muted: var(--dark-accent-muted);
-    --glow-a: var(--dark-glow-a);
-    --glow-b: var(--dark-glow-b);
-    --grid-dot: var(--dark-grid-dot);
     --error: var(--dark-error);
     --accent-strong: var(--dark-accent-strong);
   }
@@ -128,9 +119,6 @@
   --card-bg: var(--dark-card-bg);
   --header-bg: var(--dark-header-bg);
   --accent-muted: var(--dark-accent-muted);
-  --glow-a: var(--dark-glow-a);
-  --glow-b: var(--dark-glow-b);
-  --grid-dot: var(--dark-grid-dot);
   --error: var(--dark-error);
   --accent-strong: var(--dark-accent-strong);
 }
@@ -142,48 +130,66 @@ html{scroll-behavior:smooth;}
   *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
 }
 
-/* ===== Ambient background glow ===== */
-.bg-ambient{
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  overflow:hidden;
-  pointer-events:none;
+/* ===== Firma visual: marca "› + punto", repetida en cada eyebrow del sitio ===== */
+.eyebrow{ position:relative; }
+.eyebrow::before{
+  content:"›";
+  display:inline-block;
+  margin-right:6px;
+  color:var(--accent);
+  font-family:var(--font-mono);
+  font-weight:700;
 }
-.bg-blob{
-  position:absolute;
-  width:60vmax;
-  height:60vmax;
+.sig-dot{
+  display:inline-block;
+  width:7px;
+  height:7px;
   border-radius:50%;
-  will-change:transform;
-  animation:bg-drift 34s ease-in-out infinite alternate;
+  background:var(--warm);
+  margin-left:10px;
+  position:relative;
+  top:-8px;
 }
-.bg-blob-a{
-  top:-22%;
-  left:-18%;
-  background:radial-gradient(circle at 50% 50%, var(--glow-a) 0%, transparent 70%);
+
+/* ===== Fondo del hero: campo de dígitos binarios (0/1), atenuado con una
+   máscara radial, con un parpadeo asincrónico sutil por dígito. Sustituye
+   los blobs/grilla anteriores — más técnico y coherente con el perfil. ===== */
+.hero{ position:relative; overflow:hidden; }
+.hero-binary{
+  position:absolute;
+  right:-24px;
+  bottom:-24px;
+  display:grid;
+  grid-template-columns:repeat(16, 22px);
+  grid-auto-rows:22px;
+  font-family:var(--font-mono);
+  font-weight:700;
+  font-size:13px;
+  line-height:22px;
+  text-align:center;
+  color:var(--accent);
+  -webkit-mask-image:radial-gradient(circle at bottom right, black 0%, black 20%, transparent 75%);
+  mask-image:radial-gradient(circle at bottom right, black 0%, black 20%, transparent 75%);
+  pointer-events:none;
+  z-index:0;
 }
-.bg-blob-b{
-  bottom:-26%;
-  right:-16%;
-  background:radial-gradient(circle at 50% 50%, var(--glow-b) 0%, transparent 70%);
-  animation-duration:42s;
-  animation-delay:-10s;
-}
-@keyframes bg-drift{
-  0%{ transform:translate(0, 0) scale(1); }
-  50%{ transform:translate(5%, 6%) scale(1.08); }
-  100%{ transform:translate(-4%, -3%) scale(0.95); }
+.hero-binary span{ animation:hero-binary-flicker 4.5s ease-in-out infinite; }
+.hero-binary span:nth-child(3n){ color:var(--warm); animation-duration:5.5s; animation-delay:-1.2s; }
+.hero-binary span:nth-child(5n){ color:var(--accent-muted); animation-duration:3.8s; animation-delay:-2.4s; }
+.hero-binary span:nth-child(7n){ animation-duration:6.2s; animation-delay:-0.6s; }
+.hero-binary span:nth-child(4n+1){ animation-delay:-3.1s; }
+.hero-binary span:nth-child(2n){ animation-delay:-1.8s; }
+@keyframes hero-binary-flicker{
+  0%, 100%{ opacity:0.22; }
+  50%{ opacity:0.85; }
 }
 @media (prefers-reduced-motion: reduce){
-  .bg-blob{ animation:none; }
+  .hero-binary span{ animation:none; opacity:0.45; }
 }
-.bg-grid{
-  position:absolute;
-  inset:0;
-  background-image:radial-gradient(circle, var(--grid-dot) 1px, transparent 1px);
-  background-size:28px 28px;
+@media (max-width:640px){
+  .hero-binary{ grid-template-columns:repeat(10, 18px); grid-auto-rows:18px; font-size:11px; line-height:18px; opacity:0.7; }
 }
+.hero-main, .hero-metric{ position:relative; z-index:1; }
 
 body{
   margin:0;
@@ -412,6 +418,139 @@ h1{
 }
 .btn-ghost:hover{ border-color:var(--ink); transform:translateY(-1px); }
 
+.visually-hidden{
+  position:absolute;
+  width:1px;
+  height:1px;
+  margin:-1px;
+  padding:0;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  white-space:nowrap;
+  border:0;
+}
+
+/* Hero — tags de foco profesional (mismo lenguaje que .chips-mono) */
+.hero-tags{
+  list-style:none;
+  margin:0 0 22px;
+  padding:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.hero-tags li{
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  padding:5px 11px;
+  background:var(--accent-soft);
+  border:1px solid var(--border);
+  border-radius:999px;
+  color:var(--chip-mono-text);
+}
+
+/* Hero — dos columnas en desktop */
+.hero-main{ min-width:0; }
+@media (min-width:820px){
+  .hero{
+    display:grid;
+    grid-template-columns:minmax(0, 1.45fr) minmax(0, 1fr);
+    gap:44px;
+    align-items:center;
+  }
+  /* el badge envuelve a 2 líneas en la columna angosta; la píldora completa se deforma */
+  .hero .status-badge{ border-radius:14px; }
+  .hero h1{
+    font-size:clamp(3.4rem, 3vw + 2.2rem, 4.8rem);
+    line-height:1;
+  }
+}
+
+/* Hero — panel de métrica (mismo patrón que .project-card) */
+.hero-metric{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:24px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+@media (max-width:819px){
+  .hero-metric{ margin-top:48px; max-width:420px; }
+}
+.hero-metric-eyebrow{
+  font-family:var(--font-mono);
+  font-size:0.72rem;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  color:var(--accent-muted);
+  margin:0;
+}
+.hero-metric-value{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:clamp(1.7rem, 1.4vw + 1.2rem, 2.15rem);
+  line-height:1.1;
+  color:var(--ink);
+  margin:0;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  column-gap:10px;
+}
+.hero-metric-arrow{ color:var(--warm); font-family:var(--font-body); }
+.hero-metric-to{ color:var(--accent); }
+.hero-metric-caption{
+  font-size:0.9rem;
+  color:var(--ink-soft);
+  margin:0 0 6px;
+}
+.hero-metric-titlebar{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin:-4px 0 4px;
+}
+.hero-metric-tdot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--border);
+  flex-shrink:0;
+}
+.hero-metric-tdot--live{ background:#7ED9A8; }
+.hero-metric-tfile{
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+  color:var(--ink-soft);
+  margin-left:4px;
+}
+.hero-metric-checks{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.hero-metric-checks li{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:0.86rem;
+  color:var(--ink-soft);
+}
+.hero-metric-checks .check-mark{
+  color:var(--warm);
+  font-weight:700;
+  font-size:0.85rem;
+  flex-shrink:0;
+}
+
 /* ===== Section signature (connector spine) ===== */
 .section{
   position:relative;
@@ -486,6 +625,96 @@ h1{
 @media (prefers-reduced-motion: reduce){
   .section, .hero{ opacity:1; transform:none; }
   .node, .node::after{ opacity:1; transform:none; }
+}
+
+/* ===== Personal — heading + motivo decorativo ===== */
+.personal-heading{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.personal-motif{
+  width:80px;
+  height:80px;
+  flex-shrink:0;
+  color:var(--accent-muted);
+  opacity:0.85;
+}
+@media (max-width:640px){
+  .personal-motif{ width:56px; height:56px; }
+}
+
+/* ===== Educación — línea de tiempo ===== */
+.edu-timeline{
+  list-style:none;
+  margin:8px 0 0;
+  padding:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:24px;
+  position:relative;
+}
+.edu-timeline::before{
+  content:"";
+  position:absolute;
+  top:6px;
+  left:0;
+  right:0;
+  height:2px;
+  background:var(--border);
+  z-index:0;
+}
+.edu-node-wrap{
+  flex:1 1 200px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  position:relative;
+  z-index:1;
+}
+.edu-dot{
+  width:13px;
+  height:13px;
+  border-radius:50%;
+  background:var(--bg);
+  border:3px solid var(--accent);
+  box-sizing:border-box;
+}
+.edu-dot--filled{ background:var(--accent); }
+.edu-date{
+  font-family:var(--font-mono);
+  font-size:0.72rem;
+  font-weight:600;
+  color:var(--accent);
+}
+.edu-card{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.edu-card--current{ border-color:var(--accent); }
+.edu-card h3{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:1rem;
+  margin:0;
+  color:var(--ink);
+}
+.edu-card p{
+  font-size:0.85rem;
+  color:var(--ink-soft);
+  margin:0;
+  line-height:1.5;
+}
+@media (max-width:700px){
+  .edu-timeline{ flex-direction:column; gap:16px; }
+  .edu-timeline::before{ display:none; }
 }
 
 /* ===== Stack ===== */
@@ -898,12 +1127,6 @@ li.chip-conceptual{
 </head>
 <body>
 
-<div class="bg-ambient" aria-hidden="true">
-  <span class="bg-blob bg-blob-a"></span>
-  <span class="bg-blob bg-blob-b"></span>
-  <span class="bg-grid"></span>
-</div>
-
 <a class="skip-link" href="#main" data-i18n="skipLink">Saltar al contenido</a>
 
 <header class="site-header">
@@ -912,6 +1135,7 @@ li.chip-conceptual{
     <nav aria-label="Navegación principal">
       <a href="#personal" data-i18n="nav.personal">Personal</a>
       <a href="#about" data-i18n="nav.about">Sobre mí</a>
+      <a href="#educacion" data-i18n="nav.educacion">Educación</a>
       <a href="#experience" data-i18n="nav.experience">Experiencia</a>
       <a href="#projects" data-i18n="nav.projects">Proyectos</a>
       <a href="#stack" data-i18n="nav.stack">Stack</a>
@@ -933,20 +1157,66 @@ li.chip-conceptual{
 
   <!-- HERO -->
   <section id="hero" class="hero wrap">
-    <p class="status-badge"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.badge">📌 Buscando oportunidad — Remoto / Híbrido · Viña del Mar &amp; Valparaíso · Santiago</span></p>
-    <h1>Sofía Menzel</h1>
-    <p class="role-statement" data-i18n="hero.role">Ingeniera en Ejecución Informática con enfoque en resultados: automatización, análisis funcional y QA.</p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary" data-i18n="hero.viewProjects">Ver proyectos</a>
-      <a href="#contact" class="btn btn-ghost" data-i18n="hero.getInTouch">Hablemos</a>
+    <div class="hero-binary" aria-hidden="true"><span>1</span><span>1</span><span>1</span><span>0</span><span>0</span><span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>1</span><span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>1</span><span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>0</span><span>0</span><span>0</span><span>1</span><span>0</span><span>1</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>1</span><span>1</span><span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>0</span><span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>0</span><span>0</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>1</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>1</span><span>1</span><span>0</span><span>1</span><span>0</span><span>1</span><span>0</span><span>0</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>0</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>0</span></div>
+    <div class="hero-main">
+      <p class="status-badge"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.badge">📌 Buscando oportunidad — Remoto / Híbrido · Viña del Mar &amp; Valparaíso · Santiago</span></p>
+      <ul class="hero-tags">
+        <li data-i18n="hero.tags.functional">Análisis funcional</li>
+        <li data-i18n="hero.tags.qa">QA &amp; Automatización</li>
+        <li data-i18n="hero.tags.backend">Backend junior</li>
+      </ul>
+      <h1>Sofía Menzel<span class="sig-dot" aria-hidden="true"></span></h1>
+      <p class="role-statement" data-i18n="hero.role">Ingeniera en Ejecución Informática con enfoque en resultados: automatización, análisis funcional y QA.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary" data-i18n="hero.viewProjects">Ver proyectos</a>
+        <a href="#contact" class="btn btn-ghost" data-i18n="hero.getInTouch">Hablemos</a>
+      </div>
     </div>
+
+    <aside class="hero-metric" aria-labelledby="hero-metric-title">
+      <div class="hero-metric-titlebar" aria-hidden="true">
+        <span class="hero-metric-tdot"></span>
+        <span class="hero-metric-tdot"></span>
+        <span class="hero-metric-tdot hero-metric-tdot--live"></span>
+        <span class="hero-metric-tfile">pos_cerveceria.py</span>
+      </div>
+      <p class="hero-metric-eyebrow" data-i18n="hero.metric.eyebrow">Estado del proyecto</p>
+      <p class="hero-metric-value" id="hero-metric-title">
+        <span data-i18n="hero.metric.from">Prototipo</span>
+        <span class="hero-metric-arrow" aria-hidden="true">→</span>
+        <span class="visually-hidden" data-i18n="hero.metric.toSr">hasta</span>
+        <span class="hero-metric-to" data-i18n="hero.metric.to">Producción</span>
+      </p>
+      <p class="hero-metric-caption" data-i18n="hero.metric.caption">Sistema de punto de venta entregado a un cliente real.</p>
+      <ul class="hero-metric-checks">
+        <li><span class="check-mark" aria-hidden="true">✓</span><span data-i18n="hero.metric.check1">Cliente real, en uso operativo activo</span></li>
+        <li><span class="check-mark" aria-hidden="true">✓</span><span data-i18n="hero.metric.check2">Desarrollado en menos de 2 meses</span></li>
+      </ul>
+    </aside>
   </section>
 
   <!-- PERSONAL -->
   <section id="personal" class="section wrap">
     <div class="node" aria-hidden="true"></div>
-    <p class="eyebrow" data-i18n="personal.eyebrow">Sobre mí</p>
-    <h2 data-i18n="personal.h2">Más allá del código</h2>
+    <div class="personal-heading">
+      <div>
+        <p class="eyebrow" data-i18n="personal.eyebrow">Sobre mí</p>
+        <h2 data-i18n="personal.h2">Más allá del código</h2>
+      </div>
+      <svg class="personal-motif" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z"/>
+        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(72 12 6.5)"/>
+        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(144 12 6.5)"/>
+        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(216 12 6.5)"/>
+        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(288 12 6.5)"/>
+        <circle cx="12" cy="6.5" r="0.9" fill="currentColor" stroke="none"/>
+        <path d="M12,8.5 C10.3,10.5 13.7,12.5 12,15"/>
+        <path d="M12,12 C10,12.3 9,13.6 9.5,15"/>
+        <path d="M9,17 L6.2,19.5 L9,22"/>
+        <path d="M15,17 L17.8,19.5 L15,22"/>
+        <line x1="10.8" y1="19.5" x2="13.2" y2="19.5"/>
+      </svg>
+    </div>
 
     <div class="stack-grid">
       <div class="stack-group">
@@ -992,7 +1262,48 @@ li.chip-conceptual{
     <p class="lead" data-i18n="about.p2">
       Soy analítica y detallista: prefiero entender el 'por qué' antes de resolver. Me importa que la documentación y el código queden tan claros como el razonamiento detrás de ellos. Busco mi primera oportunidad en análisis funcional, QA o backend.
     </p>
-    <p class="lang-note"><span class="mono-tag" data-i18n="about.eduDate">2019 – 2025</span> <span data-i18n="about.eduLine">Ingeniera en Ejecución Informática — PUCV</span></p>
+  </section>
+
+  <!-- EDUCACIÓN -->
+  <section id="educacion" class="section wrap">
+    <div class="node" aria-hidden="true"></div>
+    <p class="eyebrow" data-i18n="educacion.eyebrow">Educación</p>
+    <h2 data-i18n="educacion.h2">Formación y trayectoria<span class="sig-dot" aria-hidden="true"></span></h2>
+
+    <ol class="edu-timeline">
+      <li class="edu-node-wrap">
+        <span class="edu-dot edu-dot--filled" aria-hidden="true"></span>
+        <span class="edu-date" data-i18n="educacion.m1.date">2019</span>
+        <div class="edu-card">
+          <h3 data-i18n="educacion.m1.title">Inicio Ingeniería en Ejecución Informática</h3>
+          <p data-i18n="educacion.m1.desc">Pontificia Universidad Católica de Valparaíso (PUCV).</p>
+        </div>
+      </li>
+      <li class="edu-node-wrap">
+        <span class="edu-dot edu-dot--filled" aria-hidden="true"></span>
+        <span class="edu-date" data-i18n="educacion.m2.date">Ene – Feb 2025</span>
+        <div class="edu-card">
+          <h3 data-i18n="educacion.m2.title">Práctica profesional — Dental Laval</h3>
+          <p data-i18n="educacion.m2.desc">Análisis funcional, documentación UML, SQL sobre ERP Softland y automatización en Python.</p>
+        </div>
+      </li>
+      <li class="edu-node-wrap">
+        <span class="edu-dot edu-dot--filled" aria-hidden="true"></span>
+        <span class="edu-date" data-i18n="educacion.m3.date">Julio 2025</span>
+        <div class="edu-card">
+          <h3 data-i18n="educacion.m3.title">Titulación</h3>
+          <p data-i18n="educacion.m3.desc">Ingeniera en Ejecución Informática, PUCV.</p>
+        </div>
+      </li>
+      <li class="edu-node-wrap">
+        <span class="edu-dot" aria-hidden="true"></span>
+        <span class="edu-date" data-i18n="educacion.m4.date">2025 — hoy</span>
+        <div class="edu-card edu-card--current">
+          <h3 data-i18n="educacion.m4.title">Portafolio propio &amp; búsqueda activa</h3>
+          <p data-i18n="educacion.m4.desc">POS para cervecería entregado a cliente real, más proyectos personales. En búsqueda de mi primer rol formal en análisis funcional, QA o backend junior.</p>
+        </div>
+      </li>
+    </ol>
   </section>
 
   <!-- EXPERIENCE -->
