@@ -18,8 +18,6 @@ if ('IntersectionObserver' in window && sections.length) {
   sections.forEach(section => observer.observe(section));
 }
 
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
 // Toggle manual de modo claro/oscuro, con persistencia
 const THEME_KEY = 'theme-preference';
 const themeToggle = document.getElementById('theme-toggle');
@@ -62,66 +60,17 @@ if (themeToggle) {
   document.addEventListener('i18n:changed', updateToggleUI);
 }
 
-// Revela secciones y "dibuja" la columna de proceso a medida que entran en pantalla
-const revealTargets = document.querySelectorAll('.hero, .section');
-if ('IntersectionObserver' in window && revealTargets.length) {
-  const revealObserver = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
-
-  revealTargets.forEach(target => revealObserver.observe(target));
-} else {
-  revealTargets.forEach(target => target.classList.add('in-view'));
-}
-
-// Parallax sutil de los nodos de la columna de proceso según el scroll
-if (!prefersReducedMotion && sections.length) {
-  const parallaxItems = Array.from(sections)
-    .map(section => ({ section, node: section.querySelector('.node') }))
-    .filter(item => item.node);
-
-  const PARALLAX_RANGE = 18;
-  let ticking = false;
-
-  const updateParallax = () => {
-    const vh = window.innerHeight;
-    parallaxItems.forEach(({ section, node }) => {
-      const rect = section.getBoundingClientRect();
-      const progress = Math.min(1, Math.max(0, (vh - rect.top) / (vh + rect.height)));
-      const offset = (progress - 0.5) * PARALLAX_RANGE * 2;
-      node.style.setProperty('--parallax-y', `${offset.toFixed(1)}px`);
-    });
-    ticking = false;
-  };
-
-  const onScroll = () => {
-    if (!ticking) {
-      requestAnimationFrame(updateParallax);
-      ticking = true;
-    }
-  };
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
-  updateParallax();
-}
-
 // Envío del formulario de contacto vía fetch (Formspree), con fallback nativo sin JS
 const CONTACT_FORM_LABELS = {
   es: {
     sending: 'Enviando...',
-    success: '> ¡Gracias! Tu mensaje fue enviado, te responderé pronto.',
-    error: '> Algo salió mal. Intenta de nuevo o escríbeme directo a soofiaa.menzel@gmail.com.',
+    success: '¡Gracias! Tu mensaje fue enviado, te responderé pronto.',
+    error: 'Algo salió mal. Intenta de nuevo o escríbeme directo a soofiaa.menzel@gmail.com.',
   },
   en: {
     sending: 'Sending...',
-    success: "> Thanks! Your message was sent, I'll get back to you soon.",
-    error: '> Something went wrong. Please try again or email me directly at soofiaa.menzel@gmail.com.',
+    success: "Thanks! Your message was sent, I'll get back to you soon.",
+    error: 'Something went wrong. Please try again or email me directly at soofiaa.menzel@gmail.com.',
   },
 };
 
@@ -159,21 +108,6 @@ if (contactForm) {
     } finally {
       submitBtn.disabled = false;
     }
-  });
-}
-
-// Inclinación sutil de las tarjetas de proyecto según la posición del cursor
-if (!prefersReducedMotion) {
-  document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = `perspective(700px) rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 6).toFixed(2)}deg) translateY(-2px)`;
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
   });
 }
 

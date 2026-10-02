@@ -16,7 +16,7 @@
       "contact": "Contacto"
     },
     "hero": {
-      "badge": "📌 Buscando oportunidad — Remoto / Híbrido · Viña del Mar & Valparaíso · Santiago",
+      "badge": "Buscando oportunidad. Remoto o híbrido, en Viña del Mar, Valparaíso y Santiago.",
       "role": "Ingeniera en Ejecución Informática con enfoque en resultados: automatización, análisis funcional y QA.",
       "viewProjects": "Ver proyectos",
       "getInTouch": "Hablemos",
@@ -85,16 +85,24 @@
     "projects": {
       "eyebrow": "Proyectos",
       "h2": "Proyectos personales",
-      "viewGithub": "Ver en GitHub →",
-      "frontend": "Frontend →",
-      "backend": "Backend →",
+      "viewGithub": "Ver en GitHub",
+      "frontend": "Frontend",
+      "backend": "Backend",
       "petpal": {
+        "headline": "<span class=\"num\">+180</span><span class=\"cap\">tests automatizados</span>",
+        "evidenceTitle": "Qué hay detrás del número",
+        "evidence": [
+          "<strong>+180 tests en 40 archivos.</strong> Cada cambio se comprueba de forma automática, así que corregir algo en vacunas o notificaciones no rompe otra parte sin que nadie lo note.",
+          "<strong>CI en GitHub Actions.</strong> Las pruebas corren solas y validan 250+ notificaciones simultáneas, para detectar recordatorios duplicados o perdidos antes de que lleguen a una persona.",
+          "<strong>Riverpod en las 10 entidades.</strong> La lógica de cada entidad queda separada de la interfaz, y eso permite probarla sin abrir la app."
+        ],
         "status": "En desarrollo activo",
         "problem": "<strong>Problema:</strong> los dueños de mascotas pierden el control de vacunas, tratamientos y controles veterinarios — información que termina dispersa entre papeles, mensajes y la memoria, especialmente con más de una mascota.",
         "solution": "<strong>Solución:</strong> app móvil multi-mascota que centraliza el historial médico completo (vacunas, medicación, desparasitación, signos vitales), con recordatorios confiables y una ficha clínica exportable en PDF para la consulta veterinaria.",
         "process": "<strong>Proceso:</strong> +180 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas"
       },
       "finance": {
+        "headline": "API REST desacoplada",
         "status": "Finalizado y aprobado",
         "meta": "Proyecto de título · Mar – Jul 2025",
         "problem": "<strong>Problema:</strong> el seguimiento manual de ingresos y gastos personales es propenso a errores y poco visual.",
@@ -102,17 +110,20 @@
         "process": "<strong>Proceso:</strong> API REST desacoplada (React + Flask + MySQL) · Proyecto de título aprobado"
       },
       "pos": {
+        "headline": "Cliente real, en producción",
         "meta": "Entregado a cliente real · actualmente en uso",
         "problem": "<strong>Problema:</strong> negocios pequeños necesitan un punto de venta simple, sin la complejidad de un sistema comercial.",
         "solution": "<strong>Solución:</strong> sistema de punto de venta liviano para gestionar ventas e inventario.",
         "process": "<strong>Proceso:</strong> cobertura de tests dirigida por riesgo de negocio, con criterio explícito de qué NO testear y por qué · Entregado a cliente real, en uso productivo"
       },
       "jobbi": {
+        "headline": "Detecta 10 portales de empleo",
         "problem": "<strong>Problema:</strong> llevar el registro de postulaciones laborales (empresas, estados, fechas de seguimiento) de forma manual es desordenado y fácil de perder.",
         "solution": "<strong>Solución:</strong> aplicación de escritorio para centralizar y dar seguimiento ordenado a todas las postulaciones laborales, con dashboard de métricas y exportación a Excel.",
         "process": "<strong>Proceso:</strong> empaquetado standalone (.exe + instalador Inno Setup), autodetección de 10 portales de empleo, y decisión de seguridad documentada (uso exclusivo de anon key de Supabase)."
       },
       "budgetdesk": {
+        "headline": "Auditoría y remediación",
         "problem": "<strong>Problema:</strong> gestionar ingresos y gastos personales sin depender de una conexión a internet ni de planillas dispersas, con reportes que se puedan compartir fácilmente.",
         "solution": "<strong>Solución:</strong> aplicación de escritorio para gestión de finanzas personales (ingresos y gastos), con balance neto automático, visualización de estadísticas y exportación de reportes a Excel.",
         "process": "<strong>Proceso:</strong> auditoría de código con hallazgos documentados y remediación aplicada"
@@ -159,7 +170,7 @@
         "emailPlaceholder": "tu@email.com",
         "messageLabel": "mensaje:",
         "messagePlaceholder": "Cuéntame brevemente tu propuesta...",
-        "submit": "> Enviar mensaje"
+        "submit": "Enviar mensaje"
       }
     },
     "footer": "Sofía Menzel — hecho con atención al detalle.",
@@ -188,7 +199,7 @@
       "contact": "Contact"
     },
     "hero": {
-      "badge": "📌 Open to work — Remote / Hybrid · Viña del Mar & Valparaíso · Santiago",
+      "badge": "Open to work. Remote or hybrid, in Viña del Mar, Valparaíso and Santiago.",
       "role": "Computer Systems Engineer with a results-driven approach: automation, functional analysis & QA.",
       "viewProjects": "View projects",
       "getInTouch": "Let's talk",
@@ -257,16 +268,24 @@
     "projects": {
       "eyebrow": "Projects",
       "h2": "Personal projects",
-      "viewGithub": "View on GitHub →",
-      "frontend": "Frontend →",
-      "backend": "Backend →",
+      "viewGithub": "View on GitHub",
+      "frontend": "Frontend",
+      "backend": "Backend",
       "petpal": {
+        "headline": "<span class=\"num\">+180</span><span class=\"cap\">automated tests</span>",
+        "evidenceTitle": "Behind the number",
+        "evidence": [
+          "<strong>180+ tests across 40 files.</strong> Every change is checked automatically, so fixing something in vaccines or notifications does not silently break another part.",
+          "<strong>CI on GitHub Actions.</strong> The tests run on their own and validate 250+ simultaneous notifications, to catch duplicated or lost reminders before they reach a person.",
+          "<strong>Riverpod across all 10 entities.</strong> Each entity's logic is kept separate from the interface, which makes it testable without opening the app."
+        ],
         "status": "In active development",
         "problem": "<strong>Problem:</strong> pet owners lose track of vaccines, treatments, and vet checkups — information that ends up scattered across paper records, messages, and memory, especially with more than one pet.",
         "solution": "<strong>Solution:</strong> a multi-pet mobile app that centralizes the complete medical history (vaccines, medication, deworming, vital signs), with reliable reminders and an exportable PDF clinical record for the vet visit.",
         "process": "<strong>Process:</strong> +180 automated tests · CI/CD with GitHub Actions · Layered architecture"
       },
       "finance": {
+        "headline": "Decoupled REST API",
         "status": "Completed & approved",
         "meta": "Capstone project · Mar – Jul 2025",
         "problem": "<strong>Problem:</strong> manually tracking personal income and expenses is error-prone and hard to visualize.",
@@ -274,17 +293,20 @@
         "process": "<strong>Process:</strong> Decoupled REST API (React + Flask + MySQL) · Approved capstone project"
       },
       "pos": {
+        "headline": "Real client, in production",
         "meta": "Delivered to a real client · currently in use",
         "problem": "<strong>Problem:</strong> small businesses need a simple point-of-sale system, without the overhead of a full commercial platform.",
         "solution": "<strong>Solution:</strong> a lightweight point-of-sale system for managing sales and inventory.",
         "process": "<strong>Process:</strong> risk-driven test coverage, with explicit reasoning for what was deliberately left untested · Delivered to a real client, in production use"
       },
       "jobbi": {
+        "headline": "Detects 10 job portals",
         "problem": "<strong>Problem:</strong> tracking job applications — companies, stages, follow-up dates — by hand gets messy fast, and things fall through the cracks.",
         "solution": "<strong>Solution:</strong> a desktop app to centralize and track every job application in one organized place, with a metrics dashboard and Excel export.",
         "process": "<strong>Process:</strong> standalone packaging (.exe + Inno Setup installer), auto-detection across 10 job portals, and a documented security decision (Supabase anon key only, never the service role key)."
       },
       "budgetdesk": {
+        "headline": "Audit and remediation",
         "problem": "<strong>Problem:</strong> personal income and expense tracking often depends on an internet connection or scattered spreadsheets, with reports that are a hassle to share.",
         "solution": "<strong>Solution:</strong> a desktop app for managing personal finances (income and expenses), with automatic net balance calculation, visual statistics, and one-click Excel report exports.",
         "process": "<strong>Process:</strong> code audit with documented findings and applied remediation"
@@ -331,7 +353,7 @@
         "emailPlaceholder": "you@email.com",
         "messageLabel": "message:",
         "messagePlaceholder": "Briefly tell me about your proposal...",
-        "submit": "> Send message"
+        "submit": "Send message"
       }
     },
     "footer": "Sofía Menzel — built with attention to detail.",

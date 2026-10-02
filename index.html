@@ -31,96 +31,259 @@
 <meta name="twitter:title" content="Sofía Menzel — Análisis Funcional · QA · Automatización">
 <meta name="twitter:description" content="Portafolio de Sofía Menzel, Ingeniera en Ejecución Informática. Análisis funcional, QA, automatización de procesos y desarrollo backend.">
 <meta name="twitter:image" content="https://portafolio-web-theta-coral.vercel.app/assets/og-image.jpg">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%234A3F7A'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='42' font-weight='600' fill='white' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='26' fill='%232A1638'/%3E%3Ctext x='50' y='66' font-family='Arial, Helvetica, sans-serif' font-size='40' font-weight='800' fill='%23F7F3F8' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 <style>
 /* ===== Tokens ===== */
 :root{
-  --bg: #F5EFE6;
-  --bg-alt: #EDE1D3;
-  --ink: #3B2A1E;
-  --ink-soft: #7A6653;
-  --border: #DDD0BC;
-  --accent: #A45C33;
-  --accent-soft: #F0DCC9;
-  --warm: #6B7A4F;
-  --warm-soft: #E4E8D9;
-  --radius: 6px;
-  --max-width: 880px;
-  --font-display: "Fraunces", serif;
-  --font-body: "Manrope", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
-  --chip-mono-text: #4A2E14;
-  --mono-tag-text: #4A5738;
-  --card-bg: #fff;
-  --header-bg: rgba(245,239,230,0.88);
-  --accent-muted: #8C6B4A;
-  --error: #B3402A;
-  --accent-strong: #8B4A28;
+  color-scheme: light;
+  --bg: #F7F3F8;
+  --bg-alt: #EDE5F2;
+  --ink: #2A1638;
+  --ink-soft: #66557A;
+  --border: #D9CCE5;
+  --accent: #C42F68;
+  --on-accent: #FFFFFF;
+  --accent-strong: #A8235A;
+  --accent-soft: #E7DDF3;
+  --accent-muted: #7C4B9E;
+  --warm: #D63D75;
+  --warm-soft: #F6E1EC;
+  --mono-tag-text: #7A1F4B;
+  --chip-mono-text: #3D2352;
+  --card-bg: #FFFFFF;
+  --header-bg: rgba(247,243,248,0.88);
+  --error: #B42318;
+  --panel-bg: #2A1638;
+  --panel-ink: #F7F3F8;
+  --panel-soft: #CDBBE0;
+  --panel-accent: #FF6B9D;
+  --t1-bg: #2A1638;
+  --t1-ink: #F7F3F8;
+  --t1-soft: #D2C2E3;
+  --t1-hl: #FF6B9D;
+  --t1-pbg: #F7F3F8;
+  --t1-pink: #2A1638;
+  --t1-border: transparent;
+  --t2-bg: #E7DDF3;
+  --t2-ink: #2A1638;
+  --t2-soft: #5B4A6E;
+  --t2-hl: #2A1638;
+  --t2-pbg: #2A1638;
+  --t2-pink: #F7F3F8;
+  --t2-border: transparent;
+  --t3-bg: #C42F68;
+  --t3-ink: #FFFFFF;
+  --t3-soft: #FFF0F5;
+  --t3-hl: #FFFFFF;
+  --t3-pbg: #FFFFFF;
+  --t3-pink: #A8235A;
+  --t3-border: transparent;
+  --t4-bg: #FFFFFF;
+  --t4-ink: #2A1638;
+  --t4-soft: #5B4A6E;
+  --t4-hl: #2A1638;
+  --t4-pbg: #E7DDF3;
+  --t4-pink: #2A1638;
+  --t4-border: #2A1638;
+  --t5-bg: #D3C2EA;
+  --t5-ink: #2A1638;
+  --t5-soft: #4F3D63;
+  --t5-hl: #2A1638;
+  --t5-pbg: #2A1638;
+  --t5-pink: #F7F3F8;
+  --t5-border: transparent;
+  --radius: 16px;
+  --radius-lg: 28px;
+  --max-width: 1120px;
+  --font-display: "Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --font-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  /* Dark palette — single source of truth, referenced by both the
-     prefers-color-scheme block and the [data-theme="dark"] override
-     below instead of duplicating hex values in each. */
-  --dark-bg: #1E1710;
-  --dark-bg-alt: #2A2117;
-  --dark-ink: #F1E7DA;
-  --dark-ink-soft: #C2AF9A;
-  --dark-border: #5C4A34;
-  --dark-accent: #D98A54;
-  --dark-accent-soft: #3D2E1E;
-  --dark-warm: #9AAD79;
-  --dark-warm-soft: #333B26;
-  --dark-chip-mono-text: #F3D9BE;
-  --dark-mono-tag-text: #C7D6A8;
-  --dark-card-bg: #362A1C;
-  --dark-header-bg: rgba(30,23,16,0.88);
-  --dark-accent-muted: #C99A6E;
-  --dark-error: #E8A08C;
-  --dark-accent-strong: #C4713C;
+  /* Paleta oscura: fuente única de verdad, referenciada por el bloque
+     prefers-color-scheme y por [data-theme="dark"] (sin duplicar hex). */
+  --dark-bg: #1B0F26;
+  --dark-bg-alt: #26163A;
+  --dark-ink: #F3ECF7;
+  --dark-ink-soft: #BDAACE;
+  --dark-border: #4B3562;
+  --dark-accent: #F0679A;
+  --dark-on-accent: #1B0F26;
+  --dark-accent-strong: #FF8DB6;
+  --dark-accent-soft: #3A2455;
+  --dark-accent-muted: #D2AEF0;
+  --dark-warm: #F28AB2;
+  --dark-warm-soft: #3A2340;
+  --dark-mono-tag-text: #F5C2D9;
+  --dark-chip-mono-text: #E8DAF5;
+  --dark-card-bg: #2A183D;
+  --dark-header-bg: rgba(27,15,38,0.88);
+  --dark-error: #FFA79B;
+  --dark-panel-bg: #2E1A45;
+  --dark-panel-ink: #F3ECF7;
+  --dark-panel-soft: #C9B6DC;
+  --dark-panel-accent: #FF7FAE;
+  --dark-t1-bg: #3A2257;
+  --dark-t1-ink: #F3ECF7;
+  --dark-t1-soft: #CFBFE2;
+  --dark-t1-hl: #FF7FAE;
+  --dark-t1-pbg: #F3ECF7;
+  --dark-t1-pink: #1B0F26;
+  --dark-t1-border: transparent;
+  --dark-t2-bg: #2A183D;
+  --dark-t2-ink: #F3ECF7;
+  --dark-t2-soft: #BDAACE;
+  --dark-t2-hl: #F3ECF7;
+  --dark-t2-pbg: #4B3068;
+  --dark-t2-pink: #F3ECF7;
+  --dark-t2-border: transparent;
+  --dark-t3-bg: #B02A60;
+  --dark-t3-ink: #FFFFFF;
+  --dark-t3-soft: #FFE9F1;
+  --dark-t3-hl: #FFFFFF;
+  --dark-t3-pbg: #FFFFFF;
+  --dark-t3-pink: #8A1E4A;
+  --dark-t3-border: transparent;
+  --dark-t4-bg: #1B0F26;
+  --dark-t4-ink: #F3ECF7;
+  --dark-t4-soft: #BDAACE;
+  --dark-t4-hl: #F3ECF7;
+  --dark-t4-pbg: #3A2455;
+  --dark-t4-pink: #F3ECF7;
+  --dark-t4-border: #4B3562;
+  --dark-t5-bg: #3D2A58;
+  --dark-t5-ink: #F3ECF7;
+  --dark-t5-soft: #C9B6DC;
+  --dark-t5-hl: #F3ECF7;
+  --dark-t5-pbg: #F3ECF7;
+  --dark-t5-pink: #1B0F26;
+  --dark-t5-border: transparent;
 }
 
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
+    color-scheme: dark;
     --bg: var(--dark-bg);
     --bg-alt: var(--dark-bg-alt);
     --ink: var(--dark-ink);
     --ink-soft: var(--dark-ink-soft);
     --border: var(--dark-border);
     --accent: var(--dark-accent);
+    --on-accent: var(--dark-on-accent);
+    --accent-strong: var(--dark-accent-strong);
     --accent-soft: var(--dark-accent-soft);
+    --accent-muted: var(--dark-accent-muted);
     --warm: var(--dark-warm);
     --warm-soft: var(--dark-warm-soft);
-    --chip-mono-text: var(--dark-chip-mono-text);
     --mono-tag-text: var(--dark-mono-tag-text);
+    --chip-mono-text: var(--dark-chip-mono-text);
     --card-bg: var(--dark-card-bg);
     --header-bg: var(--dark-header-bg);
-    --accent-muted: var(--dark-accent-muted);
     --error: var(--dark-error);
-    --accent-strong: var(--dark-accent-strong);
+    --panel-bg: var(--dark-panel-bg);
+    --panel-ink: var(--dark-panel-ink);
+    --panel-soft: var(--dark-panel-soft);
+    --panel-accent: var(--dark-panel-accent);
+    --t1-bg: var(--dark-t1-bg);
+    --t1-ink: var(--dark-t1-ink);
+    --t1-soft: var(--dark-t1-soft);
+    --t1-hl: var(--dark-t1-hl);
+    --t1-pbg: var(--dark-t1-pbg);
+    --t1-pink: var(--dark-t1-pink);
+    --t1-border: var(--dark-t1-border);
+    --t2-bg: var(--dark-t2-bg);
+    --t2-ink: var(--dark-t2-ink);
+    --t2-soft: var(--dark-t2-soft);
+    --t2-hl: var(--dark-t2-hl);
+    --t2-pbg: var(--dark-t2-pbg);
+    --t2-pink: var(--dark-t2-pink);
+    --t2-border: var(--dark-t2-border);
+    --t3-bg: var(--dark-t3-bg);
+    --t3-ink: var(--dark-t3-ink);
+    --t3-soft: var(--dark-t3-soft);
+    --t3-hl: var(--dark-t3-hl);
+    --t3-pbg: var(--dark-t3-pbg);
+    --t3-pink: var(--dark-t3-pink);
+    --t3-border: var(--dark-t3-border);
+    --t4-bg: var(--dark-t4-bg);
+    --t4-ink: var(--dark-t4-ink);
+    --t4-soft: var(--dark-t4-soft);
+    --t4-hl: var(--dark-t4-hl);
+    --t4-pbg: var(--dark-t4-pbg);
+    --t4-pink: var(--dark-t4-pink);
+    --t4-border: var(--dark-t4-border);
+    --t5-bg: var(--dark-t5-bg);
+    --t5-ink: var(--dark-t5-ink);
+    --t5-soft: var(--dark-t5-soft);
+    --t5-hl: var(--dark-t5-hl);
+    --t5-pbg: var(--dark-t5-pbg);
+    --t5-pink: var(--dark-t5-pink);
+    --t5-border: var(--dark-t5-border);
   }
 }
 
 :root[data-theme="dark"]{
+  color-scheme: dark;
   --bg: var(--dark-bg);
   --bg-alt: var(--dark-bg-alt);
   --ink: var(--dark-ink);
   --ink-soft: var(--dark-ink-soft);
   --border: var(--dark-border);
   --accent: var(--dark-accent);
+  --on-accent: var(--dark-on-accent);
+  --accent-strong: var(--dark-accent-strong);
   --accent-soft: var(--dark-accent-soft);
+  --accent-muted: var(--dark-accent-muted);
   --warm: var(--dark-warm);
   --warm-soft: var(--dark-warm-soft);
-  --chip-mono-text: var(--dark-chip-mono-text);
   --mono-tag-text: var(--dark-mono-tag-text);
+  --chip-mono-text: var(--dark-chip-mono-text);
   --card-bg: var(--dark-card-bg);
   --header-bg: var(--dark-header-bg);
-  --accent-muted: var(--dark-accent-muted);
   --error: var(--dark-error);
-  --accent-strong: var(--dark-accent-strong);
+  --panel-bg: var(--dark-panel-bg);
+  --panel-ink: var(--dark-panel-ink);
+  --panel-soft: var(--dark-panel-soft);
+  --panel-accent: var(--dark-panel-accent);
+  --t1-bg: var(--dark-t1-bg);
+  --t1-ink: var(--dark-t1-ink);
+  --t1-soft: var(--dark-t1-soft);
+  --t1-hl: var(--dark-t1-hl);
+  --t1-pbg: var(--dark-t1-pbg);
+  --t1-pink: var(--dark-t1-pink);
+  --t1-border: var(--dark-t1-border);
+  --t2-bg: var(--dark-t2-bg);
+  --t2-ink: var(--dark-t2-ink);
+  --t2-soft: var(--dark-t2-soft);
+  --t2-hl: var(--dark-t2-hl);
+  --t2-pbg: var(--dark-t2-pbg);
+  --t2-pink: var(--dark-t2-pink);
+  --t2-border: var(--dark-t2-border);
+  --t3-bg: var(--dark-t3-bg);
+  --t3-ink: var(--dark-t3-ink);
+  --t3-soft: var(--dark-t3-soft);
+  --t3-hl: var(--dark-t3-hl);
+  --t3-pbg: var(--dark-t3-pbg);
+  --t3-pink: var(--dark-t3-pink);
+  --t3-border: var(--dark-t3-border);
+  --t4-bg: var(--dark-t4-bg);
+  --t4-ink: var(--dark-t4-ink);
+  --t4-soft: var(--dark-t4-soft);
+  --t4-hl: var(--dark-t4-hl);
+  --t4-pbg: var(--dark-t4-pbg);
+  --t4-pink: var(--dark-t4-pink);
+  --t4-border: var(--dark-t4-border);
+  --t5-bg: var(--dark-t5-bg);
+  --t5-ink: var(--dark-t5-ink);
+  --t5-soft: var(--dark-t5-soft);
+  --t5-hl: var(--dark-t5-hl);
+  --t5-pbg: var(--dark-t5-pbg);
+  --t5-pink: var(--dark-t5-pink);
+  --t5-border: var(--dark-t5-border);
 }
 
 *{box-sizing:border-box;}
@@ -130,72 +293,12 @@ html{scroll-behavior:smooth;}
   *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
 }
 
-/* ===== Firma visual: marca "› + punto", repetida en cada eyebrow del sitio ===== */
-.eyebrow{ position:relative; }
-.eyebrow::before{
-  content:"›";
-  display:inline-block;
-  margin-right:6px;
-  color:var(--accent);
-  font-family:var(--font-mono);
-  font-weight:700;
-}
-.sig-dot{
-  display:inline-block;
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:var(--warm);
-  margin-left:10px;
-  position:relative;
-  top:-8px;
-}
-
-/* ===== Fondo del hero: campo de dígitos binarios (0/1), atenuado con una
-   máscara radial, con un parpadeo asincrónico sutil por dígito. Sustituye
-   los blobs/grilla anteriores — más técnico y coherente con el perfil. ===== */
-.hero{ position:relative; overflow:hidden; }
-.hero-binary{
-  position:absolute;
-  right:-24px;
-  bottom:-24px;
-  display:grid;
-  grid-template-columns:repeat(16, 22px);
-  grid-auto-rows:22px;
-  font-family:var(--font-mono);
-  font-weight:700;
-  font-size:13px;
-  line-height:22px;
-  text-align:center;
-  color:var(--accent);
-  -webkit-mask-image:radial-gradient(circle at bottom right, black 0%, black 20%, transparent 75%);
-  mask-image:radial-gradient(circle at bottom right, black 0%, black 20%, transparent 75%);
-  pointer-events:none;
-  z-index:0;
-}
-.hero-binary span{ animation:hero-binary-flicker 4.5s ease-in-out infinite; }
-.hero-binary span:nth-child(3n){ color:var(--warm); animation-duration:5.5s; animation-delay:-1.2s; }
-.hero-binary span:nth-child(5n){ color:var(--accent-muted); animation-duration:3.8s; animation-delay:-2.4s; }
-.hero-binary span:nth-child(7n){ animation-duration:6.2s; animation-delay:-0.6s; }
-.hero-binary span:nth-child(4n+1){ animation-delay:-3.1s; }
-.hero-binary span:nth-child(2n){ animation-delay:-1.8s; }
-@keyframes hero-binary-flicker{
-  0%, 100%{ opacity:0.22; }
-  50%{ opacity:0.85; }
-}
-@media (prefers-reduced-motion: reduce){
-  .hero-binary span{ animation:none; opacity:0.45; }
-}
-@media (max-width:640px){
-  .hero-binary{ grid-template-columns:repeat(10, 18px); grid-auto-rows:18px; font-size:11px; line-height:18px; opacity:0.7; }
-}
-.hero-main, .hero-metric{ position:relative; z-index:1; }
-
 body{
   margin:0;
   background:var(--bg);
   color:var(--ink);
   font-family:var(--font-body);
+  font-size:1.0625rem;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
@@ -206,7 +309,7 @@ body{
   padding:0 24px;
 }
 
-/* ===== Accessibility ===== */
+/* ===== Accesibilidad ===== */
 .skip-link{
   position:absolute;
   left:-999px;
@@ -215,14 +318,25 @@ body{
   color:var(--bg);
   padding:10px 16px;
   z-index:100;
-  border-radius:0 0 6px 0;
+  border-radius:0 0 12px 0;
 }
 .skip-link:focus{ left:0; }
 
 a:focus-visible,
 button:focus-visible{
-  outline:2px solid var(--accent-muted);
+  outline:3px solid var(--accent);
   outline-offset:3px;
+}
+.visually-hidden{
+  position:absolute;
+  width:1px;
+  height:1px;
+  margin:-1px;
+  padding:0;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  white-space:nowrap;
+  border:0;
 }
 
 /* ===== Header ===== */
@@ -231,41 +345,42 @@ button:focus-visible{
   top:0;
   z-index:50;
   background:var(--header-bg);
-  backdrop-filter:blur(8px);
+  backdrop-filter:blur(10px);
   border-bottom:1px solid var(--border);
 }
 .header-inner{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding-top:16px;
-  padding-bottom:16px;
+  padding-top:14px;
+  padding-bottom:14px;
 }
 .mark{
   font-family:var(--font-display);
-  font-weight:600;
-  font-size:1.1rem;
-  color:var(--ink);
+  font-weight:800;
+  font-size:1.05rem;
+  letter-spacing:-0.02em;
+  color:var(--bg);
+  background:var(--ink);
   text-decoration:none;
-  border:1px solid var(--border);
-  width:38px;
-  height:38px;
+  width:42px;
+  height:42px;
   display:flex;
   align-items:center;
   justify-content:center;
-  border-radius:50%;
+  border-radius:14px;
 }
 nav{
   display:flex;
-  gap:8px;
+  gap:16px;
   align-items:center;
 }
 nav a{
   position:relative;
   color:var(--ink-soft);
   text-decoration:none;
-  font-size:0.78rem;
-  font-weight:500;
+  font-size:0.86rem;
+  font-weight:600;
   transition:color .2s ease;
 }
 nav a:not(.nav-cta):hover{ color:var(--ink); }
@@ -275,9 +390,9 @@ nav a:not(.nav-cta)::after{
   left:0;
   right:0;
   bottom:-6px;
-  height:2px;
-  border-radius:2px;
-  background:var(--accent-muted);
+  height:3px;
+  border-radius:3px;
+  background:var(--accent);
   transform:scaleX(0);
   transform-origin:left;
   transition:transform .25s ease;
@@ -285,9 +400,9 @@ nav a:not(.nav-cta)::after{
 nav a.active:not(.nav-cta){ color:var(--ink); }
 nav a.active:not(.nav-cta)::after{ transform:scaleX(1); }
 .nav-cta{
-  color:#fff;
+  color:var(--on-accent);
   background:var(--accent);
-  padding:8px 16px;
+  padding:9px 18px;
   border-radius:999px;
 }
 .nav-cta:hover{ background:var(--accent-strong); }
@@ -296,8 +411,8 @@ nav a.active:not(.nav-cta)::after{ transform:scaleX(1); }
   display:flex;
   align-items:center;
   justify-content:center;
-  width:28px;
-  height:28px;
+  width:32px;
+  height:32px;
   padding:0;
   border:1px solid var(--border);
   border-radius:50%;
@@ -325,11 +440,10 @@ nav a.active:not(.nav-cta)::after{ transform:scaleX(1); }
   border:none;
   background:transparent;
   color:var(--ink-soft);
-  font-family:var(--font-mono);
-  font-size:0.66rem;
-  font-weight:600;
-  letter-spacing:0.02em;
-  padding:4px 7px;
+  font-family:var(--font-body);
+  font-size:0.74rem;
+  font-weight:700;
+  padding:5px 9px;
   border-radius:999px;
   line-height:1;
   cursor:pointer;
@@ -338,10 +452,10 @@ nav a.active:not(.nav-cta)::after{ transform:scaleX(1); }
 .lang-btn:hover:not([aria-pressed="true"]){ color:var(--ink); }
 .lang-btn[aria-pressed="true"]{
   background:var(--accent);
-  color:#fff;
+  color:var(--on-accent);
 }
 
-@media (max-width:640px){
+@media (max-width:900px){
   nav{ gap:14px; }
   nav a:not(.nav-cta){ display:none; }
 }
@@ -351,184 +465,146 @@ nav a.active:not(.nav-cta)::after{ transform:scaleX(1); }
   scroll-margin-top:90px;
 }
 .hero{
-  padding:88px 24px 72px;
+  padding:56px 24px 96px;
 }
-.status-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  font-family:var(--font-mono);
-  font-size:0.78rem;
-  letter-spacing:0.02em;
-  color:var(--ink-soft);
-  background:var(--bg-alt);
-  border:1px solid var(--border);
-  padding:6px 14px;
-  border-radius:999px;
-  margin:0 0 28px;
-}
-.status-badge .dot{
-  width:7px; height:7px;
-  border-radius:50%;
-  background:var(--mono-tag-text);
-  box-shadow:0 0 0 3px var(--warm-soft);
-  animation:pulse-dot 2.4s ease-in-out infinite;
-}
-@keyframes pulse-dot{
-  0%, 100%{ box-shadow:0 0 0 3px var(--warm-soft); }
-  50%{ box-shadow:0 0 0 7px transparent; }
-}
+.hero-main{ min-width:0; }
 h1{
   font-family:var(--font-display);
-  font-weight:500;
-  font-size:clamp(2.6rem, 4vw + 1.2rem, 4.2rem);
-  line-height:1.05;
-  margin:0 0 20px;
+  font-weight:800;
+  font-size:clamp(3.4rem, 19vw, 8rem);
+  line-height:0.88;
+  letter-spacing:-0.045em;
+  margin:0 0 28px;
   color:var(--ink);
 }
+.h1-line{ display:block; }
 .role-statement{
-  font-size:clamp(1.05rem, 1.2vw + 0.8rem, 1.3rem);
+  font-size:clamp(1.12rem, 1vw + 0.9rem, 1.4rem);
+  line-height:1.45;
   color:var(--ink-soft);
-  max-width:640px;
-  margin:0 0 36px;
+  max-width:34em;
+  margin:0 0 34px;
 }
 .hero-actions{
   display:flex;
-  gap:14px;
+  gap:12px;
   flex-wrap:wrap;
 }
 .btn{
   display:inline-block;
   text-decoration:none;
-  font-weight:600;
-  font-size:0.95rem;
-  padding:13px 26px;
+  font-weight:700;
+  font-size:1rem;
+  padding:15px 30px;
   border-radius:999px;
-  transition:transform .15s ease, background .15s ease;
+  transition:transform .15s ease, background .15s ease, color .15s ease;
 }
 .btn-primary{
-  background:var(--ink);
-  color:var(--bg);
+  background:var(--accent);
+  color:var(--on-accent);
 }
-.btn-primary:hover{ background:var(--accent); color:#fff; transform:translateY(-1px); }
+.btn-primary:hover{ background:var(--accent-strong); transform:translateY(-1px); }
 .btn-ghost{
   color:var(--ink);
-  border:1px solid var(--border);
+  border:2px solid var(--ink);
   background:transparent;
+  padding:13px 28px;
 }
-.btn-ghost:hover{ border-color:var(--ink); transform:translateY(-1px); }
+.btn-ghost:hover{ background:var(--ink); color:var(--bg); transform:translateY(-1px); }
 
-.visually-hidden{
-  position:absolute;
-  width:1px;
-  height:1px;
-  margin:-1px;
-  padding:0;
-  overflow:hidden;
-  clip:rect(0 0 0 0);
-  white-space:nowrap;
-  border:0;
-}
-
-/* Hero — tags de foco profesional (mismo lenguaje que .chips-mono) */
-.hero-tags{
-  list-style:none;
-  margin:0 0 22px;
-  padding:0;
+.status-badge{
   display:flex;
-  flex-wrap:wrap;
-  gap:8px;
+  align-items:flex-start;
+  gap:10px;
+  margin:28px 0 0;
+  font-size:0.95rem;
+  color:var(--ink-soft);
+  max-width:34em;
 }
-.hero-tags li{
-  font-family:var(--font-mono);
-  font-size:0.7rem;
-  font-weight:500;
-  text-transform:uppercase;
-  letter-spacing:0.06em;
-  padding:5px 11px;
-  background:var(--accent-soft);
-  border:1px solid var(--border);
-  border-radius:999px;
-  color:var(--chip-mono-text);
+.status-badge .dot{
+  flex-shrink:0;
+  width:9px;
+  height:9px;
+  margin-top:0.5em;
+  border-radius:50%;
+  background:var(--accent);
 }
 
-/* Hero — dos columnas en desktop */
-.hero-main{ min-width:0; }
+.hero-side{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  min-width:0;
+}
+@media (max-width:819px){
+  .hero-side{ margin-top:56px; max-width:520px; }
+}
 @media (min-width:820px){
   .hero{
     display:grid;
-    grid-template-columns:minmax(0, 1.45fr) minmax(0, 1fr);
-    gap:44px;
-    align-items:center;
+    grid-template-columns:minmax(0, 1.5fr) minmax(0, 1fr);
+    gap:56px;
+    align-items:end;
+    padding-top:72px;
   }
-  /* el badge envuelve a 2 líneas en la columna angosta; la píldora completa se deforma */
-  .hero .status-badge{ border-radius:14px; }
-  .hero h1{
-    font-size:clamp(3.4rem, 3vw + 2.2rem, 4.8rem);
-    line-height:1;
-  }
+  h1{ font-size:clamp(5.5rem, 13vw, 11rem); }
 }
 
-/* Hero — panel de métrica (mismo patrón que .project-card) */
+/* Hero: panel de estado del proyecto */
 .hero-metric{
-  background:var(--card-bg);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:24px;
+  background:var(--panel-bg);
+  color:var(--panel-ink);
+  border-radius:var(--radius-lg);
+  padding:28px;
   display:flex;
   flex-direction:column;
   gap:10px;
-  box-shadow:0 18px 40px -24px rgba(0,0,0,0.35);
-}
-@media (max-width:819px){
-  .hero-metric{ margin-top:48px; max-width:420px; }
 }
 .hero-metric-eyebrow{
-  font-family:var(--font-mono);
-  font-size:0.72rem;
-  text-transform:uppercase;
-  letter-spacing:0.08em;
-  color:var(--accent-muted);
+  font-size:0.88rem;
+  font-weight:600;
+  color:var(--panel-soft);
   margin:0;
 }
 .hero-metric-value{
   font-family:var(--font-display);
-  font-weight:500;
-  font-size:clamp(1.7rem, 1.4vw + 1.2rem, 2.15rem);
+  font-weight:700;
+  font-size:clamp(1.7rem, 1.2vw + 1.3rem, 2.2rem);
+  letter-spacing:-0.02em;
   line-height:1.1;
-  color:var(--ink);
+  color:var(--panel-ink);
   margin:0;
   display:flex;
   flex-wrap:wrap;
   align-items:baseline;
   column-gap:10px;
 }
-.hero-metric-arrow{ color:var(--warm); font-family:var(--font-body); }
-.hero-metric-to{ color:var(--accent); }
+.hero-metric-arrow{ color:var(--panel-accent); font-family:var(--font-body); }
+.hero-metric-to{ color:var(--panel-accent); }
 .hero-metric-caption{
-  font-size:0.9rem;
-  color:var(--ink-soft);
+  font-size:0.95rem;
+  color:var(--panel-soft);
   margin:0 0 6px;
 }
 .hero-metric-titlebar{
   display:flex;
   align-items:center;
   gap:7px;
-  margin:-4px 0 4px;
+  margin:0 0 6px;
 }
 .hero-metric-tdot{
-  width:8px;
-  height:8px;
+  width:9px;
+  height:9px;
   border-radius:50%;
-  background:var(--ink-soft);
-  opacity:0.35;
+  background:var(--panel-soft);
+  opacity:0.4;
   flex-shrink:0;
 }
 .hero-metric-tdot--live{ background:#7ED9A8; opacity:1; }
 .hero-metric-tfile{
   font-family:var(--font-mono);
-  font-size:0.7rem;
-  color:var(--ink-soft);
+  font-size:0.74rem;
+  color:var(--panel-soft);
   margin-left:4px;
 }
 .hero-metric-checks{
@@ -543,93 +619,61 @@ h1{
   display:flex;
   align-items:center;
   gap:10px;
-  font-size:0.86rem;
-  color:var(--ink-soft);
+  font-size:0.92rem;
+  color:var(--panel-ink);
 }
 .hero-metric-checks .check-mark{
-  color:var(--warm);
+  color:var(--panel-accent);
   font-weight:700;
-  font-size:0.85rem;
   flex-shrink:0;
 }
 
-/* ===== Section signature (connector spine) ===== */
-.section{
-  position:relative;
-  padding:64px 24px 24px 40px;
-  border-top:1px solid var(--border);
+/* Hero: foco profesional */
+.hero-tags{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
 }
-.node{
-  position:absolute;
-  left:24px;
-  top:64px;
-  width:9px;
-  height:9px;
-  border-radius:50%;
-  background:var(--accent-muted);
-  box-shadow:0 0 0 4px var(--accent-soft);
-  opacity:0;
-  transform:translateY(var(--parallax-y, 0px)) scale(0.3);
-  transition:opacity .4s ease, transform .4s ease;
-}
-.node::after{
-  content:"";
-  position:absolute;
-  left:3px;
-  top:9px;
-  width:1px;
-  height:52px;
-  background:linear-gradient(var(--accent-soft), transparent);
-  transform-origin:top;
-  transform:scaleY(0);
-  transition:transform .7s ease .1s;
-}
-.section.in-view .node{
-  opacity:1;
-  transform:translateY(var(--parallax-y, 0px)) scale(1);
-}
-.section.in-view .node::after{
-  transform:scaleY(1);
+.hero-tags li{
+  font-size:0.9rem;
+  font-weight:600;
+  padding:7px 15px;
+  background:var(--accent-soft);
+  border-radius:999px;
+  color:var(--chip-mono-text);
 }
 
+/* ===== Secciones ===== */
+.section{
+  padding:112px 24px 24px;
+}
 .eyebrow{
-  font-family:var(--font-mono);
-  font-size:0.78rem;
-  text-transform:uppercase;
-  letter-spacing:0.08em;
+  font-size:0.95rem;
+  font-weight:600;
   color:var(--accent-muted);
-  margin:0 0 10px;
+  margin:0 0 12px;
 }
 .section h2{
   font-family:var(--font-display);
-  font-style:italic;
-  font-weight:400;
-  font-size:clamp(1.5rem, 1.4vw + 1rem, 2rem);
-  margin:0 0 24px;
-  max-width:600px;
+  font-weight:800;
+  font-size:clamp(2rem, 3.6vw + 0.5rem, 3.6rem);
+  line-height:1.03;
+  letter-spacing:-0.035em;
+  margin:0 0 36px;
+  max-width:20ch;
+  color:var(--ink);
 }
 .lead{
-  max-width:640px;
+  max-width:62ch;
+  font-size:1.14rem;
   color:var(--ink);
   margin:0 0 18px;
 }
 
-/* reveal-on-scroll */
-.section, .hero{
-  opacity:0;
-  transform:translateY(14px);
-  transition:opacity .7s ease, transform .7s ease;
-}
-.section.in-view, .hero.in-view{
-  opacity:1;
-  transform:translateY(0);
-}
-@media (prefers-reduced-motion: reduce){
-  .section, .hero{ opacity:1; transform:none; }
-  .node, .node::after{ opacity:1; transform:none; }
-}
-
-/* ===== Personal — heading + motivo decorativo ===== */
+/* ===== Personal ===== */
 .personal-heading{
   display:flex;
   align-items:flex-start;
@@ -638,17 +682,16 @@ h1{
   flex-wrap:wrap;
 }
 .personal-motif{
-  width:80px;
-  height:80px;
+  width:84px;
+  height:84px;
   flex-shrink:0;
-  color:var(--accent-muted);
-  opacity:0.85;
+  color:var(--accent);
 }
 @media (max-width:640px){
   .personal-motif{ width:56px; height:56px; }
 }
 
-/* ===== Educación — línea de tiempo ===== */
+/* ===== Educación ===== */
 .edu-timeline{
   list-style:none;
   margin:8px 0 0;
@@ -661,10 +704,11 @@ h1{
 .edu-timeline::before{
   content:"";
   position:absolute;
-  top:6px;
+  top:7px;
   left:0;
   right:0;
-  height:2px;
+  height:3px;
+  border-radius:3px;
   background:var(--border);
   z-index:0;
 }
@@ -677,39 +721,39 @@ h1{
   z-index:1;
 }
 .edu-dot{
-  width:13px;
-  height:13px;
+  width:17px;
+  height:17px;
   border-radius:50%;
   background:var(--bg);
-  border:3px solid var(--accent);
+  border:4px solid var(--accent);
   box-sizing:border-box;
 }
 .edu-dot--filled{ background:var(--accent); }
 .edu-date{
-  font-family:var(--font-mono);
-  font-size:0.72rem;
-  font-weight:600;
-  color:var(--accent);
+  font-size:0.88rem;
+  font-weight:700;
+  color:var(--accent-muted);
 }
 .edu-card{
   background:var(--card-bg);
   border:1px solid var(--border);
   border-radius:var(--radius);
-  padding:16px;
+  padding:18px;
   display:flex;
   flex-direction:column;
   gap:6px;
 }
-.edu-card--current{ border-color:var(--accent); }
+.edu-card--current{ border:2px solid var(--accent); padding:17px; }
 .edu-card h3{
   font-family:var(--font-display);
-  font-weight:500;
-  font-size:1rem;
+  font-weight:700;
+  font-size:1.05rem;
+  line-height:1.2;
   margin:0;
   color:var(--ink);
 }
 .edu-card p{
-  font-size:0.85rem;
+  font-size:0.9rem;
   color:var(--ink-soft);
   margin:0;
   line-height:1.5;
@@ -722,21 +766,20 @@ h1{
   .edu-timeline::before{ display:none; }
 }
 
-/* ===== Stack ===== */
+/* ===== Personal / Stack ===== */
 .stack-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
-  gap:28px;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:32px;
   margin-bottom:24px;
 }
 .personal-image{
   width:100%;
   aspect-ratio:4/3;
   border-radius:var(--radius);
-  border:1px solid var(--border);
   background:var(--bg-alt);
   overflow:hidden;
-  margin-bottom:12px;
+  margin-bottom:14px;
 }
 .personal-image img{
   width:100%;
@@ -744,7 +787,7 @@ h1{
   object-fit:cover;
   display:block;
 }
-/* 75% width matches the 4/3 sibling's height (width * 3/4) so both stay the same height while this one stays square */
+/* 75% de ancho iguala la altura del hermano 4/3 (ancho * 3/4) manteniéndola cuadrada */
 .personal-image--square{
   width:75%;
   aspect-ratio:1/1;
@@ -755,7 +798,7 @@ h1{
   align-items:center;
   gap:12px;
   width:100%;
-  margin-top:12px;
+  margin-top:14px;
   padding:10px 14px;
   background:var(--card-bg);
   border:1px solid var(--border);
@@ -763,12 +806,13 @@ h1{
   cursor:pointer;
   text-align:left;
   font-family:inherit;
+  color:var(--ink);
 }
-.spotify-facade:hover{ border-color:var(--accent-muted); }
+.spotify-facade:hover{ border-color:var(--accent); }
 .spotify-facade-art{
   width:44px;
   height:44px;
-  border-radius:4px;
+  border-radius:8px;
   flex-shrink:0;
   object-fit:cover;
 }
@@ -779,12 +823,12 @@ h1{
   min-width:0;
 }
 .spotify-facade-title{
-  font-size:0.9rem;
-  font-weight:600;
+  font-size:0.95rem;
+  font-weight:700;
   color:var(--ink);
 }
 .spotify-facade-artist{
-  font-size:0.8rem;
+  font-size:0.82rem;
   color:var(--ink-soft);
 }
 .spotify-facade-play{
@@ -794,12 +838,12 @@ h1{
   flex-shrink:0;
 }
 .spotify-embed{
-  margin-top:12px;
+  margin-top:14px;
   border-radius:var(--radius);
   overflow:hidden;
 }
 .spotify-embed:focus{
-  outline:2px solid var(--accent-muted);
+  outline:3px solid var(--accent);
   outline-offset:3px;
 }
 .spotify-embed iframe{
@@ -808,22 +852,24 @@ h1{
 }
 .stack-group-icon{
   display:block;
-  width:22px;
-  height:22px;
-  color:var(--accent-muted);
+  width:24px;
+  height:24px;
+  color:var(--accent);
   margin-bottom:10px;
 }
 .stack-group h3{
-  font-size:0.85rem;
+  font-family:var(--font-display);
+  font-size:1.05rem;
   font-weight:700;
-  color:var(--ink-soft);
+  color:var(--ink);
   margin:0 0 12px;
 }
 .stack-group p{
-  font-size:0.92rem;
+  font-size:0.98rem;
   color:var(--ink-soft);
   margin:0;
 }
+.stack-group p strong{ color:var(--ink); }
 .chips{
   list-style:none;
   margin:0;
@@ -833,8 +879,9 @@ h1{
   gap:8px;
 }
 .chips li{
-  font-size:0.88rem;
-  padding:6px 12px;
+  font-size:0.92rem;
+  font-weight:500;
+  padding:7px 14px;
   background:var(--bg-alt);
   border:1px solid var(--border);
   border-radius:999px;
@@ -843,6 +890,7 @@ h1{
 .chips-mono li{
   font-family:var(--font-mono);
   font-size:0.76rem;
+  font-weight:500;
   background:var(--accent-soft);
   border-color:transparent;
   color:var(--chip-mono-text);
@@ -856,14 +904,12 @@ li.chip-conceptual{
   color:var(--ink-soft);
 }
 .chip-tag{
-  font-family:var(--font-mono);
-  font-size:0.62rem;
-  text-transform:uppercase;
-  letter-spacing:0.03em;
+  font-size:0.72rem;
+  font-weight:600;
   color:var(--ink-soft);
 }
 .lang-note{
-  font-size:0.92rem;
+  font-size:0.98rem;
   color:var(--ink-soft);
   display:flex;
   align-items:center;
@@ -871,128 +917,200 @@ li.chip-conceptual{
   flex-wrap:wrap;
 }
 .mono-tag{
-  font-family:var(--font-mono);
-  font-size:0.72rem;
-  text-transform:uppercase;
-  letter-spacing:0.04em;
+  font-size:0.82rem;
+  font-weight:700;
   background:var(--warm-soft);
   color:var(--mono-tag-text);
-  padding:4px 9px;
-  border-radius:4px;
+  padding:4px 12px;
+  border-radius:999px;
 }
 
-/* ===== Projects ===== */
+/* ===== Proyectos: bento ===== */
 .project-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns:1fr;
   gap:20px;
 }
+@media (min-width:640px){
+  .project-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
+  .pc-1{ grid-column:1 / -1; }
+}
+@media (min-width:900px){
+  .project-grid{ grid-template-columns:repeat(6, minmax(0, 1fr)); }
+  .pc-1{ grid-column:1 / 4; grid-row:1 / 3; }
+  .pc-2{ grid-column:4 / 7; grid-row:1; }
+  .pc-3{ grid-column:4 / 7; grid-row:2; }
+  .pc-4{ grid-column:1 / 4; grid-row:3; }
+  .pc-5{ grid-column:4 / 7; grid-row:3; }
+}
 .project-card{
-  background:var(--card-bg);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:24px;
+  background:var(--tile-bg);
+  color:var(--tile-ink);
+  border:2px solid var(--tile-border);
+  border-radius:var(--radius-lg);
+  padding:32px;
   display:flex;
   flex-direction:column;
-  gap:10px;
-  transition:border-color .15s ease, transform .15s ease;
-  will-change:transform;
+  gap:12px;
+  transition:transform .15s ease;
 }
-.project-card:hover{
-  border-color:var(--accent-muted);
-  transform:translateY(-2px);
-}
+.project-card:hover{ transform:translateY(-3px); }
+.project-card a:focus-visible{ outline-color:currentColor; }
 .project-head{
   display:flex;
-  align-items:baseline;
+  align-items:center;
   justify-content:space-between;
-  gap:8px;
+  gap:10px;
   flex-wrap:wrap;
 }
 .project-head h3{
-  font-size:1.1rem;
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1.3rem;
+  letter-spacing:-0.015em;
+  line-height:1.15;
   margin:0;
 }
 .project-status{
-  font-family:var(--font-mono);
-  font-size:0.68rem;
-  text-transform:uppercase;
-  color:var(--mono-tag-text);
+  font-size:0.78rem;
+  font-weight:700;
+  padding:4px 12px;
+  border-radius:999px;
+  background:var(--tile-pbg);
+  color:var(--tile-pink);
+}
+.project-headline{
+  margin:10px 0 6px;
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:clamp(1.7rem, 1.6vw + 1.1rem, 2.5rem);
+  line-height:0.98;
+  letter-spacing:-0.035em;
+  color:var(--tile-hl);
+}
+.pc-1 .project-headline{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  margin:18px 0 14px;
+}
+.pc-1 .num{
+  font-size:clamp(5.2rem, 14vw, 9.5rem);
+  line-height:0.82;
+  letter-spacing:-0.055em;
+}
+.pc-1 .cap{
+  font-size:clamp(1.4rem, 1.4vw + 0.9rem, 2rem);
+  letter-spacing:-0.025em;
+  color:var(--tile-ink);
 }
 .project-meta{
-  font-size:0.8rem;
-  color:var(--ink-soft);
-  margin:-4px 0 0;
-}
-.project-problem, .project-solution{
-  font-size:0.92rem;
-  color:var(--ink-soft);
-  margin:0;
-}
-.project-solution strong, .project-problem strong{
-  color:var(--ink);
-}
-.project-process{
-  font-family:var(--font-mono);
-  font-size:0.78rem;
-  color:var(--ink-soft);
-  margin:0;
-}
-.project-process strong{
-  color:var(--accent-muted);
-}
-.project-process code{
-  font-family:inherit;
-  background:var(--bg-alt);
-  padding:1px 5px;
-  border-radius:3px;
-}
-.project-link{
-  margin-top:auto;
-  padding-top:6px;
   font-size:0.88rem;
   font-weight:600;
-  color:var(--ink);
-  text-decoration:none;
+  color:var(--tile-soft);
+  margin:0;
 }
-.project-link:hover{ color:var(--accent-muted); }
-
+.project-problem, .project-solution, .project-process{
+  font-size:0.97rem;
+  color:var(--tile-soft);
+  margin:0;
+}
+.project-problem strong, .project-solution strong, .project-process strong{
+  color:var(--tile-ink);
+}
+.project-evidence-title{
+  margin:10px 0 0;
+  font-size:0.92rem;
+  font-weight:700;
+  color:var(--tile-ink);
+}
+.project-evidence{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.project-evidence li{
+  position:relative;
+  padding-left:28px;
+  font-size:0.97rem;
+  line-height:1.5;
+  color:var(--tile-soft);
+}
+.project-evidence li strong{ color:var(--tile-ink); }
+.project-evidence li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  top:0;
+  font-weight:700;
+  color:var(--tile-hl);
+}
+.project-card .chips{ margin-top:6px; }
+.pc-3{ --tile-chip:rgba(42,22,56,0.32); }
+.pc-1 .chips{ margin-top:auto; padding-top:12px; }
+.project-card .chips li{
+  background:var(--tile-chip, color-mix(in srgb, var(--tile-ink) 12%, transparent));
+  border:0;
+  color:var(--tile-ink);
+}
+.pc-1 .project-link{ margin-top:14px; }
+.project-link{
+  margin-top:auto;
+  align-self:flex-start;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:10px 18px 10px 15px;
+  font-size:0.95rem;
+  font-weight:700;
+  line-height:1.2;
+  color:var(--tile-ink);
+  text-decoration:none;
+  border:2px solid currentColor;
+  border-radius:999px;
+  transition:background .15s ease, color .15s ease, transform .15s ease;
+}
+.project-link:hover{ background:var(--tile-ink); color:var(--tile-bg); transform:translateY(-1px); }
+.gh-icon{ width:20px; height:20px; flex-shrink:0; }
 .project-links{
   margin-top:auto;
-  padding-top:6px;
+  padding-top:8px;
   display:flex;
-  gap:16px;
+  gap:10px;
   flex-wrap:wrap;
 }
-.project-links .project-link{
-  margin-top:0;
-  padding-top:0;
-}
+.project-links .project-link{ margin-top:0; }
 
-/* ===== Experience ===== */
+/* ===== Experiencia / certificaciones ===== */
 .timeline-item{
-  padding:20px 0;
+  padding:22px 0;
   border-bottom:1px solid var(--border);
 }
 .timeline-item:last-child{ border-bottom:none; }
-.timeline-meta{ margin-bottom:8px; }
+.timeline-meta{ margin-bottom:10px; }
 .timeline-item h3{
-  font-size:1.05rem;
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1.25rem;
   margin:0 0 12px;
 }
 .outcome-list{
   margin:0;
-  padding-left:18px;
+  padding-left:20px;
   color:var(--ink-soft);
+  max-width:70ch;
 }
-.outcome-list li{ margin-bottom:6px; }
+.outcome-list li{ margin-bottom:8px; }
 .outcome-list-note{
   color:var(--ink-soft);
   margin:0;
-  font-size:0.92rem;
+  font-size:0.95rem;
 }
 
-/* ===== Contact ===== */
+/* ===== Contacto ===== */
 .contact-links{
   display:flex;
   flex-direction:column;
@@ -1005,33 +1123,36 @@ li.chip-conceptual{
   gap:12px;
   color:var(--ink);
   text-decoration:none;
-  font-size:1rem;
+  font-size:1.02rem;
   padding-bottom:12px;
   border-bottom:1px solid var(--border);
-  max-width:420px;
+  max-width:440px;
 }
-.contact-link:hover{ color:var(--accent-muted); }
+.contact-link:hover{ color:var(--accent); }
 .contact-icon{
   width:20px;
   height:20px;
   flex-shrink:0;
 }
+.contact-link .mono-tag{ min-width:5.2em; text-align:center; }
 
 .contact-form{
   margin-top:40px;
-  max-width:480px;
+  max-width:520px;
   overflow:hidden;
-  padding-top:0;
+  padding:0 28px 28px;
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
 }
 .form-titlebar{
   display:flex;
   align-items:center;
   gap:8px;
-  padding:12px 16px;
-  margin:0 -1px 20px;
+  padding:14px 28px;
+  margin:0 -28px 24px;
   background:var(--bg-alt);
-  border:1px solid var(--border);
-  border-radius:var(--radius) var(--radius) 0 0;
+  border-bottom:1px solid var(--border);
 }
 .form-dot{
   width:10px;
@@ -1040,18 +1161,17 @@ li.chip-conceptual{
   display:inline-block;
 }
 .form-dot-a{ background:var(--warm-soft); border:1px solid var(--warm); }
-.form-dot-b{ background:var(--accent-soft); border:1px solid var(--accent); }
+.form-dot-b{ background:var(--accent-soft); border:1px solid var(--accent-muted); }
 .form-dot-c{ background:var(--card-bg); border:1px solid var(--ink-soft); }
 .form-titlebar-label{
   font-family:var(--font-mono);
   font-size:11px;
-  letter-spacing:0.04em;
   color:var(--ink-soft);
   margin-left:4px;
 }
 .contact-form-lead{
   color:var(--ink-soft);
-  margin:0 0 20px;
+  margin:0 0 22px;
 }
 .form-field{
   display:flex;
@@ -1060,30 +1180,29 @@ li.chip-conceptual{
   margin-bottom:18px;
 }
 .form-field label{
-  font-family:var(--font-mono);
-  font-size:0.78rem;
-  letter-spacing:0.08em;
-  color:var(--accent-muted);
+  font-size:0.92rem;
+  font-weight:700;
+  color:var(--ink);
 }
 .form-field input,
 .form-field textarea{
   font-family:var(--font-body);
-  font-size:0.98rem;
+  font-size:1rem;
   color:var(--ink);
-  background:var(--card-bg);
+  background:var(--bg);
   border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:11px 14px;
+  border-radius:12px;
+  padding:12px 14px;
   resize:vertical;
 }
 .form-field input::placeholder,
 .form-field textarea::placeholder{
   color:var(--ink-soft);
-  opacity:0.75;
+  opacity:0.8;
 }
 .form-field input:focus-visible,
 .form-field textarea:focus-visible{
-  outline:2px solid var(--accent-muted);
+  outline:3px solid var(--accent);
   outline-offset:1px;
 }
 .hp-field{
@@ -1096,23 +1215,42 @@ li.chip-conceptual{
 .contact-form .btn{
   border:none;
   cursor:pointer;
-  font-family:var(--font-mono);
+  font-family:var(--font-body);
 }
+.contact-form .btn:disabled{ opacity:0.7; cursor:progress; }
 .form-status{
   margin:14px 0 0;
-  font-size:0.9rem;
-  font-family:var(--font-mono);
+  font-size:0.95rem;
+  font-weight:600;
   min-height:1.2em;
 }
 .form-status-success{ color:var(--mono-tag-text); }
 .form-status-error{ color:var(--error); }
 
+@media (min-width:960px){
+  .contact-section{
+    display:grid;
+    grid-template-columns:minmax(0, 1fr) minmax(0, 520px);
+    column-gap:64px;
+    align-items:start;
+  }
+  .contact-section > *{ grid-column:1; }
+  .contact-section .contact-form{ grid-column:2; grid-row:1 / span 5; margin-top:0; }
+}
+
 /* ===== Footer ===== */
 .site-footer{
-  padding:36px 24px 60px;
+  padding:48px 24px 64px;
   color:var(--ink-soft);
-  font-size:0.85rem;
+  font-size:0.9rem;
 }
+
+/* ===== Colores de las tarjetas de proyecto ===== */
+.pc-1{ --tile-bg:var(--t1-bg); --tile-ink:var(--t1-ink); --tile-soft:var(--t1-soft); --tile-hl:var(--t1-hl); --tile-pbg:var(--t1-pbg); --tile-pink:var(--t1-pink); --tile-border:var(--t1-border); }
+.pc-2{ --tile-bg:var(--t2-bg); --tile-ink:var(--t2-ink); --tile-soft:var(--t2-soft); --tile-hl:var(--t2-hl); --tile-pbg:var(--t2-pbg); --tile-pink:var(--t2-pink); --tile-border:var(--t2-border); }
+.pc-3{ --tile-bg:var(--t3-bg); --tile-ink:var(--t3-ink); --tile-soft:var(--t3-soft); --tile-hl:var(--t3-hl); --tile-pbg:var(--t3-pbg); --tile-pink:var(--t3-pink); --tile-border:var(--t3-border); }
+.pc-4{ --tile-bg:var(--t4-bg); --tile-ink:var(--t4-ink); --tile-soft:var(--t4-soft); --tile-hl:var(--t4-hl); --tile-pbg:var(--t4-pbg); --tile-pink:var(--t4-pink); --tile-border:var(--t4-border); }
+.pc-5{ --tile-bg:var(--t5-bg); --tile-ink:var(--t5-ink); --tile-soft:var(--t5-soft); --tile-hl:var(--t5-hl); --tile-pbg:var(--t5-pbg); --tile-pink:var(--t5-pink); --tile-border:var(--t5-border); }
 </style>
 <script type="application/ld+json">
 {
@@ -1128,7 +1266,6 @@ li.chip-conceptual{
   ]
 }
 </script>
-<noscript><style>.section,.hero,.node,.node::after{opacity:1!important;transform:none!important;}</style></noscript>
 </head>
 <body>
 
@@ -1162,47 +1299,47 @@ li.chip-conceptual{
 
   <!-- HERO -->
   <section id="hero" class="hero wrap">
-    <div class="hero-binary" aria-hidden="true"><span>1</span><span>1</span><span>1</span><span>0</span><span>0</span><span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>1</span><span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>1</span><span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>0</span><span>0</span><span>0</span><span>1</span><span>0</span><span>1</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>1</span><span>1</span><span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>0</span><span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>0</span><span>0</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>1</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>1</span><span>1</span><span>0</span><span>1</span><span>0</span><span>1</span><span>0</span><span>0</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>0</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>0</span></div>
     <div class="hero-main">
-      <p class="status-badge"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.badge">📌 Buscando oportunidad — Remoto / Híbrido · Viña del Mar &amp; Valparaíso · Santiago</span></p>
-      <ul class="hero-tags">
-        <li data-i18n="hero.tags.functional">Análisis funcional</li>
-        <li data-i18n="hero.tags.qa">QA &amp; Automatización</li>
-        <li data-i18n="hero.tags.backend">Backend junior</li>
-      </ul>
-      <h1>Sofía Menzel<span class="sig-dot" aria-hidden="true"></span></h1>
+      <h1><span class="h1-line">Sofía</span> <span class="h1-line">Menzel</span></h1>
       <p class="role-statement" data-i18n="hero.role">Ingeniera en Ejecución Informática con enfoque en resultados: automatización, análisis funcional y QA.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary" data-i18n="hero.viewProjects">Ver proyectos</a>
         <a href="#contact" class="btn btn-ghost" data-i18n="hero.getInTouch">Hablemos</a>
       </div>
+      <p class="status-badge"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.badge">Buscando oportunidad. Remoto o híbrido, en Viña del Mar, Valparaíso y Santiago.</span></p>
     </div>
 
-    <aside class="hero-metric" aria-labelledby="hero-metric-title">
-      <div class="hero-metric-titlebar" aria-hidden="true">
-        <span class="hero-metric-tdot"></span>
-        <span class="hero-metric-tdot"></span>
-        <span class="hero-metric-tdot hero-metric-tdot--live"></span>
-        <span class="hero-metric-tfile">pos_cerveceria.py</span>
-      </div>
-      <p class="hero-metric-eyebrow" data-i18n="hero.metric.eyebrow">Estado del proyecto</p>
-      <p class="hero-metric-value" id="hero-metric-title">
-        <span data-i18n="hero.metric.from">Prototipo</span>
-        <span class="hero-metric-arrow" aria-hidden="true">→</span>
-        <span class="visually-hidden" data-i18n="hero.metric.toSr">hasta</span>
-        <span class="hero-metric-to" data-i18n="hero.metric.to">Producción</span>
-      </p>
-      <p class="hero-metric-caption" data-i18n="hero.metric.caption">Sistema de punto de venta entregado a un cliente real.</p>
-      <ul class="hero-metric-checks">
-        <li><span class="check-mark" aria-hidden="true">✓</span><span data-i18n="hero.metric.check1">Cliente real, en uso operativo activo</span></li>
-        <li><span class="check-mark" aria-hidden="true">✓</span><span data-i18n="hero.metric.check2">Desarrollado en menos de 2 meses</span></li>
+    <div class="hero-side">
+      <aside class="hero-metric" aria-labelledby="hero-metric-title">
+        <div class="hero-metric-titlebar" aria-hidden="true">
+          <span class="hero-metric-tdot"></span>
+          <span class="hero-metric-tdot"></span>
+          <span class="hero-metric-tdot hero-metric-tdot--live"></span>
+          <span class="hero-metric-tfile">pos_cerveceria.py</span>
+        </div>
+        <p class="hero-metric-eyebrow" data-i18n="hero.metric.eyebrow">Estado del proyecto</p>
+        <p class="hero-metric-value" id="hero-metric-title">
+          <span data-i18n="hero.metric.from">Prototipo</span>
+          <span class="hero-metric-arrow" aria-hidden="true">→</span>
+          <span class="visually-hidden" data-i18n="hero.metric.toSr">hasta</span>
+          <span class="hero-metric-to" data-i18n="hero.metric.to">Producción</span>
+        </p>
+        <p class="hero-metric-caption" data-i18n="hero.metric.caption">Sistema de punto de venta entregado a un cliente real.</p>
+        <ul class="hero-metric-checks">
+          <li><span class="check-mark" aria-hidden="true">✓</span><span data-i18n="hero.metric.check1">Cliente real, en uso operativo activo</span></li>
+          <li><span class="check-mark" aria-hidden="true">✓</span><span data-i18n="hero.metric.check2">Desarrollado en menos de 2 meses</span></li>
+        </ul>
+      </aside>
+      <ul class="hero-tags">
+        <li data-i18n="hero.tags.functional">Análisis funcional</li>
+        <li data-i18n="hero.tags.qa">QA &amp; Automatización</li>
+        <li data-i18n="hero.tags.backend">Backend junior</li>
       </ul>
-    </aside>
+    </div>
   </section>
 
   <!-- PERSONAL -->
   <section id="personal" class="section wrap">
-    <div class="node" aria-hidden="true"></div>
     <div class="personal-heading">
       <div>
         <p class="eyebrow" data-i18n="personal.eyebrow">Sobre mí</p>
@@ -1258,7 +1395,6 @@ li.chip-conceptual{
 
   <!-- ABOUT -->
   <section id="about" class="section wrap">
-    <div class="node" aria-hidden="true"></div>
     <p class="eyebrow" data-i18n="about.eyebrow">Sobre mí</p>
     <h2 data-i18n="about.h2">Traducir procesos de negocio en sistemas que funcionan</h2>
     <p class="lead" data-i18n="about.p1">
@@ -1271,9 +1407,8 @@ li.chip-conceptual{
 
   <!-- EDUCACIÓN -->
   <section id="educacion" class="section wrap">
-    <div class="node" aria-hidden="true"></div>
     <p class="eyebrow" data-i18n="educacion.eyebrow">Educación</p>
-    <h2 data-i18n="educacion.h2">Formación y trayectoria<span class="sig-dot" aria-hidden="true"></span></h2>
+    <h2 data-i18n="educacion.h2">Formación y trayectoria</h2>
 
     <ol class="edu-timeline">
       <li class="edu-node-wrap">
@@ -1313,7 +1448,6 @@ li.chip-conceptual{
 
   <!-- EXPERIENCE -->
   <section id="experience" class="section wrap">
-    <div class="node" aria-hidden="true"></div>
     <p class="eyebrow" data-i18n="experience.eyebrow">Experiencia</p>
     <h2 data-i18n="experience.h2">Trayectoria</h2>
 
@@ -1334,32 +1468,39 @@ li.chip-conceptual{
 
   <!-- PROJECTS -->
   <section id="projects" class="section wrap">
-    <div class="node" aria-hidden="true"></div>
     <p class="eyebrow" data-i18n="projects.eyebrow">Proyectos</p>
     <h2 data-i18n="projects.h2">Proyectos personales</h2>
 
     <div class="project-grid">
 
-      <article class="project-card">
+      <article class="project-card pc-1">
         <div class="project-head">
           <h3>PetPal</h3>
           <span class="project-status" data-i18n="projects.petpal.status">En desarrollo activo</span>
         </div>
+        <p class="project-headline" data-i18n-html="projects.petpal.headline"><span class="num">+180</span><span class="cap">tests automatizados</span></p>
         <p class="project-problem" data-i18n-html="projects.petpal.problem"><strong>Problema:</strong> los dueños de mascotas pierden el control de vacunas, tratamientos y controles veterinarios — información que termina dispersa entre papeles, mensajes y la memoria, especialmente con más de una mascota.</p>
         <p class="project-solution" data-i18n-html="projects.petpal.solution"><strong>Solución:</strong> app móvil multi-mascota que centraliza el historial médico completo (vacunas, medicación, desparasitación, signos vitales), con recordatorios confiables y una ficha clínica exportable en PDF para la consulta veterinaria.</p>
         <p class="project-process" data-i18n-html="projects.petpal.process"><strong>Proceso:</strong> +180 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas</p>
+        <p class="project-evidence-title" data-i18n="projects.petpal.evidenceTitle">Qué hay detrás del número</p>
+        <ul class="project-evidence">
+          <li data-i18n-html="projects.petpal.evidence.0"><strong>+180 tests en 40 archivos.</strong> Cada cambio se comprueba de forma automática, así que corregir algo en vacunas o notificaciones no rompe otra parte sin que nadie lo note.</li>
+          <li data-i18n-html="projects.petpal.evidence.1"><strong>CI en GitHub Actions.</strong> Las pruebas corren solas y validan 250+ notificaciones simultáneas, para detectar recordatorios duplicados o perdidos antes de que lleguen a una persona.</li>
+          <li data-i18n-html="projects.petpal.evidence.2"><strong>Riverpod en las 10 entidades.</strong> La lógica de cada entidad queda separada de la interfaz, y eso permite probarla sin abrir la app.</li>
+        </ul>
         <ul class="chips chips-mono">
           <li>Flutter</li>
           <li>Dart</li>
         </ul>
-        <a href="https://github.com/Soofiaa/pet_pal" class="project-link" target="_blank" rel="noopener" data-i18n="projects.viewGithub">Ver en GitHub →</a>
+        <a href="https://github.com/Soofiaa/pet_pal" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a>
       </article>
 
-      <article class="project-card">
+      <article class="project-card pc-2">
         <div class="project-head">
           <h3>Plataforma de finanzas personales</h3>
           <span class="project-status" data-i18n="projects.finance.status">Finalizado y aprobado</span>
         </div>
+        <p class="project-headline" data-i18n="projects.finance.headline">API REST desacoplada</p>
         <p class="project-meta" data-i18n="projects.finance.meta">Proyecto de título · Mar – Jul 2025</p>
         <p class="project-problem" data-i18n-html="projects.finance.problem"><strong>Problema:</strong> el seguimiento manual de ingresos y gastos personales es propenso a errores y poco visual.</p>
         <p class="project-solution" data-i18n-html="projects.finance.solution"><strong>Solución:</strong> plataforma web para registrar movimientos y visualizar el estado financiero personal.</p>
@@ -1370,15 +1511,16 @@ li.chip-conceptual{
           <li>MySQL</li>
         </ul>
         <div class="project-links">
-          <a href="https://github.com/Soofiaa/All-Too-Accountable" class="project-link" target="_blank" rel="noopener" data-i18n="projects.frontend">Frontend →</a>
-          <a href="https://github.com/Soofiaa/BackEnd-All-Too-Accountable" class="project-link" target="_blank" rel="noopener" data-i18n="projects.backend">Backend →</a>
+          <a href="https://github.com/Soofiaa/All-Too-Accountable" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.frontend">Frontend</span></a>
+          <a href="https://github.com/Soofiaa/BackEnd-All-Too-Accountable" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.backend">Backend</span></a>
         </div>
       </article>
 
-      <article class="project-card">
+      <article class="project-card pc-3">
         <div class="project-head">
           <h3>POS para cervecería</h3>
         </div>
+        <p class="project-headline" data-i18n="projects.pos.headline">Cliente real, en producción</p>
         <p class="project-meta" data-i18n="projects.pos.meta">Entregado a cliente real · actualmente en uso</p>
         <p class="project-problem" data-i18n-html="projects.pos.problem"><strong>Problema:</strong> negocios pequeños necesitan un punto de venta simple, sin la complejidad de un sistema comercial.</p>
         <p class="project-solution" data-i18n-html="projects.pos.solution"><strong>Solución:</strong> sistema de punto de venta liviano para gestionar ventas e inventario.</p>
@@ -1387,13 +1529,14 @@ li.chip-conceptual{
           <li>Python</li>
           <li>SQLite</li>
         </ul>
-        <a href="https://github.com/Soofiaa/cerveceria_pos" class="project-link" target="_blank" rel="noopener" data-i18n="projects.viewGithub">Ver en GitHub →</a>
+        <a href="https://github.com/Soofiaa/cerveceria_pos" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a>
       </article>
 
-      <article class="project-card">
+      <article class="project-card pc-4">
         <div class="project-head">
           <h3>Jobbi</h3>
         </div>
+        <p class="project-headline" data-i18n="projects.jobbi.headline">Detecta 10 portales de empleo</p>
         <p class="project-problem" data-i18n-html="projects.jobbi.problem"><strong>Problema:</strong> llevar el registro de postulaciones laborales (empresas, estados, fechas de seguimiento) de forma manual es desordenado y fácil de perder.</p>
         <p class="project-solution" data-i18n-html="projects.jobbi.solution"><strong>Solución:</strong> aplicación de escritorio para centralizar y dar seguimiento ordenado a todas las postulaciones laborales, con dashboard de métricas y exportación a Excel.</p>
         <p class="project-process" data-i18n-html="projects.jobbi.process"><strong>Proceso:</strong> empaquetado standalone (.exe + instalador Inno Setup), autodetección de 10 portales de empleo, y decisión de seguridad documentada (uso exclusivo de anon key de Supabase).</p>
@@ -1403,13 +1546,14 @@ li.chip-conceptual{
           <li>Supabase</li>
           <li>PostgreSQL</li>
         </ul>
-        <a href="https://github.com/Soofiaa/Jobbi" class="project-link" target="_blank" rel="noopener" data-i18n="projects.viewGithub">Ver en GitHub →</a>
+        <a href="https://github.com/Soofiaa/Jobbi" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a>
       </article>
 
-      <article class="project-card">
+      <article class="project-card pc-5">
         <div class="project-head">
           <h3>BudgetDesk</h3>
         </div>
+        <p class="project-headline" data-i18n="projects.budgetdesk.headline">Auditoría y remediación</p>
         <p class="project-problem" data-i18n-html="projects.budgetdesk.problem"><strong>Problema:</strong> gestionar ingresos y gastos personales sin depender de una conexión a internet ni de planillas dispersas, con reportes que se puedan compartir fácilmente.</p>
         <p class="project-solution" data-i18n-html="projects.budgetdesk.solution"><strong>Solución:</strong> aplicación de escritorio para gestión de finanzas personales (ingresos y gastos), con balance neto automático, visualización de estadísticas y exportación de reportes a Excel.</p>
         <p class="project-process" data-i18n-html="projects.budgetdesk.process"><strong>Proceso:</strong> auditoría de código con hallazgos documentados y remediación aplicada</p>
@@ -1419,7 +1563,7 @@ li.chip-conceptual{
           <li>SQLite</li>
           <li>Matplotlib</li>
         </ul>
-        <a href="https://github.com/Soofiaa/BudgetDesk" class="project-link" target="_blank" rel="noopener" data-i18n="projects.viewGithub">Ver en GitHub →</a>
+        <a href="https://github.com/Soofiaa/BudgetDesk" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a>
       </article>
 
     </div>
@@ -1427,7 +1571,6 @@ li.chip-conceptual{
 
   <!-- STACK -->
   <section id="stack" class="section wrap">
-    <div class="node" aria-hidden="true"></div>
     <p class="eyebrow" data-i18n="stack.eyebrow">Stack técnico</p>
     <h2 data-i18n="stack.h2">Lo que uso para construir soluciones</h2>
 
@@ -1481,7 +1624,6 @@ li.chip-conceptual{
 
   <!-- CERTIFICATIONS -->
   <section id="certifications" class="section wrap">
-    <div class="node" aria-hidden="true"></div>
     <p class="eyebrow" data-i18n="certifications.eyebrow">Certificaciones</p>
     <h2 data-i18n="certifications.h2">Aprendizaje continuo</h2>
 
@@ -1502,7 +1644,6 @@ li.chip-conceptual{
 
   <!-- CONTACT -->
   <section id="contact" class="section wrap contact-section">
-    <div class="node" aria-hidden="true"></div>
     <p class="eyebrow" data-i18n="contact.eyebrow">Contacto</p>
     <h2 data-i18n="contact.h2">Conversemos</h2>
     <p class="lead" data-i18n="contact.lead">¿Buscas a alguien que entienda el negocio, documente con claridad y construya soluciones que funcionen? Escríbeme.</p>
@@ -1553,7 +1694,7 @@ li.chip-conceptual{
       <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio">
 
-      <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">&gt; Enviar mensaje</button>
+      <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Enviar mensaje</button>
       <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
     </form>
   </section>
