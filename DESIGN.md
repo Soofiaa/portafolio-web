@@ -59,7 +59,7 @@ diseño de `CONTEXT.md`, que describen versiones anteriores (paleta morada y lue
 
 Un portafolio que se lee como evidencia, no como decoración. La pieza memorable es el
 nombre gigante en el héroe; los proyectos son un mosaico de tarjetas de color donde cada
-una abre con su dato más fuerte (por ejemplo "+180 tests automatizados"). Todo lo demás
+una abre con su dato más fuerte (por ejemplo "+290 tests automatizados"). Todo lo demás
 es silencioso: mucho aire, un solo acento y poco movimiento.
 
 ## 2. Color

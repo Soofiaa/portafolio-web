@@ -1478,15 +1478,16 @@ li.chip-conceptual{
           <h3>PetPal</h3>
           <span class="project-status" data-i18n="projects.petpal.status">En desarrollo activo</span>
         </div>
-        <p class="project-headline" data-i18n-html="projects.petpal.headline"><span class="num">+180</span><span class="cap">tests automatizados</span></p>
+        <p class="project-headline" data-i18n-html="projects.petpal.headline"><span class="num">+290</span><span class="cap">tests automatizados</span></p>
         <p class="project-problem" data-i18n-html="projects.petpal.problem"><strong>Problema:</strong> los dueños de mascotas pierden el control de vacunas, tratamientos y controles veterinarios — información que termina dispersa entre papeles, mensajes y la memoria, especialmente con más de una mascota.</p>
         <p class="project-solution" data-i18n-html="projects.petpal.solution"><strong>Solución:</strong> app móvil multi-mascota que centraliza el historial médico completo (vacunas, medicación, desparasitación, signos vitales), con recordatorios confiables y una ficha clínica exportable en PDF para la consulta veterinaria.</p>
-        <p class="project-process" data-i18n-html="projects.petpal.process"><strong>Proceso:</strong> +180 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas</p>
+        <p class="project-process" data-i18n-html="projects.petpal.process"><strong>Proceso:</strong> +290 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas</p>
         <p class="project-evidence-title" data-i18n="projects.petpal.evidenceTitle">Qué hay detrás del número</p>
         <ul class="project-evidence">
-          <li data-i18n-html="projects.petpal.evidence.0"><strong>+180 tests en 40 archivos.</strong> Cada cambio se comprueba de forma automática, así que corregir algo en vacunas o notificaciones no rompe otra parte sin que nadie lo note.</li>
-          <li data-i18n-html="projects.petpal.evidence.1"><strong>CI en GitHub Actions.</strong> Las pruebas corren solas y validan 250+ notificaciones simultáneas, para detectar recordatorios duplicados o perdidos antes de que lleguen a una persona.</li>
-          <li data-i18n-html="projects.petpal.evidence.2"><strong>Riverpod en las 10 entidades.</strong> La lógica de cada entidad queda separada de la interfaz, y eso permite probarla sin abrir la app.</li>
+          <li data-i18n-html="projects.petpal.evidence.0"><strong>+290 tests en 47 archivos.</strong> Hay pruebas para modelos, repositorios, providers y servicios, además de tests de widget en pantallas clave, así que un cambio que rompe algo se nota enseguida.</li>
+          <li data-i18n-html="projects.petpal.evidence.1"><strong>CI en cada push y pull request.</strong> GitHub Actions ejecuta flutter analyze y flutter test, con SQLite real instalado en el runner en vez de una simulación.</li>
+          <li data-i18n-html="projects.petpal.evidence.2"><strong>250 notificaciones sin IDs repetidos.</strong> Un test programa 250 recordatorios a la vez (25 medicaciones × 2 horarios × 5 días) y comprueba que ninguno repita ID: si dos comparten, uno pisa al otro y el aviso se pierde. La app ya tuvo ese bug una vez.</li>
+          <li data-i18n-html="projects.petpal.evidence.3"><strong>Riverpod en las 10 entidades.</strong> Cada una sigue el camino pantalla, provider, repository y base de datos, y esa lógica se prueba sin abrir la app.</li>
         </ul>
         <ul class="chips chips-mono">
           <li>Flutter</li>

@@ -89,17 +89,18 @@
       "frontend": "Frontend",
       "backend": "Backend",
       "petpal": {
-        "headline": "<span class=\"num\">+180</span><span class=\"cap\">tests automatizados</span>",
+        "headline": "<span class=\"num\">+290</span><span class=\"cap\">tests automatizados</span>",
         "evidenceTitle": "Qué hay detrás del número",
         "evidence": [
-          "<strong>+180 tests en 40 archivos.</strong> Cada cambio se comprueba de forma automática, así que corregir algo en vacunas o notificaciones no rompe otra parte sin que nadie lo note.",
-          "<strong>CI en GitHub Actions.</strong> Las pruebas corren solas y validan 250+ notificaciones simultáneas, para detectar recordatorios duplicados o perdidos antes de que lleguen a una persona.",
-          "<strong>Riverpod en las 10 entidades.</strong> La lógica de cada entidad queda separada de la interfaz, y eso permite probarla sin abrir la app."
+          "<strong>+290 tests en 47 archivos.</strong> Hay pruebas para modelos, repositorios, providers y servicios, además de tests de widget en pantallas clave, así que un cambio que rompe algo se nota enseguida.",
+          "<strong>CI en cada push y pull request.</strong> GitHub Actions ejecuta flutter analyze y flutter test, con SQLite real instalado en el runner en vez de una simulación.",
+          "<strong>250 notificaciones sin IDs repetidos.</strong> Un test programa 250 recordatorios a la vez (25 medicaciones × 2 horarios × 5 días) y comprueba que ninguno repita ID: si dos comparten, uno pisa al otro y el aviso se pierde. La app ya tuvo ese bug una vez.",
+          "<strong>Riverpod en las 10 entidades.</strong> Cada una sigue el camino pantalla, provider, repository y base de datos, y esa lógica se prueba sin abrir la app."
         ],
         "status": "En desarrollo activo",
         "problem": "<strong>Problema:</strong> los dueños de mascotas pierden el control de vacunas, tratamientos y controles veterinarios — información que termina dispersa entre papeles, mensajes y la memoria, especialmente con más de una mascota.",
         "solution": "<strong>Solución:</strong> app móvil multi-mascota que centraliza el historial médico completo (vacunas, medicación, desparasitación, signos vitales), con recordatorios confiables y una ficha clínica exportable en PDF para la consulta veterinaria.",
-        "process": "<strong>Proceso:</strong> +180 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas"
+        "process": "<strong>Proceso:</strong> +290 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas"
       },
       "finance": {
         "headline": "API REST desacoplada",
@@ -272,17 +273,18 @@
       "frontend": "Frontend",
       "backend": "Backend",
       "petpal": {
-        "headline": "<span class=\"num\">+180</span><span class=\"cap\">automated tests</span>",
+        "headline": "<span class=\"num\">+290</span><span class=\"cap\">automated tests</span>",
         "evidenceTitle": "Behind the number",
         "evidence": [
-          "<strong>180+ tests across 40 files.</strong> Every change is checked automatically, so fixing something in vaccines or notifications does not silently break another part.",
-          "<strong>CI on GitHub Actions.</strong> The tests run on their own and validate 250+ simultaneous notifications, to catch duplicated or lost reminders before they reach a person.",
-          "<strong>Riverpod across all 10 entities.</strong> Each entity's logic is kept separate from the interface, which makes it testable without opening the app."
+          "<strong>290+ tests across 47 files.</strong> There are tests for models, repositories, providers and services, plus widget tests on key screens, so a change that breaks something shows up right away.",
+          "<strong>CI on every push and pull request.</strong> GitHub Actions runs flutter analyze and flutter test, with a real SQLite installed on the runner instead of a simulation.",
+          "<strong>250 notifications with no repeated IDs.</strong> A test schedules 250 reminders at once (25 medications × 2 times × 5 days) and checks that none repeats an ID: if two share one, one overwrites the other and the alert is lost. The app had that bug once.",
+          "<strong>Riverpod across all 10 entities.</strong> Each one follows the path screen, provider, repository and database, and that logic is tested without opening the app."
         ],
         "status": "In active development",
         "problem": "<strong>Problem:</strong> pet owners lose track of vaccines, treatments, and vet checkups — information that ends up scattered across paper records, messages, and memory, especially with more than one pet.",
         "solution": "<strong>Solution:</strong> a multi-pet mobile app that centralizes the complete medical history (vaccines, medication, deworming, vital signs), with reliable reminders and an exportable PDF clinical record for the vet visit.",
-        "process": "<strong>Process:</strong> +180 automated tests · CI/CD with GitHub Actions · Layered architecture"
+        "process": "<strong>Process:</strong> +290 automated tests · CI/CD with GitHub Actions · Layered architecture"
       },
       "finance": {
         "headline": "Decoupled REST API",
