@@ -787,12 +787,25 @@ h1{
   object-fit:cover;
   display:block;
 }
-/* 75% de ancho iguala la altura del hermano 4/3 (ancho * 3/4) manteniéndola cuadrada */
-.personal-image--square{
-  width:75%;
-  aspect-ratio:1/1;
-  margin-inline:auto;
+/* La foto de música es cuadrada: se recorta a 4/3 como las otras dos, cuidando el encuadre del rostro */
+.personal-image--square img{ object-position:50% 38%; }
+/* Tercera tarjeta: sin foto, un panel de terminal ocupa el mismo marco 4/3 */
+.personal-terminal{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:6px;
+  padding:0 clamp(16px, 8%, 28px);
+  background:var(--panel-bg);
+  color:var(--panel-ink);
+  font-family:var(--font-mono);
+  font-size:clamp(12px, 1.05vw, 14px);
+  line-height:1.5;
+  white-space:nowrap;
 }
+.personal-terminal .prompt{ color:var(--panel-accent); }
+.personal-terminal .ok{ color:var(--panel-accent); }
+.personal-terminal .dim{ color:var(--panel-soft); }
 .spotify-facade{
   display:flex;
   align-items:center;
@@ -1386,6 +1399,11 @@ li.chip-conceptual{
         </button>
       </div>
       <div class="stack-group">
+        <div class="personal-image personal-terminal" aria-hidden="true">
+          <span><span class="prompt">$</span> docker compose up -d</span>
+          <span><span class="ok">✔</span> open-webui <span class="dim">Started</span></span>
+          <span><span class="ok">✔</span> librechat <span class="dim">Started</span></span>
+        </div>
         <svg class="stack-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9l-8 4.5-8-4.5v-9l8-4.5z"/><path d="M12 12l8-4.5M12 12l-8-4.5M12 12v9"/></svg>
         <h3 data-i18n="personal.docker.label">Curiosidad autodidacta</h3>
         <p data-i18n-html="personal.docker.text">Fuera de los proyectos formales, exploro herramientas de IA autohospedadas (Open WebUI, LibreChat) con contenedores Docker. Es <strong>aprendizaje autodirigido, más cercano a la curiosidad que a la certificación</strong>: cuando algo se desconfigura, entender por qué me enseña más que cualquier tutorial.</p>
