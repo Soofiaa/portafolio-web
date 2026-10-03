@@ -128,6 +128,20 @@
         "problem": "<strong>Problema:</strong> gestionar ingresos y gastos personales sin depender de una conexión a internet ni de planillas dispersas, con reportes que se puedan compartir fácilmente.",
         "solution": "<strong>Solución:</strong> aplicación de escritorio para gestión de finanzas personales (ingresos y gastos), con balance neto automático, visualización de estadísticas y exportación de reportes a Excel.",
         "process": "<strong>Proceso:</strong> auditoría de código con hallazgos documentados y remediación aplicada"
+      },
+      "aura": {
+        "status": "v1.0 · Android",
+        "headline": "<span class=\"num\">+120</span><span class=\"cap\">tests · 100 % local, sin cuenta ni servidor</span>",
+        "problem": "<strong>Problema:</strong> quería una app de seguimiento de ciclo donde los datos de salud nunca salieran del teléfono y donde la predicción fuera honesta sobre su incertidumbre.",
+        "solution": "<strong>Solución:</strong> app Android en Flutter, 100 % local, sin cuenta, sin servidor y sin analítica. Estima próximo período, ovulación y ventana fértil como un rango con nivel de confianza, y muestra la fase actual.",
+        "process": "<strong>Proceso:</strong> lógica de dominio pura (derivación de ciclos, predicción y planificación de notificaciones) separada de la interfaz y de la base de datos, validada con tests de fechas fijas y revisada con auditorías y pruebas manuales.",
+        "evidenceTitle": "Qué hay detrás de la app",
+        "evidence": [
+          "<strong>Predicción con incertidumbre explícita.</strong> Promedio ponderado de los últimos 6 ciclos y un rango con confianza baja, media o alta; si pasan más de 60 días sin datos, avisa en vez de inventar una fecha.",
+          "<strong>Ciclos derivados, no almacenados.</strong> Solo se guardan los días de sangrado, y un ciclo nuevo empieza tras 7 días de separación. Una única fuente de verdad: editar un día recalcula todo de forma consistente.",
+          "<strong>Fechas sin errores de zona horaria.</strong> Cada día se guarda como texto yyyy-MM-dd y se opera en UTC; en Chile el cambio de hora ocurre a medianoche y la medianoche local a veces no existe.",
+          "<strong>Calidad más allá de los tests.</strong> +120 tests; las auditorías y las pruebas manuales destaparon errores que los tests iniciales no cubrían, y cada corrección quedó con su prueba."
+        ]
       }
     },
     "stack": {
@@ -312,6 +326,20 @@
         "problem": "<strong>Problem:</strong> personal income and expense tracking often depends on an internet connection or scattered spreadsheets, with reports that are a hassle to share.",
         "solution": "<strong>Solution:</strong> a desktop app for managing personal finances (income and expenses), with automatic net balance calculation, visual statistics, and one-click Excel report exports.",
         "process": "<strong>Process:</strong> code audit with documented findings and applied remediation"
+      },
+      "aura": {
+        "status": "v1.0 · Android",
+        "headline": "<span class=\"num\">120+</span><span class=\"cap\">tests · 100% local, no account or server</span>",
+        "problem": "<strong>Problem:</strong> I wanted a cycle-tracking app where health data never leaves the phone and where predictions are honest about their uncertainty.",
+        "solution": "<strong>Solution:</strong> an Android app in Flutter, 100% local, with no account, no server and no analytics. It estimates the next period, ovulation and fertile window as a range with a confidence level, and shows the current phase.",
+        "process": "<strong>Process:</strong> pure domain logic (cycle derivation, prediction and notification planning) kept separate from the UI and the database, validated with fixed-date tests and reviewed through audits and manual testing.",
+        "evidenceTitle": "Behind the app",
+        "evidence": [
+          "<strong>Prediction with explicit uncertainty.</strong> A weighted average of the last 6 cycles and a range with low, medium or high confidence; after more than 60 days without data it says so instead of inventing a date.",
+          "<strong>Derived cycles, not stored.</strong> Only bleeding days are saved, and a new cycle starts after a 7-day gap. A single source of truth: editing one day recomputes everything consistently.",
+          "<strong>No time-zone bugs.</strong> Each day is stored as yyyy-MM-dd text and handled in UTC; in Chile the DST change happens at midnight, so local midnight sometimes doesn't exist.",
+          "<strong>Quality beyond the tests.</strong> 120+ tests; audits and manual testing found bugs the initial tests had missed, and each fix came with a regression test."
+        ]
       }
     },
     "stack": {

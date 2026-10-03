@@ -71,8 +71,11 @@ bloque `prefers-color-scheme` y `[data-theme="dark"]`. No dupliques hex fuera de
 - **Rosa `--accent`** es para acciones (botón principal, enlace activo, foco). Sobre rosa
   el texto va en `--on-accent` (blanco en claro, ciruela oscuro en oscuro). No uses `#fff`
   fijo sobre el acento.
-- **Tarjetas de proyecto** usan tokens `--t1-*` a `--t5-*` (fondo, tinta, tinta suave,
+- **Tarjetas de proyecto** usan tokens `--t1-*` a `--t6-*` (fondo, tinta, tinta suave,
   titular, píldora, borde). Cada tarjeta recibe su juego con la clase `pc-N`.
+  `--t6-*` (Aura) se deriva de la paleta de la app: celeste `#A8D8EA` de fondo en claro,
+  azul petróleo `#14303D` en oscuro, rosa `#FAD4D8` en la píldora y rosa `#EE8CA7` como
+  titular en oscuro (en claro se oscurece a `#8E2149`, porque `#EE8CA7` sobre celeste da 1,5:1).
 - **Panel del héroe** usa `--panel-*`.
 - Todos los pares texto/fondo cumplen WCAG AA (4,5:1); axe-core no reporta violaciones de
   contraste en claro ni oscuro, ES ni EN, escritorio ni móvil. Si cambias un token,
@@ -92,8 +95,10 @@ bloque `prefers-color-scheme` y `[data-theme="dark"]`. No dupliques hex fuera de
 
 - Héroe en dos columnas desde 820 px: nombre a la izquierda; panel de estado y foco
   profesional a la derecha. En móvil se apila.
-- Proyectos en un mosaico de 6 columnas desde 900 px (PetPal ocupa 3 columnas y 2 filas);
-  2 columnas desde 640 px; 1 columna debajo.
+- Proyectos en un mosaico de 6 columnas desde 900 px (PetPal ocupa 3 columnas y 2 filas;
+  Aura cierra el mosaico en una fila propia a todo el ancho); 2 columnas desde 640 px
+  (PetPal y Aura a todo el ancho); 1 columna debajo. Como Aura ocupa todo el ancho, sus
+  párrafos se limitan a 62ch y su evidencia va en 2 columnas desde 900 px.
 - Contacto en dos columnas desde 960 px.
 - Secciones separadas por espacio (112 px arriba), sin líneas divisorias.
 
