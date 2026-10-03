@@ -97,6 +97,13 @@
   --t5-pbg: #2A1638;
   --t5-pink: #F7F3F8;
   --t5-border: transparent;
+  --t6-bg: #A8D8EA;
+  --t6-ink: #2A1638;
+  --t6-soft: #2E4656;
+  --t6-hl: #8E2149;
+  --t6-pbg: #FAD4D8;
+  --t6-pink: #2A1638;
+  --t6-border: transparent;
   --radius: 16px;
   --radius-lg: 28px;
   --max-width: 1120px;
@@ -162,6 +169,13 @@
   --dark-t5-pbg: #F3ECF7;
   --dark-t5-pink: #1B0F26;
   --dark-t5-border: transparent;
+  --dark-t6-bg: #14303D;
+  --dark-t6-ink: #F8FAFB;
+  --dark-t6-soft: #A8D8EA;
+  --dark-t6-hl: #EE8CA7;
+  --dark-t6-pbg: #FAD4D8;
+  --dark-t6-pink: #2A1638;
+  --dark-t6-border: transparent;
 }
 
 @media (prefers-color-scheme: dark){
@@ -223,6 +237,13 @@
     --t5-pbg: var(--dark-t5-pbg);
     --t5-pink: var(--dark-t5-pink);
     --t5-border: var(--dark-t5-border);
+    --t6-bg: var(--dark-t6-bg);
+    --t6-ink: var(--dark-t6-ink);
+    --t6-soft: var(--dark-t6-soft);
+    --t6-hl: var(--dark-t6-hl);
+    --t6-pbg: var(--dark-t6-pbg);
+    --t6-pink: var(--dark-t6-pink);
+    --t6-border: var(--dark-t6-border);
   }
 }
 
@@ -284,6 +305,13 @@
   --t5-pbg: var(--dark-t5-pbg);
   --t5-pink: var(--dark-t5-pink);
   --t5-border: var(--dark-t5-border);
+  --t6-bg: var(--dark-t6-bg);
+  --t6-ink: var(--dark-t6-ink);
+  --t6-soft: var(--dark-t6-soft);
+  --t6-hl: var(--dark-t6-hl);
+  --t6-pbg: var(--dark-t6-pbg);
+  --t6-pink: var(--dark-t6-pink);
+  --t6-border: var(--dark-t6-border);
 }
 
 *{box-sizing:border-box;}
@@ -947,6 +975,7 @@ li.chip-conceptual{
 @media (min-width:640px){
   .project-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
   .pc-1{ grid-column:1 / -1; }
+  .pc-6{ grid-column:1 / -1; }
 }
 @media (min-width:900px){
   .project-grid{ grid-template-columns:repeat(6, minmax(0, 1fr)); }
@@ -955,6 +984,7 @@ li.chip-conceptual{
   .pc-3{ grid-column:4 / 7; grid-row:2; }
   .pc-4{ grid-column:1 / 4; grid-row:3; }
   .pc-5{ grid-column:4 / 7; grid-row:3; }
+  .pc-6{ grid-column:1 / -1; grid-row:4; }
 }
 .project-card{
   background:var(--tile-bg);
@@ -1001,18 +1031,18 @@ li.chip-conceptual{
   letter-spacing:-0.035em;
   color:var(--tile-hl);
 }
-.pc-1 .project-headline{
+.pc-1 .project-headline, .pc-6 .project-headline{
   display:flex;
   flex-direction:column;
   gap:4px;
   margin:18px 0 14px;
 }
-.pc-1 .num{
+.pc-1 .num, .pc-6 .num{
   font-size:clamp(5.2rem, 14vw, 9.5rem);
   line-height:0.82;
   letter-spacing:-0.055em;
 }
-.pc-1 .cap{
+.pc-1 .cap, .pc-6 .cap{
   font-size:clamp(1.4rem, 1.4vw + 0.9rem, 2rem);
   letter-spacing:-0.025em;
   color:var(--tile-ink);
@@ -1063,13 +1093,18 @@ li.chip-conceptual{
 }
 .project-card .chips{ margin-top:6px; }
 .pc-3{ --tile-chip:rgba(42,22,56,0.32); }
-.pc-1 .chips{ margin-top:auto; padding-top:12px; }
+.pc-1 .chips, .pc-6 .chips{ margin-top:auto; padding-top:12px; }
 .project-card .chips li{
   background:var(--tile-chip, color-mix(in srgb, var(--tile-ink) 12%, transparent));
   border:0;
   color:var(--tile-ink);
 }
-.pc-1 .project-link{ margin-top:14px; }
+.pc-1 .project-link, .pc-6 .project-link{ margin-top:14px; }
+/* Aura ocupa todo el ancho: se limita la línea de lectura y la evidencia va en 2 columnas */
+.pc-6 .project-problem, .pc-6 .project-solution, .pc-6 .project-process{ max-width:62ch; }
+@media (min-width:900px){
+  .pc-6 .project-evidence{ display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px 32px; }
+}
 .project-link{
   margin-top:auto;
   align-self:flex-start;
@@ -1264,6 +1299,7 @@ li.chip-conceptual{
 .pc-3{ --tile-bg:var(--t3-bg); --tile-ink:var(--t3-ink); --tile-soft:var(--t3-soft); --tile-hl:var(--t3-hl); --tile-pbg:var(--t3-pbg); --tile-pink:var(--t3-pink); --tile-border:var(--t3-border); }
 .pc-4{ --tile-bg:var(--t4-bg); --tile-ink:var(--t4-ink); --tile-soft:var(--t4-soft); --tile-hl:var(--t4-hl); --tile-pbg:var(--t4-pbg); --tile-pink:var(--t4-pink); --tile-border:var(--t4-border); }
 .pc-5{ --tile-bg:var(--t5-bg); --tile-ink:var(--t5-ink); --tile-soft:var(--t5-soft); --tile-hl:var(--t5-hl); --tile-pbg:var(--t5-pbg); --tile-pink:var(--t5-pink); --tile-border:var(--t5-border); }
+.pc-6{ --tile-bg:var(--t6-bg); --tile-ink:var(--t6-ink); --tile-soft:var(--t6-soft); --tile-hl:var(--t6-hl); --tile-pbg:var(--t6-pbg); --tile-pink:var(--t6-pink); --tile-border:var(--t6-border); }
 </style>
 <script type="application/ld+json">
 {
@@ -1583,6 +1619,31 @@ li.chip-conceptual{
           <li>Matplotlib</li>
         </ul>
         <a href="https://github.com/Soofiaa/BudgetDesk" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a>
+      </article>
+      <article class="project-card pc-6">
+        <div class="project-head">
+          <h3>Aura</h3>
+          <span class="project-status" data-i18n="projects.aura.status">v1.0 · Android</span>
+        </div>
+        <p class="project-headline" data-i18n-html="projects.aura.headline"><span class="num">+120</span><span class="cap">tests · 100 % local, sin cuenta ni servidor</span></p>
+        <p class="project-problem" data-i18n-html="projects.aura.problem"><strong>Problema:</strong> quería una app de seguimiento de ciclo donde los datos de salud nunca salieran del teléfono y donde la predicción fuera honesta sobre su incertidumbre.</p>
+        <p class="project-solution" data-i18n-html="projects.aura.solution"><strong>Solución:</strong> app Android en Flutter, 100 % local, sin cuenta, sin servidor y sin analítica. Estima próximo período, ovulación y ventana fértil como un rango con nivel de confianza, y muestra la fase actual.</p>
+        <p class="project-process" data-i18n-html="projects.aura.process"><strong>Proceso:</strong> lógica de dominio pura (derivación de ciclos, predicción y planificación de notificaciones) separada de la interfaz y de la base de datos, validada con tests de fechas fijas y revisada con auditorías y pruebas manuales.</p>
+        <p class="project-evidence-title" data-i18n="projects.aura.evidenceTitle">Qué hay detrás de la app</p>
+        <ul class="project-evidence">
+          <li data-i18n-html="projects.aura.evidence.0"><strong>Predicción con incertidumbre explícita.</strong> Promedio ponderado de los últimos 6 ciclos y un rango con confianza baja, media o alta; si pasan más de 60 días sin datos, avisa en vez de inventar una fecha.</li>
+          <li data-i18n-html="projects.aura.evidence.1"><strong>Ciclos derivados, no almacenados.</strong> Solo se guardan los días de sangrado, y un ciclo nuevo empieza tras 7 días de separación. Una única fuente de verdad: editar un día recalcula todo de forma consistente.</li>
+          <li data-i18n-html="projects.aura.evidence.2"><strong>Fechas sin errores de zona horaria.</strong> Cada día se guarda como texto yyyy-MM-dd y se opera en UTC; en Chile el cambio de hora ocurre a medianoche y la medianoche local a veces no existe.</li>
+          <li data-i18n-html="projects.aura.evidence.3"><strong>Calidad más allá de los tests.</strong> +120 tests; las auditorías y las pruebas manuales destaparon errores que los tests iniciales no cubrían, y cada corrección quedó con su prueba.</li>
+        </ul>
+        <ul class="chips chips-mono">
+          <li>Flutter</li>
+          <li>Dart</li>
+          <li>drift</li>
+          <li>SQLite</li>
+          <li>flutter_local_notifications</li>
+        </ul>
+        <a href="https://github.com/Soofiaa/Aura" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a>
       </article>
 
     </div>

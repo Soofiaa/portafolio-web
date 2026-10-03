@@ -41,6 +41,27 @@ test('el selector de idioma cambia el texto visible', async ({ page }) => {
   await expect(viewProjects).toHaveText('View projects');
 });
 
+test('la tarjeta de Aura cambia de texto entre ES y EN', async ({ page }) => {
+  const card = page.locator('.project-card', { has: page.locator('h3', { hasText: 'Aura' }) });
+  await expect(card).toBeVisible();
+
+  const headline = card.locator('[data-i18n-html="projects.aura.headline"]');
+  const evidenceTitle = card.locator('[data-i18n="projects.aura.evidenceTitle"]');
+  const problem = card.locator('[data-i18n-html="projects.aura.problem"]');
+
+  await expect(headline).toContainText('sin cuenta ni servidor');
+  await expect(evidenceTitle).toHaveText('Qué hay detrás de la app');
+  await expect(problem).toContainText('Problema:');
+
+  await page.click('.lang-btn[data-lang="en"]');
+  await expect(headline).toContainText('no account or server');
+  await expect(evidenceTitle).toHaveText('Behind the app');
+  await expect(problem).toContainText('Problem:');
+
+  await page.click('.lang-btn[data-lang="es"]');
+  await expect(evidenceTitle).toHaveText('Qué hay detrás de la app');
+});
+
 test('el modo oscuro guardado se aplica antes de que corra script.js, sin depender del esquema del SO', async ({ browser }, testInfo) => {
   // Simula: SO en modo claro, pero la persona eligió "oscuro" manualmente en una visita anterior.
   const context = await browser.newContext({
