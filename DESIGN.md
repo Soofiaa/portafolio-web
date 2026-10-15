@@ -1,32 +1,36 @@
 ---
-name: Ciruela y rosa
-description: Sistema de diseño del portafolio de Sofía Menzel (HTML/CSS/JS estático, ES/EN, claro/oscuro).
+name: Evidencia verificable
+description: Sistema de diseño del portafolio de Sofía Menzel (HTML/CSS/JS estático, ES/EN, claro/oscuro). Marca "Expediente + Circuit Bloom".
 colors:
   light:
-    bg: "#F7F3F8"
-    bg-alt: "#EDE5F2"
-    ink: "#2A1638"
-    ink-soft: "#66557A"
-    border: "#D9CCE5"
-    accent: "#C42F68"
+    bg: "#F7EEEB"
+    bg-alt: "#EBDAD7"
+    ink: "#3B2230"
+    ink-soft: "#6B5360"
+    border: "#D9C2C3"
+    accent: "#8E2F50"
     on-accent: "#FFFFFF"
-    accent-strong: "#A8235A"
-    accent-soft: "#E7DDF3"
-    accent-muted: "#7C4B9E"
-    card-bg: "#FFFFFF"
+    accent-strong: "#741F40"
+    accent-soft: "#F3E7E4"
+    card-bg: "#FFFBF9"
+    gold-fill: "#D6A84A"
+    seal-bg: "#F3E2B8"
+    seal-ink: "#5E4210"
     error: "#B42318"
   dark:
-    bg: "#1B0F26"
-    bg-alt: "#26163A"
-    ink: "#F3ECF7"
-    ink-soft: "#BDAACE"
-    border: "#4B3562"
-    accent: "#F0679A"
-    on-accent: "#1B0F26"
-    accent-strong: "#FF8DB6"
-    accent-soft: "#3A2455"
-    accent-muted: "#D2AEF0"
-    card-bg: "#2A183D"
+    bg: "#17101F"
+    bg-alt: "#211733"
+    ink: "#F5EDF3"
+    ink-soft: "#BEACC9"
+    border: "#3A2B4D"
+    accent: "#F592B3"
+    on-accent: "#17101F"
+    accent-strong: "#FFB1C9"
+    accent-soft: "#2F2245"
+    card-bg: "#221834"
+    gold-fill: "#EBC477"
+    seal-bg: "#3A2C1A"
+    seal-ink: "#F2D08F"
     error: "#FFA79B"
 typography:
   display:
@@ -39,7 +43,7 @@ typography:
   mono:
     fontFamily: JetBrains Mono
     weights: [400, 500]
-    use: solo elementos de código (archivo del panel, chips de tecnología, barra del formulario)
+    use: etiquetas de expediente (EV-01), chips de tecnología y código real
 rounded:
   base: 16px
   large: 28px
@@ -53,33 +57,32 @@ layout:
 
 **Fuente de verdad del diseño.** Si este documento y el código se contradicen, gana el
 código (`index.html`, bloque `<style>`): corrige este archivo. Reemplaza las secciones de
-diseño de `CONTEXT.md`, que describen versiones anteriores (paleta morada y luego terracota).
+diseño de `CONTEXT.md`, que describen versiones anteriores (paletas morada, terracota y ciruela/rosa).
 
 ## 1. Idea
 
-Un portafolio que se lee como evidencia, no como decoración. La pieza memorable es el
-nombre gigante en el héroe; los proyectos son un mosaico de tarjetas de color donde cada
-una abre con su dato más fuerte (por ejemplo "+290 tests automatizados"). Todo lo demás
-es silencioso: mucho aire, un solo acento y poco movimiento.
+**Evidencia verificable.** Un portafolio que se lee como un expediente: cada proyecto abre con
+su dato más fuerte (por ejemplo "+290 tests automatizados"), lleva un código `EV-0N` y un sello
+dorado que dice qué se puede verificar. El **oro significa "verificado"**: solo aparece en
+sellos, en el punto del estado y en detalles del Circuit Bloom; no se usa como color decorativo.
+La pieza memorable es el nombre gigante del héroe junto al **Circuit Bloom** (una flor cuyos
+pétalos se conectan con trazas de circuito: lo humano y lo técnico) y el resultado medido
+("1 semana → ~3 min"). Todo lo demás es silencioso: mucho aire y poco movimiento.
 
 ## 2. Color
 
-La paleta es ciruela (tinta y paneles), rosa (acción y acento) y lila (superficies suaves).
-Los tokens viven en `:root`; el modo oscuro está en tokens `--dark-*` que usan por igual el
-bloque `prefers-color-scheme` y `[data-theme="dark"]`. No dupliques hex fuera de los tokens.
+Dos temas de una misma marca: **rosa empolvado + oro** (claro) y **noche ciruela + oro**
+(oscuro). Los tokens viven en `:root`; el modo oscuro está en tokens `--dark-*` que usan por
+igual el bloque `prefers-color-scheme` y `[data-theme="dark"]`. No dupliques hex fuera de los tokens.
 
-- **Rosa `--accent`** es para acciones (botón principal, enlace activo, foco). Sobre rosa
-  el texto va en `--on-accent` (blanco en claro, ciruela oscuro en oscuro). No uses `#fff`
-  fijo sobre el acento.
-- **Tarjetas de proyecto** usan tokens `--t1-*` a `--t6-*` (fondo, tinta, tinta suave,
-  titular, píldora, borde). Cada tarjeta recibe su juego con la clase `pc-N`.
-  `--t6-*` (Aura) se deriva de la paleta de la app: celeste `#A8D8EA` de fondo en claro,
-  azul petróleo `#14303D` en oscuro, rosa `#FAD4D8` en la píldora y rosa `#EE8CA7` como
-  titular en oscuro (en claro se oscurece a `#8E2149`, porque `#EE8CA7` sobre celeste da 1,5:1).
-- **Panel del héroe** usa `--panel-*`.
-- Todos los pares texto/fondo cumplen WCAG AA (4,5:1); axe-core no reporta violaciones de
-  contraste en claro ni oscuro, ES ni EN, escritorio ni móvil. Si cambias un token,
-  vuelve a medir.
+- **Rosa `--accent`** es para acciones (botón principal, enlace activo, foco) y para los números
+  protagonistas (`--num`). Sobre rosa el texto va en `--on-accent`. No uses `#fff` fijo.
+- **Oro** (`--gold-*`, `--seal-*`, `--warm`) = verificado. Los sellos usan `--seal-bg`/`--seal-ink`.
+- **Tarjetas de proyecto** usan `--card-bg`, `--card-border` y `--card-feature` (PetPal). Ya no
+  existen los tokens `--t1-*` a `--t6-*`.
+- **Panel del héroe** usa `--panel-*`; el Circuit Bloom usa `--petal*`, `--trace` y `--gold-line`.
+- Todos los pares texto/fondo cumplen WCAG AA (4,5:1); axe-core no reporta violaciones en claro
+  ni oscuro, ES ni EN, escritorio ni móvil. Si cambias un token, vuelve a medir.
 
 ## 3. Tipografía
 
@@ -87,26 +90,29 @@ bloque `prefers-color-scheme` y `[data-theme="dark"]`. No dupliques hex fuera de
   Tracking ajustado (-0,035 a -0,055 em) y interlineado 0,85 a 1,05.
 - **Instrument Sans** para el cuerpo (1,0625 rem, interlineado 1,6). Líneas de 62 caracteres
   como máximo en párrafos de lectura.
-- **JetBrains Mono** solo donde hay código real. No la uses para etiquetas decorativas.
+- **JetBrains Mono** para las etiquetas de expediente (`EV-01`), los chips de tecnología y el código real. No la uses en párrafos ni titulares.
 - Sin mayúsculas sostenidas, sin eyebrows con símbolos y sin acentuar una sola palabra de
   un titular.
 
 ## 4. Layout
 
-- Héroe en dos columnas desde 820 px: nombre a la izquierda; panel de estado y foco
-  profesional a la derecha. En móvil se apila.
-- Proyectos en un mosaico de 6 columnas desde 900 px (PetPal ocupa 3 columnas y 2 filas;
-  Aura cierra el mosaico en una fila propia a todo el ancho); 2 columnas desde 640 px
-  (PetPal y Aura a todo el ancho); 1 columna debajo. Como Aura ocupa todo el ancho, sus
-  párrafos se limitan a 62ch y su evidencia va en 2 columnas desde 900 px.
+- Héroe en dos columnas desde 880 px: nombre y mensaje a la izquierda; Circuit Bloom, resultado
+  medido y foco profesional a la derecha. En móvil se apila.
+- Proyectos en 6 columnas desde 900 px: PetPal y Job-tracker (3 columnas cada uno), Aura a todo el
+  ancho, y Finanzas, POS y BudgetDesk (2 columnas cada uno). Desde 640 px, 2 columnas con Aura y
+  BudgetDesk a todo el ancho; 1 columna debajo. Los párrafos de Aura se limitan a 62ch y su
+  evidencia va en 2 columnas desde 900 px.
 - Contacto en dos columnas desde 960 px.
 - Secciones separadas por espacio (112 px arriba), sin líneas divisorias.
 
 ## 5. Movimiento
 
-Solo respuestas a una acción: hover de botones y tarjetas (3 px), subrayado del enlace
-activo, scroll suave. No hay animaciones al cargar ni al hacer scroll. `prefers-reduced-motion`
-anula transiciones.
+Pocas y con propósito. Solo si la persona no pidió reducir el movimiento
+(`prefers-reduced-motion: no-preference`): entrada escalonada del mensaje, los botones y el estado
+del héroe, el Circuit Bloom que se dibuja (pétalos que crecen, trazas que se trazan, nodos que
+aparecen) y el panel de resultado. El `h1` no se anima a propósito: es el candidato a LCP.
+Además, hover de botones y tarjetas (3 px), subrayado del enlace activo y scroll suave. No hay
+animaciones al hacer scroll. Con `prefers-reduced-motion: reduce` todo queda estático.
 
 ## 6. Reglas para cambios futuros
 
@@ -114,13 +120,16 @@ anula transiciones.
 2. Todo texto visible nuevo va con `data-i18n` y su valor en `i18n/i18n.json` (es y en); el texto
    por defecto del HTML debe coincidir con `es` (`scripts/check_i18n_sync.py`).
 3. Mantén los ids y atributos que usan los tests (`#contact-form`, `#theme-toggle`,
-   `#spotify-facade`, `data-i18n="hero.viewProjects"`).
+   `#spotify-facade`, `data-i18n="hero.viewProjects"`, la clase `.project-card` y las claves
+   `projects.aura.*`).
 4. Sin build step: HTML, CSS y JS estáticos.
 5. Antes de publicar: `npx html-validate index.html`, `python scripts/check_i18n_sync.py`,
    `npm run test:e2e`.
 
 ## 7. Activos de marca
 
-- `assets/og-image.jpg` (1200×630): fondo ciruela, nombre en Bricolage 800, círculo rosa.
-- `apple-touch-icon.png` (180×180): "SM" sobre ciruela con punto rosa.
-- Favicon: SVG en línea dentro de `index.html` (cuadrado redondeado ciruela, "SM" claro).
+- `assets/og-image.jpg` (1200×630): fondo noche ciruela, nombre en Bricolage 800 con "Menzel" en oro,
+  Circuit Bloom a la derecha. La versión anterior quedó en `assets/og-alternativas/og-image.v1-ciruela.jpg`.
+- `apple-touch-icon.png` (180×180): "SM" sobre ciruela con sello dorado.
+- Favicon: SVG en línea dentro de `index.html` (cuadrado redondeado ciruela, "SM" claro, sello dorado).
+- Monograma del encabezado (`.mark`): "SM" con sello dorado; es la misma firma del favicon.

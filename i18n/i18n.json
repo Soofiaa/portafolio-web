@@ -17,7 +17,7 @@
     },
     "hero": {
       "badge": "Buscando oportunidad. Remoto o híbrido, en Viña del Mar, Valparaíso y Santiago.",
-      "role": "Ingeniera en Ejecución Informática con enfoque en resultados: automatización, análisis funcional y QA.",
+      "role": "Ingeniera en Ejecución Informática. Convierto procesos de negocio en sistemas que funcionan, y los dejo probados y explicados.",
       "viewProjects": "Ver proyectos",
       "getInTouch": "Hablemos",
       "downloadCv": "Descargar CV",
@@ -27,13 +27,12 @@
         "backend": "Backend junior"
       },
       "metric": {
-        "eyebrow": "Estado del proyecto",
-        "from": "Prototipo",
-        "toSr": "hasta",
-        "to": "Producción",
-        "caption": "Sistema de punto de venta entregado a un cliente real.",
-        "check1": "Cliente real, en uso operativo activo",
-        "check2": "Desarrollado en menos de 2 meses"
+        "eyebrow": "Resultado medido",
+        "seal": "Práctica profesional",
+        "from": "1 semana",
+        "toSr": "a",
+        "to": "~3 min",
+        "caption": "Cálculo de comisiones automatizado con Python en Dental Laval."
       }
     },
     "personal": {
@@ -92,12 +91,12 @@
         "headline": "<span class=\"num\">+290</span><span class=\"cap\">tests automatizados</span>",
         "evidenceTitle": "Qué hay detrás del número",
         "evidence": [
-          "<strong>+290 tests en 47 archivos.</strong> Hay pruebas para modelos, repositorios, providers y servicios, además de tests de widget en pantallas clave, así que un cambio que rompe algo se nota enseguida.",
+          "<strong>+290 tests en 48 archivos.</strong> Hay pruebas para modelos, repositorios, providers y servicios, además de tests de widget en pantallas clave, así que un cambio que rompe algo se nota enseguida.",
           "<strong>CI en cada push y pull request.</strong> GitHub Actions ejecuta flutter analyze y flutter test, con SQLite real instalado en el runner en vez de una simulación.",
           "<strong>250 notificaciones sin IDs repetidos.</strong> Un test programa 250 recordatorios a la vez (25 medicaciones × 2 horarios × 5 días) y comprueba que ninguno repita ID: si dos comparten, uno pisa al otro y el aviso se pierde. La app ya tuvo ese bug una vez.",
           "<strong>Riverpod en las 10 entidades.</strong> Cada una sigue el camino pantalla, provider, repository y base de datos, y esa lógica se prueba sin abrir la app."
         ],
-        "status": "En desarrollo activo",
+        "status": "CI en cada push",
         "problem": "<strong>Problema:</strong> los dueños de mascotas pierden el control de vacunas, tratamientos y controles veterinarios — información que termina dispersa entre papeles, mensajes y la memoria, especialmente con más de una mascota.",
         "solution": "<strong>Solución:</strong> app móvil multi-mascota que centraliza el historial médico completo (vacunas, medicación, desparasitación, signos vitales), con recordatorios confiables y una ficha clínica exportable en PDF para la consulta veterinaria.",
         "process": "<strong>Proceso:</strong> +290 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas"
@@ -115,23 +114,19 @@
         "meta": "Entregado a cliente real · actualmente en uso",
         "problem": "<strong>Problema:</strong> negocios pequeños necesitan un punto de venta simple, sin la complejidad de un sistema comercial.",
         "solution": "<strong>Solución:</strong> sistema de punto de venta liviano para gestionar ventas e inventario.",
-        "process": "<strong>Proceso:</strong> cobertura de tests dirigida por riesgo de negocio, con criterio explícito de qué NO testear y por qué · Entregado a cliente real, en uso productivo"
-      },
-      "jobbi": {
-        "headline": "Detecta 10 portales de empleo",
-        "problem": "<strong>Problema:</strong> llevar el registro de postulaciones laborales (empresas, estados, fechas de seguimiento) de forma manual es desordenado y fácil de perder.",
-        "solution": "<strong>Solución:</strong> aplicación de escritorio para centralizar y dar seguimiento ordenado a todas las postulaciones laborales, con dashboard de métricas y exportación a Excel.",
-        "process": "<strong>Proceso:</strong> empaquetado standalone (.exe + instalador Inno Setup), autodetección de 10 portales de empleo, y decisión de seguridad documentada (uso exclusivo de anon key de Supabase)."
+        "process": "<strong>Proceso:</strong> cobertura de tests dirigida por riesgo de negocio, con criterio explícito de qué NO testear y por qué · Entregado a cliente real, en uso productivo",
+        "status": "En uso real"
       },
       "budgetdesk": {
         "headline": "Auditoría y remediación",
         "problem": "<strong>Problema:</strong> gestionar ingresos y gastos personales sin depender de una conexión a internet ni de planillas dispersas, con reportes que se puedan compartir fácilmente.",
         "solution": "<strong>Solución:</strong> aplicación de escritorio para gestión de finanzas personales (ingresos y gastos), con balance neto automático, visualización de estadísticas y exportación de reportes a Excel.",
-        "process": "<strong>Proceso:</strong> auditoría de código con hallazgos documentados y remediación aplicada"
+        "process": "<strong>Proceso:</strong> auditoría de código con hallazgos documentados y remediación aplicada",
+        "status": "Auditado y remediado"
       },
       "aura": {
-        "status": "v1.0 · Android",
-        "headline": "<span class=\"num\">+120</span><span class=\"cap\">tests · 100 % local, sin cuenta ni servidor</span>",
+        "status": "v1.1 · en desarrollo",
+        "headline": "<span class=\"num\">1.203</span><span class=\"cap\">tests · 100 % local, sin cuenta ni servidor</span>",
         "problem": "<strong>Problema:</strong> quería una app de seguimiento de ciclo donde los datos de salud nunca salieran del teléfono y donde la predicción fuera honesta sobre su incertidumbre.",
         "solution": "<strong>Solución:</strong> app Android en Flutter, 100 % local, sin cuenta, sin servidor y sin analítica. Estima próximo período, ovulación y ventana fértil como un rango con nivel de confianza, y muestra la fase actual.",
         "process": "<strong>Proceso:</strong> lógica de dominio pura (derivación de ciclos, predicción y planificación de notificaciones) separada de la interfaz y de la base de datos, validada con tests de fechas fijas y revisada con auditorías y pruebas manuales.",
@@ -140,7 +135,23 @@
           "<strong>Predicción con incertidumbre explícita.</strong> Promedio ponderado de los últimos 6 ciclos y un rango con confianza baja, media o alta; si pasan más de 60 días sin datos, avisa en vez de inventar una fecha.",
           "<strong>Ciclos derivados, no almacenados.</strong> Solo se guardan los días de sangrado, y un ciclo nuevo empieza tras 7 días de separación. Una única fuente de verdad: editar un día recalcula todo de forma consistente.",
           "<strong>Fechas sin errores de zona horaria.</strong> Cada día se guarda como texto yyyy-MM-dd y se opera en UTC; en Chile el cambio de hora ocurre a medianoche y la medianoche local a veces no existe.",
-          "<strong>Calidad más allá de los tests.</strong> +120 tests; las auditorías y las pruebas manuales destaparon errores que los tests iniciales no cubrían, y cada corrección quedó con su prueba."
+          "<strong>Calidad más allá de los tests.</strong> 1.203 tests; las auditorías y las pruebas manuales destaparon errores que los tests iniciales no cubrían, y cada corrección quedó con su prueba."
+        ]
+      },
+      "lead": "Cada proyecto abre con su evidencia: lo que se midió, lo que se probó y lo que no se hizo.",
+      "jobtracker": {
+        "status": "480+ tests",
+        "headline": "<span class=\"num\">95 %</span><span class=\"cap\">de 1.321 ofertas se descartan solas al clasificar</span>",
+        "problem": "<strong>Problema:</strong> buscar a mano en 6 portales es repetitivo, y la mayoría de los avisos no sirve para un perfil junior (prácticas, exigencia de 2 o más años, cargos comerciales con la palabra “desarrollador”).",
+        "solution": "<strong>Solución:</strong> una aplicación local en Python que junta 6 fuentes, clasifica cada oferta con reglas explícitas según mi perfil y deja a la vista solo lo que merece una decisión, con un tablero de seguimiento de postulaciones.",
+        "process": "<strong>Proceso:</strong> reglas auditables y deterministas (cada descarte tiene una razón legible), 9 corridas completas de 6 a 8 minutos, y construcción por fases con pruebas, respaldo verificado y reversión lista antes de desplegar.",
+        "credit": "<strong>Qué es mío y qué no:</strong> Indeed y Glassdoor se obtienen con la librería JobSpy (MIT, © Cullen Watson), usada como dependencia sin modificar su código. Los lectores de los portales chilenos, el clasificador, la base de datos, el servidor, el tablero y los respaldos los escribí yo. Parte de la idea de Jobbi, mi app anterior de seguimiento de postulaciones, pero es un proyecto distinto.",
+        "evidenceTitle": "Qué hay detrás del número",
+        "evidence": [
+          "<strong>Clasificación explicable.</strong> Reglas explícitas en vez de un modelo: cada oferta sale con categoría y razón legible, y una regla que falla se corrige en una línea. Limitación conocida: la palabra clave da falsos positivos (un “Desarrollador de Negocios” entró como rol TI).",
+          "<strong>Más de 480 pruebas.</strong> pytest, más las funciones puras de la página ejecutadas con Node; en los arreglos comprobé que las pruebas fallan con el código anterior.",
+          "<strong>Datos que no se pierden.</strong> Respaldos con la API de SQLite, huella sha256 e integrity_check; el despliegue se prueba primero sobre una copia de solo lectura y deja la imagen anterior lista para volver atrás.",
+          "<strong>Cortesía con los sitios.</strong> Los lectores propios respetan robots.txt, esperan de 3 a 5 segundos entre pedidos y se detienen ante un bloqueo o un CAPTCHA: un bloqueo nunca se esquiva."
         ]
       }
     },
@@ -215,7 +226,7 @@
     },
     "hero": {
       "badge": "Open to work. Remote or hybrid, in Viña del Mar, Valparaíso and Santiago.",
-      "role": "Computer Systems Engineer with a results-driven approach: automation, functional analysis & QA.",
+      "role": "Computer Systems Engineer. I turn business processes into systems that work, and leave them tested and explained.",
       "viewProjects": "View projects",
       "getInTouch": "Let's talk",
       "downloadCv": "Download CV",
@@ -225,13 +236,12 @@
         "backend": "Junior backend"
       },
       "metric": {
-        "eyebrow": "Project status",
-        "from": "Prototype",
-        "toSr": "through to",
-        "to": "Production",
-        "caption": "Point-of-sale system delivered to a real client.",
-        "check1": "Real client, in active operational use",
-        "check2": "Built in under 2 months"
+        "eyebrow": "Measured result",
+        "seal": "Professional internship",
+        "from": "1 week",
+        "toSr": "to",
+        "to": "~3 min",
+        "caption": "Commission calculation automated with Python at Dental Laval."
       }
     },
     "personal": {
@@ -290,12 +300,12 @@
         "headline": "<span class=\"num\">+290</span><span class=\"cap\">automated tests</span>",
         "evidenceTitle": "Behind the number",
         "evidence": [
-          "<strong>290+ tests across 47 files.</strong> There are tests for models, repositories, providers and services, plus widget tests on key screens, so a change that breaks something shows up right away.",
+          "<strong>290+ tests across 48 files.</strong> There are tests for models, repositories, providers and services, plus widget tests on key screens, so a change that breaks something shows up right away.",
           "<strong>CI on every push and pull request.</strong> GitHub Actions runs flutter analyze and flutter test, with a real SQLite installed on the runner instead of a simulation.",
           "<strong>250 notifications with no repeated IDs.</strong> A test schedules 250 reminders at once (25 medications × 2 times × 5 days) and checks that none repeats an ID: if two share one, one overwrites the other and the alert is lost. The app had that bug once.",
           "<strong>Riverpod across all 10 entities.</strong> Each one follows the path screen, provider, repository and database, and that logic is tested without opening the app."
         ],
-        "status": "In active development",
+        "status": "CI on every push",
         "problem": "<strong>Problem:</strong> pet owners lose track of vaccines, treatments, and vet checkups — information that ends up scattered across paper records, messages, and memory, especially with more than one pet.",
         "solution": "<strong>Solution:</strong> a multi-pet mobile app that centralizes the complete medical history (vaccines, medication, deworming, vital signs), with reliable reminders and an exportable PDF clinical record for the vet visit.",
         "process": "<strong>Process:</strong> +290 automated tests · CI/CD with GitHub Actions · Layered architecture"
@@ -313,23 +323,19 @@
         "meta": "Delivered to a real client · currently in use",
         "problem": "<strong>Problem:</strong> small businesses need a simple point-of-sale system, without the overhead of a full commercial platform.",
         "solution": "<strong>Solution:</strong> a lightweight point-of-sale system for managing sales and inventory.",
-        "process": "<strong>Process:</strong> risk-driven test coverage, with explicit reasoning for what was deliberately left untested · Delivered to a real client, in production use"
-      },
-      "jobbi": {
-        "headline": "Detects 10 job portals",
-        "problem": "<strong>Problem:</strong> tracking job applications — companies, stages, follow-up dates — by hand gets messy fast, and things fall through the cracks.",
-        "solution": "<strong>Solution:</strong> a desktop app to centralize and track every job application in one organized place, with a metrics dashboard and Excel export.",
-        "process": "<strong>Process:</strong> standalone packaging (.exe + Inno Setup installer), auto-detection across 10 job portals, and a documented security decision (Supabase anon key only, never the service role key)."
+        "process": "<strong>Process:</strong> risk-driven test coverage, with explicit reasoning for what was deliberately left untested · Delivered to a real client, in production use",
+        "status": "In real use"
       },
       "budgetdesk": {
         "headline": "Audit and remediation",
         "problem": "<strong>Problem:</strong> personal income and expense tracking often depends on an internet connection or scattered spreadsheets, with reports that are a hassle to share.",
         "solution": "<strong>Solution:</strong> a desktop app for managing personal finances (income and expenses), with automatic net balance calculation, visual statistics, and one-click Excel report exports.",
-        "process": "<strong>Process:</strong> code audit with documented findings and applied remediation"
+        "process": "<strong>Process:</strong> code audit with documented findings and applied remediation",
+        "status": "Audited and remediated"
       },
       "aura": {
-        "status": "v1.0 · Android",
-        "headline": "<span class=\"num\">120+</span><span class=\"cap\">tests · 100% local, no account or server</span>",
+        "status": "v1.1 · in development",
+        "headline": "<span class=\"num\">1,203</span><span class=\"cap\">tests · 100% local, no account or server</span>",
         "problem": "<strong>Problem:</strong> I wanted a cycle-tracking app where health data never leaves the phone and where predictions are honest about their uncertainty.",
         "solution": "<strong>Solution:</strong> an Android app in Flutter, 100% local, with no account, no server and no analytics. It estimates the next period, ovulation and fertile window as a range with a confidence level, and shows the current phase.",
         "process": "<strong>Process:</strong> pure domain logic (cycle derivation, prediction and notification planning) kept separate from the UI and the database, validated with fixed-date tests and reviewed through audits and manual testing.",
@@ -338,7 +344,23 @@
           "<strong>Prediction with explicit uncertainty.</strong> A weighted average of the last 6 cycles and a range with low, medium or high confidence; after more than 60 days without data it says so instead of inventing a date.",
           "<strong>Derived cycles, not stored.</strong> Only bleeding days are saved, and a new cycle starts after a 7-day gap. A single source of truth: editing one day recomputes everything consistently.",
           "<strong>No time-zone bugs.</strong> Each day is stored as yyyy-MM-dd text and handled in UTC; in Chile the DST change happens at midnight, so local midnight sometimes doesn't exist.",
-          "<strong>Quality beyond the tests.</strong> 120+ tests; audits and manual testing found bugs the initial tests had missed, and each fix came with a regression test."
+          "<strong>Quality beyond the tests.</strong> 1,203 tests; audits and manual testing found bugs the initial tests had missed, and each fix came with a regression test."
+        ]
+      },
+      "lead": "Every project opens with its evidence: what was measured, what was tested and what was left out.",
+      "jobtracker": {
+        "status": "480+ tests",
+        "headline": "<span class=\"num\">95%</span><span class=\"cap\">of 1,321 job listings filtered out automatically when classified</span>",
+        "problem": "<strong>Problem:</strong> searching 6 job boards by hand is repetitive, and most listings don't fit a junior profile (internships, 2+ years required, sales roles that use the word “developer”).",
+        "solution": "<strong>Solution:</strong> a local Python app that gathers 6 sources, classifies every listing with explicit rules based on my profile and shows only what deserves a decision, with an application tracking board.",
+        "process": "<strong>Process:</strong> auditable, deterministic rules (every discard has a readable reason), 9 full runs of 6 to 8 minutes, and phased development with tests, a verified backup and a rollback ready before each deployment.",
+        "credit": "<strong>What is mine and what isn't:</strong> Indeed and Glassdoor come from the JobSpy library (MIT, © Cullen Watson), used as a dependency without modifying its code. The Chilean job-board readers, the classifier, the database, the server, the board and the backups are my own code. It grew out of the idea behind Jobbi, my earlier application-tracking app, but it is a different project.",
+        "evidenceTitle": "Behind the number",
+        "evidence": [
+          "<strong>Explainable classification.</strong> Explicit rules instead of a model: every listing gets a category and a readable reason, and a failing rule is fixed in one line. Known limitation: keyword rules give false positives (a “Business Developer” was classified as an IT role).",
+          "<strong>480+ tests.</strong> pytest, plus the page's pure functions run with Node; for fixes I checked that the tests fail against the old code.",
+          "<strong>Data that doesn't get lost.</strong> Backups use the SQLite backup API with a sha256 fingerprint and integrity_check; each deployment is tried first on a read-only copy and keeps the previous image ready for rollback.",
+          "<strong>Courtesy toward the sites.</strong> The custom readers respect robots.txt, wait 3 to 5 seconds between requests and stop at a block or CAPTCHA: a block is never bypassed."
         ]
       }
     },
