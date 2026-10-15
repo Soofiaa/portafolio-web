@@ -1,6 +1,6 @@
 // Sistema de traducción ES/EN — carga i18n/i18n.json (ambos idiomas en un
 // solo archivo), aplica el idioma activo a [data-i18n] / [data-i18n-html] /
-// [data-i18n-placeholder] / [data-i18n-alt], meta tags y <html lang>.
+// [data-i18n-placeholder] / [data-i18n-alt] / [data-i18n-aria-label], meta tags y <html lang>.
 (function () {
   const STORAGE_KEY = 'lang-preference';
   const DEFAULT_LANG = 'es';
@@ -37,16 +37,24 @@
       if (typeof value === 'string') el.setAttribute('alt', value);
     });
 
-    if (dict.meta) {
-      document.title = dict.meta.title;
+    // Las subpáginas declaran su propio bloque de metadatos con data-i18n-meta en <html>.
+    const metaKey = document.documentElement.getAttribute('data-i18n-meta');
+    const meta = (metaKey && getNested(dict, metaKey)) || dict.meta;
+    if (meta) {
+      document.title = meta.title;
       const setMetaContent = (selector, value) => {
         const el = document.querySelector(selector);
         if (el && typeof value === 'string') el.setAttribute('content', value);
       };
-      setMetaContent('meta[name="description"]', dict.meta.description);
-      setMetaContent('meta[property="og:title"]', dict.meta.title);
-      setMetaContent('meta[property="og:description"]', dict.meta.description);
+      setMetaContent('meta[name="description"]', meta.description);
+      setMetaContent('meta[property="og:title"]', meta.title);
+      setMetaContent('meta[property="og:description"]', meta.description);
     }
+
+    document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
+      const value = getNested(dict, el.getAttribute('data-i18n-aria-label'));
+      if (typeof value === 'string') el.setAttribute('aria-label', value);
+    });
 
     document.querySelectorAll('.lang-btn').forEach((btn) => {
       btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang));
@@ -65,7 +73,7 @@
     });
   }
 
-  fetch('i18n/i18n.json')
+  fetch('/i18n/i18n.json')
     .then((r) => r.json())
     .then((data) => {
       translations = data;

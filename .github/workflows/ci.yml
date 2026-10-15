@@ -24,7 +24,7 @@ jobs:
           python-version: "3.x"
 
       - name: Validate HTML
-        run: npx --yes html-validate index.html
+        run: npx --yes html-validate index.html apps/aura/index.html
 
       - name: Validate i18n JSON
         run: |

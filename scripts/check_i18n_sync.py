@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify that hardcoded ES text in index.html matches i18n/i18n.json["es"].
+"""Verify that hardcoded ES text in index.html and apps/*/index.html matches i18n/i18n.json["es"].
 
 index.html carries the default Spanish copy so the page has real content
 before i18n.js fetches i18n/i18n.json and replaces it. If the two drift
@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-HTML = (ROOT / "index.html").read_text(encoding="utf-8")
+PAGES = [ROOT / "index.html", *sorted((ROOT / "apps").glob("*/index.html"))]
 DATA = json.loads((ROOT / "i18n" / "i18n.json").read_text(encoding="utf-8"))
 ES = DATA["es"]
 
@@ -42,24 +42,26 @@ def normalize(text):
 def main():
     mismatches = []
     seen = set()
-    for match in PATTERN.finditer(HTML):
-        _tag, _attrs, _is_html, key, inner = match.groups()
-        if key in seen:
-            continue
-        seen.add(key)
-        expected = get_nested(ES, key)
-        if expected is None:
-            mismatches.append((key, "CLAVE NO ENCONTRADA EN i18n.json", inner))
-            continue
-        if normalize(inner) != normalize(str(expected)):
-            mismatches.append((key, normalize(str(expected)), normalize(inner)))
+    for page in PAGES:
+        name = str(page.relative_to(ROOT))
+        for match in PATTERN.finditer(page.read_text(encoding="utf-8")):
+            _tag, _attrs, _is_html, key, inner = match.groups()
+            if key in seen:
+                continue
+            seen.add(key)
+            expected = get_nested(ES, key)
+            if expected is None:
+                mismatches.append((key, "CLAVE NO ENCONTRADA EN i18n.json", inner, name))
+                continue
+            if normalize(inner) != normalize(str(expected)):
+                mismatches.append((key, normalize(str(expected)), normalize(inner), name))
 
     if mismatches:
         print(f"Desincronización detectada en {len(mismatches)} campo(s):\n")
-        for key, expected, actual in mismatches:
+        for key, expected, actual, name in mismatches:
             print(f"  clave: {key}")
             print(f"    i18n.json: {expected}")
-            print(f"    index.html: {actual}\n")
+            print(f"    {name}: {actual}\n")
         sys.exit(1)
 
     print(f"OK: {len(seen)} claves data-i18n verificadas, todas sincronizadas.")
