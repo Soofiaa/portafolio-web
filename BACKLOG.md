@@ -26,7 +26,7 @@ de la auditoría Lighthouse (tickets `ARQ-04` y derivados).
 
 | ID | Título | Estado |
 |----|--------|--------|
-| SEO-01 | Imagen og:image / twitter:card | 🟡 — meta tags implementados; imagen actual pendiente de rediseño (ver `VIS-02`) |
+| SEO-01 | Imagen og:image / twitter:card | 🟡 — meta tags implementados; imagen rediseñada (ver `VIS-02`) |
 | SEO-02 | JSON-LD schema.org/Person | ✅ |
 | SEO-03 | robots.txt y sitemap.xml | ✅ |
 | SEO-04 | rel="canonical" | ✅ |
@@ -56,7 +56,7 @@ resuelto — ver tablas arriba.
 | CSS-01 | `.nav-cta{ color:#fff !important }` innecesario | ✅ — quitado; se ajustó `nav a:hover` con `:not(.nav-cta)` para no romper el hover |
 | CSS-02 | `.chip-conceptual` con 3x `!important` | ✅ — selector cambiado a `li.chip-conceptual`, empata especificidad con `.chips li` y gana por orden de aparición |
 | VIS-01 | Diferenciar botón "Descargar CV" de "Contactar" | ✅ — superado: el CV se sacó del hero y se movió a `.contact-links` (ver P0-02 abajo), con su propio ícono de descarga, en vez de quedarse en el hero con un ícono |
-| VIS-02 | Rediseñar `assets/og-image.jpg` (usar el lienzo 1200×630 completo) | ⏳ — pendiente, a propósito no se tocó esta sesión; usuaria quiere revisar el resultado antes de aceptarlo |
+| VIS-02 | Rediseñar `assets/og-image.jpg` (usar el lienzo 1200×630 completo) | ✅ — rediseñado con la marca "Evidencia verificable" (Circuit Bloom); la versión anterior se guardó en `assets/og-alternativas/` — pendiente de la revisión de la usuaria |
 | P0-01 | Falta `scroll-margin-top` — header sticky tapa secciones al navegar | ✅ |
 | P0-02 | Mover botón "Descargar CV" del hero a Contacto | ✅ — hero vuelve a 2 CTAs (`Ver proyectos` + `Contactar`); CV ahora es un 4º ítem en `.contact-links` con ícono + `.mono-tag` + texto, mismo patrón que Email/LinkedIn/GitHub |
 | P1-01 | Duplicación completa de la paleta de modo oscuro | ✅ — refactor a tokens `--dark-*` como fuente única de verdad; ambos bloques (`@media` y `[data-theme="dark"]`) solo referencian esos tokens |
