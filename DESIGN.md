@@ -126,7 +126,17 @@ animaciones al hacer scroll. Con `prefers-reduced-motion: reduce` todo queda est
 5. Antes de publicar: `npx html-validate index.html`, `python scripts/check_i18n_sync.py`,
    `npm run test:e2e`.
 
-## 7. Activos de marca
+## 7. Subpáginas de apps (`apps/<app>/index.html`)
+
+Cada app publicada o en prueba tiene su página propia, con la misma marca. Los tokens, la base, el
+encabezado, los botones y los sellos viven en `assets/shared.css` (lo cargan `index.html` y las
+subpáginas); los estilos propios de cada página van inline en su HTML. Los textos van en
+`i18n/i18n.json` bajo una clave propia (`auraPage`) y la página la declara con `data-i18n-meta`
+en `<html>` para sus metadatos. Las rutas de las subpáginas son absolutas desde la raíz
+(`/assets/...`, `/i18n.js`). `check_links.py` y `check_i18n_sync.py` recorren `apps/*/index.html`,
+y el CI valida el HTML de cada una. No se enlaza a una tienda hasta que la app esté publicada.
+
+## 8. Activos de marca
 
 - `assets/og-image.jpg` (1200×630): fondo noche ciruela, nombre en Bricolage 800 con "Menzel" en oro,
   Circuit Bloom a la derecha. La versión anterior quedó en `assets/og-alternativas/og-image.v1-ciruela.jpg`.
