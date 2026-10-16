@@ -818,6 +818,24 @@ li.chip-conceptual{
   .contact-section .contact-form{ grid-column:2; grid-row:1 / span 5; margin-top:0; }
 }
 
+/* ===== Apoyo (donación opcional, discreta) ===== */
+.support{
+  margin-top:40px;
+  padding:20px 22px;
+  max-width:440px;
+  border:1px dashed var(--border);
+  border-radius:14px;
+  color:var(--ink-soft);
+  font-size:0.95rem;
+}
+.support h3{ margin:10px 0 6px; font-size:1.05rem; color:var(--ink); }
+.support p{ margin:0 0 14px; }
+.support .mono-tag{ margin:0; display:inline-block; }
+.support-btn{ display:inline-flex; align-items:center; gap:10px; }
+@media (min-width:960px){
+  .contact-section .support{ margin-top:32px; }
+}
+
 /* ===== Footer ===== */
 .site-footer{
   padding:48px 24px 64px;
@@ -1270,6 +1288,16 @@ li.chip-conceptual{
       <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Enviar mensaje</button>
       <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
     </form>
+
+    <aside class="support" aria-labelledby="support-title">
+      <p class="mono-tag" data-i18n="contact.support.tag">Opcional</p>
+      <h3 id="support-title" data-i18n="contact.support.title">Apoya mi trabajo</h3>
+      <p data-i18n="contact.support.text">Si algo de lo que publico te sirvió, puedes invitarme un café. No es necesario: leer, probar o compartir mis proyectos ya ayuda.</p>
+      <a class="btn btn-ghost support-btn" href="https://www.paypal.com/paypalme/sofiamenzeldev" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="contact.support.aria" aria-label="Donar por PayPal (se abre en una pestaña nueva)">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <span data-i18n="contact.support.cta">Donar por PayPal</span>
+      </a>
+    </aside>
   </section>
 
 </main>
