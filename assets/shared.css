@@ -433,21 +433,6 @@ nav a.active:not(.nav-cta)::after{ transform:scaleX(1); }
   cursor:not-allowed;
 }
 
-/* Sello de evidencia (oro = verificado) */
-.seal{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  background:var(--seal-bg);
-  color:var(--seal-ink);
-  border-radius:999px;
-  padding:4px 12px 4px 8px;
-  font-size:0.78rem;
-  font-weight:600;
-  line-height:1.3;
-}
-.seal svg{ width:14px; height:14px; flex:none; }
-
 /* Estado en curso (en desarrollo, en prueba): neutro, sin oro ni check, porque no es evidencia verificada */
 .status-chip{
   display:inline-flex;
@@ -469,3 +454,18 @@ nav a.active:not(.nav-cta)::after{ transform:scaleX(1); }
   border-radius:50%;
   border:1.5px solid currentColor;
 }
+
+/* Sello de evidencia (oro = verificado) */
+.seal{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:var(--seal-bg);
+  color:var(--seal-ink);
+  border-radius:999px;
+  padding:4px 12px 4px 8px;
+  font-size:0.78rem;
+  font-weight:600;
+  line-height:1.3;
+}
+.seal svg{ width:14px; height:14px; flex:none; }

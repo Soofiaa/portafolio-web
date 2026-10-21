@@ -73,6 +73,7 @@ resuelto — ver tablas arriba.
 | A11Y-01 | Foco perdido al activar la fachada de Spotify | ✅ — el wrapper del iframe recibe `tabindex="-1"` + `.focus()` explícito, con estilo `:focus` visible a juego con el resto del sitio |
 | CI-01 | Smoke tests de comportamiento (Playwright) | ✅ — `tests/e2e/site.spec.js` cubre formulario/validación nativa, persistencia de tema, cambio de idioma y fachada de Spotify; job `e2e` nuevo en `ci.yml`, no afecta el deploy (sigue sin build step) |
 | ARQ-07 | CSS inline en `index.html` (~1240 líneas) | ⏳ — sin acción por ahora; ver nota abajo |
+| VIS-03 | Los estados en curso ("v1.2 · en desarrollo", "En prueba cerrada", "En desarrollo · Aún no está en tiendas") usaban el sello dorado de "verificado" | ✅ — ahora usan `.status-chip`, neutro; el sello queda solo para evidencia comprobable |
 
 **Nota ARQ-07:** si se agrega otra sección grande o componente interactivo
 nuevo, evaluar separar el CSS a un archivo aparte con estrategia de critical
@@ -100,4 +101,3 @@ correcta.
 | APP-06 | `check_links.py`, `check_i18n_sync.py` y el `html-validate` del CI recorren también `apps/index.html` | ✅ |
 | APP-07 | Páginas propias de Job-tracker, Finanzas, POS y BudgetDesk | ⏳ — descartadas por ahora (decisión de la usuaria); siguen solo como tarjetas en la portada |
 | APP-08 | `og:image` propia para `/apps/` y `/apps/petpal/` (hoy usan `assets/og-image.jpg`) | ⏳ |
-| VIS-03 | Los estados en curso ("v1.2 · en desarrollo", "En prueba cerrada", "En desarrollo · Aún no está en tiendas") usaban el sello dorado de "verificado" | ✅ — ahora usan `.status-chip`, neutro; el sello queda solo para evidencia comprobable |
