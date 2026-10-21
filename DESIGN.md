@@ -139,6 +139,10 @@ declara con `data-i18n-meta` en `<html>` para sus metadatos. Las rutas de las su
 absolutas desde la raíz (`/assets/...`, `/i18n.js`). `check_links.py` y `check_i18n_sync.py`
 recorren `apps/index.html` y `apps/*/index.html`, y el CI valida el HTML de cada una.
 
+**Apoyo.** El bloque opcional "Apoya mi trabajo" (`.support`: borde punteado, etiqueta "Opcional" y
+botón secundario con corazón, sin logo de PayPal) aparece en Contacto de la portada y al pie de cada
+página de apps, con las mismas claves `contact.support.*`. Sus estilos viven en `assets/shared.css`.
+
 **Tiendas.** No se enlaza a una tienda hasta que la app esté publicada. Mientras tanto se muestra
 `.btn-store` como "Próximamente en Google Play": un `<a>` sin `href` con `role="link"` y
 `aria-disabled="true"` (no recibe foco ni navega), borde punteado y texto `--ink-soft`, que cumple AA
