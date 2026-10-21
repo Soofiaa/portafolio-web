@@ -1,8 +1,12 @@
 const { test, expect } = require('@playwright/test');
 
 test.beforeEach(async ({ page }) => {
+  // Espera a que i18n.js cargue i18n/i18n.json, registre el selector de idioma y aplique el idioma.
+  await page.addInitScript(() => {
+    document.addEventListener('i18n:changed', () => { window.__i18nReady = true; });
+  });
   await page.goto('/apps/aura/');
-  await expect(page.locator('html')).not.toHaveAttribute('data-lang-loading', 'en');
+  await page.waitForFunction(() => window.__i18nReady === true);
 });
 
 test('la página de Aura cambia de idioma y de metadatos', async ({ page }) => {
@@ -39,4 +43,30 @@ test('las capturas tienen texto alternativo y el portafolio enlaza a la página'
   await page.goto('/');
   await page.locator('a[href="apps/aura/"]').click();
   await expect(page).toHaveURL(/\/apps\/aura\/$/);
+});
+
+test('el botón de Google Play está deshabilitado y no es un enlace navegable', async ({ page }) => {
+  const store = page.locator('.btn-store');
+  await expect(store).toHaveText('Próximamente en Google Play');
+  await expect(store).toHaveAttribute('aria-disabled', 'true');
+  await expect(store).toBeDisabled();
+  expect(await store.getAttribute('href')).toBeNull();
+
+  await store.focus();
+  await expect(store).not.toBeFocused();
+  for (let i = 0; i < 25; i++) {
+    await page.keyboard.press('Tab');
+    expect(await page.evaluate(() => document.activeElement.classList.contains('btn-store'))).toBe(false);
+  }
+
+  await store.click({ force: true });
+  await expect(page).toHaveURL(/\/apps\/aura\/$/);
+
+  await page.click('.lang-btn[data-lang="en"]');
+  await expect(store).toHaveText('Coming soon to Google Play');
+});
+
+test('la página de Aura enlaza al índice de apps', async ({ page }) => {
+  await page.locator('nav a[href="/apps/"]').click();
+  await expect(page).toHaveURL(/\/apps\/$/);
 });

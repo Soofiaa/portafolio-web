@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es" data-i18n-meta="appsPage.meta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function () {
+  try {
+    if (localStorage.getItem('lang-preference') === 'en') {
+      document.documentElement.setAttribute('data-lang-loading', 'en');
+    }
+    const storedTheme = localStorage.getItem('theme-preference');
+    if (storedTheme === 'dark' || storedTheme === 'light') {
+      document.documentElement.setAttribute('data-theme', storedTheme);
+    }
+  } catch (e) {}
+})();
+</script>
+<style>html[data-lang-loading="en"] body{visibility:hidden}</style>
+<title>Apps · Sofía Menzel</title>
+<meta name="description" content="Las apps de Sofía Menzel: Aura, seguimiento de ciclo para Android sin cuenta ni servidor, y PetPal, el historial de salud de tus mascotas. Qué hace cada una, cómo se ve y cómo está construida.">
+<link rel="canonical" href="https://portafolio-web-theta-coral.vercel.app/apps/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://portafolio-web-theta-coral.vercel.app/apps/">
+<meta property="og:title" content="Apps · Sofía Menzel">
+<meta property="og:description" content="Las apps de Sofía Menzel: Aura, seguimiento de ciclo para Android sin cuenta ni servidor, y PetPal, el historial de salud de tus mascotas. Qué hace cada una, cómo se ve y cómo está construida.">
+<meta property="og:image" content="https://portafolio-web-theta-coral.vercel.app/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Apps · Sofía Menzel">
+<meta name="twitter:description" content="Las apps de Sofía Menzel: Aura, seguimiento de ciclo para Android sin cuenta ni servidor, y PetPal, el historial de salud de tus mascotas. Qué hace cada una, cómo se ve y cómo está construida.">
+<meta name="twitter:image" content="https://portafolio-web-theta-coral.vercel.app/assets/og-image.jpg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='26' fill='%233B2230'/%3E%3Ctext x='46' y='64' font-family='Arial, Helvetica, sans-serif' font-size='38' font-weight='800' fill='%23F7EEEB' text-anchor='middle'%3ESM%3C/text%3E%3Ccircle cx='78' cy='78' r='15' fill='%23D6A84A' stroke='%233B2230' stroke-width='6'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="/assets/shared.css">
+<style>
+/* ===== Índice de apps (subpágina): estilos propios; tokens y base en /assets/shared.css ===== */
+.intro{ padding:64px 24px 48px; }
+@media (min-width:880px){ .intro{ padding-top:88px; padding-bottom:64px; } }
+h1{
+  font-family:var(--font-display); font-weight:800;
+  font-size:clamp(4rem, 13vw, 7.6rem); line-height:0.86; letter-spacing:-0.055em;
+  margin:0 0 24px; color:var(--ink);
+}
+.lead{ max-width:34em; font-size:1.14rem; color:var(--ink-soft); margin:0; }
+
+.app-list{ list-style:none; margin:0; padding:0; display:grid; gap:24px; grid-template-columns:1fr; }
+@media (min-width:760px){ .app-list{ grid-template-columns:repeat(2, minmax(0, 1fr)); } }
+.app-card{
+  position:relative; display:flex; flex-direction:column;
+  background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--radius-lg);
+  overflow:hidden; transition:transform .25s ease, box-shadow .25s ease;
+}
+.app-card:hover{ transform:translateY(-3px); box-shadow:var(--card-shadow); }
+.app-card:has(.app-link:focus-visible){ outline:3px solid var(--accent); outline-offset:3px; }
+.app-media{
+  position:relative; height:260px; overflow:hidden; background:var(--card-feature);
+  display:flex; justify-content:center; padding-top:32px;
+}
+.app-media img{
+  display:block; width:min(52%, 220px); height:auto; align-self:flex-start;
+  border-radius:22px; border:1px solid var(--card-border); box-shadow:var(--metric-shadow);
+}
+.app-body{ display:flex; flex-direction:column; gap:12px; padding:26px 28px 30px; flex:1; }
+.app-top{ display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+.ev{ font-family:var(--font-mono); font-size:0.78rem; letter-spacing:0.02em; color:var(--ink-soft); }
+.app-card h2{
+  font-family:var(--font-display); font-weight:800; font-size:clamp(2rem, 2.4vw + 1rem, 2.6rem);
+  line-height:1; letter-spacing:-0.035em; margin:4px 0 0;
+}
+.app-link{ color:var(--ink); text-decoration:none; }
+.app-link:focus-visible{ outline:none; }
+.app-link::after{ content:""; position:absolute; inset:0; border-radius:inherit; }
+.app-desc{ margin:0; color:var(--ink-soft); max-width:46ch; }
+.app-more{ margin-top:auto; padding-top:8px; font-weight:700; color:var(--accent); }
+
+.link-row{ display:flex; gap:12px; flex-wrap:wrap; padding-top:56px; }
+.site-footer{ padding:64px 24px 64px; color:var(--ink-soft); font-size:0.9rem; }
+
+@media (prefers-reduced-motion: no-preference){
+  .rise{ opacity:0; transform:translateY(16px); animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards; animation-delay:calc(var(--i, 0) * 90ms); }
+}
+@keyframes rise{ to{ opacity:1; transform:none; } }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="skipLink">Saltar al contenido</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="/" class="mark" aria-label="Sofía Menzel">SM<svg class="mark-seal" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="var(--gold-fill)" stroke="var(--bg)" stroke-width="2"/><path d="M5.4 9.2l2.4 2.4 4.6-5.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <nav aria-label="Navegación principal">
+      <a href="/#projects" class="nav-cta" data-i18n="auraPage.nav.portfolio">Portafolio</a>
+      <div class="lang-toggle" role="group" aria-label="Selector de idioma">
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Cambiar a modo oscuro" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="intro wrap">
+    <h1 data-i18n="appsPage.h1">Apps</h1>
+    <p class="lead rise" style="--i:0" data-i18n="appsPage.lead">Apps que diseño y construyo de punta a punta. Cada una tiene su página: qué hace, cómo se ve, cómo está construida y en qué estado está.</p>
+  </section>
+
+  <div class="wrap">
+  <ul class="app-list">
+    <li class="app-card">
+      <div class="app-media"><img src="/assets/petpal/inicio.webp" width="540" height="960" alt="Pantalla Mis Mascotas de PetPal con dos mascotas y sus avisos de eventos próximos." data-i18n-alt="appsPage.petpal.alt"></div>
+      <div class="app-body">
+        <div class="app-top"><span class="ev">EV-01</span><span class="seal"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="appsPage.petpal.status">En desarrollo · Aún no está en tiendas</span></span></div>
+        <h2><a href="/apps/petpal/" class="app-link">PetPal</a></h2>
+        <p class="app-desc" data-i18n="appsPage.petpal.desc">El historial de salud de tus mascotas en un solo lugar, con recordatorios confiables y ficha clínica en PDF.</p>
+        <p class="app-more" aria-hidden="true"><span data-i18n="appsPage.petpal.link">Ver la página de PetPal</span> →</p>
+      </div>
+    </li>
+    <li class="app-card">
+      <div class="app-media"><img src="/assets/aura/inicio.webp" width="540" height="960" alt="Pantalla de Inicio de Aura con la fase actual y el próximo período estimado." data-i18n-alt="appsPage.aura.alt"></div>
+      <div class="app-body">
+        <div class="app-top"><span class="ev">EV-03</span><span class="seal"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="appsPage.aura.status">En prueba cerrada en Google Play</span></span></div>
+        <h2><a href="/apps/aura/" class="app-link">Aura</a></h2>
+        <p class="app-desc" data-i18n="appsPage.aura.desc">Seguimiento de ciclo para Android, sin cuenta, sin servidor y sin analítica: tus datos viven en tu teléfono.</p>
+        <p class="app-more" aria-hidden="true"><span data-i18n="appsPage.aura.link">Ver la página de Aura</span> →</p>
+      </div>
+    </li>
+  </ul>
+  </div>
+
+  <div class="link-row wrap">
+    <a href="/#projects" class="btn btn-ghost" data-i18n="appsPage.backLink">Volver al portafolio</a>
+  </div>
+
+</main>
+
+<footer class="site-footer wrap">
+  <p data-i18n="footer">Sofía Menzel — hecho con atención al detalle.</p>
+</footer>
+
+<script defer src="/i18n.js"></script>
+<script defer src="/script.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

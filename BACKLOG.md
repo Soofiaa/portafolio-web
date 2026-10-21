@@ -87,4 +87,16 @@ correcta.
 
 - **Sección "Personal"** — nueva sección `#personal` entre Hero y "Sobre mí" (Mascota, Juego favorito, Música), con link de nav "Personal" primero en el `<nav>`. Reutiliza el patrón visual de Stack técnico (`stack-grid` + `stack-group`), sin CSS nuevo salvo `.stack-group p`. ✅
 - **Íconos en sección "Personal"** — huella/mira/nota musical, mismo tratamiento SVG que `.theme-toggle`/`.contact-icon` (stroke + `currentColor`). Nuevo token de estilo `.stack-group-icon` (reusa `--accent-muted`). Verificado en navegador: peso visual parejo entre los 3, color correcto en ambos temas, ambos idiomas OK, nav highlight funcionando. ✅
-- **APP-01 — Página propia de Aura (`/apps/aura/`) con capturas de Play Store, ES/EN** — ✅ enlazada desde la tarjeta de Aura; falta el enlace a Google Play cuando la app se publique
+- **APP-01 — Página propia de Aura (`/apps/aura/`) con capturas de Play Store, ES/EN** — ✅ enlazada desde la tarjeta de Aura. Botón de Google Play agregado como "Próximamente en Google Play", deshabilitado (`<a>` sin `href`, `role="link"`, `aria-disabled="true"`, no recibe foco). 🟡 Falta activarlo con el enlace real cuando Aura salga de la prueba cerrada: los pasos están en un comentario junto al botón en `apps/aura/index.html`.
+
+## Sección de apps
+
+| ID | Título | Estado |
+|----|--------|--------|
+| APP-02 | Índice `/apps/` con una tarjeta por app (nombre, descripción, estado, captura), enlazado desde la sección de proyectos de la portada ("Ver todas las apps") y desde la navegación de cada página de app | ✅ — lista solo las apps con página propia (decisión de la usuaria) |
+| APP-03 | Página propia de PetPal (`/apps/petpal/`), ES/EN, con la estructura de `/apps/aura/` | ✅ — enlazada desde la tarjeta de PetPal; capturas tomadas en el emulador con datos de ejemplo, desde el código de `pet_pal` en `HEAD` |
+| APP-04 | Botón "Próximamente en Google Play" deshabilitado en las apps que no están en una tienda (estilo `.btn-store` en `assets/shared.css`) | ✅ — Aura y PetPal; 🟡 activar cada uno al publicar (ver comentario en su HTML) |
+| APP-05 | Tests e2e de la sección de apps (`tests/e2e/apps.spec.js`, `petpal.spec.js` y el botón de tienda en `aura.spec.js`) | ✅ |
+| APP-06 | `check_links.py`, `check_i18n_sync.py` y el `html-validate` del CI recorren también `apps/index.html` | ✅ |
+| APP-07 | Páginas propias de Job-tracker, Finanzas, POS y BudgetDesk | ⏳ — descartadas por ahora (decisión de la usuaria); siguen solo como tarjetas en la portada |
+| APP-08 | `og:image` propia para `/apps/` y `/apps/petpal/` (hoy usan `assets/og-image.jpg`) | ⏳ |

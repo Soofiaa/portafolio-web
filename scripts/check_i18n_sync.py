@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify that hardcoded ES text in index.html and apps/*/index.html matches i18n/i18n.json["es"].
+"""Verify that hardcoded ES text in index.html, apps/index.html and apps/*/index.html matches i18n/i18n.json["es"].
 
 index.html carries the default Spanish copy so the page has real content
 before i18n.js fetches i18n/i18n.json and replaces it. If the two drift
@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGES = [ROOT / "index.html", *sorted((ROOT / "apps").glob("*/index.html"))]
+PAGES = [ROOT / "index.html", ROOT / "apps" / "index.html", *sorted((ROOT / "apps").glob("*/index.html"))]
 DATA = json.loads((ROOT / "i18n" / "i18n.json").read_text(encoding="utf-8"))
 ES = DATA["es"]
 

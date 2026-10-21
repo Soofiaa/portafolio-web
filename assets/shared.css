@@ -414,6 +414,25 @@ nav a.active:not(.nav-cta)::after{ transform:scaleX(1); }
 }
 .btn-ghost:hover{ border-color:var(--ink); transform:translateY(-2px); }
 
+/* Botón de tienda (Google Play). Mientras la app no esté publicada va como <a> sin href,
+   con aria-disabled="true": no recibe foco ni navega. El texto usa --ink-soft (AA en ambos temas). */
+.btn-store{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  color:var(--ink);
+  border:2px solid var(--border);
+  background:transparent;
+  padding:13px 26px 13px 22px;
+}
+.btn-store svg{ width:20px; height:20px; flex-shrink:0; }
+.btn-store[href]:hover{ border-color:var(--ink); transform:translateY(-2px); }
+.btn-store[aria-disabled="true"]{
+  color:var(--ink-soft);
+  border-style:dashed;
+  cursor:not-allowed;
+}
+
 /* Sello de evidencia (oro = verificado) */
 .seal{
   display:inline-flex;

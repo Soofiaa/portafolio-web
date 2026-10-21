@@ -123,18 +123,27 @@ animaciones al hacer scroll. Con `prefers-reduced-motion: reduce` todo queda est
    `#spotify-facade`, `data-i18n="hero.viewProjects"`, la clase `.project-card` y las claves
    `projects.aura.*`).
 4. Sin build step: HTML, CSS y JS estáticos.
-5. Antes de publicar: `npx html-validate index.html`, `python scripts/check_i18n_sync.py`,
+5. Antes de publicar: `npx html-validate index.html apps/index.html apps/*/index.html`, `python scripts/check_links.py`, `python scripts/check_i18n_sync.py`,
    `npm run test:e2e`.
 
 ## 7. Subpáginas de apps (`apps/<app>/index.html`)
 
-Cada app publicada o en prueba tiene su página propia, con la misma marca. Los tokens, la base, el
-encabezado, los botones y los sellos viven en `assets/shared.css` (lo cargan `index.html` y las
-subpáginas); los estilos propios de cada página van inline en su HTML. Los textos van en
-`i18n/i18n.json` bajo una clave propia (`auraPage`) y la página la declara con `data-i18n-meta`
-en `<html>` para sus metadatos. Las rutas de las subpáginas son absolutas desde la raíz
-(`/assets/...`, `/i18n.js`). `check_links.py` y `check_i18n_sync.py` recorren `apps/*/index.html`,
-y el CI valida el HTML de cada una. No se enlaza a una tienda hasta que la app esté publicada.
+Cada app con página propia (hoy Aura y PetPal) sigue la misma estructura: héroe con estado,
+principios, capturas, qué hace, transparencia y cómo está construida. El índice `apps/index.html`
+lista una tarjeta por app (captura, `EV-0N`, estado, nombre y una línea de descripción); toda la
+tarjeta es clicable con un enlace estirado sobre el nombre. Los tokens, la base, el encabezado, los
+botones y los sellos viven en `assets/shared.css` (lo cargan `index.html` y las subpáginas); los
+estilos propios de cada página van inline en su HTML. Los textos van en `i18n/i18n.json` bajo una
+clave propia (`auraPage`, `petpalPage`, `appsPage`; los compartidos en `store`) y la página la
+declara con `data-i18n-meta` en `<html>` para sus metadatos. Las rutas de las subpáginas son
+absolutas desde la raíz (`/assets/...`, `/i18n.js`). `check_links.py` y `check_i18n_sync.py`
+recorren `apps/index.html` y `apps/*/index.html`, y el CI valida el HTML de cada una.
+
+**Tiendas.** No se enlaza a una tienda hasta que la app esté publicada. Mientras tanto se muestra
+`.btn-store` como "Próximamente en Google Play": un `<a>` sin `href` con `role="link"` y
+`aria-disabled="true"` (no recibe foco ni navega), borde punteado y texto `--ink-soft`, que cumple AA
+en ambos temas. Para activarlo basta agregar el `href` y quitar `role` y `aria-disabled`; cada
+botón lleva un comentario con los pasos.
 
 ## 8. Activos de marca
 

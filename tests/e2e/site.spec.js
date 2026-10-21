@@ -1,9 +1,12 @@
 const { test, expect } = require('@playwright/test');
 
 test.beforeEach(async ({ page }) => {
+  // Espera a que i18n.js cargue i18n/i18n.json, registre el selector de idioma y aplique el idioma.
+  await page.addInitScript(() => {
+    document.addEventListener('i18n:changed', () => { window.__i18nReady = true; });
+  });
   await page.goto('/');
-  // Espera a que i18n.js termine de cargar i18n/i18n.json y aplique el idioma.
-  await expect(page.locator('html')).not.toHaveAttribute('data-lang-loading', 'en');
+  await page.waitForFunction(() => window.__i18nReady === true);
 });
 
 test('el formulario de contacto no se envía si falta el email', async ({ page }) => {

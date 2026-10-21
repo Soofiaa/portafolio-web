@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify every local href/src referenced in index.html and apps/*/index.html points to a real file.
+"""Verify every local href/src referenced in index.html, apps/index.html and apps/*/index.html points to a real file.
 
 Las rutas relativas se resuelven desde la carpeta de cada página. Las rutas que
 empiezan con "/" se resuelven desde la raíz del repo, salvo las que inyecta la
@@ -11,7 +11,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGES = [ROOT / "index.html", *sorted((ROOT / "apps").glob("*/index.html"))]
+PAGES = [ROOT / "index.html", ROOT / "apps" / "index.html", *sorted((ROOT / "apps").glob("*/index.html"))]
 
 SKIP_PREFIXES = ("http://", "https://", "mailto:", "tel:", "#", "data:", "/_vercel/")
 

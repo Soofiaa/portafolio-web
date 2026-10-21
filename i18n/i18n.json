@@ -99,8 +99,10 @@
         "status": "CI en cada push",
         "problem": "<strong>Problema:</strong> los dueños de mascotas pierden el control de vacunas, tratamientos y controles veterinarios — información que termina dispersa entre papeles, mensajes y la memoria, especialmente con más de una mascota.",
         "solution": "<strong>Solución:</strong> app móvil multi-mascota que centraliza el historial médico completo (vacunas, medicación, desparasitación, signos vitales), con recordatorios confiables y una ficha clínica exportable en PDF para la consulta veterinaria.",
-        "process": "<strong>Proceso:</strong> +290 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas"
+        "process": "<strong>Proceso:</strong> +290 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas",
+        "page": "Ver la página de la app"
       },
+      "appsLink": "Ver todas las apps",
       "finance": {
         "headline": "API REST desacoplada",
         "status": "Finalizado y aprobado",
@@ -282,6 +284,104 @@
         "h2": "Cómo está construida",
         "text": "Flutter y Dart con una base SQLite (drift). La lógica de ciclos, la predicción y los recordatorios viven en un dominio puro, separado de la interfaz y de la base de datos, y están cubiertos por 1.296 tests."
       }
+    },
+    "store": {
+      "playSoon": "Próximamente en Google Play"
+    },
+    "appsPage": {
+      "meta": {
+        "title": "Apps · Sofía Menzel",
+        "description": "Las apps de Sofía Menzel: Aura, seguimiento de ciclo para Android sin cuenta ni servidor, y PetPal, el historial de salud de tus mascotas. Qué hace cada una, cómo se ve y cómo está construida."
+      },
+      "navLabel": "Apps",
+      "h1": "Apps",
+      "lead": "Apps que diseño y construyo de punta a punta. Cada una tiene su página: qué hace, cómo se ve, cómo está construida y en qué estado está.",
+      "aura": {
+        "desc": "Seguimiento de ciclo para Android, sin cuenta, sin servidor y sin analítica: tus datos viven en tu teléfono.",
+        "status": "En prueba cerrada en Google Play",
+        "alt": "Pantalla de Inicio de Aura con la fase actual y el próximo período estimado.",
+        "link": "Ver la página de Aura"
+      },
+      "petpal": {
+        "desc": "El historial de salud de tus mascotas en un solo lugar, con recordatorios confiables y ficha clínica en PDF.",
+        "status": "En desarrollo · Aún no está en tiendas",
+        "alt": "Pantalla Mis Mascotas de PetPal con dos mascotas y sus avisos de eventos próximos.",
+        "link": "Ver la página de PetPal"
+      },
+      "backLink": "Volver al portafolio"
+    },
+    "petpalPage": {
+      "meta": {
+        "title": "PetPal — La salud de tus mascotas, en un solo lugar · Sofía Menzel",
+        "description": "PetPal es una app móvil para llevar el historial de salud de tus mascotas: vacunas, medicación, desparasitación, peso y signos vitales, con recordatorios confiables y ficha clínica en PDF. En desarrollo, para Android."
+      },
+      "nav": {
+        "principles": "Principios",
+        "shots": "Capturas",
+        "transparency": "Transparencia",
+        "portfolio": "Portafolio"
+      },
+      "status": "En desarrollo · Android · Aún no está en tiendas",
+      "tagline": "La salud de tus mascotas, en un solo lugar",
+      "lead": "App móvil para llevar las vacunas, la medicación, la desparasitación, el peso y los signos vitales de cada mascota, con recordatorios confiables y una ficha clínica en PDF para la consulta veterinaria.",
+      "pill1": "Varias mascotas",
+      "pill2": "Recordatorios confiables",
+      "pill3": "Respaldo con contraseña",
+      "ctaCode": "Ver el código",
+      "heroAlt": "Pantalla Mis Mascotas de PetPal con dos mascotas: Olivia, con avisos de cita, vacuna y fin de medicación próximos, y Mostaza, al día.",
+      "principles": {
+        "eyebrow": "Cómo piensa PetPal",
+        "h2": "Tres decisiones de diseño",
+        "p1": {
+          "title": "Recordatorios que no se pierden",
+          "text": "Medicación con varios horarios, vacunas, desparasitación y citas: cada aviso dice el nombre de la mascota y se vuelve a programar después de reiniciar el teléfono o de restaurar un respaldo. Un test programa 250 recordatorios a la vez y comprueba que ninguno repita su ID."
+        },
+        "p2": {
+          "title": "Tus datos, en tu teléfono",
+          "text": "No hay cuenta ni servidor: todo se guarda en una base SQLite en el teléfono, con integridad referencial real. Al borrar una mascota se borra todo lo suyo, y los tests lo verifican contra SQLite real."
+        },
+        "p3": {
+          "title": "Un respaldo completo y cifrado",
+          "text": "Todos los datos, con las fotos y los documentos adjuntos, quedan en un solo archivo ZIP cifrado con AES y tu contraseña. Antes de restaurar ves la fecha del respaldo y las mascotas que incluye, y confirmas el reemplazo."
+        }
+      },
+      "shots": {
+        "eyebrow": "Capturas",
+        "h2": "Así se ve",
+        "region": "Capturas de pantalla de PetPal",
+        "note": "Las capturas están en español, el idioma de la app, y usan datos de ejemplo.",
+        "home": "Pantalla Mis Mascotas con dos tarjetas: Olivia, con avisos de cita, vacuna y fin de medicación próximos, y Mostaza, al día.",
+        "today": "Pantalla Eventos de hoy con las próximas citas, vacunas y desparasitaciones de las dos mascotas y el fin de una medicación.",
+        "meds": "Medicación de Olivia: dos tratamientos con dosis, frecuencia, fechas de inicio y fin, horarios y notas.",
+        "temperature": "Temperatura de Olivia: gráfico de los últimos días y lista de registros, con 39,3 °C destacado en rojo por estar fuera del rango normal.",
+        "calendar": "Calendario de Olivia de octubre de 2026 con la cantidad de eventos de cada día y los eventos del mes ya completados."
+      },
+      "features": {
+        "eyebrow": "Qué hace",
+        "h2": "Lo que puedes hacer con PetPal",
+        "f1": "<strong>Registrar varias mascotas,</strong> con foto, número de microchip y su edad exacta calculada sola.",
+        "f2": "<strong>Ver el día en “Hoy”:</strong> citas, próximas dosis y tratamientos activos de todas tus mascotas, ordenados por urgencia.",
+        "f3": "<strong>Llevar el historial médico:</strong> vacunas, medicación, desparasitación, peso y temperatura, con gráficos de tendencia y un aviso cuando un valor sale del rango normal.",
+        "f4": "<strong>Programar desparasitaciones recurrentes</strong> (por ejemplo, cada 3 meses) y citas con recordatorio anticipado y el lugar guardado con su enlace de Google Maps.",
+        "f5": "<strong>Guardar documentos clínicos</strong> (exámenes, radiografías, recetas), alergias alimentarias y notas de comportamiento con fotos.",
+        "f6": "<strong>Buscar cualquier texto</strong> entre todas tus mascotas con el buscador global.",
+        "f7": "<strong>Exportar la ficha clínica en PDF</strong> para la consulta veterinaria, y el historial de peso, vacunas y medicación a CSV."
+      },
+      "transparency": {
+        "eyebrow": "Transparencia",
+        "h2": "Lo que PetPal es y lo que no",
+        "t1": "<strong>Organiza, no diagnostica.</strong> Los recordatorios y los avisos de rango ayudan a llevar el control; no reemplazan la consulta veterinaria.",
+        "t2": "<strong>Estado:</strong> en desarrollo activo. Por ahora solo Android (iOS en desarrollo) y todavía no está publicada en ninguna tienda.",
+        "t3": "<strong>Solo en español por ahora;</strong> la versión en inglés está planificada.",
+        "t4": "<strong>Es un proyecto personal de portafolio,</strong> con el código abierto en GitHub.",
+        "repoLink": "Ver el repositorio",
+        "backLink": "Volver a los proyectos"
+      },
+      "inside": {
+        "eyebrow": "Por dentro",
+        "h2": "Cómo está construida",
+        "text": "Flutter y Dart, con Riverpod y una base SQLite (sqflite). Las 10 entidades siguen el mismo camino: pantalla, provider, repositorio y base de datos; los efectos secundarios, como programar recordatorios o limpiar archivos, viven en el provider. Más de 290 tests automatizados corren con GitHub Actions en cada push y pull request."
+      }
     }
   },
   "en": {
@@ -384,8 +484,10 @@
         "status": "CI on every push",
         "problem": "<strong>Problem:</strong> pet owners lose track of vaccines, treatments, and vet checkups — information that ends up scattered across paper records, messages, and memory, especially with more than one pet.",
         "solution": "<strong>Solution:</strong> a multi-pet mobile app that centralizes the complete medical history (vaccines, medication, deworming, vital signs), with reliable reminders and an exportable PDF clinical record for the vet visit.",
-        "process": "<strong>Process:</strong> +290 automated tests · CI/CD with GitHub Actions · Layered architecture"
+        "process": "<strong>Process:</strong> +290 automated tests · CI/CD with GitHub Actions · Layered architecture",
+        "page": "See the app page"
       },
+      "appsLink": "See all apps",
       "finance": {
         "headline": "Decoupled REST API",
         "status": "Completed & approved",
@@ -566,6 +668,104 @@
         "eyebrow": "Under the hood",
         "h2": "How it's built",
         "text": "Flutter and Dart with a SQLite database (drift). Cycle logic, prediction and reminders live in a pure domain layer, separate from the UI and the database, and are covered by 1,296 tests."
+      }
+    },
+    "store": {
+      "playSoon": "Coming soon to Google Play"
+    },
+    "appsPage": {
+      "meta": {
+        "title": "Apps · Sofía Menzel",
+        "description": "Sofía Menzel's apps: Aura, cycle tracking for Android with no account and no server, and PetPal, your pets' health record. What each one does, what it looks like and how it's built."
+      },
+      "navLabel": "Apps",
+      "h1": "Apps",
+      "lead": "Apps I design and build end to end. Each one has its own page: what it does, what it looks like, how it's built and where it stands.",
+      "aura": {
+        "desc": "Cycle tracking for Android with no account, no server and no analytics: your data lives on your phone.",
+        "status": "In closed testing on Google Play",
+        "alt": "Aura's Home screen showing the current phase and the next estimated period.",
+        "link": "See Aura's page"
+      },
+      "petpal": {
+        "desc": "Your pets' health record in one place, with reliable reminders and a PDF clinical record.",
+        "status": "In development · Not in stores yet",
+        "alt": "PetPal's My Pets screen with two pets and their alerts for upcoming events.",
+        "link": "See PetPal's page"
+      },
+      "backLink": "Back to the portfolio"
+    },
+    "petpalPage": {
+      "meta": {
+        "title": "PetPal — Your pets' health, all in one place · Sofía Menzel",
+        "description": "PetPal is a mobile app to keep your pets' health record: vaccines, medication, deworming, weight and vital signs, with reliable reminders and a PDF clinical record. In development, for Android."
+      },
+      "nav": {
+        "principles": "Principles",
+        "shots": "Screenshots",
+        "transparency": "Transparency",
+        "portfolio": "Portfolio"
+      },
+      "status": "In development · Android · Not in stores yet",
+      "tagline": "Your pets' health, all in one place",
+      "lead": "A mobile app to keep track of each pet's vaccines, medication, deworming, weight and vital signs, with reliable reminders and a PDF clinical record for the vet visit.",
+      "pill1": "Multiple pets",
+      "pill2": "Reliable reminders",
+      "pill3": "Password-protected backup",
+      "ctaCode": "View the code",
+      "heroAlt": "PetPal's My Pets screen with two pets: Olivia, with alerts for an upcoming appointment, vaccine and end of medication, and Mostaza, all up to date.",
+      "principles": {
+        "eyebrow": "How PetPal thinks",
+        "h2": "Three design decisions",
+        "p1": {
+          "title": "Reminders that don't get lost",
+          "text": "Medication with several daily times, vaccines, deworming and appointments: every alert names the pet and is rescheduled after the phone restarts or a backup is restored. A test schedules 250 reminders at once and checks that none repeats its ID."
+        },
+        "p2": {
+          "title": "Your data, on your phone",
+          "text": "There is no account and no server: everything is stored in a SQLite database on the phone, with real referential integrity. Deleting a pet deletes everything that belongs to it, and the tests check this against a real SQLite."
+        },
+        "p3": {
+          "title": "A complete, encrypted backup",
+          "text": "All your data, including photos and attached documents, goes into a single ZIP file encrypted with AES and your password. Before restoring you see the backup's date and the pets it includes, and you confirm the replacement."
+        }
+      },
+      "shots": {
+        "eyebrow": "Screenshots",
+        "h2": "What it looks like",
+        "region": "PetPal screenshots",
+        "note": "The screenshots are in Spanish, the app's language, and use sample data.",
+        "home": "My Pets screen with two cards: Olivia, with alerts for an upcoming appointment, vaccine and end of medication, and Mostaza, all up to date.",
+        "today": "Today's events screen with both pets' upcoming appointments, vaccines and deworming, and the end of a medication.",
+        "meds": "Olivia's medication: two treatments with dose, frequency, start and end dates, times and notes.",
+        "temperature": "Olivia's temperature: a chart of the last few days and a list of readings, with 39.3 °C highlighted in red for being outside the normal range.",
+        "calendar": "Olivia's calendar for October 2026 with the number of events on each day and the month's completed events."
+      },
+      "features": {
+        "eyebrow": "What it does",
+        "h2": "What you can do with PetPal",
+        "f1": "<strong>Add several pets,</strong> with a photo, microchip number and their exact age calculated for you.",
+        "f2": "<strong>See the day in “Today”:</strong> appointments, upcoming doses and active treatments for all your pets, sorted by urgency.",
+        "f3": "<strong>Keep the medical history:</strong> vaccines, medication, deworming, weight and temperature, with trend charts and an alert when a value falls outside the normal range.",
+        "f4": "<strong>Schedule recurring deworming</strong> (for example, every 3 months) and appointments with an advance reminder and the place saved with its Google Maps link.",
+        "f5": "<strong>Store clinical documents</strong> (lab results, X-rays, prescriptions), food allergies and behavior notes with photos.",
+        "f6": "<strong>Search any text</strong> across all your pets with the global search.",
+        "f7": "<strong>Export the clinical record as a PDF</strong> for the vet visit, and the weight, vaccine and medication history as CSV."
+      },
+      "transparency": {
+        "eyebrow": "Transparency",
+        "h2": "What PetPal is and what it isn't",
+        "t1": "<strong>It organizes; it doesn't diagnose.</strong> Reminders and range alerts help you keep track; they don't replace a vet visit.",
+        "t2": "<strong>Status:</strong> in active development. Android only for now (iOS in development), and it isn't published in any store yet.",
+        "t3": "<strong>Spanish only for now;</strong> an English version is planned.",
+        "t4": "<strong>It is a personal portfolio project,</strong> with the code open on GitHub.",
+        "repoLink": "View the repository",
+        "backLink": "Back to projects"
+      },
+      "inside": {
+        "eyebrow": "Under the hood",
+        "h2": "How it's built",
+        "text": "Flutter and Dart, with Riverpod and a SQLite database (sqflite). All 10 entities follow the same path: screen, provider, repository and database; side effects, such as scheduling reminders or cleaning up files, live in the provider. More than 290 automated tests run on GitHub Actions on every push and pull request."
       }
     }
   }
