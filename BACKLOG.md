@@ -101,3 +101,4 @@ correcta.
 | APP-06 | `check_links.py`, `check_i18n_sync.py` y el `html-validate` del CI recorren también `apps/index.html` | ✅ |
 | APP-07 | Páginas propias de Job-tracker, Finanzas, POS y BudgetDesk | ⏳ — descartadas por ahora (decisión de la usuaria); siguen solo como tarjetas en la portada |
 | APP-08 | `og:image` propia para `/apps/` y `/apps/petpal/` (hoy usan `assets/og-image.jpg`) | ⏳ |
+| APP-09 | Bloque opcional "Apoya mi trabajo" (PayPal) también al pie de `/apps/`, `/apps/aura/` y `/apps/petpal/` | ✅ — mismo bloque y claves (`contact.support.*`) que en Contacto (PR #5); sus estilos y `.mono-tag` pasaron a `assets/shared.css` |

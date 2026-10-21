@@ -59,3 +59,18 @@ test('cada tarjeta lleva a la página de su app y la portada enlaza al índice',
   await page.locator('a[href="apps/"]').click();
   await expect(page).toHaveURL(/\/apps\/$/);
 });
+
+test('las páginas de apps muestran el apoyo opcional por PayPal en ES y EN', async ({ page }) => {
+  for (const url of ['/apps/', '/apps/aura/', '/apps/petpal/']) {
+    await page.goto(url);
+    await page.waitForFunction(() => window.__i18nReady === true);
+    const link = page.locator('.support a');
+    await expect(link).toHaveAttribute('href', 'https://www.paypal.com/paypalme/sofiamenzeldev');
+    await expect(link).toHaveAttribute('target', '_blank');
+    await expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+    await expect(link).toHaveText('Donar por PayPal');
+  }
+  await page.click('.lang-btn[data-lang="en"]');
+  await expect(page.locator('.support a')).toHaveText('Donate via PayPal');
+  await expect(page.locator('.support a')).toHaveAttribute('aria-label', 'Donate via PayPal (opens in a new tab)');
+});
