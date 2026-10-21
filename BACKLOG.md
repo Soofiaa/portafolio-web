@@ -100,3 +100,4 @@ correcta.
 | APP-06 | `check_links.py`, `check_i18n_sync.py` y el `html-validate` del CI recorren también `apps/index.html` | ✅ |
 | APP-07 | Páginas propias de Job-tracker, Finanzas, POS y BudgetDesk | ⏳ — descartadas por ahora (decisión de la usuaria); siguen solo como tarjetas en la portada |
 | APP-08 | `og:image` propia para `/apps/` y `/apps/petpal/` (hoy usan `assets/og-image.jpg`) | ⏳ |
+| VIS-03 | Los estados en curso ("v1.2 · en desarrollo", "En prueba cerrada", "En desarrollo · Aún no está en tiendas") usaban el sello dorado de "verificado" | ✅ — ahora usan `.status-chip`, neutro; el sello queda solo para evidencia comprobable |

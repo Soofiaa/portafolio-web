@@ -78,6 +78,9 @@ igual el bloque `prefers-color-scheme` y `[data-theme="dark"]`. No dupliques hex
 - **Rosa `--accent`** es para acciones (botón principal, enlace activo, foco) y para los números
   protagonistas (`--num`). Sobre rosa el texto va en `--on-accent`. No uses `#fff` fijo.
 - **Oro** (`--gold-*`, `--seal-*`, `--warm`) = verificado. Los sellos usan `--seal-bg`/`--seal-ink`.
+  Solo llevan sello los hechos comprobables (tests, CI, cliente real, auditoría). Los estados en curso
+  ("en desarrollo", "en prueba cerrada") usan `.status-chip` (`assets/shared.css`): borde y texto
+  `--ink-soft`, punto hueco, sin oro ni check.
 - **Tarjetas de proyecto** usan `--card-bg`, `--card-border` y `--card-feature` (PetPal). Ya no
   existen los tokens `--t1-*` a `--t6-*`.
 - **Panel del héroe** usa `--panel-*`; el Circuit Bloom usa `--petal*`, `--trace` y `--gold-line`.
