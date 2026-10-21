@@ -22,6 +22,15 @@ test('el índice de apps lista cada app con su estado y su captura', async ({ pa
   await expect(page.locator('[data-i18n="appsPage.aura.status"]')).toHaveText('En prueba cerrada en Google Play');
 });
 
+test('en las páginas de apps el encabezado no usa el sello de verificado para estados ni características', async ({ page }) => {
+  for (const url of ['/apps/aura/', '/apps/petpal/']) {
+    await page.goto(url);
+    await expect(page.locator('.hero .status-chip')).toHaveCount(1);
+    await expect(page.locator('.hero .feature-chip')).toHaveCount(3);
+    await expect(page.locator('.hero .seal')).toHaveCount(0);
+  }
+});
+
 test('el índice de apps cambia de idioma y de metadatos', async ({ page }) => {
   const lead = page.locator('[data-i18n="appsPage.lead"]');
   await expect(lead).toContainText('Apps que diseño y construyo');
@@ -49,13 +58,4 @@ test('cada tarjeta lleva a la página de su app y la portada enlaza al índice',
   await page.goto('/');
   await page.locator('a[href="apps/"]').click();
   await expect(page).toHaveURL(/\/apps\/$/);
-});
-
-test('en las páginas de apps el encabezado no usa el sello de verificado para estados ni características', async ({ page }) => {
-  for (const url of ['/apps/aura/', '/apps/petpal/']) {
-    await page.goto(url);
-    await expect(page.locator('.hero .status-chip')).toHaveCount(1);
-    await expect(page.locator('.hero .feature-chip')).toHaveCount(3);
-    await expect(page.locator('.hero .seal')).toHaveCount(0);
-  }
 });
