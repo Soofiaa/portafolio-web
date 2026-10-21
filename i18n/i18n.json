@@ -190,6 +190,13 @@
       "linkedinLabel": "LinkedIn",
       "githubLabel": "GitHub",
       "cvLabel": "CV",
+      "support": {
+        "tag": "Opcional",
+        "title": "Apoya mi trabajo",
+        "text": "Si algo de lo que publico te sirvió, puedes invitarme un café. No es necesario: leer, probar o compartir mis proyectos ya ayuda.",
+        "cta": "Donar por PayPal",
+        "aria": "Donar por PayPal (se abre en una pestaña nueva)"
+      },
       "form": {
         "fileLabel": "contacto.form",
         "lead": "¿Tienes una propuesta o vacante? Escríbeme directamente desde aquí.",
@@ -575,6 +582,13 @@
       "linkedinLabel": "LinkedIn",
       "githubLabel": "GitHub",
       "cvLabel": "CV",
+      "support": {
+        "tag": "Optional",
+        "title": "Support my work",
+        "text": "If something I publish was useful to you, you can buy me a coffee. It's not expected: reading, trying or sharing my projects already helps.",
+        "cta": "Donate via PayPal",
+        "aria": "Donate via PayPal (opens in a new tab)"
+      },
       "form": {
         "fileLabel": "contact.form",
         "lead": "Have a proposal or an opening? Reach out directly from here.",
