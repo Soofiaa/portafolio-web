@@ -125,17 +125,17 @@
         "status": "Auditado y remediado"
       },
       "aura": {
-        "status": "v1.1 · en desarrollo",
-        "headline": "<span class=\"num\">1.203</span><span class=\"cap\">tests · 100 % local, sin cuenta ni servidor</span>",
+        "status": "v1.2 · en desarrollo",
+        "headline": "<span class=\"num\">1.296</span><span class=\"cap\">tests · local primero, sin cuenta ni servidor</span>",
         "problem": "<strong>Problema:</strong> quería una app de seguimiento de ciclo donde los datos de salud nunca salieran del teléfono y donde la predicción fuera honesta sobre su incertidumbre.",
-        "solution": "<strong>Solución:</strong> app Android en Flutter, 100 % local, sin cuenta, sin servidor y sin analítica. Estima próximo período, ovulación y ventana fértil como un rango con nivel de confianza, y muestra la fase actual.",
+        "solution": "<strong>Solución:</strong> app Android en Flutter, sin cuenta, sin servidor y sin analítica: los datos viven en el teléfono y solo salen en un respaldo cifrado, en un archivo o, si la usuaria lo activa, en su propio Google Drive. Estima próximo período, ovulación y ventana fértil como un rango con nivel de confianza, y muestra la fase actual.",
         "process": "<strong>Proceso:</strong> lógica de dominio pura (derivación de ciclos, predicción y planificación de notificaciones) separada de la interfaz y de la base de datos, validada con tests de fechas fijas y revisada con auditorías y pruebas manuales.",
         "evidenceTitle": "Qué hay detrás de la app",
         "evidence": [
           "<strong>Predicción con incertidumbre explícita.</strong> Promedio ponderado de los últimos 6 ciclos y un rango con confianza baja, media o alta; si pasan más de 60 días sin datos, avisa en vez de inventar una fecha.",
           "<strong>Ciclos derivados, no almacenados.</strong> Solo se guardan los días de sangrado, y un ciclo nuevo empieza tras 7 días de separación. Una única fuente de verdad: editar un día recalcula todo de forma consistente.",
           "<strong>Fechas sin errores de zona horaria.</strong> Cada día se guarda como texto yyyy-MM-dd y se opera en UTC; en Chile el cambio de hora ocurre a medianoche y la medianoche local a veces no existe.",
-          "<strong>Calidad más allá de los tests.</strong> 1.203 tests; las auditorías y las pruebas manuales destaparon errores que los tests iniciales no cubrían, y cada corrección quedó con su prueba."
+          "<strong>Calidad más allá de los tests.</strong> 1.296 tests; las auditorías y las pruebas manuales destaparon errores que los tests iniciales no cubrían, y cada corrección quedó con su prueba."
         ],
         "page": "Ver la página de la app"
       },
@@ -211,7 +211,7 @@
     "auraPage": {
       "meta": {
         "title": "Aura — Seguimiento de ciclo, sin cuenta y sin servidor · Sofía Menzel",
-        "description": "Aura es una app Android para registrar tu ciclo y estimar tus fases. 100 % local: sin cuenta, sin analítica y con respaldo protegido con contraseña. En prueba cerrada en Google Play."
+        "description": "Aura es una app Android para registrar tu ciclo y estimar tus fases. Sin cuenta, sin servidor y sin analítica: tus datos viven en tu teléfono, con respaldo cifrado y opcional en tu propio Google Drive. En prueba cerrada en Google Play."
       },
       "nav": {
         "principles": "Principios",
@@ -222,7 +222,7 @@
       },
       "status": "En prueba cerrada en Google Play · Solo Android",
       "tagline": "Entiende tu ciclo con calma",
-      "lead": "App Android para registrar tu ciclo y estimar tus fases, sin cuenta, sin servidor y sin analítica. Tus datos se quedan en tu teléfono.",
+      "lead": "App Android para registrar tu ciclo y estimar tus fases, sin cuenta, sin servidor y sin analítica. Tus datos viven en tu teléfono y solo salen en un respaldo que tú decides.",
       "pill1": "Sin cuenta",
       "pill2": "Sin analítica",
       "pill3": "Respaldo con contraseña",
@@ -234,8 +234,8 @@
         "eyebrow": "Cómo piensa Aura",
         "h2": "Tres decisiones de diseño",
         "p1": {
-          "title": "Tus datos no salen del teléfono",
-          "text": "Todo vive en una base SQLite dentro del almacenamiento privado de la app. Aura no tiene cuenta ni servidor, la app no pide el permiso de Internet y Android no copia sus datos a la nube."
+          "title": "Tus datos viven en tu teléfono",
+          "text": "Todo vive en una base SQLite dentro del almacenamiento privado de la app. Aura no tiene cuenta ni servidor y Android no copia sus datos a la nube. La app solo usa Internet si activas el respaldo en tu propio Google Drive."
         },
         "p2": {
           "title": "Una predicción honesta",
@@ -243,7 +243,7 @@
         },
         "p3": {
           "title": "Respaldo bajo tu control",
-          "text": "Creas un archivo de respaldo y decides dónde guardarlo. Puedes protegerlo con una contraseña: se cifra en el teléfono (AES-256-GCM, con la clave derivada con Argon2id). Aura no la guarda ni puede recuperarla."
+          "text": "Creas un archivo de respaldo y decides dónde guardarlo, o activas el respaldo automático diario en tu propio Google Drive. Se cifra en el teléfono con tu contraseña (AES-256-GCM, con la clave derivada con Argon2id), opcional en el archivo y obligatoria en Drive. Aura no la guarda ni puede recuperarla."
         }
       },
       "shots": {
@@ -265,13 +265,13 @@
         "f3": "<strong>Consultar el calendario</strong> con períodos registrados, días estimados, ventana fértil y ovulación estimadas.",
         "f4": "<strong>Entender tus patrones:</strong> duración típica del ciclo, regularidad y síntomas más frecuentes.",
         "f5": "<strong>Activar recordatorios locales</strong> con texto discreto, si quieres.",
-        "f6": "<strong>Crear y restaurar respaldos</strong> (con “Deshacer” tras importar) y borrar todos tus datos cuando quieras."
+        "f6": "<strong>Crear y restaurar respaldos</strong> (con “Deshacer” tras importar), activar el respaldo automático en tu Google Drive y borrar todos tus datos cuando quieras."
       },
       "transparency": {
         "eyebrow": "Transparencia",
         "h2": "Lo que Aura es y lo que no",
         "t1": "<strong>No es un método anticonceptivo.</strong> Las fechas son estimaciones y pueden fallar.",
-        "t2": "<strong>Estado:</strong> versión 1.1 en prueba cerrada en Google Play. Solo Android; todavía no hay versión pública en la tienda.",
+        "t2": "<strong>Estado:</strong> versión 1.2 en prueba cerrada en Google Play. Solo Android; todavía no hay versión pública en la tienda.",
         "t3": "<strong>Es un proyecto personal de portafolio,</strong> en uso real, con el código abierto en GitHub.",
         "privacyLink": "Leer la política de privacidad",
         "repoLink": "Ver el repositorio",
@@ -280,7 +280,7 @@
       "inside": {
         "eyebrow": "Por dentro",
         "h2": "Cómo está construida",
-        "text": "Flutter y Dart con una base SQLite (drift). La lógica de ciclos, la predicción y los recordatorios viven en un dominio puro, separado de la interfaz y de la base de datos, y están cubiertos por 1.203 tests."
+        "text": "Flutter y Dart con una base SQLite (drift). La lógica de ciclos, la predicción y los recordatorios viven en un dominio puro, separado de la interfaz y de la base de datos, y están cubiertos por 1.296 tests."
       }
     }
   },
@@ -410,17 +410,17 @@
         "status": "Audited and remediated"
       },
       "aura": {
-        "status": "v1.1 · in development",
-        "headline": "<span class=\"num\">1,203</span><span class=\"cap\">tests · 100% local, no account or server</span>",
+        "status": "v1.2 · in development",
+        "headline": "<span class=\"num\">1,296</span><span class=\"cap\">tests · local-first, no account or server</span>",
         "problem": "<strong>Problem:</strong> I wanted a cycle-tracking app where health data never leaves the phone and where predictions are honest about their uncertainty.",
-        "solution": "<strong>Solution:</strong> an Android app in Flutter, 100% local, with no account, no server and no analytics. It estimates the next period, ovulation and fertile window as a range with a confidence level, and shows the current phase.",
+        "solution": "<strong>Solution:</strong> an Android app in Flutter with no account, no server and no analytics: data lives on the phone and only leaves in an encrypted backup, as a file or, if the user turns it on, in their own Google Drive. It estimates the next period, ovulation and fertile window as a range with a confidence level, and shows the current phase.",
         "process": "<strong>Process:</strong> pure domain logic (cycle derivation, prediction and notification planning) kept separate from the UI and the database, validated with fixed-date tests and reviewed through audits and manual testing.",
         "evidenceTitle": "Behind the app",
         "evidence": [
           "<strong>Prediction with explicit uncertainty.</strong> A weighted average of the last 6 cycles and a range with low, medium or high confidence; after more than 60 days without data it says so instead of inventing a date.",
           "<strong>Derived cycles, not stored.</strong> Only bleeding days are saved, and a new cycle starts after a 7-day gap. A single source of truth: editing one day recomputes everything consistently.",
           "<strong>No time-zone bugs.</strong> Each day is stored as yyyy-MM-dd text and handled in UTC; in Chile the DST change happens at midnight, so local midnight sometimes doesn't exist.",
-          "<strong>Quality beyond the tests.</strong> 1,203 tests; audits and manual testing found bugs the initial tests had missed, and each fix came with a regression test."
+          "<strong>Quality beyond the tests.</strong> 1,296 tests; audits and manual testing found bugs the initial tests had missed, and each fix came with a regression test."
         ],
         "page": "See the app page"
       },
@@ -496,7 +496,7 @@
     "auraPage": {
       "meta": {
         "title": "Aura — Cycle tracking with no account and no server · Sofía Menzel",
-        "description": "Aura is an Android app to log your cycle and estimate its phases. 100% local: no account, no analytics and a password-protected backup. In closed testing on Google Play."
+        "description": "Aura is an Android app to log your cycle and estimate its phases. No account, no server and no analytics: your data lives on your phone, with an optional encrypted backup to your own Google Drive. In closed testing on Google Play."
       },
       "nav": {
         "principles": "Principles",
@@ -507,7 +507,7 @@
       },
       "status": "In closed testing on Google Play · Android only",
       "tagline": "Understand your cycle, calmly",
-      "lead": "An Android app to log your cycle and estimate its phases, with no account, no server and no analytics. Your data stays on your phone.",
+      "lead": "An Android app to log your cycle and estimate its phases, with no account, no server and no analytics. Your data lives on your phone and only leaves in a backup you choose.",
       "pill1": "No account",
       "pill2": "No analytics",
       "pill3": "Password-protected backup",
@@ -519,8 +519,8 @@
         "eyebrow": "How Aura thinks",
         "h2": "Three design decisions",
         "p1": {
-          "title": "Your data never leaves your phone",
-          "text": "Everything lives in a SQLite database inside the app's private storage. Aura has no account and no server, the app doesn't ask for the Internet permission, and Android doesn't copy its data to the cloud."
+          "title": "Your data lives on your phone",
+          "text": "Everything lives in a SQLite database inside the app's private storage. Aura has no account and no server, and Android doesn't copy its data to the cloud. The app only uses the Internet if you turn on the backup to your own Google Drive."
         },
         "p2": {
           "title": "An honest prediction",
@@ -528,7 +528,7 @@
         },
         "p3": {
           "title": "A backup under your control",
-          "text": "You create a backup file and choose where to save it. You can protect it with a password: it is encrypted on the phone (AES-256-GCM, with the key derived using Argon2id). Aura doesn't store the password and can't recover it."
+          "text": "You create a backup file and choose where to save it, or turn on the daily automatic backup to your own Google Drive. It is encrypted on the phone with your password (AES-256-GCM, with the key derived using Argon2id), optional for the file and required for Drive. Aura doesn't store the password and can't recover it."
         }
       },
       "shots": {
@@ -550,13 +550,13 @@
         "f3": "<strong>Check the calendar</strong> with logged periods, estimated days, and the estimated fertile window and ovulation.",
         "f4": "<strong>Understand your patterns:</strong> typical cycle length, regularity and most frequent symptoms.",
         "f5": "<strong>Turn on local reminders</strong> with discreet text, if you want them.",
-        "f6": "<strong>Create and restore backups</strong> (with “Undo” after importing) and delete all your data whenever you want."
+        "f6": "<strong>Create and restore backups</strong> (with “Undo” after importing), turn on the automatic backup to your Google Drive, and delete all your data whenever you want."
       },
       "transparency": {
         "eyebrow": "Transparency",
         "h2": "What Aura is and what it isn't",
         "t1": "<strong>It is not a contraceptive method.</strong> Dates are estimates and can be wrong.",
-        "t2": "<strong>Status:</strong> version 1.1 in closed testing on Google Play. Android only; there is no public store release yet.",
+        "t2": "<strong>Status:</strong> version 1.2 in closed testing on Google Play. Android only; there is no public store release yet.",
         "t3": "<strong>It is a personal portfolio project,</strong> in real use, with the code open on GitHub.",
         "privacyLink": "Read the privacy policy",
         "repoLink": "View the repository",
@@ -565,7 +565,7 @@
       "inside": {
         "eyebrow": "Under the hood",
         "h2": "How it's built",
-        "text": "Flutter and Dart with a SQLite database (drift). Cycle logic, prediction and reminders live in a pure domain layer, separate from the UI and the database, and are covered by 1,203 tests."
+        "text": "Flutter and Dart with a SQLite database (drift). Cycle logic, prediction and reminders live in a pure domain layer, separate from the UI and the database, and are covered by 1,296 tests."
       }
     }
   }
