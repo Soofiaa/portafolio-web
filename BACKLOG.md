@@ -101,4 +101,13 @@ correcta.
 | APP-06 | `check_links.py`, `check_i18n_sync.py` y el `html-validate` del CI recorren también `apps/index.html` | ✅ |
 | APP-07 | Páginas propias de Job-tracker, Finanzas, POS y BudgetDesk | ⏳ — descartadas por ahora (decisión de la usuaria); siguen solo como tarjetas en la portada |
 | APP-08 | `og:image` propia para `/apps/` y `/apps/petpal/` (hoy usan `assets/og-image.jpg`) | ⏳ |
+
+## Portada para cualquier rol informático
+
+| ID | Título | Estado |
+|----|--------|--------|
+| POS-01 | Mensaje amplio: "Construyo, pruebo y documento software que se usa de verdad"; título, etiquetas y textos dejan de limitar a análisis funcional, QA o backend | ✅ |
+| POS-02 | Nuevo orden: Proyectos y Experiencia primero; Sobre mí y Personal al final | ✅ |
+| POS-03 | Proyectos por fuerza de evidencia (Aura, POS, PetPal, Job-tracker, Finanzas, BudgetDesk) y tarjetas más livianas (2 evidencias, sin el párrafo "Proceso" repetido) | ✅ — las claves `process` y las evidencias ocultas siguen en `i18n.json` por si se quieren recuperar |
+| POS-04 | Navegación de 4 enlaces + Contacto, con menú en móvil | ✅ |
 | APP-09 | Bloque opcional "Apoya mi trabajo" (PayPal) también al pie de `/apps/`, `/apps/aura/` y `/apps/petpal/` | ✅ — mismo bloque y claves (`contact.support.*`) que en Contacto (PR #5); sus estilos y `.mono-tag` pasaron a `assets/shared.css` |

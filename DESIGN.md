@@ -102,10 +102,17 @@ igual el bloque `prefers-color-scheme` y `[data-theme="dark"]`. No dupliques hex
 
 - Héroe en dos columnas desde 880 px: nombre y mensaje a la izquierda; Circuit Bloom, resultado
   medido y foco profesional a la derecha. En móvil se apila.
-- Proyectos en 6 columnas desde 900 px: PetPal y Job-tracker (3 columnas cada uno), Aura a todo el
-  ancho, y Finanzas, POS y BudgetDesk (2 columnas cada uno). Desde 640 px, 2 columnas con Aura y
-  BudgetDesk a todo el ancho; 1 columna debajo. Los párrafos de Aura se limitan a 62ch y su
-  evidencia va en 2 columnas desde 900 px.
+- Orden de la portada, pensado para quien recluta: Héroe → Proyectos → Experiencia → Stack →
+  Educación → Certificaciones → Sobre mí → Personal → Contacto. La navegación tiene 4 enlaces
+  (Proyectos, Experiencia, Stack, Sobre mí) más Contacto; bajo 900 px van en un menú
+  (`#nav-toggle`, `aria-expanded`, se cierra al elegir un enlace o con Escape).
+- Proyectos ordenados por fuerza de evidencia, en 6 columnas desde 900 px: Aura a todo el ancho
+  (fondo `--card-feature`), POS (2 columnas) y PetPal (4), Job-tracker a todo el ancho, y Finanzas y
+  BudgetDesk (3 cada uno). Desde 640 px, 2 columnas con Aura y Job-tracker a todo el ancho; 1
+  columna debajo. En las tarjetas a todo el ancho los párrafos se limitan a 62ch y la evidencia va en
+  2 columnas desde 900 px. Las tarjetas con lista de evidencia muestran 2 puntos y no repiten el
+  párrafo "Proceso"; el detalle completo vive en la página de cada app o en su repositorio.
+- Los códigos `EV-0N` identifican cada proyecto y no cambian aunque cambie el orden.
 - Contacto en dos columnas desde 960 px.
 - Secciones separadas por espacio (112 px arriba), sin líneas divisorias.
 

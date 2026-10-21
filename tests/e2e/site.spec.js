@@ -109,3 +109,31 @@ test('la fachada de Spotify se reemplaza por un iframe al hacer clic', async ({ 
   );
   expect(focusedHasWrapperClass).toBe(true);
 });
+
+test('la portada muestra primero los proyectos y deja lo personal al final', async ({ page }) => {
+  const ids = await page.locator('main > section').evaluateAll((els) => els.map((el) => el.id));
+  expect(ids).toEqual(['hero', 'projects', 'experience', 'stack', 'educacion', 'certifications', 'about', 'personal', 'contact']);
+  const projects = await page.locator('.project-card h3').allTextContents();
+  expect(projects[0]).toBe('Aura');
+});
+
+test('en móvil el menú abre, navega y se cierra con Escape', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  const toggle = page.locator('#nav-toggle');
+  const link = page.locator('#nav-links a[href="#experience"]');
+  await expect(toggle).toBeVisible();
+  await expect(link).toBeHidden();
+
+  await toggle.click();
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  await expect(link).toBeVisible();
+  await link.click();
+  await expect(page).toHaveURL(/#experience$/);
+  await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+  await expect(link).toBeHidden();
+
+  await toggle.click();
+  await page.keyboard.press('Escape');
+  await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+  await expect(toggle).toBeFocused();
+});
