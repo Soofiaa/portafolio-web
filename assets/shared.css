@@ -433,6 +433,29 @@ nav a.active:not(.nav-cta)::after{ transform:scaleX(1); }
   cursor:not-allowed;
 }
 
+/* Chips neutros: lo que no es evidencia verificada va sin oro ni check.
+   .status-chip = estado en curso (en desarrollo, en prueba), con punto hueco; .feature-chip = característica de una app. */
+.status-chip, .feature-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  border:1px solid var(--border);
+  color:var(--ink-soft);
+  border-radius:999px;
+  padding:3px 12px 3px 10px;
+  font-size:0.78rem;
+  font-weight:600;
+  line-height:1.3;
+}
+.status-chip::before{
+  content:"";
+  width:8px;
+  height:8px;
+  flex:none;
+  border-radius:50%;
+  border:1.5px solid currentColor;
+}
+
 /* Sello de evidencia (oro = verificado) */
 .seal{
   display:inline-flex;

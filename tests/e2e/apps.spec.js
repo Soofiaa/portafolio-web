@@ -14,10 +14,21 @@ test('el índice de apps lista cada app con su estado y su captura', async ({ pa
   await expect(cards).toHaveCount(2);
   for (const card of await cards.all()) {
     await expect(card.locator('h2 a')).toHaveAttribute('href', /^\/apps\/[a-z]+\/$/);
-    await expect(card.locator('.seal')).not.toBeEmpty();
+    // Un estado en curso no es evidencia verificada: va en un chip neutro, no en el sello dorado.
+    await expect(card.locator('.status-chip')).not.toBeEmpty();
+    await expect(card.locator('.seal')).toHaveCount(0);
     expect(((await card.locator('img').getAttribute('alt')) || '').length).toBeGreaterThan(10);
   }
   await expect(page.locator('[data-i18n="appsPage.aura.status"]')).toHaveText('En prueba cerrada en Google Play');
+});
+
+test('en las páginas de apps el encabezado no usa el sello de verificado para estados ni características', async ({ page }) => {
+  for (const url of ['/apps/aura/', '/apps/petpal/']) {
+    await page.goto(url);
+    await expect(page.locator('.hero .status-chip')).toHaveCount(1);
+    await expect(page.locator('.hero .feature-chip')).toHaveCount(3);
+    await expect(page.locator('.hero .seal')).toHaveCount(0);
+  }
 });
 
 test('el índice de apps cambia de idioma y de metadatos', async ({ page }) => {

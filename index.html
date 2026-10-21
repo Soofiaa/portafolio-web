@@ -17,19 +17,19 @@
 })();
 </script>
 <style>html[data-lang-loading="en"] body{visibility:hidden}</style>
-<title>Sofía Menzel — Análisis Funcional · QA · Automatización</title>
-<meta name="description" content="Portafolio de Sofía Menzel, Ingeniera en Ejecución Informática. Análisis funcional, QA, automatización de procesos y desarrollo backend.">
+<title>Sofía Menzel — Desarrollo de software, QA y Análisis funcional</title>
+<meta name="description" content="Portafolio de Sofía Menzel, Ingeniera en Ejecución Informática. Construyo, pruebo y documento software que se usa de verdad: apps móviles, web y de escritorio, automatización y análisis funcional.">
 <link rel="canonical" href="https://portafolio-web-theta-coral.vercel.app/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://portafolio-web-theta-coral.vercel.app/">
-<meta property="og:title" content="Sofía Menzel — Análisis Funcional · QA · Automatización">
-<meta property="og:description" content="Portafolio de Sofía Menzel, Ingeniera en Ejecución Informática. Análisis funcional, QA, automatización de procesos y desarrollo backend.">
+<meta property="og:title" content="Sofía Menzel — Desarrollo de software, QA y Análisis funcional">
+<meta property="og:description" content="Portafolio de Sofía Menzel, Ingeniera en Ejecución Informática. Construyo, pruebo y documento software que se usa de verdad: apps móviles, web y de escritorio, automatización y análisis funcional.">
 <meta property="og:image" content="https://portafolio-web-theta-coral.vercel.app/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Sofía Menzel — Análisis Funcional · QA · Automatización">
-<meta name="twitter:description" content="Portafolio de Sofía Menzel, Ingeniera en Ejecución Informática. Análisis funcional, QA, automatización de procesos y desarrollo backend.">
+<meta name="twitter:title" content="Sofía Menzel — Desarrollo de software, QA y Análisis funcional">
+<meta name="twitter:description" content="Portafolio de Sofía Menzel, Ingeniera en Ejecución Informática. Construyo, pruebo y documento software que se usa de verdad: apps móviles, web y de escritorio, automatización y análisis funcional.">
 <meta name="twitter:image" content="https://portafolio-web-theta-coral.vercel.app/assets/og-image.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='26' fill='%233B2230'/%3E%3Ctext x='46' y='64' font-family='Arial, Helvetica, sans-serif' font-size='38' font-weight='800' fill='%23F7EEEB' text-anchor='middle'%3ESM%3C/text%3E%3Ccircle cx='78' cy='78' r='15' fill='%23D6A84A' stroke='%233B2230' stroke-width='6'/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -486,6 +486,25 @@ li.chip-conceptual{
   gap:10px;
   flex-wrap:wrap;
 }
+/* ===== Menú de navegación en móvil ===== */
+.nav-links{ display:flex; gap:16px; align-items:center; }
+.nav-toggle{ display:none; }
+@media (max-width:900px){
+  .nav-toggle{
+    display:flex; align-items:center; justify-content:center; width:36px; height:36px; padding:0;
+    border:1px solid var(--border); border-radius:12px; background:transparent; color:var(--ink); cursor:pointer;
+  }
+  .nav-toggle svg{ width:20px; height:20px; }
+  .nav-links{
+    display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:stretch; gap:0;
+    padding:8px 24px 16px; background:var(--bg); border-bottom:1px solid var(--border); box-shadow:var(--card-shadow);
+  }
+  .nav-links.is-open{ display:flex; }
+  .site-header .nav-links.is-open a{ display:block; padding:12px 0; font-size:1rem; border-bottom:1px solid var(--border); }
+  .site-header .nav-links.is-open a:last-child{ border-bottom:0; }
+  .site-header .nav-links a::after{ display:none; }
+}
+
 /* ===== Proyectos: expedientes ===== */
 .section-lead{
   color:var(--ink-soft);
@@ -499,16 +518,17 @@ li.chip-conceptual{
 }
 @media (min-width:640px){
   .project-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
-  .pc-3, .pc-6{ grid-column:1 / -1; }
+  .pc-3, .pc-2{ grid-column:1 / -1; }
 }
+/* Orden por fuerza de evidencia: Aura (ancho completo), POS y PetPal, Job-tracker (ancho completo), Finanzas y BudgetDesk */
 @media (min-width:900px){
   .project-grid{ grid-template-columns:repeat(6, minmax(0, 1fr)); }
-  .pc-1{ grid-column:1 / 4; }
-  .pc-2{ grid-column:4 / 7; }
   .pc-3{ grid-column:1 / -1; }
-  .pc-4{ grid-column:1 / 3; }
-  .pc-5{ grid-column:3 / 5; }
-  .pc-6{ grid-column:5 / 7; }
+  .pc-5{ grid-column:1 / 3; }
+  .pc-1{ grid-column:3 / 7; }
+  .pc-2{ grid-column:1 / -1; }
+  .pc-4{ grid-column:1 / 4; }
+  .pc-6{ grid-column:4 / 7; }
 }
 .project-card{
   background:var(--card-bg);
@@ -522,7 +542,7 @@ li.chip-conceptual{
   transition:transform .25s ease, box-shadow .25s ease;
 }
 .project-card:hover{ transform:translateY(-3px); box-shadow:var(--card-shadow); }
-.pc-1{ background:var(--card-feature); }
+.pc-3{ background:var(--card-feature); }
 .project-top{
   display:flex;
   align-items:center;
@@ -565,7 +585,7 @@ li.chip-conceptual{
   letter-spacing:-0.05em;
   color:var(--num);
 }
-.pc-1 .project-headline .num{ font-size:clamp(4rem, 9vw, 6.6rem); }
+.pc-3 .project-headline .num{ font-size:clamp(4rem, 9vw, 6.6rem); }
 .project-headline .cap{
   font-family:var(--font-body);
   font-size:1.05rem;
@@ -626,10 +646,10 @@ li.chip-conceptual{
   border:0;
   color:var(--chip-ink);
 }
-/* Aura ocupa todo el ancho: se limita la línea de lectura y la evidencia va en 2 columnas */
-.pc-3 .project-problem, .pc-3 .project-solution, .pc-3 .project-process{ max-width:62ch; }
+/* Aura y Job-tracker ocupan todo el ancho: se limita la línea de lectura y la evidencia va en 2 columnas */
+.pc-3 .project-problem, .pc-3 .project-solution, .pc-2 .project-problem, .pc-2 .project-solution, .pc-2 .project-credit{ max-width:62ch; }
 @media (min-width:900px){
-  .pc-3 .project-evidence{ display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px 32px; }
+  .pc-3 .project-evidence, .pc-2 .project-evidence{ display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px 32px; }
 }
 .project-link{
   align-self:flex-start;
@@ -861,13 +881,13 @@ li.chip-conceptual{
   <div class="wrap header-inner">
     <a href="#hero" class="mark">SM<svg class="mark-seal" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="var(--gold-fill)" stroke="var(--bg)" stroke-width="2"/><path d="M5.4 9.2l2.4 2.4 4.6-5.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     <nav aria-label="Navegación principal">
-      <a href="#personal" data-i18n="nav.personal">Personal</a>
-      <a href="#about" data-i18n="nav.about">Sobre mí</a>
-      <a href="#educacion" data-i18n="nav.educacion">Educación</a>
-      <a href="#experience" data-i18n="nav.experience">Experiencia</a>
-      <a href="#projects" data-i18n="nav.projects">Proyectos</a>
-      <a href="#stack" data-i18n="nav.stack">Stack</a>
-      <a href="#certifications" data-i18n="nav.certifications">Certificaciones</a>
+      <button type="button" id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="visually-hidden" data-i18n="nav.menu">Menú</span></button>
+      <div class="nav-links" id="nav-links">
+        <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+        <a href="#experience" data-i18n="nav.experience">Experiencia</a>
+        <a href="#stack" data-i18n="nav.stack">Stack</a>
+        <a href="#about" data-i18n="nav.about">Sobre mí</a>
+      </div>
       <a href="#contact" class="nav-cta" data-i18n="nav.contact">Contacto</a>
       <div class="lang-toggle" role="group" aria-label="Selector de idioma">
         <button type="button" class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
@@ -887,7 +907,7 @@ li.chip-conceptual{
   <section id="hero" class="hero wrap">
     <div class="hero-main">
       <h1><span class="h1-line">Sofía</span> <span class="h1-line">Menzel</span></h1>
-      <p class="role-statement rise" style="--i:2" data-i18n="hero.role">Ingeniera en Ejecución Informática. Convierto procesos de negocio en sistemas que funcionan, y los dejo probados y explicados.</p>
+      <p class="role-statement rise" style="--i:2" data-i18n="hero.role">Ingeniera en Ejecución Informática. Construyo, pruebo y documento software que se usa de verdad.</p>
       <div class="hero-actions rise" style="--i:3">
         <a href="#projects" class="btn btn-primary" data-i18n="hero.viewProjects">Ver proyectos</a>
         <a href="#contact" class="btn btn-ghost" data-i18n="hero.getInTouch">Hablemos</a>
@@ -916,124 +936,92 @@ li.chip-conceptual{
         <p class="hero-metric-caption" data-i18n="hero.metric.caption">Cálculo de comisiones automatizado con Python en Dental Laval.</p>
       </aside>
       <ul class="hero-tags">
-        <li data-i18n="hero.tags.functional">Análisis funcional</li>
+        <li data-i18n="hero.tags.dev">Desarrollo de software</li>
         <li data-i18n="hero.tags.qa">QA &amp; Automatización</li>
-        <li data-i18n="hero.tags.backend">Backend junior</li>
+        <li data-i18n="hero.tags.functional">Análisis funcional</li>
       </ul>
     </div>
   </section>
 
-  <!-- PERSONAL -->
-  <section id="personal" class="section wrap">
-    <div class="personal-heading">
-      <div>
-        <p class="eyebrow" data-i18n="personal.eyebrow">Sobre mí</p>
-        <h2 data-i18n="personal.h2">Más allá del código</h2>
-      </div>
-      <svg class="personal-motif" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z"/>
-        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(72 12 6.5)"/>
-        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(144 12 6.5)"/>
-        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(216 12 6.5)"/>
-        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(288 12 6.5)"/>
-        <circle cx="12" cy="6.5" r="0.9" fill="currentColor" stroke="none"/>
-        <path d="M12,8.5 C10.3,10.5 13.7,12.5 12,15"/>
-        <path d="M12,12 C10,12.3 9,13.6 9.5,15"/>
-        <path d="M9,17 L6.2,19.5 L9,22"/>
-        <path d="M15,17 L17.8,19.5 L15,22"/>
-        <line x1="10.8" y1="19.5" x2="13.2" y2="19.5"/>
-      </svg>
+  <!-- PROJECTS -->
+  <section id="projects" class="section wrap">
+    <p class="eyebrow" data-i18n="projects.eyebrow">Proyectos</p>
+    <h2 data-i18n="projects.h2">Proyectos personales</h2>
+    <p class="section-lead" data-i18n="projects.lead">Cada proyecto abre con su evidencia: lo que se midió, lo que se probó y lo que no se hizo.</p>
+
+    <div class="project-grid">
+
+      <article class="project-card pc-3">
+        <div class="project-top"><span class="ev">EV-03</span><span class="status-chip project-status"><span data-i18n="projects.aura.status">v1.2 · en desarrollo</span></span></div>
+        <div class="project-head"><h3>Aura</h3></div>
+        <p class="project-headline" data-i18n-html="projects.aura.headline"><span class="num">1.296</span><span class="cap">tests · local primero, sin cuenta ni servidor</span></p>
+        <p class="project-problem" data-i18n-html="projects.aura.problem"><strong>Problema:</strong> quería una app de seguimiento de ciclo donde los datos de salud nunca salieran del teléfono y donde la predicción fuera honesta sobre su incertidumbre.</p>
+        <p class="project-solution" data-i18n-html="projects.aura.solution"><strong>Solución:</strong> app Android en Flutter, sin cuenta, sin servidor y sin analítica: los datos viven en el teléfono y solo salen en un respaldo cifrado, en un archivo o, si la usuaria lo activa, en su propio Google Drive. Estima próximo período, ovulación y ventana fértil como un rango con nivel de confianza, y muestra la fase actual.</p>
+        <p class="project-evidence-title" data-i18n="projects.aura.evidenceTitle">Qué hay detrás de la app</p><ul class="project-evidence"><li data-i18n-html="projects.aura.evidence.0"><strong>Predicción con incertidumbre explícita.</strong> Promedio ponderado de los últimos 6 ciclos y un rango con confianza baja, media o alta; si pasan más de 60 días sin datos, avisa en vez de inventar una fecha.</li><li data-i18n-html="projects.aura.evidence.2"><strong>Fechas sin errores de zona horaria.</strong> Cada día se guarda como texto yyyy-MM-dd y se opera en UTC; en Chile el cambio de hora ocurre a medianoche y la medianoche local a veces no existe.</li></ul>
+        <ul class="chips chips-mono"><li>Flutter</li><li>Dart</li><li>drift</li><li>SQLite</li><li>flutter_local_notifications</li></ul>
+        <div class="project-links"><a href="apps/aura/" class="project-link"><span data-i18n="projects.aura.page">Ver la página de la app</span> <span aria-hidden="true">→</span></a><a href="https://github.com/Soofiaa/Aura" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a></div>
+      </article>
+
+      <article class="project-card pc-5">
+        <div class="project-top"><span class="ev">EV-05</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.pos.status">En uso real</span></span></div>
+        <div class="project-head"><h3>POS para cervecería</h3></div>
+        <p class="project-headline" data-i18n="projects.pos.headline">Cliente real, en producción</p>
+        <p class="project-meta" data-i18n="projects.pos.meta">Entregado a cliente real · actualmente en uso</p>
+        <p class="project-problem" data-i18n-html="projects.pos.problem"><strong>Problema:</strong> negocios pequeños necesitan un punto de venta simple, sin la complejidad de un sistema comercial.</p>
+        <p class="project-solution" data-i18n-html="projects.pos.solution"><strong>Solución:</strong> sistema de punto de venta liviano para gestionar ventas e inventario.</p>
+        <p class="project-process" data-i18n-html="projects.pos.process"><strong>Proceso:</strong> cobertura de tests dirigida por riesgo de negocio, con criterio explícito de qué NO testear y por qué · Entregado a cliente real, en uso productivo</p>
+        <ul class="chips chips-mono"><li>Python</li><li>SQLite</li></ul>
+        <a href="https://github.com/Soofiaa/cerveceria_pos" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a>
+      </article>
+
+      <article class="project-card pc-1">
+        <div class="project-top"><span class="ev">EV-01</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.petpal.status">CI en cada push</span></span></div>
+        <div class="project-head"><h3>PetPal</h3></div>
+        <p class="project-headline" data-i18n-html="projects.petpal.headline"><span class="num">+290</span><span class="cap">tests automatizados</span></p>
+        <p class="project-problem" data-i18n-html="projects.petpal.problem"><strong>Problema:</strong> los dueños de mascotas pierden el control de vacunas, tratamientos y controles veterinarios — información que termina dispersa entre papeles, mensajes y la memoria, especialmente con más de una mascota.</p>
+        <p class="project-solution" data-i18n-html="projects.petpal.solution"><strong>Solución:</strong> app móvil multi-mascota que centraliza el historial médico completo (vacunas, medicación, desparasitación, signos vitales), con recordatorios confiables y una ficha clínica exportable en PDF para la consulta veterinaria.</p>
+        <p class="project-evidence-title" data-i18n="projects.petpal.evidenceTitle">Qué hay detrás del número</p><ul class="project-evidence"><li data-i18n-html="projects.petpal.evidence.1"><strong>CI en cada push y pull request.</strong> GitHub Actions ejecuta flutter analyze y flutter test, con SQLite real instalado en el runner en vez de una simulación.</li><li data-i18n-html="projects.petpal.evidence.2"><strong>250 notificaciones sin IDs repetidos.</strong> Un test programa 250 recordatorios a la vez (25 medicaciones × 2 horarios × 5 días) y comprueba que ninguno repita ID: si dos comparten, uno pisa al otro y el aviso se pierde. La app ya tuvo ese bug una vez.</li></ul>
+        <ul class="chips chips-mono"><li>Flutter</li><li>Dart</li><li>Riverpod</li><li>GitHub Actions</li></ul>
+        <div class="project-links"><a href="apps/petpal/" class="project-link"><span data-i18n="projects.petpal.page">Ver la página de la app</span> <span aria-hidden="true">→</span></a><a href="https://github.com/Soofiaa/pet_pal" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a></div>
+      </article>
+
+      <article class="project-card pc-2">
+        <div class="project-top"><span class="ev">EV-02</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.jobtracker.status">480+ tests</span></span></div>
+        <div class="project-head"><h3>Job-tracker</h3></div>
+        <p class="project-headline" data-i18n-html="projects.jobtracker.headline"><span class="num">95 %</span><span class="cap">de 1.321 ofertas se descartan solas al clasificar</span></p>
+        <p class="project-problem" data-i18n-html="projects.jobtracker.problem"><strong>Problema:</strong> buscar a mano en 6 portales es repetitivo, y la mayoría de los avisos no sirve para un perfil junior (prácticas, exigencia de 2 o más años, cargos comerciales con la palabra “desarrollador”).</p>
+        <p class="project-solution" data-i18n-html="projects.jobtracker.solution"><strong>Solución:</strong> una aplicación local en Python que junta 6 fuentes, clasifica cada oferta con reglas explícitas según mi perfil y deja a la vista solo lo que merece una decisión, con un tablero de seguimiento de postulaciones.</p>
+        <p class="project-credit" data-i18n-html="projects.jobtracker.credit"><strong>Qué es mío y qué no:</strong> Indeed y Glassdoor se obtienen con la librería JobSpy (MIT, © Cullen Watson), usada como dependencia sin modificar su código. Los lectores de los portales chilenos, el clasificador, la base de datos, el servidor, el tablero y los respaldos los escribí yo. Parte de la idea de Jobbi, mi app anterior de seguimiento de postulaciones, pero es un proyecto distinto.</p>
+        <p class="project-evidence-title" data-i18n="projects.jobtracker.evidenceTitle">Qué hay detrás del número</p><ul class="project-evidence"><li data-i18n-html="projects.jobtracker.evidence.0"><strong>Clasificación explicable.</strong> Reglas explícitas en vez de un modelo: cada oferta sale con categoría y razón legible, y una regla que falla se corrige en una línea. Limitación conocida: la palabra clave da falsos positivos (un “Desarrollador de Negocios” entró como rol TI).</li><li data-i18n-html="projects.jobtracker.evidence.2"><strong>Datos que no se pierden.</strong> Respaldos con la API de SQLite, huella sha256 e integrity_check; el despliegue se prueba primero sobre una copia de solo lectura y deja la imagen anterior lista para volver atrás.</li></ul>
+        <ul class="chips chips-mono"><li>Python</li><li>SQLite</li><li>Docker</li><li>pytest</li></ul>
+        <a href="https://github.com/Soofiaa/Buscador-de-empleos" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a>
+      </article>
+
+      <article class="project-card pc-4">
+        <div class="project-top"><span class="ev">EV-04</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.finance.status">Finalizado y aprobado</span></span></div>
+        <div class="project-head"><h3>Plataforma de finanzas personales</h3></div>
+        <p class="project-headline" data-i18n="projects.finance.headline">API REST desacoplada</p>
+        <p class="project-meta" data-i18n="projects.finance.meta">Proyecto de título · Mar – Jul 2025</p>
+        <p class="project-problem" data-i18n-html="projects.finance.problem"><strong>Problema:</strong> el seguimiento manual de ingresos y gastos personales es propenso a errores y poco visual.</p>
+        <p class="project-solution" data-i18n-html="projects.finance.solution"><strong>Solución:</strong> plataforma web para registrar movimientos y visualizar el estado financiero personal.</p>
+        <p class="project-process" data-i18n-html="projects.finance.process"><strong>Proceso:</strong> API REST desacoplada (React + Flask + MySQL) · Proyecto de título aprobado</p>
+        <ul class="chips chips-mono"><li>React</li><li>Flask</li><li>MySQL</li></ul>
+        <div class="project-links"><a href="https://github.com/Soofiaa/All-Too-Accountable" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.frontend">Frontend</span></a><a href="https://github.com/Soofiaa/BackEnd-All-Too-Accountable" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.backend">Backend</span></a></div>
+      </article>
+
+      <article class="project-card pc-6">
+        <div class="project-top"><span class="ev">EV-06</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.budgetdesk.status">Auditado y remediado</span></span></div>
+        <div class="project-head"><h3>BudgetDesk</h3></div>
+        <p class="project-headline" data-i18n="projects.budgetdesk.headline">Auditoría y remediación</p>
+        <p class="project-problem" data-i18n-html="projects.budgetdesk.problem"><strong>Problema:</strong> gestionar ingresos y gastos personales sin depender de una conexión a internet ni de planillas dispersas, con reportes que se puedan compartir fácilmente.</p>
+        <p class="project-solution" data-i18n-html="projects.budgetdesk.solution"><strong>Solución:</strong> aplicación de escritorio para gestión de finanzas personales (ingresos y gastos), con balance neto automático, visualización de estadísticas y exportación de reportes a Excel.</p>
+        <p class="project-process" data-i18n-html="projects.budgetdesk.process"><strong>Proceso:</strong> auditoría de código con hallazgos documentados y remediación aplicada</p>
+        <ul class="chips chips-mono"><li>Python</li><li>CustomTkinter</li><li>SQLite</li><li>Matplotlib</li></ul>
+        <a href="https://github.com/Soofiaa/BudgetDesk" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a>
+      </article>
+
     </div>
-
-    <div class="stack-grid">
-      <div class="stack-group">
-        <div class="personal-image">
-          <img src="assets/personal/juego.jpg" data-i18n-alt="personal.game.imageAlt" alt="Captura de Overwatch">
-        </div>
-        <svg class="stack-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
-        <h3 data-i18n="personal.game.label">Estrategia en equipo</h3>
-        <p data-i18n-html="personal.game.text">Disfruto de juegos que exigen <strong>toma de decisiones rápida, adaptación al cambio y coordinación en equipo</strong>. Habilidades que aplico directamente al trabajar en proyectos de software con plazos ajustados.</p>
-      </div>
-      <div class="stack-group">
-        <div class="personal-image personal-image--square">
-          <img src="assets/personal/musica.jpg" data-i18n-alt="personal.music.imageAlt" alt="Foto relacionada con música" loading="lazy">
-        </div>
-        <svg class="stack-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-        <h3 data-i18n="personal.music.label">Disciplina creativa</h3>
-        <p data-i18n-html="personal.music.text">La música pop (especialmente Ariana Grande) me inspira por su <strong>disciplina, evolución constante y atención al detalle</strong>. Cualidades que también busco en mi desarrollo profesional, donde la creatividad y la precisión van de la mano.</p>
-        <button type="button" class="spotify-facade" id="spotify-facade" aria-label="Reproducir petal de Ariana Grande en Spotify" data-embed-src="https://open.spotify.com/embed/album/2k4FmEtXR0WiDW0Ac2QArT?utm_source=generator" data-embed-title="Reproductor de Spotify: petal — Ariana Grande">
-          <img class="spotify-facade-art" src="https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e028baf677ee2d8dda6cc9fcbd7" alt="" loading="lazy" width="64" height="64">
-          <span class="spotify-facade-text">
-            <span class="spotify-facade-title" data-i18n="personal.music.spotifyTitle">petal</span>
-            <span class="spotify-facade-artist" data-i18n="personal.music.spotifyArtist">Ariana Grande · Spotify</span>
-          </span>
-          <svg class="spotify-facade-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-        </button>
-      </div>
-      <div class="stack-group">
-        <div class="personal-image personal-terminal" aria-hidden="true">
-          <span><span class="prompt">$</span> docker compose up -d</span>
-          <span><span class="ok">✔</span> open-webui <span class="dim">Started</span></span>
-          <span><span class="ok">✔</span> librechat <span class="dim">Started</span></span>
-        </div>
-        <svg class="stack-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9l-8 4.5-8-4.5v-9l8-4.5z"/><path d="M12 12l8-4.5M12 12l-8-4.5M12 12v9"/></svg>
-        <h3 data-i18n="personal.docker.label">Curiosidad autodidacta</h3>
-        <p data-i18n-html="personal.docker.text">Fuera de los proyectos formales, exploro herramientas de IA autohospedadas (Open WebUI, LibreChat) con contenedores Docker. Es <strong>aprendizaje autodirigido, más cercano a la curiosidad que a la certificación</strong>: cuando algo se desconfigura, entender por qué me enseña más que cualquier tutorial.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="section wrap">
-    <p class="eyebrow" data-i18n="about.eyebrow">Sobre mí</p>
-    <h2 data-i18n="about.h2">Traducir procesos de negocio en sistemas que funcionan</h2>
-    <p class="lead" data-i18n="about.p1">
-      Egresé de Ingeniería en Ejecución Informática (PUCV, 2025). Mi experiencia en Dental Laval me enseñó que lo que más disfruto es entender procesos de negocio, conversar con quienes los ejecutan, revisar datos en la base de datos y construir soluciones técnicas que realmente resuelvan problemas.
-    </p>
-    <p class="lead" data-i18n="about.p2">
-      Soy analítica y detallista: prefiero entender el 'por qué' antes de resolver. Me importa que la documentación y el código queden tan claros como el razonamiento detrás de ellos. Busco mi primera oportunidad en análisis funcional, QA o backend.
-    </p>
-  </section>
-
-  <!-- EDUCACIÓN -->
-  <section id="educacion" class="section wrap">
-    <p class="eyebrow" data-i18n="educacion.eyebrow">Educación</p>
-    <h2 data-i18n="educacion.h2">Formación y trayectoria</h2>
-
-    <ol class="edu-timeline">
-      <li class="edu-node-wrap">
-        <span class="edu-dot edu-dot--filled" aria-hidden="true"></span>
-        <span class="edu-date" data-i18n="educacion.m1.date">2019</span>
-        <div class="edu-card">
-          <h3 data-i18n="educacion.m1.title">Inicio Ingeniería en Ejecución Informática</h3>
-          <p data-i18n="educacion.m1.desc">Pontificia Universidad Católica de Valparaíso (PUCV).</p>
-        </div>
-      </li>
-      <li class="edu-node-wrap">
-        <span class="edu-dot edu-dot--filled" aria-hidden="true"></span>
-        <span class="edu-date" data-i18n="educacion.m2.date">Ene – Feb 2025</span>
-        <div class="edu-card">
-          <h3 data-i18n="educacion.m2.title">Práctica profesional — Dental Laval</h3>
-          <p data-i18n="educacion.m2.desc">Análisis funcional, documentación UML, SQL sobre ERP Softland y automatización en Python.</p>
-        </div>
-      </li>
-      <li class="edu-node-wrap">
-        <span class="edu-dot edu-dot--filled" aria-hidden="true"></span>
-        <span class="edu-date" data-i18n="educacion.m3.date">Julio 2025</span>
-        <div class="edu-card">
-          <h3 data-i18n="educacion.m3.title">Titulación</h3>
-          <p data-i18n="educacion.m3.desc">Ingeniera en Ejecución Informática, PUCV.</p>
-        </div>
-      </li>
-      <li class="edu-node-wrap">
-        <span class="edu-dot" aria-hidden="true"></span>
-        <span class="edu-date" data-i18n="educacion.m4.date">2025 — hoy</span>
-        <div class="edu-card edu-card--current">
-          <h3 data-i18n="educacion.m4.title">Portafolio propio &amp; búsqueda activa</h3>
-          <p data-i18n="educacion.m4.desc">POS para cervecería entregado a cliente real, más proyectos personales. En búsqueda de mi primer rol formal en análisis funcional, QA o backend junior.</p>
-        </div>
-      </li>
-    </ol>
+    <p class="projects-more"><a href="apps/" class="project-link"><span data-i18n="projects.appsLink">Ver todas las apps</span> <span aria-hidden="true">→</span></a></p>
   </section>
 
   <!-- EXPERIENCE -->
@@ -1054,90 +1042,6 @@ li.chip-conceptual{
         <li data-i18n="experience.bullets.4">Audité la lógica del ERP, identificando 3+ riesgos operacionales que permitieron anticipar fallos antes de producción.</li>
       </ul>
     </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section wrap">
-    <p class="eyebrow" data-i18n="projects.eyebrow">Proyectos</p>
-    <h2 data-i18n="projects.h2">Proyectos personales</h2>
-    <p class="section-lead" data-i18n="projects.lead">Cada proyecto abre con su evidencia: lo que se midió, lo que se probó y lo que no se hizo.</p>
-
-    <div class="project-grid">
-
-      <article class="project-card pc-1">
-        <div class="project-top"><span class="ev">EV-01</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.petpal.status">CI en cada push</span></span></div>
-        <div class="project-head"><h3>PetPal</h3></div>
-        <p class="project-headline" data-i18n-html="projects.petpal.headline"><span class="num">+290</span><span class="cap">tests automatizados</span></p>
-        <p class="project-problem" data-i18n-html="projects.petpal.problem"><strong>Problema:</strong> los dueños de mascotas pierden el control de vacunas, tratamientos y controles veterinarios — información que termina dispersa entre papeles, mensajes y la memoria, especialmente con más de una mascota.</p>
-        <p class="project-solution" data-i18n-html="projects.petpal.solution"><strong>Solución:</strong> app móvil multi-mascota que centraliza el historial médico completo (vacunas, medicación, desparasitación, signos vitales), con recordatorios confiables y una ficha clínica exportable en PDF para la consulta veterinaria.</p>
-        <p class="project-process" data-i18n-html="projects.petpal.process"><strong>Proceso:</strong> +290 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas</p>
-        <p class="project-evidence-title" data-i18n="projects.petpal.evidenceTitle">Qué hay detrás del número</p><ul class="project-evidence"><li data-i18n-html="projects.petpal.evidence.0"><strong>+290 tests en 48 archivos.</strong> Hay pruebas para modelos, repositorios, providers y servicios, además de tests de widget en pantallas clave, así que un cambio que rompe algo se nota enseguida.</li><li data-i18n-html="projects.petpal.evidence.1"><strong>CI en cada push y pull request.</strong> GitHub Actions ejecuta flutter analyze y flutter test, con SQLite real instalado en el runner en vez de una simulación.</li><li data-i18n-html="projects.petpal.evidence.2"><strong>250 notificaciones sin IDs repetidos.</strong> Un test programa 250 recordatorios a la vez (25 medicaciones × 2 horarios × 5 días) y comprueba que ninguno repita ID: si dos comparten, uno pisa al otro y el aviso se pierde. La app ya tuvo ese bug una vez.</li><li data-i18n-html="projects.petpal.evidence.3"><strong>Riverpod en las 10 entidades.</strong> Cada una sigue el camino pantalla, provider, repository y base de datos, y esa lógica se prueba sin abrir la app.</li></ul>
-        <ul class="chips chips-mono"><li>Flutter</li><li>Dart</li><li>Riverpod</li><li>GitHub Actions</li></ul>
-        <div class="project-links"><a href="apps/petpal/" class="project-link"><span data-i18n="projects.petpal.page">Ver la página de la app</span> <span aria-hidden="true">→</span></a><a href="https://github.com/Soofiaa/pet_pal" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a></div>
-        </article>
-
-      <article class="project-card pc-2">
-        <div class="project-top"><span class="ev">EV-02</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.jobtracker.status">480+ tests</span></span></div>
-        <div class="project-head"><h3>Job-tracker</h3></div>
-        <p class="project-headline" data-i18n-html="projects.jobtracker.headline"><span class="num">95 %</span><span class="cap">de 1.321 ofertas se descartan solas al clasificar</span></p>
-        <p class="project-problem" data-i18n-html="projects.jobtracker.problem"><strong>Problema:</strong> buscar a mano en 6 portales es repetitivo, y la mayoría de los avisos no sirve para un perfil junior (prácticas, exigencia de 2 o más años, cargos comerciales con la palabra “desarrollador”).</p>
-        <p class="project-solution" data-i18n-html="projects.jobtracker.solution"><strong>Solución:</strong> una aplicación local en Python que junta 6 fuentes, clasifica cada oferta con reglas explícitas según mi perfil y deja a la vista solo lo que merece una decisión, con un tablero de seguimiento de postulaciones.</p>
-        <p class="project-process" data-i18n-html="projects.jobtracker.process"><strong>Proceso:</strong> reglas auditables y deterministas (cada descarte tiene una razón legible), 9 corridas completas de 6 a 8 minutos, y construcción por fases con pruebas, respaldo verificado y reversión lista antes de desplegar.</p>
-        <p class="project-credit" data-i18n-html="projects.jobtracker.credit"><strong>Qué es mío y qué no:</strong> Indeed y Glassdoor se obtienen con la librería JobSpy (MIT, © Cullen Watson), usada como dependencia sin modificar su código. Los lectores de los portales chilenos, el clasificador, la base de datos, el servidor, el tablero y los respaldos los escribí yo. Parte de la idea de Jobbi, mi app anterior de seguimiento de postulaciones, pero es un proyecto distinto.</p>
-        <p class="project-evidence-title" data-i18n="projects.jobtracker.evidenceTitle">Qué hay detrás del número</p><ul class="project-evidence"><li data-i18n-html="projects.jobtracker.evidence.0"><strong>Clasificación explicable.</strong> Reglas explícitas en vez de un modelo: cada oferta sale con categoría y razón legible, y una regla que falla se corrige en una línea. Limitación conocida: la palabra clave da falsos positivos (un “Desarrollador de Negocios” entró como rol TI).</li><li data-i18n-html="projects.jobtracker.evidence.1"><strong>Más de 480 pruebas.</strong> pytest, más las funciones puras de la página ejecutadas con Node; en los arreglos comprobé que las pruebas fallan con el código anterior.</li><li data-i18n-html="projects.jobtracker.evidence.2"><strong>Datos que no se pierden.</strong> Respaldos con la API de SQLite, huella sha256 e integrity_check; el despliegue se prueba primero sobre una copia de solo lectura y deja la imagen anterior lista para volver atrás.</li><li data-i18n-html="projects.jobtracker.evidence.3"><strong>Cortesía con los sitios.</strong> Los lectores propios respetan robots.txt, esperan de 3 a 5 segundos entre pedidos y se detienen ante un bloqueo o un CAPTCHA: un bloqueo nunca se esquiva.</li></ul>
-        <ul class="chips chips-mono"><li>Python</li><li>SQLite</li><li>Docker</li><li>pytest</li></ul>
-        <a href="https://github.com/Soofiaa/Buscador-de-empleos" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a>
-        </article>
-
-      <article class="project-card pc-3">
-        <div class="project-top"><span class="ev">EV-03</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.aura.status">v1.2 · en desarrollo</span></span></div>
-        <div class="project-head"><h3>Aura</h3></div>
-        <p class="project-headline" data-i18n-html="projects.aura.headline"><span class="num">1.296</span><span class="cap">tests · local primero, sin cuenta ni servidor</span></p>
-        <p class="project-problem" data-i18n-html="projects.aura.problem"><strong>Problema:</strong> quería una app de seguimiento de ciclo donde los datos de salud nunca salieran del teléfono y donde la predicción fuera honesta sobre su incertidumbre.</p>
-        <p class="project-solution" data-i18n-html="projects.aura.solution"><strong>Solución:</strong> app Android en Flutter, sin cuenta, sin servidor y sin analítica: los datos viven en el teléfono y solo salen en un respaldo cifrado, en un archivo o, si la usuaria lo activa, en su propio Google Drive. Estima próximo período, ovulación y ventana fértil como un rango con nivel de confianza, y muestra la fase actual.</p>
-        <p class="project-process" data-i18n-html="projects.aura.process"><strong>Proceso:</strong> lógica de dominio pura (derivación de ciclos, predicción y planificación de notificaciones) separada de la interfaz y de la base de datos, validada con tests de fechas fijas y revisada con auditorías y pruebas manuales.</p>
-        <p class="project-evidence-title" data-i18n="projects.aura.evidenceTitle">Qué hay detrás de la app</p><ul class="project-evidence"><li data-i18n-html="projects.aura.evidence.0"><strong>Predicción con incertidumbre explícita.</strong> Promedio ponderado de los últimos 6 ciclos y un rango con confianza baja, media o alta; si pasan más de 60 días sin datos, avisa en vez de inventar una fecha.</li><li data-i18n-html="projects.aura.evidence.1"><strong>Ciclos derivados, no almacenados.</strong> Solo se guardan los días de sangrado, y un ciclo nuevo empieza tras 7 días de separación. Una única fuente de verdad: editar un día recalcula todo de forma consistente.</li><li data-i18n-html="projects.aura.evidence.2"><strong>Fechas sin errores de zona horaria.</strong> Cada día se guarda como texto yyyy-MM-dd y se opera en UTC; en Chile el cambio de hora ocurre a medianoche y la medianoche local a veces no existe.</li><li data-i18n-html="projects.aura.evidence.3"><strong>Calidad más allá de los tests.</strong> 1.296 tests; las auditorías y las pruebas manuales destaparon errores que los tests iniciales no cubrían, y cada corrección quedó con su prueba.</li></ul>
-        <ul class="chips chips-mono"><li>Flutter</li><li>Dart</li><li>drift</li><li>SQLite</li><li>flutter_local_notifications</li></ul>
-        <div class="project-links"><a href="apps/aura/" class="project-link"><span data-i18n="projects.aura.page">Ver la página de la app</span> <span aria-hidden="true">→</span></a><a href="https://github.com/Soofiaa/Aura" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a></div>
-        </article>
-
-      <article class="project-card pc-4">
-        <div class="project-top"><span class="ev">EV-04</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.finance.status">Finalizado y aprobado</span></span></div>
-        <div class="project-head"><h3>Plataforma de finanzas personales</h3></div>
-        <p class="project-headline" data-i18n="projects.finance.headline">API REST desacoplada</p>
-        <p class="project-meta" data-i18n="projects.finance.meta">Proyecto de título · Mar – Jul 2025</p>
-        <p class="project-problem" data-i18n-html="projects.finance.problem"><strong>Problema:</strong> el seguimiento manual de ingresos y gastos personales es propenso a errores y poco visual.</p>
-        <p class="project-solution" data-i18n-html="projects.finance.solution"><strong>Solución:</strong> plataforma web para registrar movimientos y visualizar el estado financiero personal.</p>
-        <p class="project-process" data-i18n-html="projects.finance.process"><strong>Proceso:</strong> API REST desacoplada (React + Flask + MySQL) · Proyecto de título aprobado</p>
-        <ul class="chips chips-mono"><li>React</li><li>Flask</li><li>MySQL</li></ul>
-        <div class="project-links"><a href="https://github.com/Soofiaa/All-Too-Accountable" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.frontend">Frontend</span></a><a href="https://github.com/Soofiaa/BackEnd-All-Too-Accountable" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.backend">Backend</span></a></div>
-        </article>
-
-      <article class="project-card pc-5">
-        <div class="project-top"><span class="ev">EV-05</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.pos.status">En uso real</span></span></div>
-        <div class="project-head"><h3>POS para cervecería</h3></div>
-        <p class="project-headline" data-i18n="projects.pos.headline">Cliente real, en producción</p>
-        <p class="project-meta" data-i18n="projects.pos.meta">Entregado a cliente real · actualmente en uso</p>
-        <p class="project-problem" data-i18n-html="projects.pos.problem"><strong>Problema:</strong> negocios pequeños necesitan un punto de venta simple, sin la complejidad de un sistema comercial.</p>
-        <p class="project-solution" data-i18n-html="projects.pos.solution"><strong>Solución:</strong> sistema de punto de venta liviano para gestionar ventas e inventario.</p>
-        <p class="project-process" data-i18n-html="projects.pos.process"><strong>Proceso:</strong> cobertura de tests dirigida por riesgo de negocio, con criterio explícito de qué NO testear y por qué · Entregado a cliente real, en uso productivo</p>
-        <ul class="chips chips-mono"><li>Python</li><li>SQLite</li></ul>
-        <a href="https://github.com/Soofiaa/cerveceria_pos" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a>
-        </article>
-
-      <article class="project-card pc-6">
-        <div class="project-top"><span class="ev">EV-06</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.budgetdesk.status">Auditado y remediado</span></span></div>
-        <div class="project-head"><h3>BudgetDesk</h3></div>
-        <p class="project-headline" data-i18n="projects.budgetdesk.headline">Auditoría y remediación</p>
-        <p class="project-problem" data-i18n-html="projects.budgetdesk.problem"><strong>Problema:</strong> gestionar ingresos y gastos personales sin depender de una conexión a internet ni de planillas dispersas, con reportes que se puedan compartir fácilmente.</p>
-        <p class="project-solution" data-i18n-html="projects.budgetdesk.solution"><strong>Solución:</strong> aplicación de escritorio para gestión de finanzas personales (ingresos y gastos), con balance neto automático, visualización de estadísticas y exportación de reportes a Excel.</p>
-        <p class="project-process" data-i18n-html="projects.budgetdesk.process"><strong>Proceso:</strong> auditoría de código con hallazgos documentados y remediación aplicada</p>
-        <ul class="chips chips-mono"><li>Python</li><li>CustomTkinter</li><li>SQLite</li><li>Matplotlib</li></ul>
-        <a href="https://github.com/Soofiaa/BudgetDesk" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a>
-        </article>
-
-    </div>
-    <p class="projects-more"><a href="apps/" class="project-link"><span data-i18n="projects.appsLink">Ver todas las apps</span> <span aria-hidden="true">→</span></a></p>
   </section>
 
   <!-- STACK -->
@@ -1193,6 +1097,47 @@ li.chip-conceptual{
     <p class="lang-note"><span class="mono-tag" data-i18n="stack.langEnglishTag">EN · B2</span> <span data-i18n="stack.langEnglishText">Inglés en desarrollo continuo, cómodo leyendo documentación técnica y en comunicación escrita.</span></p>
   </section>
 
+  <!-- EDUCACIÓN -->
+  <section id="educacion" class="section wrap">
+    <p class="eyebrow" data-i18n="educacion.eyebrow">Educación</p>
+    <h2 data-i18n="educacion.h2">Formación y trayectoria</h2>
+
+    <ol class="edu-timeline">
+      <li class="edu-node-wrap">
+        <span class="edu-dot edu-dot--filled" aria-hidden="true"></span>
+        <span class="edu-date" data-i18n="educacion.m1.date">2019</span>
+        <div class="edu-card">
+          <h3 data-i18n="educacion.m1.title">Inicio Ingeniería en Ejecución Informática</h3>
+          <p data-i18n="educacion.m1.desc">Pontificia Universidad Católica de Valparaíso (PUCV).</p>
+        </div>
+      </li>
+      <li class="edu-node-wrap">
+        <span class="edu-dot edu-dot--filled" aria-hidden="true"></span>
+        <span class="edu-date" data-i18n="educacion.m2.date">Ene – Feb 2025</span>
+        <div class="edu-card">
+          <h3 data-i18n="educacion.m2.title">Práctica profesional — Dental Laval</h3>
+          <p data-i18n="educacion.m2.desc">Análisis funcional, documentación UML, SQL sobre ERP Softland y automatización en Python.</p>
+        </div>
+      </li>
+      <li class="edu-node-wrap">
+        <span class="edu-dot edu-dot--filled" aria-hidden="true"></span>
+        <span class="edu-date" data-i18n="educacion.m3.date">Julio 2025</span>
+        <div class="edu-card">
+          <h3 data-i18n="educacion.m3.title">Titulación</h3>
+          <p data-i18n="educacion.m3.desc">Ingeniera en Ejecución Informática, PUCV.</p>
+        </div>
+      </li>
+      <li class="edu-node-wrap">
+        <span class="edu-dot" aria-hidden="true"></span>
+        <span class="edu-date" data-i18n="educacion.m4.date">2025 — hoy</span>
+        <div class="edu-card edu-card--current">
+          <h3 data-i18n="educacion.m4.title">Portafolio propio &amp; búsqueda activa</h3>
+          <p data-i18n="educacion.m4.desc">POS para cervecería entregado a cliente real, más proyectos personales. En búsqueda de mi primer rol formal en informática.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
   <!-- CERTIFICATIONS -->
   <section id="certifications" class="section wrap">
     <p class="eyebrow" data-i18n="certifications.eyebrow">Certificaciones</p>
@@ -1210,6 +1155,78 @@ li.chip-conceptual{
         <span class="mono-tag" data-i18n="certifications.item2Meta">SENCE · 30 horas · 2025</span>
       </div>
       <h3 data-i18n="certifications.item2Title">Diseño Web con HTML5 + CSS</h3>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section wrap">
+    <p class="eyebrow" data-i18n="about.eyebrow">Sobre mí</p>
+    <h2 data-i18n="about.h2">Traducir procesos de negocio en sistemas que funcionan</h2>
+    <p class="lead" data-i18n="about.p1">
+      Egresé de Ingeniería en Ejecución Informática (PUCV, 2025). Mi experiencia en Dental Laval me enseñó que lo que más disfruto es entender procesos de negocio, conversar con quienes los ejecutan, revisar datos en la base de datos y construir soluciones técnicas que realmente resuelvan problemas.
+    </p>
+    <p class="lead" data-i18n="about.p2">
+      Soy analítica y detallista: prefiero entender el 'por qué' antes de resolver. Me importa que la documentación y el código queden tan claros como el razonamiento detrás de ellos. Busco mi primer rol formal en informática y estoy abierta a distintas áreas: desarrollo, QA, análisis funcional y más.
+    </p>
+  </section>
+
+  <!-- PERSONAL -->
+  <section id="personal" class="section wrap">
+    <div class="personal-heading">
+      <div>
+        <p class="eyebrow" data-i18n="personal.eyebrow">Personal</p>
+        <h2 data-i18n="personal.h2">Más allá del código</h2>
+      </div>
+      <svg class="personal-motif" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z"/>
+        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(72 12 6.5)"/>
+        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(144 12 6.5)"/>
+        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(216 12 6.5)"/>
+        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(288 12 6.5)"/>
+        <circle cx="12" cy="6.5" r="0.9" fill="currentColor" stroke="none"/>
+        <path d="M12,8.5 C10.3,10.5 13.7,12.5 12,15"/>
+        <path d="M12,12 C10,12.3 9,13.6 9.5,15"/>
+        <path d="M9,17 L6.2,19.5 L9,22"/>
+        <path d="M15,17 L17.8,19.5 L15,22"/>
+        <line x1="10.8" y1="19.5" x2="13.2" y2="19.5"/>
+      </svg>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-group">
+        <div class="personal-image">
+          <img src="assets/personal/juego.jpg" data-i18n-alt="personal.game.imageAlt" alt="Captura de Overwatch">
+        </div>
+        <svg class="stack-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+        <h3 data-i18n="personal.game.label">Estrategia en equipo</h3>
+        <p data-i18n-html="personal.game.text">Disfruto de juegos que exigen <strong>toma de decisiones rápida, adaptación al cambio y coordinación en equipo</strong>. Habilidades que aplico directamente al trabajar en proyectos de software con plazos ajustados.</p>
+      </div>
+      <div class="stack-group">
+        <div class="personal-image personal-image--square">
+          <img src="assets/personal/musica.jpg" data-i18n-alt="personal.music.imageAlt" alt="Foto relacionada con música" loading="lazy">
+        </div>
+        <svg class="stack-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        <h3 data-i18n="personal.music.label">Disciplina creativa</h3>
+        <p data-i18n-html="personal.music.text">La música pop (especialmente Ariana Grande) me inspira por su <strong>disciplina, evolución constante y atención al detalle</strong>. Cualidades que también busco en mi desarrollo profesional, donde la creatividad y la precisión van de la mano.</p>
+        <button type="button" class="spotify-facade" id="spotify-facade" aria-label="Reproducir petal de Ariana Grande en Spotify" data-embed-src="https://open.spotify.com/embed/album/2k4FmEtXR0WiDW0Ac2QArT?utm_source=generator" data-embed-title="Reproductor de Spotify: petal — Ariana Grande">
+          <img class="spotify-facade-art" src="https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e028baf677ee2d8dda6cc9fcbd7" alt="" loading="lazy" width="64" height="64">
+          <span class="spotify-facade-text">
+            <span class="spotify-facade-title" data-i18n="personal.music.spotifyTitle">petal</span>
+            <span class="spotify-facade-artist" data-i18n="personal.music.spotifyArtist">Ariana Grande · Spotify</span>
+          </span>
+          <svg class="spotify-facade-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
+      <div class="stack-group">
+        <div class="personal-image personal-terminal" aria-hidden="true">
+          <span><span class="prompt">$</span> docker compose up -d</span>
+          <span><span class="ok">✔</span> open-webui <span class="dim">Started</span></span>
+          <span><span class="ok">✔</span> librechat <span class="dim">Started</span></span>
+        </div>
+        <svg class="stack-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9l-8 4.5-8-4.5v-9l8-4.5z"/><path d="M12 12l8-4.5M12 12l-8-4.5M12 12v9"/></svg>
+        <h3 data-i18n="personal.docker.label">Curiosidad autodidacta</h3>
+        <p data-i18n-html="personal.docker.text">Fuera de los proyectos formales, exploro herramientas de IA autohospedadas (Open WebUI, LibreChat) con contenedores Docker. Es <strong>aprendizaje autodirigido, más cercano a la curiosidad que a la certificación</strong>: cuando algo se desconfigura, entender por qué me enseña más que cualquier tutorial.</p>
+      </div>
     </div>
   </section>
 

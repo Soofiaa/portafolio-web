@@ -18,6 +18,32 @@ if ('IntersectionObserver' in window && sections.length) {
   sections.forEach(section => observer.observe(section));
 }
 
+// Menú de navegación en móvil (solo la portada lo tiene)
+const navToggle = document.getElementById('nav-toggle');
+const navLinksPanel = document.getElementById('nav-links');
+
+if (navToggle && navLinksPanel) {
+  const setMenuOpen = (open) => {
+    navToggle.setAttribute('aria-expanded', String(open));
+    navLinksPanel.classList.toggle('is-open', open);
+  };
+
+  navToggle.addEventListener('click', () => {
+    setMenuOpen(navToggle.getAttribute('aria-expanded') !== 'true');
+  });
+
+  navLinksPanel.addEventListener('click', (e) => {
+    if (e.target.closest('a')) setMenuOpen(false);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
+      setMenuOpen(false);
+      navToggle.focus();
+    }
+  });
+}
+
 // Toggle manual de modo claro/oscuro, con persistencia
 const THEME_KEY = 'theme-preference';
 const themeToggle = document.getElementById('theme-toggle');

@@ -1,8 +1,8 @@
 {
   "es": {
     "meta": {
-      "title": "Sofía Menzel — Análisis Funcional · QA · Automatización",
-      "description": "Portafolio de Sofía Menzel, Ingeniera en Ejecución Informática. Análisis funcional, QA, automatización de procesos y desarrollo backend."
+      "title": "Sofía Menzel — Desarrollo de software, QA y Análisis funcional",
+      "description": "Portafolio de Sofía Menzel, Ingeniera en Ejecución Informática. Construyo, pruebo y documento software que se usa de verdad: apps móviles, web y de escritorio, automatización y análisis funcional."
     },
     "skipLink": "Saltar al contenido",
     "nav": {
@@ -13,18 +13,19 @@
       "projects": "Proyectos",
       "stack": "Stack",
       "certifications": "Certificaciones",
-      "contact": "Contacto"
+      "contact": "Contacto",
+      "menu": "Menú"
     },
     "hero": {
       "badge": "Buscando oportunidad. Remoto o híbrido, en Viña del Mar, Valparaíso y Santiago.",
-      "role": "Ingeniera en Ejecución Informática. Convierto procesos de negocio en sistemas que funcionan, y los dejo probados y explicados.",
+      "role": "Ingeniera en Ejecución Informática. Construyo, pruebo y documento software que se usa de verdad.",
       "viewProjects": "Ver proyectos",
       "getInTouch": "Hablemos",
       "downloadCv": "Descargar CV",
       "tags": {
         "functional": "Análisis funcional",
         "qa": "QA & Automatización",
-        "backend": "Backend junior"
+        "dev": "Desarrollo de software"
       },
       "metric": {
         "eyebrow": "Resultado medido",
@@ -36,7 +37,7 @@
       }
     },
     "personal": {
-      "eyebrow": "Sobre mí",
+      "eyebrow": "Personal",
       "h2": "Más allá del código",
       "game": {
         "label": "Estrategia en equipo",
@@ -59,7 +60,7 @@
       "eyebrow": "Sobre mí",
       "h2": "Traducir procesos de negocio en sistemas que funcionan",
       "p1": "Egresé de Ingeniería en Ejecución Informática (PUCV, 2025). Mi experiencia en Dental Laval me enseñó que lo que más disfruto es entender procesos de negocio, conversar con quienes los ejecutan, revisar datos en la base de datos y construir soluciones técnicas que realmente resuelvan problemas.",
-      "p2": "Soy analítica y detallista: prefiero entender el 'por qué' antes de resolver. Me importa que la documentación y el código queden tan claros como el razonamiento detrás de ellos. Busco mi primera oportunidad en análisis funcional, QA o backend."
+      "p2": "Soy analítica y detallista: prefiero entender el 'por qué' antes de resolver. Me importa que la documentación y el código queden tan claros como el razonamiento detrás de ellos. Busco mi primer rol formal en informática y estoy abierta a distintas áreas: desarrollo, QA, análisis funcional y más."
     },
     "educacion": {
       "eyebrow": "Educación",
@@ -67,7 +68,7 @@
       "m1": { "date": "2019", "title": "Inicio Ingeniería en Ejecución Informática", "desc": "Pontificia Universidad Católica de Valparaíso (PUCV)." },
       "m2": { "date": "Ene – Feb 2025", "title": "Práctica profesional — Dental Laval", "desc": "Análisis funcional, documentación UML, SQL sobre ERP Softland y automatización en Python." },
       "m3": { "date": "Julio 2025", "title": "Titulación", "desc": "Ingeniera en Ejecución Informática, PUCV." },
-      "m4": { "date": "2025 — hoy", "title": "Portafolio propio & búsqueda activa", "desc": "POS para cervecería entregado a cliente real, más proyectos personales. En búsqueda de mi primer rol formal en análisis funcional, QA o backend junior." }
+      "m4": { "date": "2025 — hoy", "title": "Portafolio propio & búsqueda activa", "desc": "POS para cervecería entregado a cliente real, más proyectos personales. En búsqueda de mi primer rol formal en informática." }
     },
     "experience": {
       "eyebrow": "Experiencia",
@@ -393,8 +394,8 @@
   },
   "en": {
     "meta": {
-      "title": "Sofía Menzel — Functional Analysis · QA · Automation",
-      "description": "Portfolio of Sofía Menzel, Computer Systems Engineer. Functional analysis, QA, process automation, and backend development."
+      "title": "Sofía Menzel — Software Development, QA and Functional Analysis",
+      "description": "Portfolio of Sofía Menzel, Computer Systems Engineer. I build, test and document software that people actually use: mobile, web and desktop apps, automation and functional analysis."
     },
     "skipLink": "Skip to content",
     "nav": {
@@ -405,18 +406,19 @@
       "projects": "Projects",
       "stack": "Stack",
       "certifications": "Certifications",
-      "contact": "Contact"
+      "contact": "Contact",
+      "menu": "Menu"
     },
     "hero": {
       "badge": "Open to work. Remote or hybrid, in Viña del Mar, Valparaíso and Santiago.",
-      "role": "Computer Systems Engineer. I turn business processes into systems that work, and leave them tested and explained.",
+      "role": "Computer Systems Engineer. I build, test and document software that people actually use.",
       "viewProjects": "View projects",
       "getInTouch": "Let's talk",
       "downloadCv": "Download CV",
       "tags": {
         "functional": "Functional analysis",
         "qa": "QA & Automation",
-        "backend": "Junior backend"
+        "dev": "Software development"
       },
       "metric": {
         "eyebrow": "Measured result",
@@ -428,7 +430,7 @@
       }
     },
     "personal": {
-      "eyebrow": "About me",
+      "eyebrow": "Personal",
       "h2": "Beyond the code",
       "game": {
         "label": "Team strategy",
@@ -451,7 +453,7 @@
       "eyebrow": "About me",
       "h2": "Turning business processes into systems that work",
       "p1": "I graduated in Computer Systems Engineering (PUCV, 2025). My internship at Dental Laval confirmed what I enjoy most: understanding business processes, talking with the people who run them, digging into the database, and building solutions that actually solve problems.",
-      "p2": "I'm analytical and detail-oriented: I'd rather understand the 'why' before solving. I care that documentation and code are as clear as the reasoning behind them. I'm looking for my first role in functional analysis, QA or backend."
+      "p2": "I'm analytical and detail-oriented: I'd rather understand the 'why' before solving. I care that documentation and code are as clear as the reasoning behind them. I'm looking for my first formal role in IT and I'm open to different areas: development, QA, functional analysis and more."
     },
     "educacion": {
       "eyebrow": "Education",
@@ -459,7 +461,7 @@
       "m1": { "date": "2019", "title": "Started Computer Systems Engineering", "desc": "Pontificia Universidad Católica de Valparaíso (PUCV)." },
       "m2": { "date": "Jan – Feb 2025", "title": "Professional internship — Dental Laval", "desc": "Functional analysis, UML documentation, SQL against the Softland ERP, and Python automation." },
       "m3": { "date": "July 2025", "title": "Graduated", "desc": "Computer Systems Engineering, PUCV." },
-      "m4": { "date": "2025 — now", "title": "Own portfolio & active job search", "desc": "Point-of-sale system delivered to a real client, plus personal projects. Looking for my first formal role in functional analysis, QA, or junior backend." }
+      "m4": { "date": "2025 — now", "title": "Own portfolio & active job search", "desc": "Point-of-sale system delivered to a real client, plus personal projects. Looking for my first formal role in IT." }
     },
     "experience": {
       "eyebrow": "Experience",
