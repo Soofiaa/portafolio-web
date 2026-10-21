@@ -657,6 +657,7 @@ li.chip-conceptual{
 }
 .project-link:hover{ background:var(--ink); color:var(--bg); transform:translateY(-1px); }
 .gh-icon{ width:20px; height:20px; flex-shrink:0; }
+.projects-more{ margin:28px 0 0; }
 .project-links{
   padding-top:8px;
   display:flex;
@@ -1076,7 +1077,7 @@ li.chip-conceptual{
         <p class="project-process" data-i18n-html="projects.petpal.process"><strong>Proceso:</strong> +290 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas</p>
         <p class="project-evidence-title" data-i18n="projects.petpal.evidenceTitle">Qué hay detrás del número</p><ul class="project-evidence"><li data-i18n-html="projects.petpal.evidence.0"><strong>+290 tests en 48 archivos.</strong> Hay pruebas para modelos, repositorios, providers y servicios, además de tests de widget en pantallas clave, así que un cambio que rompe algo se nota enseguida.</li><li data-i18n-html="projects.petpal.evidence.1"><strong>CI en cada push y pull request.</strong> GitHub Actions ejecuta flutter analyze y flutter test, con SQLite real instalado en el runner en vez de una simulación.</li><li data-i18n-html="projects.petpal.evidence.2"><strong>250 notificaciones sin IDs repetidos.</strong> Un test programa 250 recordatorios a la vez (25 medicaciones × 2 horarios × 5 días) y comprueba que ninguno repita ID: si dos comparten, uno pisa al otro y el aviso se pierde. La app ya tuvo ese bug una vez.</li><li data-i18n-html="projects.petpal.evidence.3"><strong>Riverpod en las 10 entidades.</strong> Cada una sigue el camino pantalla, provider, repository y base de datos, y esa lógica se prueba sin abrir la app.</li></ul>
         <ul class="chips chips-mono"><li>Flutter</li><li>Dart</li><li>Riverpod</li><li>GitHub Actions</li></ul>
-        <a href="https://github.com/Soofiaa/pet_pal" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a>
+        <div class="project-links"><a href="apps/petpal/" class="project-link"><span data-i18n="projects.petpal.page">Ver la página de la app</span> <span aria-hidden="true">→</span></a><a href="https://github.com/Soofiaa/pet_pal" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a></div>
         </article>
 
       <article class="project-card pc-2">
@@ -1140,6 +1141,7 @@ li.chip-conceptual{
         </article>
 
     </div>
+    <p class="projects-more"><a href="apps/" class="project-link"><span data-i18n="projects.appsLink">Ver todas las apps</span> <span aria-hidden="true">→</span></a></p>
   </section>
 
   <!-- STACK -->

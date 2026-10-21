@@ -126,6 +126,7 @@ h1{
       <a href="#principios" data-i18n="auraPage.nav.principles">Principios</a>
       <a href="#capturas" data-i18n="auraPage.nav.shots">Capturas</a>
       <a href="#privacidad" data-i18n="auraPage.nav.privacy">Privacidad</a>
+      <a href="/apps/" data-i18n="appsPage.navLabel">Apps</a>
       <a href="/#projects" class="nav-cta" data-i18n="auraPage.nav.portfolio">Portafolio</a>
       <div class="lang-toggle" role="group" aria-label="Selector de idioma">
         <button type="button" class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
@@ -155,6 +156,14 @@ h1{
       <div class="hero-actions rise" style="--i:4">
         <a href="https://github.com/Soofiaa/Aura" class="btn btn-primary" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="auraPage.ctaCode">Ver el código</span></a>
         <a href="https://soofiaa.github.io/Aura/privacy.html" class="btn btn-ghost" target="_blank" rel="noopener" data-i18n="auraPage.ctaPrivacy">Política de privacidad</a>
+        <!-- Google Play (APP-01): deshabilitado mientras Aura esté en prueba cerrada.
+             Para activarlo cuando se publique:
+             1. Agrega href="https://play.google.com/store/apps/details?id=com.soofiaa.aura" target="_blank" rel="noopener".
+             2. Quita role="link" y aria-disabled="true".
+             3. Cambia data-i18n a una clave nueva (p. ej. "store.playAvailable": "Disponible en Google Play" / "Get it on Google Play")
+                en es y en de i18n/i18n.json, y el texto del span a su valor en español.
+             4. Actualiza el estado de la página (auraPage.status y auraPage.transparency.t2) y el test de tests/e2e/aura.spec.js. -->
+        <a class="btn btn-store" role="link" aria-disabled="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5v17a.8.8 0 0 0 1.2.7l14.3-8.5a.8.8 0 0 0 0-1.4L6.2 2.8A.8.8 0 0 0 5 3.5z"/><path d="M5.6 3.2 15 12l-9.4 8.8"/></svg><span data-i18n="store.playSoon">Próximamente en Google Play</span></a>
       </div>
       <p class="disclaimer rise" style="--i:5" data-i18n="auraPage.disclaimer">Estimación; no es un método anticonceptivo.</p>
     </div>
