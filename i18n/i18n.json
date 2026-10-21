@@ -74,6 +74,7 @@
       "eyebrow": "Experiencia",
       "h2": "Trayectoria",
       "roleMeta": "Práctica profesional · Ene – Feb 2025",
+      "pos": {"meta": "Proyecto freelance · Nov 2025 – hoy", "title": "Punto de venta para una cervecería artesanal", "bullets": ["Levanté los requisitos directamente con el cliente y desarrollé el sistema completo: un punto de venta de escritorio (Python, PySide6, SQLite) con tickets abiertos, productos, control de stock y reportes de caja diaria.", "Definí reglas de negocio para no perder información: baja lógica de productos con historial, descuento de stock en la misma transacción del cobro y venta con stock negativo con aviso en vez de bloqueo.", "Separé la lógica de negocio de la interfaz y la cubrí con 24 tests con pytest en las rutas donde un error cuesta dinero (cobro, reportes, historial), con criterio explícito de qué no se testea y por qué.", "Entregué la app lista para instalar (PyInstaller) y doy soporte al cliente."]},
       "bullets": [
         "Realicé análisis funcional de procesos administrativos internos.",
         "Validé datos mediante consultas SQL sobre el ERP Softland.",
@@ -113,12 +114,12 @@
         "process": "<strong>Proceso:</strong> API REST desacoplada (React + Flask + MySQL) · Proyecto de título aprobado"
       },
       "pos": {
-        "headline": "Cliente real, en producción",
-        "meta": "Entregado a cliente real · actualmente en uso",
+        "headline": "Cliente real, entregado",
+        "meta": "Entregado a cliente real · con soporte",
         "problem": "<strong>Problema:</strong> negocios pequeños necesitan un punto de venta simple, sin la complejidad de un sistema comercial.",
         "solution": "<strong>Solución:</strong> sistema de punto de venta liviano para gestionar ventas e inventario.",
-        "process": "<strong>Proceso:</strong> cobertura de tests dirigida por riesgo de negocio, con criterio explícito de qué NO testear y por qué · Entregado a cliente real, en uso productivo",
-        "status": "En uso real"
+        "process": "<strong>Proceso:</strong> cobertura de tests dirigida por riesgo de negocio, con criterio explícito de qué NO testear y por qué · Entregado a cliente real, con soporte",
+        "status": "Entregado a cliente"
       },
       "budgetdesk": {
         "headline": "Auditoría y remediación",
@@ -166,7 +167,8 @@
         "languages": "Lenguajes",
         "frameworks": "Frameworks & librerías",
         "databases": "Bases de datos",
-        "tools": "Herramientas & metodologías"
+        "tools": "Herramientas & metodologías",
+        "testing": "Testing y CI"
       },
       "conceptualTag": "curso",
       "limitedTag": "uso puntual",
@@ -467,6 +469,7 @@
       "eyebrow": "Experience",
       "h2": "Track record",
       "roleMeta": "Professional internship · Jan – Feb 2025",
+      "pos": {"meta": "Freelance project · Nov 2025 – now", "title": "Point of sale for a craft brewery", "bullets": ["Gathered requirements directly with the client and built the whole system: a desktop point of sale (Python, PySide6, SQLite) with open tickets, products, stock control and daily cash reports.", "Defined business rules so no information is lost: soft deletion of products with sales history, stock deducted in the same transaction as the payment, and sales with negative stock allowed with a warning instead of blocked.", "Kept the business logic separate from the UI and covered it with 24 pytest tests on the paths where a bug costs money (payments, reports, history), with explicit reasoning for what is left untested and why.", "Delivered the app ready to install (PyInstaller) and provide ongoing support to the client."]},
       "bullets": [
         "Performed functional analysis of internal administrative processes.",
         "Validated data through SQL queries against the Softland ERP.",
@@ -506,12 +509,12 @@
         "process": "<strong>Process:</strong> Decoupled REST API (React + Flask + MySQL) · Approved capstone project"
       },
       "pos": {
-        "headline": "Real client, in production",
-        "meta": "Delivered to a real client · currently in use",
+        "headline": "Real client, delivered",
+        "meta": "Delivered to a real client · with ongoing support",
         "problem": "<strong>Problem:</strong> small businesses need a simple point-of-sale system, without the overhead of a full commercial platform.",
         "solution": "<strong>Solution:</strong> a lightweight point-of-sale system for managing sales and inventory.",
-        "process": "<strong>Process:</strong> risk-driven test coverage, with explicit reasoning for what was deliberately left untested · Delivered to a real client, in production use",
-        "status": "In real use"
+        "process": "<strong>Process:</strong> risk-driven test coverage, with explicit reasoning for what was deliberately left untested · Delivered to a real client, with ongoing support",
+        "status": "Delivered to client"
       },
       "budgetdesk": {
         "headline": "Audit and remediation",
@@ -559,7 +562,8 @@
         "languages": "Languages",
         "frameworks": "Frameworks & libraries",
         "databases": "Databases",
-        "tools": "Tools & methodologies"
+        "tools": "Tools & methodologies",
+        "testing": "Testing & CI"
       },
       "conceptualTag": "coursework",
       "limitedTag": "limited use",

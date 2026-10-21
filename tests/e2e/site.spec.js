@@ -137,3 +137,13 @@ test('en móvil el menú abre, navega y se cierra con Escape', async ({ page }) 
   await expect(toggle).toHaveAttribute('aria-expanded', 'false');
   await expect(toggle).toBeFocused();
 });
+
+test('experiencia incluye el POS freelance y su estado no dice que está en uso', async ({ page }) => {
+  const titles = page.locator('#experience .timeline-item h3');
+  await expect(titles.first()).toHaveText('Punto de venta para una cervecería artesanal');
+  await expect(page.locator('[data-i18n="projects.pos.status"]')).toHaveText('Entregado a cliente');
+  await expect(page.locator('#projects')).not.toContainText('en uso');
+  await page.click('.lang-btn[data-lang="en"]');
+  await expect(titles.first()).toHaveText('Point of sale for a craft brewery');
+  await expect(page.locator('[data-i18n="stack.groups.testing"]')).toHaveText('Testing & CI');
+});
