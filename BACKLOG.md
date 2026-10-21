@@ -110,4 +110,7 @@ correcta.
 | POS-02 | Nuevo orden: Proyectos y Experiencia primero; Sobre mí y Personal al final | ✅ |
 | POS-03 | Proyectos por fuerza de evidencia (Aura, POS, PetPal, Job-tracker, Finanzas, BudgetDesk) y tarjetas más livianas (2 evidencias, sin el párrafo "Proceso" repetido) | ✅ — las claves `process` y las evidencias ocultas siguen en `i18n.json` por si se quieren recuperar |
 | POS-04 | Navegación de 4 enlaces + Contacto, con menú en móvil | ✅ |
+| POS-05 | Experiencia: el POS como proyecto freelance (Nov 2025 – hoy): requisitos con el cliente, desarrollo completo, 24 tests y soporte | ✅ |
+| POS-06 | El POS ya no se presenta "en uso": no está en uso hoy (volverá tras una actualización pedida por el cliente). Estado "Entregado a cliente", titular "Cliente real, entregado" | ✅ — actualizar cuando vuelva a usarse |
+| POS-07 | Stack: grupo "Testing y CI" (pytest, Playwright, GitHub Actions, Docker) y PySide6 en frameworks, todo verificable en los repos | ✅ |
 | APP-09 | Bloque opcional "Apoya mi trabajo" (PayPal) también al pie de `/apps/`, `/apps/aura/` y `/apps/petpal/` | ✅ — mismo bloque y claves (`contact.support.*`) que en Contacto (PR #5); sus estilos y `.mono-tag` pasaron a `assets/shared.css` |

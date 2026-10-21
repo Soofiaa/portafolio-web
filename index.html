@@ -324,6 +324,7 @@ h1{
 }
 
 /* ===== Personal / Stack ===== */
+.stack-group--wide{ grid-column:1 / -1; }
 .stack-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
@@ -963,14 +964,14 @@ li.chip-conceptual{
       </article>
 
       <article class="project-card pc-5">
-        <div class="project-top"><span class="ev">EV-05</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.pos.status">En uso real</span></span></div>
+        <div class="project-top"><span class="ev">EV-05</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.pos.status">Entregado a cliente</span></span></div>
         <div class="project-head"><h3>POS para cervecería</h3></div>
-        <p class="project-headline" data-i18n="projects.pos.headline">Cliente real, en producción</p>
-        <p class="project-meta" data-i18n="projects.pos.meta">Entregado a cliente real · actualmente en uso</p>
+        <p class="project-headline" data-i18n="projects.pos.headline">Cliente real, entregado</p>
+        <p class="project-meta" data-i18n="projects.pos.meta">Entregado a cliente real · con soporte</p>
         <p class="project-problem" data-i18n-html="projects.pos.problem"><strong>Problema:</strong> negocios pequeños necesitan un punto de venta simple, sin la complejidad de un sistema comercial.</p>
         <p class="project-solution" data-i18n-html="projects.pos.solution"><strong>Solución:</strong> sistema de punto de venta liviano para gestionar ventas e inventario.</p>
-        <p class="project-process" data-i18n-html="projects.pos.process"><strong>Proceso:</strong> cobertura de tests dirigida por riesgo de negocio, con criterio explícito de qué NO testear y por qué · Entregado a cliente real, en uso productivo</p>
-        <ul class="chips chips-mono"><li>Python</li><li>SQLite</li></ul>
+        <p class="project-process" data-i18n-html="projects.pos.process"><strong>Proceso:</strong> cobertura de tests dirigida por riesgo de negocio, con criterio explícito de qué NO testear y por qué · Entregado a cliente real, con soporte</p>
+        <ul class="chips chips-mono"><li>Python</li><li>PySide6</li><li>SQLite</li><li>pytest</li></ul>
         <a href="https://github.com/Soofiaa/cerveceria_pos" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a>
       </article>
 
@@ -1031,6 +1032,19 @@ li.chip-conceptual{
 
     <div class="timeline-item">
       <div class="timeline-meta">
+        <span class="mono-tag" data-i18n="experience.pos.meta">Proyecto freelance · Nov 2025 – hoy</span>
+      </div>
+      <h3 data-i18n="experience.pos.title">Punto de venta para una cervecería artesanal</h3>
+      <ul class="outcome-list">
+        <li data-i18n="experience.pos.bullets.0">Levanté los requisitos directamente con el cliente y desarrollé el sistema completo: un punto de venta de escritorio (Python, PySide6, SQLite) con tickets abiertos, productos, control de stock y reportes de caja diaria.</li>
+        <li data-i18n="experience.pos.bullets.1">Definí reglas de negocio para no perder información: baja lógica de productos con historial, descuento de stock en la misma transacción del cobro y venta con stock negativo con aviso en vez de bloqueo.</li>
+        <li data-i18n="experience.pos.bullets.2">Separé la lógica de negocio de la interfaz y la cubrí con 24 tests con pytest en las rutas donde un error cuesta dinero (cobro, reportes, historial), con criterio explícito de qué no se testea y por qué.</li>
+        <li data-i18n="experience.pos.bullets.3">Entregué la app lista para instalar (PyInstaller) y doy soporte al cliente.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-meta">
         <span class="mono-tag" data-i18n="experience.roleMeta">Práctica profesional · Ene – Feb 2025</span>
       </div>
       <h3>Dental Laval Ltda.</h3>
@@ -1065,6 +1079,7 @@ li.chip-conceptual{
           <li>Flask</li>
           <li>React</li>
           <li>Flutter</li>
+          <li>PySide6</li>
         </ul>
       </div>
       <div class="stack-group">
@@ -1077,6 +1092,15 @@ li.chip-conceptual{
         </ul>
       </div>
       <div class="stack-group">
+        <h3 data-i18n="stack.groups.testing">Testing y CI</h3>
+        <ul class="chips">
+          <li>pytest</li>
+          <li>Playwright</li>
+          <li>GitHub Actions</li>
+          <li>Docker</li>
+        </ul>
+      </div>
+      <div class="stack-group stack-group--wide">
         <h3 data-i18n="stack.groups.tools">Herramientas &amp; metodologías</h3>
         <ul class="chips">
           <li>Git</li>
