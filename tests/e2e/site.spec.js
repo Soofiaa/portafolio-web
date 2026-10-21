@@ -147,3 +147,13 @@ test('experiencia incluye el POS freelance y su estado no dice que está en uso'
   await expect(titles.first()).toHaveText('Point of sale for a craft brewery');
   await expect(page.locator('[data-i18n="stack.groups.testing"]')).toHaveText('Testing & CI');
 });
+
+test('las fuentes se sirven desde el propio sitio, sin pedir nada a Google Fonts', async ({ page }) => {
+  const external = [];
+  page.on('request', (req) => { if (/fonts\.(googleapis|gstatic)\.com/.test(req.url())) external.push(req.url()); });
+  await page.reload();
+  await page.evaluate(() => document.fonts.ready);
+  expect(await page.evaluate(() => document.fonts.check('800 1em "Bricolage Grotesque"'))).toBe(true);
+  expect(await page.evaluate(() => document.fonts.check('400 1em "Instrument Sans"'))).toBe(true);
+  expect(external).toEqual([]);
+});

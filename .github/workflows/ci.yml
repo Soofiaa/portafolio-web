@@ -24,7 +24,7 @@ jobs:
           python-version: "3.x"
 
       - name: Validate HTML
-        run: npx --yes html-validate index.html apps/index.html apps/*/index.html
+        run: npx --yes html-validate index.html 404.html apps/index.html apps/*/index.html
 
       - name: Validate i18n JSON
         run: |

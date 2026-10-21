@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGES = [ROOT / "index.html", ROOT / "apps" / "index.html", *sorted((ROOT / "apps").glob("*/index.html"))]
+PAGES = [ROOT / "index.html", ROOT / "404.html", ROOT / "apps" / "index.html", *sorted((ROOT / "apps").glob("*/index.html"))]
 DATA = json.loads((ROOT / "i18n" / "i18n.json").read_text(encoding="utf-8"))
 ES = DATA["es"]
 

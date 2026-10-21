@@ -94,6 +94,9 @@ igual el bloque `prefers-color-scheme` y `[data-theme="dark"]`. No dupliques hex
   Tracking ajustado (-0,035 a -0,055 em) y interlineado 0,85 a 1,05.
 - **Instrument Sans** para el cuerpo (1,0625 rem, interlineado 1,6). Líneas de 62 caracteres
   como máximo en párrafos de lectura.
+- Las tres fuentes están autoalojadas en `assets/fonts/` (variables, solo subconjunto latino;
+  licencia OFL en `assets/fonts/OFL.txt`) y se declaran en `assets/shared.css`. Cada página precarga
+  Bricolage Grotesque e Instrument Sans. No se usa Google Fonts.
 - **JetBrains Mono** para las etiquetas de expediente (`EV-01`), los chips de tecnología y el código real. No la uses en párrafos ni titulares.
 - Sin mayúsculas sostenidas, sin eyebrows con símbolos y sin acentuar una sola palabra de
   un titular.
@@ -160,7 +163,13 @@ página de apps, con las mismas claves `contact.support.*`. Sus estilos viven en
 en ambos temas. Para activarlo basta agregar el `href` y quitar `role` y `aria-disabled`; cada
 botón lleva un comentario con los pasos.
 
-## 8. Activos de marca
+## 8. Página 404 (`404.html`)
+
+Vercel la sirve cuando una ruta no existe. Usa la misma marca, textos en `notFound` (ES/EN),
+`noindex` y enlaces a la portada y a `/apps/`. Sus rutas son absolutas porque puede servirse desde
+cualquier profundidad. El CI la valida igual que las demás páginas.
+
+## 9. Activos de marca
 
 - `assets/og-image.jpg` (1200×630): fondo noche ciruela, nombre en Bricolage 800 con "Menzel" en oro,
   Circuit Bloom a la derecha. La versión anterior quedó en `assets/og-alternativas/og-image.v1-ciruela.jpg`.

@@ -129,3 +129,30 @@ tiene.
   el cache-headers finding persiste, agregar `vercel.json` con
   `Cache-Control` explícito para `*.js` (ya no aplica a `style.css`,
   que ahora va inline en el HTML).
+
+## Run #4 — 2026-10-21 (fuentes autoalojadas)
+
+Después de la sección de apps y el reordenamiento de la portada, Lighthouse 13.5 (móvil, simulado).
+
+**Producción antes del cambio** (`portafolio-web-theta-coral.vercel.app`): Performance 86 en la
+portada y 90–92 en `/apps/`, Aura y PetPal; Accessibility, Best Practices y SEO en 100. El elemento
+LCP es el `h1` ("Sofía Menzel"), que esperaba a Google Fonts: dos orígenes extra (googleapis y
+gstatic) antes de pintar el texto. Además, `assets/personal/juego.jpg` (67 KB) se descargaba al
+inicio aunque la sección Personal ya está casi al final (PERF-01 le había quitado el `lazy` cuando
+estaba arriba).
+
+**Cambios:** fuentes autoalojadas en `assets/fonts/` (variables, solo subconjunto latino, licencia
+OFL en `assets/fonts/OFL.txt`), `@font-face` en `assets/shared.css` y `preload` de Bricolage
+Grotesque e Instrument Sans; `loading="lazy"` de vuelta en `juego.jpg`.
+
+**Comparación en las mismas condiciones** (dos servidores locales en paralelo, `master` contra la
+rama; sin compresión, por eso los bytes son mayores que en producción):
+
+| Página | Performance | FCP | LCP |
+|---|---|---|---|
+| Portada | 86 → 98 | 3,2 s → 1,4 s | 3,4 s → 2,4 s |
+| `/apps/` | 90 → 98 | 2,8 s → 1,2 s | 2,9 s → 2,4 s |
+| `/apps/aura/` | 89 → 97 | 2,9 s → 0,9 s | 3,0 s → 2,6 s |
+| `/apps/petpal/` | 89 → 97 | 2,9 s → 0,9 s | 3,0 s → 2,6 s |
+
+Best Practices marca 96 solo en local por el 404 de `/_vercel/insights/script.js`; en producción es 100.

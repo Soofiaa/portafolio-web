@@ -69,7 +69,7 @@ resuelto — ver tablas arriba.
 
 | ID | Título | Estado |
 |----|--------|--------|
-| PERF-01 | `loading="lazy"` en imagen de Overwatch (LCP) | ✅ — quitado; la sección queda muy arriba y Lighthouse la marcó como elemento LCP |
+| PERF-01 | `loading="lazy"` en imagen de Overwatch (LCP) | ✅ — quitado cuando Personal estaba arriba; desde que Personal va al final (POS-02) vuelve a ser `lazy` (POS-10) |
 | A11Y-01 | Foco perdido al activar la fachada de Spotify | ✅ — el wrapper del iframe recibe `tabindex="-1"` + `.focus()` explícito, con estilo `:focus` visible a juego con el resto del sitio |
 | CI-01 | Smoke tests de comportamiento (Playwright) | ✅ — `tests/e2e/site.spec.js` cubre formulario/validación nativa, persistencia de tema, cambio de idioma y fachada de Spotify; job `e2e` nuevo en `ci.yml`, no afecta el deploy (sigue sin build step) |
 | ARQ-07 | CSS inline en `index.html` (~1240 líneas) | ⏳ — sin acción por ahora; ver nota abajo |
@@ -113,4 +113,8 @@ correcta.
 | POS-05 | Experiencia: el POS como proyecto freelance (Nov 2025 – hoy): requisitos con el cliente, desarrollo completo, 24 tests y soporte | ✅ |
 | POS-06 | El POS ya no se presenta "en uso": no está en uso hoy (volverá tras una actualización pedida por el cliente). Estado "Entregado a cliente", titular "Cliente real, entregado" | ✅ — actualizar cuando vuelva a usarse |
 | POS-07 | Stack: grupo "Testing y CI" (pytest, Playwright, GitHub Actions, Docker) y PySide6 en frameworks, todo verificable en los repos | ✅ |
+| POS-08 | Título de Proyectos: "Lo que he construido" (antes "Proyectos personales", ya no exacto con el POS freelance) | ✅ |
+| POS-09 | Página 404 propia (`404.html`), ES/EN, `noindex` | ✅ |
+| POS-10 | Fuentes autoalojadas y `lazy` en `juego.jpg`: Lighthouse móvil de la portada 86 → 98 (ver `AUDIT.md`, Run #4) | ✅ |
+| POS-11 | README del portafolio al día (badge en `master`, sección de apps, desarrollo local) | ✅ |
 | APP-09 | Bloque opcional "Apoya mi trabajo" (PayPal) también al pie de `/apps/`, `/apps/aura/` y `/apps/petpal/` | ✅ — mismo bloque y claves (`contact.support.*`) que en Contacto (PR #5); sus estilos y `.mono-tag` pasaron a `assets/shared.css` |

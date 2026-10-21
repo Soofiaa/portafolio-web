@@ -11,7 +11,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGES = [ROOT / "index.html", ROOT / "apps" / "index.html", *sorted((ROOT / "apps").glob("*/index.html"))]
+PAGES = [ROOT / "index.html", ROOT / "404.html", ROOT / "apps" / "index.html", *sorted((ROOT / "apps").glob("*/index.html"))]
 
 SKIP_PREFIXES = ("http://", "https://", "mailto:", "tel:", "#", "data:", "/_vercel/")
 

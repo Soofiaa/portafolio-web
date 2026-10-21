@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es" data-i18n-meta="notFound.meta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function () {
+  try {
+    if (localStorage.getItem('lang-preference') === 'en') {
+      document.documentElement.setAttribute('data-lang-loading', 'en');
+    }
+    const storedTheme = localStorage.getItem('theme-preference');
+    if (storedTheme === 'dark' || storedTheme === 'light') {
+      document.documentElement.setAttribute('data-theme', storedTheme);
+    }
+  } catch (e) {}
+})();
+</script>
+<style>html[data-lang-loading="en"] body{visibility:hidden}</style>
+<title>Página no encontrada · Sofía Menzel</title>
+<meta name="description" content="Esta página no existe o cambió de lugar. Vuelve a la portada o revisa las apps de Sofía Menzel.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='26' fill='%233B2230'/%3E%3Ctext x='46' y='64' font-family='Arial, Helvetica, sans-serif' font-size='38' font-weight='800' fill='%23F7EEEB' text-anchor='middle'%3ESM%3C/text%3E%3Ccircle cx='78' cy='78' r='15' fill='%23D6A84A' stroke='%233B2230' stroke-width='6'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/shared.css">
+<style>
+/* ===== Página 404: estilos propios; tokens y base en /assets/shared.css ===== */
+.not-found{ padding:88px 24px 48px; min-height:calc(100vh - 220px); }
+@media (min-width:880px){ .not-found{ padding-top:120px; } }
+.not-found .mono-tag{ display:inline-block; margin:0 0 20px; font-family:var(--font-mono); }
+h1{
+  font-family:var(--font-display); font-weight:800;
+  font-size:clamp(3rem, 9vw, 6rem); line-height:0.9; letter-spacing:-0.05em;
+  margin:0 0 24px; max-width:14ch; color:var(--ink);
+}
+.lead{ max-width:34em; font-size:1.14rem; color:var(--ink-soft); margin:0 0 32px; }
+.actions{ display:flex; gap:12px; flex-wrap:wrap; }
+.site-footer{ padding:64px 24px 64px; color:var(--ink-soft); font-size:0.9rem; }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="skipLink">Saltar al contenido</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="/" class="mark" aria-label="Sofía Menzel">SM<svg class="mark-seal" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="var(--gold-fill)" stroke="var(--bg)" stroke-width="2"/><path d="M5.4 9.2l2.4 2.4 4.6-5.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <nav aria-label="Navegación principal">
+      <a href="/#contact" class="nav-cta" data-i18n="nav.contact">Contacto</a>
+      <div class="lang-toggle" role="group" aria-label="Selector de idioma">
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Cambiar a modo oscuro" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="not-found wrap">
+    <p class="mono-tag" data-i18n="notFound.code">Error 404</p>
+    <h1 data-i18n="notFound.h1">Esta página no existe</h1>
+    <p class="lead" data-i18n="notFound.lead">Puede que el enlace esté mal escrito o que la página haya cambiado de lugar. Desde aquí puedes volver a lo importante.</p>
+    <div class="actions">
+      <a href="/" class="btn btn-primary" data-i18n="notFound.home">Ir a la portada</a>
+      <a href="/apps/" class="btn btn-ghost" data-i18n="notFound.apps">Ver las apps</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer wrap">
+  <p data-i18n="footer">Sofía Menzel — hecho con atención al detalle.</p>
+</footer>
+
+<script defer src="/i18n.js"></script>
+<script defer src="/script.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

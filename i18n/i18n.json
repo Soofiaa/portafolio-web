@@ -85,7 +85,7 @@
     },
     "projects": {
       "eyebrow": "Proyectos",
-      "h2": "Proyectos personales",
+      "h2": "Lo que he construido",
       "viewGithub": "Ver en GitHub",
       "frontend": "Frontend",
       "backend": "Backend",
@@ -298,6 +298,17 @@
     "store": {
       "playSoon": "Próximamente en Google Play"
     },
+    "notFound": {
+      "meta": {
+        "title": "Página no encontrada · Sofía Menzel",
+        "description": "Esta página no existe o cambió de lugar. Vuelve a la portada o revisa las apps de Sofía Menzel."
+      },
+      "code": "Error 404",
+      "h1": "Esta página no existe",
+      "lead": "Puede que el enlace esté mal escrito o que la página haya cambiado de lugar. Desde aquí puedes volver a lo importante.",
+      "home": "Ir a la portada",
+      "apps": "Ver las apps"
+    },
     "appsPage": {
       "meta": {
         "title": "Apps · Sofía Menzel",
@@ -480,7 +491,7 @@
     },
     "projects": {
       "eyebrow": "Projects",
-      "h2": "Personal projects",
+      "h2": "What I've built",
       "viewGithub": "View on GitHub",
       "frontend": "Frontend",
       "backend": "Backend",
@@ -692,6 +703,17 @@
     },
     "store": {
       "playSoon": "Coming soon to Google Play"
+    },
+    "notFound": {
+      "meta": {
+        "title": "Page not found · Sofía Menzel",
+        "description": "This page doesn't exist or has moved. Go back to the home page or check out Sofía Menzel's apps."
+      },
+      "code": "Error 404",
+      "h1": "This page doesn't exist",
+      "lead": "The link may be mistyped or the page may have moved. From here you can get back to what matters.",
+      "home": "Go to the home page",
+      "apps": "See the apps"
     },
     "appsPage": {
       "meta": {
