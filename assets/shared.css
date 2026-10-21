@@ -433,8 +433,9 @@ nav a.active:not(.nav-cta)::after{ transform:scaleX(1); }
   cursor:not-allowed;
 }
 
-/* Estado en curso (en desarrollo, en prueba): neutro, sin oro ni check, porque no es evidencia verificada */
-.status-chip{
+/* Chips neutros: lo que no es evidencia verificada va sin oro ni check.
+   .status-chip = estado en curso (en desarrollo, en prueba), con punto hueco; .feature-chip = característica de una app. */
+.status-chip, .feature-chip{
   display:inline-flex;
   align-items:center;
   gap:7px;

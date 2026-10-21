@@ -50,3 +50,12 @@ test('cada tarjeta lleva a la página de su app y la portada enlaza al índice',
   await page.locator('a[href="apps/"]').click();
   await expect(page).toHaveURL(/\/apps\/$/);
 });
+
+test('en las páginas de apps el encabezado no usa el sello de verificado para estados ni características', async ({ page }) => {
+  for (const url of ['/apps/aura/', '/apps/petpal/']) {
+    await page.goto(url);
+    await expect(page.locator('.hero .status-chip')).toHaveCount(1);
+    await expect(page.locator('.hero .feature-chip')).toHaveCount(3);
+    await expect(page.locator('.hero .seal')).toHaveCount(0);
+  }
+});
