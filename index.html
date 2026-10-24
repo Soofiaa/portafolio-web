@@ -208,7 +208,7 @@ h1{
 .eyebrow{
   font-size:0.95rem;
   font-weight:600;
-  color:var(--accent-muted);
+  color:var(--ink-soft);
   margin:0 0 12px;
 }
 .section h2{
@@ -236,14 +236,29 @@ h1{
   gap:24px;
   flex-wrap:wrap;
 }
+/* La flor con circuito ocupa el espacio libre a la derecha de las tarjetas; en pantallas estrechas no hay espacio y se oculta */
 .personal-motif{
-  width:84px;
-  height:84px;
-  flex-shrink:0;
-  color:var(--accent);
+  display:none;
+  color:var(--ink-soft);
+  stroke-width:0.5;
 }
-@media (max-width:640px){
-  .personal-motif{ width:56px; height:56px; }
+@media (min-width:1000px){
+  #personal{
+    display:grid;
+    grid-template-columns:minmax(0, 780px) minmax(0, 1fr);
+    column-gap:48px;
+  }
+  #personal .personal-heading{ grid-column:1 / -1; }
+  .personal-motif{
+    display:block;
+    grid-column:2;
+    grid-row:2;
+    align-self:center;
+    justify-self:center;
+    width:min(100%, 220px);
+    height:auto;
+    opacity:0.9;
+  }
 }
 
 /* ===== Educación ===== */
@@ -325,10 +340,43 @@ h1{
 .stack-group--wide{ grid-column:1 / -1; }
 .stack-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-  gap:32px;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  gap:24px;
   margin-bottom:24px;
 }
+/* Cada tarjeta es un módulo: fondo de tarjeta, borde suave y la imagen de borde a borde.
+   El texto va con el mismo margen lateral y el reproductor de Spotify queda pegado al fondo,
+   así las tres tarjetas mantienen la misma altura y el mismo ritmo vertical. */
+#personal .stack-grid{ max-width:780px; }
+#personal .stack-group{
+  display:flex;
+  flex-direction:column;
+  background:var(--card-bg);
+  border:1px solid var(--card-border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  padding-bottom:28px;
+}
+#personal .stack-group > .personal-image{
+  margin:0;
+  border-radius:0;
+  aspect-ratio:16/9;
+}
+#personal .stack-group > :not(.personal-image){
+  margin-left:24px;
+  margin-right:24px;
+}
+#personal .stack-group > .stack-group-icon{
+  margin-top:22px;
+  margin-bottom:12px;
+}
+#personal .stack-group > .spotify-facade,
+#personal .stack-group > .spotify-embed{
+  width:calc(100% - 48px);
+  margin:auto 24px 0;
+}
+#personal .stack-group > p{ margin-bottom:20px; }
+#personal .stack-group .spotify-facade{ background:var(--bg); }
 .personal-image{
   width:100%;
   aspect-ratio:4/3;
@@ -345,23 +393,6 @@ h1{
 }
 /* La foto de música es cuadrada: se recorta a 4/3 como las otras dos, cuidando el encuadre del rostro */
 .personal-image--square img{ object-position:50% 38%; }
-/* Tercera tarjeta: sin foto, un panel de terminal ocupa el mismo marco 4/3 */
-.personal-terminal{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:6px;
-  padding:0 clamp(16px, 8%, 28px);
-  background:var(--panel-bg);
-  color:var(--panel-ink);
-  font-family:var(--font-mono);
-  font-size:clamp(12px, 1.05vw, 14px);
-  line-height:1.5;
-  white-space:nowrap;
-}
-.personal-terminal .prompt{ color:var(--panel-accent); }
-.personal-terminal .ok{ color:var(--panel-accent); }
-.personal-terminal .dim{ color:var(--panel-soft); }
 .spotify-facade{
   display:flex;
   align-items:center;
@@ -423,7 +454,7 @@ h1{
   display:block;
   width:24px;
   height:24px;
-  color:var(--accent);
+  color:var(--ink-soft);
   margin-bottom:10px;
 }
 .stack-group h3{
@@ -538,7 +569,7 @@ li.chip-conceptual{
   display:flex;
   flex-direction:column;
   gap:14px;
-  transition:transform .25s ease, box-shadow .25s ease;
+  transition:transform .3s ease-out, box-shadow .3s ease-out;
 }
 .project-card:hover{ transform:translateY(-3px); box-shadow:var(--card-shadow); }
 .pc-3{ background:var(--card-feature); }
@@ -637,7 +668,7 @@ li.chip-conceptual{
   left:0;
   top:0;
   font-weight:700;
-  color:var(--accent);
+  color:var(--warm);
 }
 .project-card .chips{ margin-top:auto; padding-top:6px; }
 .project-card .chips li{
@@ -793,8 +824,10 @@ li.chip-conceptual{
 }
 .form-field input:focus-visible,
 .form-field textarea:focus-visible{
-  outline:3px solid var(--accent);
+  outline:2px solid transparent;
   outline-offset:1px;
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px var(--bg), 0 0 0 5px var(--accent);
 }
 .hp-field{
   position:absolute;
@@ -924,7 +957,7 @@ li.chip-conceptual{
       <aside class="hero-metric" aria-labelledby="hero-metric-title">
         <div class="hero-metric-top">
           <p class="hero-metric-eyebrow" data-i18n="hero.metric.eyebrow">Resultado medido</p>
-          <span class="seal"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="hero.metric.seal">Práctica profesional</span></span>
+          <span class="seal"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5.4 8.2l1.8 1.8 3.4-3.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="hero.metric.seal">Práctica profesional</span></span>
         </div>
         <p class="hero-metric-value" id="hero-metric-title">
           <span data-i18n="hero.metric.from">1 semana</span>
@@ -962,7 +995,7 @@ li.chip-conceptual{
       </article>
 
       <article class="project-card pc-5">
-        <div class="project-top"><span class="ev">EV-05</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.pos.status">Entregado a cliente</span></span></div>
+        <div class="project-top"><span class="ev">EV-05</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5.4 8.2l1.8 1.8 3.4-3.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.pos.status">Entregado a cliente</span></span></div>
         <div class="project-head"><h3>POS para cervecería</h3></div>
         <p class="project-headline" data-i18n="projects.pos.headline">Cliente real, entregado</p>
         <p class="project-meta" data-i18n="projects.pos.meta">Entregado a cliente real · con soporte</p>
@@ -974,7 +1007,7 @@ li.chip-conceptual{
       </article>
 
       <article class="project-card pc-1">
-        <div class="project-top"><span class="ev">EV-01</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.petpal.status">CI en cada push</span></span></div>
+        <div class="project-top"><span class="ev">EV-01</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5.4 8.2l1.8 1.8 3.4-3.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.petpal.status">CI en cada push</span></span></div>
         <div class="project-head"><h3>PetPal</h3></div>
         <p class="project-headline" data-i18n-html="projects.petpal.headline"><span class="num">+290</span><span class="cap">tests automatizados</span></p>
         <p class="project-problem" data-i18n-html="projects.petpal.problem"><strong>Problema:</strong> los dueños de mascotas pierden el control de vacunas, tratamientos y controles veterinarios — información que termina dispersa entre papeles, mensajes y la memoria, especialmente con más de una mascota.</p>
@@ -985,7 +1018,7 @@ li.chip-conceptual{
       </article>
 
       <article class="project-card pc-2">
-        <div class="project-top"><span class="ev">EV-02</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.jobtracker.status">480+ tests</span></span></div>
+        <div class="project-top"><span class="ev">EV-02</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5.4 8.2l1.8 1.8 3.4-3.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.jobtracker.status">480+ tests</span></span></div>
         <div class="project-head"><h3>Job-tracker</h3></div>
         <p class="project-headline" data-i18n-html="projects.jobtracker.headline"><span class="num">95 %</span><span class="cap">de 1.321 ofertas se descartan solas al clasificar</span></p>
         <p class="project-problem" data-i18n-html="projects.jobtracker.problem"><strong>Problema:</strong> buscar a mano en 6 portales es repetitivo, y la mayoría de los avisos no sirve para un perfil junior (prácticas, exigencia de 2 o más años, cargos comerciales con la palabra “desarrollador”).</p>
@@ -997,7 +1030,7 @@ li.chip-conceptual{
       </article>
 
       <article class="project-card pc-4">
-        <div class="project-top"><span class="ev">EV-04</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.finance.status">Finalizado y aprobado</span></span></div>
+        <div class="project-top"><span class="ev">EV-04</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5.4 8.2l1.8 1.8 3.4-3.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.finance.status">Finalizado y aprobado</span></span></div>
         <div class="project-head"><h3>Plataforma de finanzas personales</h3></div>
         <p class="project-headline" data-i18n="projects.finance.headline">API REST desacoplada</p>
         <p class="project-meta" data-i18n="projects.finance.meta">Proyecto de título · Mar – Jul 2025</p>
@@ -1009,7 +1042,7 @@ li.chip-conceptual{
       </article>
 
       <article class="project-card pc-6">
-        <div class="project-top"><span class="ev">EV-06</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".18"/><path d="M4.6 8.3l2.2 2.2 4.4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.budgetdesk.status">Auditado y remediado</span></span></div>
+        <div class="project-top"><span class="ev">EV-06</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5.4 8.2l1.8 1.8 3.4-3.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.budgetdesk.status">Auditado y remediado</span></span></div>
         <div class="project-head"><h3>BudgetDesk</h3></div>
         <p class="project-headline" data-i18n="projects.budgetdesk.headline">Auditoría y remediación</p>
         <p class="project-problem" data-i18n-html="projects.budgetdesk.problem"><strong>Problema:</strong> gestionar ingresos y gastos personales sin depender de una conexión a internet ni de planillas dispersas, con reportes que se puedan compartir fácilmente.</p>
@@ -1199,19 +1232,6 @@ li.chip-conceptual{
         <p class="eyebrow" data-i18n="personal.eyebrow">Personal</p>
         <h2 data-i18n="personal.h2">Más allá del código</h2>
       </div>
-      <svg class="personal-motif" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z"/>
-        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(72 12 6.5)"/>
-        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(144 12 6.5)"/>
-        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(216 12 6.5)"/>
-        <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(288 12 6.5)"/>
-        <circle cx="12" cy="6.5" r="0.9" fill="currentColor" stroke="none"/>
-        <path d="M12,8.5 C10.3,10.5 13.7,12.5 12,15"/>
-        <path d="M12,12 C10,12.3 9,13.6 9.5,15"/>
-        <path d="M9,17 L6.2,19.5 L9,22"/>
-        <path d="M15,17 L17.8,19.5 L15,22"/>
-        <line x1="10.8" y1="19.5" x2="13.2" y2="19.5"/>
-      </svg>
     </div>
 
     <div class="stack-grid">
@@ -1236,20 +1256,24 @@ li.chip-conceptual{
             <span class="spotify-facade-title" data-i18n="personal.music.spotifyTitle">petal</span>
             <span class="spotify-facade-artist" data-i18n="personal.music.spotifyArtist">Ariana Grande · Spotify</span>
           </span>
-          <svg class="spotify-facade-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          <svg class="spotify-facade-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
         </button>
       </div>
-      <div class="stack-group">
-        <div class="personal-image personal-terminal" aria-hidden="true">
-          <span><span class="prompt">$</span> docker compose up -d</span>
-          <span><span class="ok">✔</span> open-webui <span class="dim">Started</span></span>
-          <span><span class="ok">✔</span> librechat <span class="dim">Started</span></span>
-        </div>
-        <svg class="stack-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9l-8 4.5-8-4.5v-9l8-4.5z"/><path d="M12 12l8-4.5M12 12l-8-4.5M12 12v9"/></svg>
-        <h3 data-i18n="personal.docker.label">Curiosidad autodidacta</h3>
-        <p data-i18n-html="personal.docker.text">Fuera de los proyectos formales, exploro herramientas de IA autohospedadas (Open WebUI, LibreChat) con contenedores Docker. Es <strong>aprendizaje autodirigido, más cercano a la curiosidad que a la certificación</strong>: cuando algo se desconfigura, entender por qué me enseña más que cualquier tutorial.</p>
-      </div>
     </div>
+
+    <svg class="personal-motif" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z"/>
+      <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(72 12 6.5)"/>
+      <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(144 12 6.5)"/>
+      <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(216 12 6.5)"/>
+      <path d="M12,6.5 C10.6,5.1 10.6,3.1 12,1.3 C13.4,3.1 13.4,5.1 12,6.5 Z" transform="rotate(288 12 6.5)"/>
+      <circle cx="12" cy="6.5" r="0.9" fill="currentColor" stroke="none"/>
+      <path d="M12,8.5 C10.3,10.5 13.7,12.5 12,15"/>
+      <path d="M12,12 C10,12.3 9,13.6 9.5,15"/>
+      <path d="M9,17 L6.2,19.5 L9,22"/>
+      <path d="M15,17 L17.8,19.5 L15,22"/>
+      <line x1="10.8" y1="19.5" x2="13.2" y2="19.5"/>
+    </svg>
   </section>
 
   <!-- CONTACT -->
@@ -1260,7 +1284,7 @@ li.chip-conceptual{
 
     <div class="contact-links">
       <a href="mailto:soofiaa.menzel@gmail.com" class="contact-link">
-        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>
         <span class="mono-tag" data-i18n="contact.emailLabel">Email</span> soofiaa.menzel@gmail.com
       </a>
       <a href="https://www.linkedin.com/in/sofia-menzel-madrid/" class="contact-link" target="_blank" rel="noopener">
@@ -1272,7 +1296,7 @@ li.chip-conceptual{
         <span class="mono-tag" data-i18n="contact.githubLabel">GitHub</span> /Soofiaa
       </a>
       <a href="cv/CV-Sofia-Menzel-2026.pdf" class="contact-link" download>
-        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
         <span class="mono-tag" data-i18n="contact.cvLabel">CV</span> <span data-i18n="hero.downloadCv">Descargar CV</span>
       </a>
     </div>
@@ -1313,7 +1337,7 @@ li.chip-conceptual{
       <h3 id="support-title" data-i18n="contact.support.title">Apoya mi trabajo</h3>
       <p data-i18n="contact.support.text">Si algo de lo que publico te sirvió, puedes invitarme un café. No es necesario: leer, probar o compartir mis proyectos ya ayuda.</p>
       <a class="btn btn-ghost support-btn" href="https://www.paypal.com/paypalme/sofiamenzeldev" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="contact.support.aria" aria-label="Donar por PayPal (se abre en una pestaña nueva)">
-        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/></svg>
         <span data-i18n="contact.support.cta">Donar por PayPal</span>
       </a>
     </aside>
