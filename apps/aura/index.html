@@ -177,7 +177,7 @@ h1{
     <ul class="principles">
       <li class="principle"><h3 data-i18n="auraPage.principles.p1.title">Tus datos viven en tu teléfono</h3><p data-i18n="auraPage.principles.p1.text">Todo vive en una base SQLite dentro del almacenamiento privado de la app. Aura no tiene cuenta ni servidor y Android no copia sus datos a la nube. La app solo usa Internet si activas el respaldo en tu propio Google Drive.</p></li>
       <li class="principle"><h3 data-i18n="auraPage.principles.p2.title">Una predicción honesta</h3><p data-i18n="auraPage.principles.p2.text">El próximo período se estima como un rango con nivel de confianza baja, media o alta. Si faltan datos o hay un atraso, Aura lo dice en vez de inventar una fecha.</p></li>
-      <li class="principle"><h3 data-i18n="auraPage.principles.p3.title">Respaldo bajo tu control</h3><p data-i18n="auraPage.principles.p3.text">Creas un archivo de respaldo y decides dónde guardarlo, o activas el respaldo automático diario en tu propio Google Drive. Se cifra en el teléfono con tu contraseña (AES-256-GCM, con la clave derivada con Argon2id), opcional en el archivo y obligatoria en Drive. Aura no la guarda ni puede recuperarla.</p></li>
+      <li class="principle"><h3 data-i18n="auraPage.principles.p3.title">Respaldo bajo tu control</h3><p data-i18n="auraPage.principles.p3.text">Creas un archivo de respaldo y decides dónde guardarlo, o activas el respaldo automático diario en tu propio Google Drive. Se cifra en el teléfono con tu contraseña (AES-256-GCM, con la clave derivada con Argon2id), opcional en el archivo y obligatoria en Drive. En los respaldos en archivo, Aura no guarda la contraseña ni puede recuperarla; en el de Drive la guarda sellada con el Keystore de Android para poder respaldar cada día.</p></li>
     </ul>
   </section>
 
@@ -221,6 +221,21 @@ h1{
       <a href="https://soofiaa.github.io/Aura/privacy.html" class="btn btn-primary" target="_blank" rel="noopener" data-i18n="auraPage.transparency.privacyLink">Leer la política de privacidad</a>
       <a href="https://github.com/Soofiaa/Aura" class="btn btn-ghost" target="_blank" rel="noopener" data-i18n="auraPage.transparency.repoLink">Ver el repositorio</a>
     </div>
+  </section>
+
+  <section id="documentacion" class="section wrap">
+    <p class="eyebrow" data-i18n="auraPage.docs.eyebrow">Documentación</p>
+    <h2 data-i18n="auraPage.docs.h2">Documentación del proyecto</h2>
+    <p class="inside-text" data-i18n="auraPage.docs.text">Aura tiene su documentación completa y abierta en su propio sitio web: requisitos, casos de uso, arquitectura, modelo de datos, permisos y privacidad, estrategia de pruebas y registro de decisiones. Está escrita para reclutadoras y para futuras usuarias.</p>
+    <ul class="checklist">
+          <li><a href="https://soofiaa.github.io/Aura/informe.html" target="_blank" rel="noopener" data-i18n-html="auraPage.docs.report"><strong>Informe del proyecto.</strong> Motivación, funciones, arquitectura, privacidad, calidad y decisiones, con un resumen ejecutivo en inglés y PDF descargable.</a></li>
+          <li><a href="https://soofiaa.github.io/Aura/guia.html" target="_blank" rel="noopener" data-i18n-html="auraPage.docs.guide"><strong>Guía de uso:</strong> primeros pasos, cómo leer la predicción, datos y permisos en lenguaje simple, y respaldo.</a></li>
+          <li><a href="https://github.com/Soofiaa/Aura/blob/main/docs/anexos/01_requisitos.md" target="_blank" rel="noopener" data-i18n-html="auraPage.docs.req"><strong>Requisitos y casos de uso:</strong> 19 funcionales y 15 no funcionales, con reglas de negocio y diagramas.</a></li>
+          <li><a href="https://github.com/Soofiaa/Aura/blob/main/docs/anexos/03_arquitectura.md" target="_blank" rel="noopener" data-i18n-html="auraPage.docs.arch"><strong>Arquitectura y modelo de datos:</strong> capas, arranque, migraciones y formato de respaldo.</a></li>
+          <li><a href="https://github.com/Soofiaa/Aura/blob/main/docs/anexos/05_permisos_y_privacidad.md" target="_blank" rel="noopener" data-i18n-html="auraPage.docs.priv"><strong>Permisos y privacidad:</strong> qué sale del teléfono, modelo de amenazas y lo que Aura no protege.</a></li>
+          <li><a href="https://github.com/Soofiaa/Aura/blob/main/docs/anexos/06_calidad_y_pruebas.md" target="_blank" rel="noopener" data-i18n-html="auraPage.docs.qa"><strong>Calidad y pruebas:</strong> estrategia, trazabilidad de requisito a prueba, 1.296 tests aprobados y brechas declaradas.</a></li>
+          <li><a href="https://github.com/Soofiaa/Aura/blob/main/docs/anexos/07_decisiones.md" target="_blank" rel="noopener" data-i18n-html="auraPage.docs.dec"><strong>Registro de decisiones:</strong> qué se decidió, por qué y a qué costo.</a></li>
+    </ul>
   </section>
 
   <section id="por-dentro" class="section wrap">

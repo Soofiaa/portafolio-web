@@ -251,7 +251,7 @@
         },
         "p3": {
           "title": "Respaldo bajo tu control",
-          "text": "Creas un archivo de respaldo y decides dónde guardarlo, o activas el respaldo automático diario en tu propio Google Drive. Se cifra en el teléfono con tu contraseña (AES-256-GCM, con la clave derivada con Argon2id), opcional en el archivo y obligatoria en Drive. Aura no la guarda ni puede recuperarla."
+          "text": "Creas un archivo de respaldo y decides dónde guardarlo, o activas el respaldo automático diario en tu propio Google Drive. Se cifra en el teléfono con tu contraseña (AES-256-GCM, con la clave derivada con Argon2id), opcional en el archivo y obligatoria en Drive. En los respaldos en archivo, Aura no guarda la contraseña ni puede recuperarla; en el de Drive la guarda sellada con el Keystore de Android para poder respaldar cada día."
         }
       },
       "shots": {
@@ -284,6 +284,18 @@
         "privacyLink": "Leer la política de privacidad",
         "repoLink": "Ver el repositorio",
         "backLink": "Volver a los proyectos"
+      },
+      "docs": {
+        "eyebrow": "Documentación",
+        "h2": "Documentación del proyecto",
+        "text": "Aura tiene su documentación completa y abierta en su propio sitio web: requisitos, casos de uso, arquitectura, modelo de datos, permisos y privacidad, estrategia de pruebas y registro de decisiones. Está escrita para reclutadoras y para futuras usuarias.",
+        "report": "<strong>Informe del proyecto.</strong> Motivación, funciones, arquitectura, privacidad, calidad y decisiones, con un resumen ejecutivo en inglés y PDF descargable.",
+        "guide": "<strong>Guía de uso:</strong> primeros pasos, cómo leer la predicción, datos y permisos en lenguaje simple, y respaldo.",
+        "req": "<strong>Requisitos y casos de uso:</strong> 19 funcionales y 15 no funcionales, con reglas de negocio y diagramas.",
+        "arch": "<strong>Arquitectura y modelo de datos:</strong> capas, arranque, migraciones y formato de respaldo.",
+        "priv": "<strong>Permisos y privacidad:</strong> qué sale del teléfono, modelo de amenazas y lo que Aura no protege.",
+        "qa": "<strong>Calidad y pruebas:</strong> estrategia, trazabilidad de requisito a prueba, 1.296 tests aprobados y brechas declaradas.",
+        "dec": "<strong>Registro de decisiones:</strong> qué se decidió, por qué y a qué costo."
       },
       "inside": {
         "eyebrow": "Por dentro",
@@ -653,7 +665,7 @@
         },
         "p3": {
           "title": "A backup under your control",
-          "text": "You create a backup file and choose where to save it, or turn on the daily automatic backup to your own Google Drive. It is encrypted on the phone with your password (AES-256-GCM, with the key derived using Argon2id), optional for the file and required for Drive. Aura doesn't store the password and can't recover it."
+          "text": "You create a backup file and choose where to save it, or turn on the daily automatic backup to your own Google Drive. It is encrypted on the phone with your password (AES-256-GCM, with the key derived using Argon2id), optional for the file and required for Drive. For file backups, Aura doesn't store the password and can't recover it; for Drive it keeps it sealed in the Android Keystore so it can back up every day."
         }
       },
       "shots": {
@@ -686,6 +698,18 @@
         "privacyLink": "Read the privacy policy",
         "repoLink": "View the repository",
         "backLink": "Back to projects"
+      },
+      "docs": {
+        "eyebrow": "Documentation",
+        "h2": "Project documentation",
+        "text": "Aura has complete, open documentation on its own website: requirements, use cases, architecture, data model, permissions and privacy, test strategy and a decision log. It is written for recruiters and for future users.",
+        "report": "<strong>Project report.</strong> Motivation, features, architecture, privacy, quality and decisions, with an English executive summary and a downloadable PDF.",
+        "guide": "<strong>User guide</strong> (in Spanish): first steps, how to read the prediction, data and permissions in plain language, and backups.",
+        "req": "<strong>Requirements and use cases:</strong> 19 functional and 15 non-functional, with business rules and diagrams.",
+        "arch": "<strong>Architecture and data model:</strong> layers, startup, migrations and backup format.",
+        "priv": "<strong>Permissions and privacy:</strong> what leaves the phone, threat model and what Aura does not protect.",
+        "qa": "<strong>Quality and testing:</strong> strategy, requirement-to-test traceability, 1,296 passing tests and declared gaps.",
+        "dec": "<strong>Decision log:</strong> what was decided, why and at what cost."
       },
       "inside": {
         "eyebrow": "Under the hood",
