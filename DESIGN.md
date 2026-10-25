@@ -117,6 +117,9 @@ igual el bloque `prefers-color-scheme` y `[data-theme="dark"]`. No dupliques hex
   párrafo "Proceso"; el detalle completo vive en la página de cada app o en su repositorio.
 - Los códigos `EV-0N` identifican cada proyecto y no cambian aunque cambie el orden.
 - Contacto en dos columnas desde 960 px.
+- Personal: dos tarjetas (juegos y música) de 780 px en total, con la foto de borde a borde en 16:9 y el
+  reproductor de Spotify pegado al pie. Desde 1000 px la flor con circuito ocupa la columna libre de la
+  derecha; bajo 1000 px se oculta. No hay material con derechos de autor ni tarjetas sin contenido propio.
 - Secciones separadas por espacio (112 px arriba), sin líneas divisorias.
 
 ## 5. Movimiento
@@ -127,6 +130,13 @@ del héroe, el Circuit Bloom que se dibuja (pétalos que crecen, trazas que se t
 aparecen) y el panel de resultado. El `h1` no se anima a propósito: es el candidato a LCP.
 Además, hover de botones y tarjetas (3 px), subrayado del enlace activo y scroll suave. No hay
 animaciones al hacer scroll. Con `prefers-reduced-motion: reduce` todo queda estático.
+
+**Foco.** `:focus-visible` dibuja un anillo de 2 px en `--accent` con un halo de `--bg`, no el contorno
+por defecto del navegador. Las transiciones de botones y tarjetas duran 0,3 s con `ease-out`.
+
+**Iconos.** Todos son de trazo (24×24, 2 px, extremos redondeados). Quedan rellenos solo los logos de
+marca (GitHub, LinkedIn) y el sello dorado del monograma. El acento rosa se reserva para acciones y
+estados activos: los eyebrows, los iconos decorativos y la flor de Personal usan `--ink-soft`.
 
 ## 6. Reglas para cambios futuros
 

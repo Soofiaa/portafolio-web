@@ -270,10 +270,12 @@ body{
 }
 .skip-link:focus{ left:0; }
 
+/* Foco: anillo limpio con halo de fondo (el outline transparente conserva el aviso en modo contraste forzado) */
 a:focus-visible,
 button:focus-visible{
-  outline:3px solid var(--accent);
+  outline:2px solid transparent;
   outline-offset:3px;
+  box-shadow:0 0 0 3px var(--bg), 0 0 0 5px var(--accent);
 }
 .visually-hidden{
   position:absolute;
@@ -425,7 +427,7 @@ nav a.active:not(.nav-cta)::after{ transform:scaleX(1); }
   font-size:1rem;
   padding:15px 30px;
   border-radius:999px;
-  transition:transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+  transition:transform .3s ease-out, background-color .3s ease-out, color .3s ease-out, border-color .3s ease-out;
 }
 .btn-primary{
   background:var(--accent);
