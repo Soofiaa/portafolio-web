@@ -288,8 +288,9 @@
       "docs": {
         "eyebrow": "Documentación",
         "h2": "Documentación del proyecto",
-        "text": "Aura tiene su documentación completa y abierta: requisitos, casos de uso, arquitectura, modelo de datos, permisos y privacidad, estrategia de pruebas y registro de decisiones. Está escrita para reclutadoras y para futuras usuarias.",
-        "report": "<strong>Informe del proyecto (PDF).</strong> Motivación, funciones, arquitectura, privacidad, calidad y decisiones, con un resumen ejecutivo en inglés.",
+        "text": "Aura tiene su documentación completa y abierta en su propio sitio web: requisitos, casos de uso, arquitectura, modelo de datos, permisos y privacidad, estrategia de pruebas y registro de decisiones. Está escrita para reclutadoras y para futuras usuarias.",
+        "report": "<strong>Informe del proyecto.</strong> Motivación, funciones, arquitectura, privacidad, calidad y decisiones, con un resumen ejecutivo en inglés y PDF descargable.",
+        "guide": "<strong>Guía de uso:</strong> primeros pasos, cómo leer la predicción, datos y permisos en lenguaje simple, y respaldo.",
         "req": "<strong>Requisitos y casos de uso:</strong> 19 funcionales y 15 no funcionales, con reglas de negocio y diagramas.",
         "arch": "<strong>Arquitectura y modelo de datos:</strong> capas, arranque, migraciones y formato de respaldo.",
         "priv": "<strong>Permisos y privacidad:</strong> qué sale del teléfono, modelo de amenazas y lo que Aura no protege.",
@@ -701,8 +702,9 @@
       "docs": {
         "eyebrow": "Documentation",
         "h2": "Project documentation",
-        "text": "Aura has complete, open documentation: requirements, use cases, architecture, data model, permissions and privacy, test strategy and a decision log. It is written for recruiters and for future users.",
-        "report": "<strong>Project report (PDF).</strong> Motivation, features, architecture, privacy, quality and decisions, with an English executive summary.",
+        "text": "Aura has complete, open documentation on its own website: requirements, use cases, architecture, data model, permissions and privacy, test strategy and a decision log. It is written for recruiters and for future users.",
+        "report": "<strong>Project report.</strong> Motivation, features, architecture, privacy, quality and decisions, with an English executive summary and a downloadable PDF.",
+        "guide": "<strong>User guide</strong> (in Spanish): first steps, how to read the prediction, data and permissions in plain language, and backups.",
         "req": "<strong>Requirements and use cases:</strong> 19 functional and 15 non-functional, with business rules and diagrams.",
         "arch": "<strong>Architecture and data model:</strong> layers, startup, migrations and backup format.",
         "priv": "<strong>Permissions and privacy:</strong> what leaves the phone, threat model and what Aura does not protect.",

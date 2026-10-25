@@ -71,15 +71,12 @@ test('la página de Aura enlaza al índice de apps', async ({ page }) => {
   await expect(page).toHaveURL(/\/apps\/$/);
 });
 
-test('la página de Aura tiene la sección de documentación, con el informe en PDF, en ambos idiomas', async ({ page }) => {
+test('la página de Aura tiene la sección de documentación, con el informe y la guía en el sitio de Aura, en ambos idiomas', async ({ page }) => {
   const docs = page.locator('#documentacion');
   await expect(docs.locator('h2')).toHaveText('Documentación del proyecto');
-  const report = docs.locator('a[href="/assets/aura/Aura_Informe.pdf"]');
+  const report = docs.locator('a[href="https://soofiaa.github.io/Aura/informe.html"]');
   await expect(report).toContainText('Informe del proyecto');
-  expect((await docs.locator('a').count())).toBeGreaterThanOrEqual(6);
-
-  const pdf = await page.request.get('/assets/aura/Aura_Informe.pdf');
-  expect(pdf.ok()).toBe(true);
+  expect((await docs.locator('a').count())).toBeGreaterThanOrEqual(7);
 
   await page.click('.lang-btn[data-lang="en"]');
   await expect(docs.locator('h2')).toHaveText('Project documentation');
