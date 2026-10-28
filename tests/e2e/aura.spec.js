@@ -11,11 +11,14 @@ test.beforeEach(async ({ page }) => {
 
 test('la página de Aura cambia de idioma y de metadatos', async ({ page }) => {
   const tagline = page.locator('[data-i18n="auraPage.tagline"]');
+  const pregnancy = page.locator('[data-i18n-html="auraPage.features.f7"]');
   await expect(tagline).toHaveText('Entiende tu ciclo con calma');
+  await expect(pregnancy).toContainText('modo embarazo');
   await expect(page).toHaveTitle(/Aura — Seguimiento de ciclo/);
 
   await page.click('.lang-btn[data-lang="en"]');
   await expect(tagline).toHaveText('Understand your cycle, calmly');
+  await expect(pregnancy).toContainText('pregnancy mode');
   await expect(page).toHaveTitle(/Aura — Cycle tracking/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
 });
