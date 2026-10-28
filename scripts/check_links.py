@@ -20,7 +20,7 @@ total = 0
 
 for page in PAGES:
     html = page.read_text(encoding="utf-8")
-    refs = set(re.findall(r'(?:href|src)="([^"]+)"', html))
+    refs = set(re.findall(r'(?<![-\w])(?:href|src)="([^"]+)"', html))
     for ref in sorted(refs):
         if ref.startswith(SKIP_PREFIXES):
             continue
