@@ -21,6 +21,7 @@ test('la página de Aura cambia de idioma y de metadatos', async ({ page }) => {
   await expect(pregnancy).toContainText('pregnancy mode');
   await expect(page.locator('[data-i18n-href="auraPage.privacyHref"]').first())
     .toHaveAttribute('href', /privacy\.html#en$/);
+  await expect(page.locator('[data-i18n="auraPage.ctaSite"]')).toHaveAttribute('href', /\/Aura\/en\/$/);
   await expect(page).toHaveTitle(/Aura — Cycle tracking/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
 });
@@ -79,11 +80,13 @@ test('la página de Aura enlaza al índice de apps', async ({ page }) => {
 test('la página de Aura tiene la sección de documentación, con el informe y la guía en el sitio de Aura, en ambos idiomas', async ({ page }) => {
   const docs = page.locator('#documentacion');
   await expect(docs.locator('h2')).toHaveText('Documentación del proyecto');
-  const report = docs.locator('a[href="https://soofiaa.github.io/Aura/informe.html"]');
+  const report = docs.locator('[data-i18n-href="auraPage.reportHref"]');
+  await expect(report).toHaveAttribute('href', 'https://soofiaa.github.io/Aura/informe.html');
   await expect(report).toContainText('Informe del proyecto');
   expect((await docs.locator('a').count())).toBeGreaterThanOrEqual(7);
 
   await page.click('.lang-btn[data-lang="en"]');
   await expect(docs.locator('h2')).toHaveText('Project documentation');
   await expect(report).toContainText('Project report');
+  await expect(report).toHaveAttribute('href', 'https://soofiaa.github.io/Aura/en/report.html');
 });

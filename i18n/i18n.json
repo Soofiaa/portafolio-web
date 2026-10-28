@@ -237,6 +237,10 @@
       "ctaCode": "Ver el código",
       "ctaPrivacy": "Política de privacidad",
     "privacyHref": "https://soofiaa.github.io/Aura/privacy.html#es",
+    "ctaSite": "Ver su página",
+    "siteHref": "https://soofiaa.github.io/Aura/",
+    "reportHref": "https://soofiaa.github.io/Aura/informe.html",
+    "guideHref": "https://soofiaa.github.io/Aura/guia.html",
       "disclaimer": "Estimación; no es un método anticonceptivo.",
       "heroAlt": "Pantalla de Inicio de Aura con la fase actual, el próximo período estimado y la confianza de la predicción.",
       "principles": {
@@ -657,6 +661,10 @@
       "ctaCode": "View the code",
       "ctaPrivacy": "Privacy policy",
     "privacyHref": "https://soofiaa.github.io/Aura/privacy.html#en",
+    "ctaSite": "Visit its website",
+    "siteHref": "https://soofiaa.github.io/Aura/en/",
+    "reportHref": "https://soofiaa.github.io/Aura/en/report.html",
+    "guideHref": "https://soofiaa.github.io/Aura/en/guide.html",
       "disclaimer": "An estimate, not a contraceptive method.",
       "heroAlt": "Aura's Home screen showing the current phase, the next estimated period and the prediction's confidence.",
       "principles": {
