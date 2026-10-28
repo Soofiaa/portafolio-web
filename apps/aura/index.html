@@ -193,7 +193,7 @@ h1{
           <li class="shot"><img src="/assets/aura/datos.webp" width="540" height="960" loading="lazy" alt="Pantalla Ajustes con las opciones de crear o restaurar un respaldo y borrar todos los datos." data-i18n-alt="auraPage.shots.data"></li>
       </ul>
     </section>
-    <p class="shots-note" data-i18n="auraPage.shots.note">Las capturas están en español, el idioma de la app.</p>
+    <p class="shots-note" data-i18n="auraPage.shots.note">Las capturas están en español y son de la versión 1.2.</p>
   </section>
 
   <section id="detalles" class="section wrap">
@@ -203,10 +203,15 @@ h1{
           <li data-i18n-html="auraPage.features.f1"><strong>Registrar tu día:</strong> sangrado, flujo, ánimo, síntomas y notas, y marcar “Me llegó hoy” en un toque.</li>
           <li data-i18n-html="auraPage.features.f2"><strong>Ver tu fase actual</strong> y el próximo período estimado, con su rango y nivel de confianza.</li>
           <li data-i18n-html="auraPage.features.f3"><strong>Consultar el calendario</strong> con períodos registrados, días estimados, ventana fértil y ovulación estimadas.</li>
-          <li data-i18n-html="auraPage.features.f4"><strong>Entender tus patrones:</strong> duración típica del ciclo, regularidad y síntomas más frecuentes.</li>
-          <li data-i18n-html="auraPage.features.f5"><strong>Activar recordatorios locales</strong> con texto discreto, si quieres.</li>
+          <li data-i18n-html="auraPage.features.f4"><strong>Entender tus patrones:</strong> duración típica del ciclo, regularidad y síntomas más frecuentes, con tarjetas de resumen, un gráfico de los últimos ciclos, explicaciones y el ánimo en barras.</li>
+          <li data-i18n-html="auraPage.features.f5"><strong>Activar recordatorios locales</strong> con texto discreto, si quieres: del ciclo, para registrar el día (solo si ese día aún no tiene nada registrado) y de tu anticonceptivo (píldora, parche, anillo o inyección mensual o trimestral; se guarda solo en el teléfono, no en los respaldos).</li>
           <li data-i18n-html="auraPage.features.f6"><strong>Crear y restaurar respaldos</strong> (con “Deshacer” tras importar), activar el respaldo automático en tu Google Drive y borrar todos tus datos cuando quieras.</li>
+          <li data-i18n-html="auraPage.features.f7"><strong>Activar el modo embarazo:</strong> muestra semanas y días y la fecha probable de parto, y pausa las predicciones, la ventana fértil y los recordatorios del ciclo. Al terminarlo eliges el desenlace (nacimiento, pérdida o sin especificar), y puedes corregir o borrar el último embarazo terminado. Sin textos de celebración; se incluye en los respaldos.</li>
+          <li data-i18n-html="auraPage.features.f8"><strong>Generar un resumen en PDF para tu médico</strong> en el teléfono, con ciclos, síntomas, ánimo, embarazos y método anticonceptivo, y compartirlo desde el menú de Android.</li>
+          <li data-i18n-html="auraPage.features.f9"><strong>Ver tu ciclo en un widget</strong> de la pantalla de inicio: próximo período, día de período, días de atraso o semanas de embarazo. El ajuste de widget discreto oculta todos los datos.</li>
+          <li data-i18n-html="auraPage.features.f10"><strong>Usarla en español o en inglés</strong> (en inglés si tu teléfono está en inglés; si no, en español) y con tema claro, oscuro o el del sistema.</li>
     </ul>
+    <p class="shots-note" data-i18n="auraPage.features.note">Las funciones nuevas (modo embarazo, resumen en PDF, widget, tema oscuro, inglés, recordatorios de registro y de anticonceptivo, y estadísticas rediseñadas) ya están en el código en GitHub y llegan en la próxima actualización de Google Play.</p>
   </section>
 
   <section id="privacidad" class="section wrap">
@@ -214,7 +219,7 @@ h1{
     <h2 data-i18n="auraPage.transparency.h2">Lo que Aura es y lo que no</h2>
     <ul class="checklist">
           <li data-i18n-html="auraPage.transparency.t1"><strong>No es un método anticonceptivo.</strong> Las fechas son estimaciones y pueden fallar.</li>
-          <li data-i18n-html="auraPage.transparency.t2"><strong>Estado:</strong> versión 1.2 en prueba cerrada en Google Play. Solo Android; todavía no hay versión pública en la tienda.</li>
+          <li data-i18n-html="auraPage.transparency.t2"><strong>Estado:</strong> versión 1.2 en prueba cerrada en Google Play. Solo Android; todavía no hay versión pública en la tienda. Las funciones nuevas de esta página llegan en la próxima actualización.</li>
           <li data-i18n-html="auraPage.transparency.t3"><strong>Es un proyecto personal de portafolio,</strong> en uso real, con el código abierto en GitHub.</li>
     </ul>
     <div class="link-row">
@@ -226,7 +231,7 @@ h1{
   <section id="por-dentro" class="section wrap">
     <p class="eyebrow" data-i18n="auraPage.inside.eyebrow">Por dentro</p>
     <h2 data-i18n="auraPage.inside.h2">Cómo está construida</h2>
-    <p class="inside-text" data-i18n="auraPage.inside.text">Flutter y Dart con una base SQLite (drift). La lógica de ciclos, la predicción y los recordatorios viven en un dominio puro, separado de la interfaz y de la base de datos, y están cubiertos por 1.296 tests.</p>
+    <p class="inside-text" data-i18n="auraPage.inside.text">Flutter y Dart con una base SQLite (drift). La lógica de ciclos, la predicción y los recordatorios viven en un dominio puro, separado de la interfaz y de la base de datos, y están cubiertos por 1.375 tests.</p>
     <div class="link-row">
       <a href="/#projects" class="btn btn-ghost" data-i18n="auraPage.transparency.backLink">Volver a los proyectos</a>
     </div>
