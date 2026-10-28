@@ -19,13 +19,15 @@ test('la página de Aura cambia de idioma y de metadatos', async ({ page }) => {
   await page.click('.lang-btn[data-lang="en"]');
   await expect(tagline).toHaveText('Understand your cycle, calmly');
   await expect(pregnancy).toContainText('pregnancy mode');
+  await expect(page.locator('[data-i18n-href="auraPage.privacyHref"]').first())
+    .toHaveAttribute('href', /privacy\.html#en$/);
   await expect(page).toHaveTitle(/Aura — Cycle tracking/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
 });
 
 test('la página de Aura declara el aviso y enlaza la política de privacidad', async ({ page }) => {
   await expect(page.locator('.disclaimer')).toContainText('no es un método anticonceptivo');
-  const privacy = page.locator('a[href="https://soofiaa.github.io/Aura/privacy.html"]').first();
+  const privacy = page.locator('a[href="https://soofiaa.github.io/Aura/privacy.html#es"]').first();
   await expect(privacy).toBeVisible();
 });
 

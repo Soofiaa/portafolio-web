@@ -236,6 +236,7 @@
       "pill3": "Respaldo con contraseña",
       "ctaCode": "Ver el código",
       "ctaPrivacy": "Política de privacidad",
+    "privacyHref": "https://soofiaa.github.io/Aura/privacy.html#es",
       "disclaimer": "Estimación; no es un método anticonceptivo.",
       "heroAlt": "Pantalla de Inicio de Aura con la fase actual, el próximo período estimado y la confianza de la predicción.",
       "principles": {
@@ -655,6 +656,7 @@
       "pill3": "Password-protected backup",
       "ctaCode": "View the code",
       "ctaPrivacy": "Privacy policy",
+    "privacyHref": "https://soofiaa.github.io/Aura/privacy.html#en",
       "disclaimer": "An estimate, not a contraceptive method.",
       "heroAlt": "Aura's Home screen showing the current phase, the next estimated period and the prediction's confidence.",
       "principles": {

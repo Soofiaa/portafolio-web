@@ -37,6 +37,11 @@
       if (typeof value === 'string') el.setAttribute('alt', value);
     });
 
+    document.querySelectorAll('[data-i18n-href]').forEach((el) => {
+      const value = getNested(dict, el.getAttribute('data-i18n-href'));
+      if (typeof value === 'string') el.setAttribute('href', value);
+    });
+
     // Las subpáginas declaran su propio bloque de metadatos con data-i18n-meta en <html>.
     const metaKey = document.documentElement.getAttribute('data-i18n-meta');
     const meta = (metaKey && getNested(dict, metaKey)) || dict.meta;
