@@ -124,6 +124,19 @@
         "process": "<strong>Proceso:</strong> auditoría de código con hallazgos documentados y remediación aplicada",
         "status": "Auditado y remediado"
       },
+      "athena": {
+        "status": "Desplegado y funcional",
+        "headline": "<span class=\"num\">10</span><span class=\"cap\">comandos slash · actualizaciones automáticas</span>",
+        "problem": "<strong>Problema:</strong> los fans de Overwatch tienen que revisar manualmente la web oficial de Blizzard para enterarse de parches nuevos, y no hay forma rápida de consultar datos de héroes, mapas, perfiles o la tienda desde Discord.",
+        "solution": "<strong>Solución:</strong> bot de Discord que revisa cada 30 minutos la página de Blizzard y publica automáticamente las notas de parche nuevas en un canal. Además responde 10 comandos slash: consultas de héroes (fichas, habilidades, héroe al azar), mapas, modos de juego, perfiles de jugadores con rangos y estadísticas, composición sugerida de equipo, trivia y datos de meta (héroes más elegidos, con más victorias o más baneados). Usa la API OverFast para datos en vivo.",
+        "evidenceTitle": "Cómo funciona",
+        "evidence": [
+          "<strong>Actualizaciones sin spam.</strong> Revisa cada 30 minutos, guarda los IDs de los parches ya enviados en un archivo de estado, y solo publica parches nuevos para que no se repitan al reiniciar.",
+          "<strong>Caché para no abusar de la API.</strong> Los datos de héroes, mapas y meta se guardan en memoria con tiempo de vida (TTL) de 15 minutos, así no se hace un pedido por cada comando.",
+          "<strong>Respeto a robots.txt y límites de tasa.</strong> Espera de 3 a 5 segundos entre pedidos al leer notas de parche y la tienda, y se detiene ante un bloqueo o un CAPTCHA sin esquivarlo."
+        ],
+        "page": "Ver la página del bot"
+      },
       "aura": {
         "status": "v1.2 · en desarrollo",
         "headline": "<span class=\"num\">1.375</span><span class=\"cap\">tests · local primero, sin cuenta ni servidor</span>",
@@ -141,16 +154,16 @@
       },
       "lead": "Cada proyecto abre con su evidencia: lo que se midió, lo que se probó y lo que no se hizo.",
       "jobtracker": {
-        "status": "480+ tests",
-        "headline": "<span class=\"num\">95 %</span><span class=\"cap\">de 1.321 ofertas se descartan solas al clasificar</span>",
-        "problem": "<strong>Problema:</strong> buscar a mano en 6 portales es repetitivo, y la mayoría de los avisos no sirve para un perfil junior (prácticas, exigencia de 2 o más años, cargos comerciales con la palabra “desarrollador”).",
-        "solution": "<strong>Solución:</strong> una aplicación local en Python que junta 6 fuentes, clasifica cada oferta con reglas explícitas según mi perfil y deja a la vista solo lo que merece una decisión, con un tablero de seguimiento de postulaciones.",
+        "status": "850+ tests",
+        "headline": "<span class=\"num\">97 %</span><span class=\"cap\">de 6.770 ofertas se descartan solas al clasificar</span>",
+        "problem": "<strong>Problema:</strong> buscar a mano en 15 portales es repetitivo, y la mayoría de los avisos no sirve para un perfil junior (prácticas, exigencia de 2 o más años, cargos comerciales con la palabra “desarrollador”).",
+        "solution": "<strong>Solución:</strong> una aplicación local en Python que junta 15 fuentes, clasifica cada oferta con reglas explícitas según mi perfil y usa IA (Groq) para estimar la compatibilidad (0–100) y marcar alertas. Incluye tablero Kanban de postulaciones, métricas de conversión y respaldos diarios verificados.",
         "process": "<strong>Proceso:</strong> reglas auditables y deterministas (cada descarte tiene una razón legible), 9 corridas completas de 6 a 8 minutos, y construcción por fases con pruebas, respaldo verificado y reversión lista antes de desplegar.",
-        "credit": "<strong>Qué es mío y qué no:</strong> Indeed y Glassdoor se obtienen con la librería JobSpy (MIT, © Cullen Watson), usada como dependencia sin modificar su código. Los lectores de los portales chilenos, el clasificador, la base de datos, el servidor, el tablero y los respaldos los escribí yo. Parte de la idea de Jobbi, mi app anterior de seguimiento de postulaciones, pero es un proyecto distinto.",
+        "credit": "<strong>Qué es mío y qué no:</strong> Indeed y Glassdoor se obtienen con la librería JobSpy (MIT, © Cullen Watson), usada como dependencia sin modificar su código. La IA usa Groq (qwen3.8-27b) como API externa. Los lectores de los portales chilenos, el clasificador, la base de datos, el servidor, el tablero, los respaldos y la integración de IA los escribí yo. Parte de la idea de Jobbi, mi app anterior de seguimiento de postulaciones, pero es un proyecto distinto.",
         "evidenceTitle": "Qué hay detrás del número",
         "evidence": [
-          "<strong>Clasificación explicable.</strong> Reglas explícitas en vez de un modelo: cada oferta sale con categoría y razón legible, y una regla que falla se corrige en una línea. Limitación conocida: la palabra clave da falsos positivos (un “Desarrollador de Negocios” entró como rol TI).",
-          "<strong>Más de 480 pruebas.</strong> pytest, más las funciones puras de la página ejecutadas con Node; en los arreglos comprobé que las pruebas fallan con el código anterior.",
+          "<strong>Clasificación explicable y análisis IA.</strong> Reglas explícitas en filtros.py más un análisis por IA que devuelve compatibilidad, resumen, puntos fuertes y alertas. Cada oferta sale con categoría, razón legible y una recomendación de compatibilidad; tú siempre decides si postular.",
+          "<strong>Más de 850 pruebas y métricas de conversión.</strong> pytest más pruebas de la interfaz; un tablero Kanban sigue cada postulación desde el envío hasta la oferta o el cierre, con métricas de conversión y notas en cada etapa.",
           "<strong>Datos que no se pierden.</strong> Respaldos con la API de SQLite, huella sha256 e integrity_check; el despliegue se prueba primero sobre una copia de solo lectura y deja la imagen anterior lista para volver atrás.",
           "<strong>Cortesía con los sitios.</strong> Los lectores propios respetan robots.txt, esperan de 3 a 5 segundos entre pedidos y se detienen ante un bloqueo o un CAPTCHA: un bloqueo nunca se esquiva."
         ]
@@ -548,6 +561,19 @@
         "process": "<strong>Process:</strong> code audit with documented findings and applied remediation",
         "status": "Audited and remediated"
       },
+      "athena": {
+        "status": "Deployed and live",
+        "headline": "<span class=\"num\">10</span><span class=\"cap\">slash commands · automatic updates</span>",
+        "problem": "<strong>Problem:</strong> Overwatch fans must manually check Blizzard's website for patch notes, and there's no quick way to query hero data, maps, player profiles or the item shop from Discord.",
+        "solution": "<strong>Solution:</strong> a Discord bot that checks Blizzard's patch page every 30 minutes and automatically posts new patch notes to a channel. Plus 10 slash commands: hero queries (cards, abilities, random hero), maps, game modes, player profiles with ranks and stats, team composition suggestions, trivia and meta data (most-picked, highest win rate, most banned heroes). Uses OverFast API for live data.",
+        "evidenceTitle": "How it works",
+        "evidence": [
+          "<strong>Updates without spam.</strong> Checks every 30 minutes, saves patch IDs to state file, publishes only new ones so they don't repeat on restart.",
+          "<strong>Cache to avoid API abuse.</strong> Hero, map and meta data are cached in memory for 15 minutes (TTL), so there's no request per command.",
+          "<strong>Respect for rate limits and robots.txt.</strong> Waits 3–5 seconds between requests when reading patches and shop, and stops on 403 or CAPTCHA without circumventing."
+        ],
+        "page": "See the bot repository"
+      },
       "aura": {
         "status": "v1.2 · in development",
         "headline": "<span class=\"num\">1,375</span><span class=\"cap\">tests · local-first, no account or server</span>",
@@ -565,17 +591,17 @@
       },
       "lead": "Every project opens with its evidence: what was measured, what was tested and what was left out.",
       "jobtracker": {
-        "status": "480+ tests",
-        "headline": "<span class=\"num\">95%</span><span class=\"cap\">of 1,321 job listings filtered out automatically when classified</span>",
-        "problem": "<strong>Problem:</strong> searching 6 job boards by hand is repetitive, and most listings don't fit a junior profile (internships, 2+ years required, sales roles that use the word “developer”).",
-        "solution": "<strong>Solution:</strong> a local Python app that gathers 6 sources, classifies every listing with explicit rules based on my profile and shows only what deserves a decision, with an application tracking board.",
+        "status": "850+ tests",
+        "headline": "<span class=\"num\">97%</span><span class=\"cap\">of 6,770 job listings filtered out automatically when classified</span>",
+        "problem": "<strong>Problem:</strong> searching 15 job boards by hand is repetitive, and most listings don't fit a junior profile (internships, 2+ years required, sales roles that use the word “developer”).",
+        "solution": "<strong>Solution:</strong> a local Python app that gathers 15 sources, classifies every listing with explicit rules based on my profile, and uses AI (Groq) to score each listing's fit (0–100) and flag red flags. Includes a Kanban board for applications, conversion metrics and verified daily backups.",
         "process": "<strong>Process:</strong> auditable, deterministic rules (every discard has a readable reason), 9 full runs of 6 to 8 minutes, and phased development with tests, a verified backup and a rollback ready before each deployment.",
-        "credit": "<strong>What is mine and what isn't:</strong> Indeed and Glassdoor come from the JobSpy library (MIT, © Cullen Watson), used as a dependency without modifying its code. The Chilean job-board readers, the classifier, the database, the server, the board and the backups are my own code. It grew out of the idea behind Jobbi, my earlier application-tracking app, but it is a different project.",
+        "credit": "<strong>What is mine and what isn't:</strong> Indeed and Glassdoor come from the JobSpy library (MIT, © Cullen Watson), used as a dependency without modifying its code. The AI uses Groq (qwen3.8-27b) as an external API. The Chilean job-board readers, the classifier, the database, the server, the board, the backups and the AI integration are my own code. It grew out of the idea behind Jobbi, my earlier application-tracking app, but it is a different project.",
         "evidenceTitle": "Behind the number",
         "evidence": [
-          "<strong>Explainable classification.</strong> Explicit rules instead of a model: every listing gets a category and a readable reason, and a failing rule is fixed in one line. Known limitation: keyword rules give false positives (a “Business Developer” was classified as an IT role).",
-          "<strong>480+ tests.</strong> pytest, plus the page's pure functions run with Node; for fixes I checked that the tests fail against the old code.",
-          "<strong>Data that doesn't get lost.</strong> Backups use the SQLite backup API with a sha256 fingerprint and integrity_check; each deployment is tried first on a read-only copy and keeps the previous image ready for rollback.",
+          "<strong>Explainable classification and AI analysis.</strong> Explicit rules in filtros.py plus AI analysis that returns fit score, summary, strengths and alerts. Every listing gets a category, a readable reason and a fit recommendation; you always decide whether to apply.",
+          "<strong>850+ tests and conversion metrics.</strong> pytest plus interface tests; a Kanban board tracks applications from submission to offer/closure, with conversion metrics and notes at each stage.",
+          "<strong>Data that doesn't get lost.</strong> Daily backups using the SQLite backup API with a sha256 fingerprint and integrity_check; each deployment is tried first on a read-only copy and keeps the previous image ready for rollback.",
           "<strong>Courtesy toward the sites.</strong> The custom readers respect robots.txt, wait 3 to 5 seconds between requests and stop at a block or CAPTCHA: a block is never bypassed."
         ]
       }
