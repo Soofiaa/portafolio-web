@@ -255,7 +255,7 @@
     "reportHref": "https://soofiaa.github.io/Aura/informe.html",
     "guideHref": "https://soofiaa.github.io/Aura/guia.html",
       "disclaimer": "Estimación; no es un método anticonceptivo.",
-      "heroAlt": "Pantalla de Inicio de Aura con la fase actual, el próximo período estimado y la confianza de la predicción.",
+      "heroAlt": "Pantalla de Inicio de Aura con la fase actual, el próximo período estimado y la ovulación estimada.",
       "principles": {
         "eyebrow": "Cómo piensa Aura",
         "h2": "Tres decisiones de diseño",
@@ -277,11 +277,11 @@
         "h2": "Así se ve",
         "region": "Capturas de pantalla de Aura",
         "note": "Las capturas están en español y son de la versión 1.2.",
-        "home": "Pantalla de Inicio de Aura: fase folicular, próximo período estimado con su rango y confianza alta.",
+        "home": "Pantalla de Inicio de Aura: fase folicular, próximo período estimado con su rango y ovulación estimada.",
         "calendar": "Calendario de octubre de 2026 con períodos registrados, ventana fértil y ovulación estimadas.",
         "log": "Pantalla Registrar día con fecha, día de sangrado, flujo, estado de ánimo y síntomas.",
-        "stats": "Pantalla Estadísticas con la duración típica del ciclo, la regularidad y los síntomas más frecuentes.",
-        "data": "Pantalla Ajustes con las opciones de crear o restaurar un respaldo y borrar todos los datos."
+        "stats": "Pantalla Estadísticas con la duración típica del ciclo, la regularidad, el próximo período estimado y la duración de los últimos ciclos.",
+        "data": "Pantalla Ajustes con la duración habitual del período, la ventana fértil y el modo embarazo."
       },
       "features": {
         "eyebrow": "Qué hace",
@@ -317,7 +317,7 @@
         "req": "<strong>Requisitos y casos de uso:</strong> 19 funcionales y 15 no funcionales, con reglas de negocio y diagramas.",
         "arch": "<strong>Arquitectura y modelo de datos:</strong> capas, arranque, migraciones y formato de respaldo.",
         "priv": "<strong>Permisos y privacidad:</strong> qué sale del teléfono, modelo de amenazas y lo que Aura no protege.",
-        "qa": "<strong>Calidad y pruebas:</strong> estrategia, trazabilidad de requisito a prueba, 1.296 tests aprobados y brechas declaradas.",
+        "qa": "<strong>Calidad y pruebas:</strong> estrategia, trazabilidad de requisito a prueba, 1.375 tests aprobados y brechas declaradas.",
         "dec": "<strong>Registro de decisiones:</strong> qué se decidió, por qué y a qué costo."
       },
       "inside": {
@@ -692,7 +692,7 @@
     "reportHref": "https://soofiaa.github.io/Aura/en/report.html",
     "guideHref": "https://soofiaa.github.io/Aura/en/guide.html",
       "disclaimer": "An estimate, not a contraceptive method.",
-      "heroAlt": "Aura's Home screen showing the current phase, the next estimated period and the prediction's confidence.",
+      "heroAlt": "Aura's Home screen showing the current phase, the next estimated period and the estimated ovulation.",
       "principles": {
         "eyebrow": "How Aura thinks",
         "h2": "Three design decisions",
@@ -714,11 +714,11 @@
         "h2": "What it looks like",
         "region": "Aura screenshots",
         "note": "The screenshots are in Spanish and show version 1.2.",
-        "home": "Aura's Home screen: follicular phase, next estimated period with its range and high confidence.",
+        "home": "Aura's Home screen: follicular phase, next estimated period with its range and estimated ovulation.",
         "calendar": "October 2026 calendar showing logged periods, and the estimated fertile window and ovulation.",
         "log": "Log day screen with date, bleeding day, flow, mood and symptoms.",
-        "stats": "Statistics screen with typical cycle length, regularity and the most frequent symptoms.",
-        "data": "Settings screen with the options to create or restore a backup and to delete all data."
+        "stats": "Statistics screen with typical cycle length, regularity, the next estimated period and the length of recent cycles.",
+        "data": "Settings screen with the usual period length, the fertile window and pregnancy mode."
       },
       "features": {
         "eyebrow": "What it does",
@@ -754,7 +754,7 @@
         "req": "<strong>Requirements and use cases:</strong> 19 functional and 15 non-functional, with business rules and diagrams.",
         "arch": "<strong>Architecture and data model:</strong> layers, startup, migrations and backup format.",
         "priv": "<strong>Permissions and privacy:</strong> what leaves the phone, threat model and what Aura does not protect.",
-        "qa": "<strong>Quality and testing:</strong> strategy, requirement-to-test traceability, 1,296 passing tests and declared gaps.",
+        "qa": "<strong>Quality and testing:</strong> strategy, requirement-to-test traceability, 1,375 passing tests and declared gaps.",
         "dec": "<strong>Decision log:</strong> what was decided, why and at what cost."
       },
       "inside": {
