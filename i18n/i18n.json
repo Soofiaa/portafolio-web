@@ -363,13 +363,13 @@
         "desc": "Seguimiento de ciclo para Android, sin cuenta, sin servidor y sin analítica: tus datos viven en tu teléfono.",
         "status": "En prueba cerrada en Google Play",
         "alt": "Pantalla de Inicio de Aura con la fase actual y el próximo período estimado.",
-        "link": "Ver la página de Aura"
+        "link": "Ver página de la aplicación"
       },
       "petpal": {
         "desc": "El historial de salud de tus mascotas en un solo lugar, con recordatorios confiables y ficha clínica en PDF.",
         "status": "En desarrollo · Aún no está en tiendas",
         "alt": "Pantalla Mis Mascotas de PetPal con dos mascotas y sus avisos de eventos próximos.",
-        "link": "Ver la página de PetPal"
+        "link": "Ver página de la aplicación"
       },
       "backLink": "Volver al portafolio"
     },
@@ -811,13 +811,13 @@
         "desc": "Cycle tracking for Android with no account, no server and no analytics: your data lives on your phone.",
         "status": "In closed testing on Google Play",
         "alt": "Aura's Home screen showing the current phase and the next estimated period.",
-        "link": "See Aura's page"
+        "link": "View the app page"
       },
       "petpal": {
         "desc": "Your pets' health record in one place, with reliable reminders and a PDF clinical record.",
         "status": "In development · Not in stores yet",
         "alt": "PetPal's My Pets screen with two pets and their alerts for upcoming events.",
-        "link": "See PetPal's page"
+        "link": "View the app page"
       },
       "backLink": "Back to the portfolio"
     },
