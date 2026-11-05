@@ -42,9 +42,17 @@ test('el toggle de tema funciona y persiste en la subpágina', async ({ page }) 
 
 test('las capturas tienen texto alternativo y el portafolio enlaza a la página', async ({ page }) => {
   const imgs = page.locator('.shot img');
-  await expect(imgs).toHaveCount(5);
+  await expect(imgs).toHaveCount(7);
   for (const img of await imgs.all()) {
     expect(((await img.getAttribute('alt')) || '').length).toBeGreaterThan(10);
+  }
+
+  const first = imgs.first();
+  await expect(first).toHaveAttribute('src', '/assets/aura/inicio.webp');
+  await page.click('.lang-btn[data-lang="en"]');
+  await expect(first).toHaveAttribute('src', '/assets/aura/inicio-en.webp');
+  for (const img of await imgs.all()) {
+    expect(await img.getAttribute('src')).toMatch(/-en\.webp$/);
   }
   await page.goto('/');
   await page.locator('a[href="apps/aura/"]').click();
