@@ -98,7 +98,7 @@
         "problem": "<strong>Problema:</strong> los dueños de mascotas pierden el control de vacunas, tratamientos y controles veterinarios — información que termina dispersa entre papeles, mensajes y la memoria, especialmente con más de una mascota.",
         "solution": "<strong>Solución:</strong> app móvil multi-mascota que centraliza el historial médico completo (vacunas, medicación, desparasitación, signos vitales), con recordatorios confiables y una ficha clínica exportable en PDF para la consulta veterinaria.",
         "process": "<strong>Proceso:</strong> +290 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas",
-        "page": "Ver la página de la app"
+        "page": "Ver ficha"
       },
       "appsLink": "Ver todas las apps",
       "finance": {
@@ -150,7 +150,7 @@
           "<strong>Fechas sin errores de zona horaria.</strong> Cada día se guarda como texto yyyy-MM-dd y se opera en UTC; en Chile el cambio de hora ocurre a medianoche y la medianoche local a veces no existe.",
           "<strong>Calidad más allá de los tests.</strong> 1.375 tests; las auditorías y las pruebas manuales destaparon errores que los tests iniciales no cubrían, y cada corrección quedó con su prueba."
         ],
-        "page": "Ver la página de la app"
+        "page": "Ver ficha"
       },
       "lead": "Cada proyecto abre con su evidencia: lo que se midió, lo que se probó y lo que no se hizo.",
       "jobtracker": {
@@ -546,7 +546,7 @@
         "problem": "<strong>Problem:</strong> pet owners lose track of vaccines, treatments, and vet checkups — information that ends up scattered across paper records, messages, and memory, especially with more than one pet.",
         "solution": "<strong>Solution:</strong> a multi-pet mobile app that centralizes the complete medical history (vaccines, medication, deworming, vital signs), with reliable reminders and an exportable PDF clinical record for the vet visit.",
         "process": "<strong>Process:</strong> +290 automated tests · CI/CD with GitHub Actions · Layered architecture",
-        "page": "See the app page"
+        "page": "View details"
       },
       "appsLink": "See all apps",
       "finance": {
@@ -598,7 +598,7 @@
           "<strong>No time-zone bugs.</strong> Each day is stored as yyyy-MM-dd text and handled in UTC; in Chile the DST change happens at midnight, so local midnight sometimes doesn't exist.",
           "<strong>Quality beyond the tests.</strong> 1,375 tests; audits and manual testing found bugs the initial tests had missed, and each fix came with a regression test."
         ],
-        "page": "See the app page"
+        "page": "View details"
       },
       "lead": "Every project opens with its evidence: what was measured, what was tested and what was left out.",
       "jobtracker": {
