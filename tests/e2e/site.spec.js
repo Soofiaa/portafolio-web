@@ -114,7 +114,7 @@ test('la portada muestra primero los proyectos y deja lo personal al final', asy
   const ids = await page.locator('main > section').evaluateAll((els) => els.map((el) => el.id));
   expect(ids).toEqual(['hero', 'projects', 'experience', 'stack', 'educacion', 'certifications', 'about', 'personal', 'contact']);
   const projects = await page.locator('.project-card h3').allTextContents();
-  expect(projects[0]).toBe('Aura');
+  expect(projects[0]).toBe('Athena Bot');
 });
 
 test('en móvil el menú abre, navega y se cierra con Escape', async ({ page }) => {
