@@ -37,6 +37,11 @@
       if (typeof value === 'string') el.setAttribute('alt', value);
     });
 
+    document.querySelectorAll('[data-i18n-src]').forEach((el) => {
+      const value = getNested(dict, el.getAttribute('data-i18n-src'));
+      if (typeof value === 'string') el.setAttribute('src', value);
+    });
+
     document.querySelectorAll('[data-i18n-href]').forEach((el) => {
       const value = getNested(dict, el.getAttribute('data-i18n-href'));
       if (typeof value === 'string') el.setAttribute('href', value);

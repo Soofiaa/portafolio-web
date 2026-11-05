@@ -138,10 +138,10 @@
         "page": "Ver la página del bot"
       },
       "aura": {
-        "status": "v1.2 · en desarrollo",
+        "status": "v1.3 · en prueba cerrada",
         "headline": "<span class=\"num\">1.375</span><span class=\"cap\">tests · local primero, sin cuenta ni servidor</span>",
         "problem": "<strong>Problema:</strong> quería una app de seguimiento de ciclo donde los datos de salud nunca salieran del teléfono y donde la predicción fuera honesta sobre su incertidumbre.",
-        "solution": "<strong>Solución:</strong> app Android en Flutter, sin cuenta, sin servidor y sin analítica: los datos viven en el teléfono y solo salen en un respaldo cifrado, en un archivo o, si la usuaria lo activa, en su propio Google Drive. Estima próximo período, ovulación y ventana fértil como un rango con nivel de confianza, y muestra la fase actual. La próxima versión suma modo embarazo, resumen en PDF para el médico, widget, tema oscuro y la app en inglés.",
+        "solution": "<strong>Solución:</strong> app Android en Flutter, sin cuenta, sin servidor y sin analítica: los datos viven en el teléfono y solo salen en un respaldo cifrado, en un archivo o, si la usuaria lo activa, en su propio Google Drive. Estima próximo período, ovulación y ventana fértil como un rango con nivel de confianza, y muestra la fase actual. La versión 1.3 suma modo embarazo, resumen en PDF para el médico, widget, tema oscuro y la app en inglés.",
         "process": "<strong>Proceso:</strong> lógica de dominio pura (derivación de ciclos, predicción y planificación de notificaciones) separada de la interfaz y de la base de datos, validada con tests de fechas fijas y revisada con auditorías y pruebas manuales.",
         "evidenceTitle": "Qué hay detrás de la app",
         "evidence": [
@@ -272,16 +272,27 @@
           "text": "Creas un archivo de respaldo y decides dónde guardarlo, o activas el respaldo automático diario en tu propio Google Drive. Se cifra en el teléfono con tu contraseña (AES-256-GCM, con la clave derivada con Argon2id), opcional en el archivo y obligatoria en Drive. En los respaldos en archivo, Aura no guarda la contraseña ni puede recuperarla; en el de Drive la guarda sellada con el Keystore de Android para poder respaldar cada día."
         }
       },
+      "img": {
+        "inicio": "/assets/aura/inicio.webp",
+        "calendario": "/assets/aura/calendario.webp",
+        "registro": "/assets/aura/registro.webp",
+        "patrones": "/assets/aura/patrones.webp",
+        "datos": "/assets/aura/datos.webp",
+        "embarazo": "/assets/aura/embarazo.webp",
+        "temaOscuro": "/assets/aura/tema-oscuro.webp"
+      },
       "shots": {
         "eyebrow": "Capturas",
         "h2": "Así se ve",
         "region": "Capturas de pantalla de Aura",
-        "note": "Las capturas están en español y son de la versión 1.2.",
-        "home": "Pantalla de Inicio de Aura: fase folicular, próximo período estimado con su rango y ovulación estimada.",
+        "note": "Las capturas están en español y son de la versión 1.3.0.",
+        "home": "Pantalla de Inicio de Aura: fase ovulatoria, próximo período estimado con su rango y ovulación estimada.",
         "calendar": "Calendario de octubre de 2026 con períodos registrados, ventana fértil y ovulación estimadas.",
         "log": "Pantalla Registrar día con fecha, día de sangrado, flujo, estado de ánimo y síntomas.",
         "stats": "Pantalla Estadísticas con la duración típica del ciclo, la regularidad, el próximo período estimado y la duración de los últimos ciclos.",
-        "data": "Pantalla Ajustes con la duración habitual del período, la ventana fértil y el modo embarazo."
+        "data": "Pantalla Ajustes con la duración habitual del período, la ventana fértil y el modo embarazo.",
+        "pregnancy": "Pantalla de Inicio en modo embarazo con las semanas y los días, y la fecha probable de parto.",
+        "dark": "Pantalla de Inicio con el tema oscuro: fase ovulatoria, próximo período estimado con su rango y ovulación estimada."
       },
       "features": {
         "eyebrow": "Qué hace",
@@ -296,13 +307,13 @@
         "f8": "<strong>Generar un resumen en PDF para tu médico</strong> en el teléfono, con ciclos, síntomas, ánimo, embarazos y método anticonceptivo, y compartirlo desde el menú de Android.",
         "f9": "<strong>Ver tu ciclo en un widget</strong> de la pantalla de inicio: próximo período, día de período, días de atraso o semanas de embarazo. El ajuste de widget discreto oculta todos los datos.",
         "f10": "<strong>Usarla en español o en inglés</strong> (en inglés si tu teléfono está en inglés; si no, en español) y con tema claro, oscuro o el del sistema.",
-        "note": "Las funciones nuevas (modo embarazo, resumen en PDF, widget, tema oscuro, inglés, recordatorios de registro y de anticonceptivo, y estadísticas rediseñadas) ya están en el código en GitHub y llegan en la próxima actualización de Google Play."
+        "note": "Las funciones nuevas (modo embarazo, resumen en PDF, widget, tema oscuro, inglés, recordatorios de registro y de anticonceptivo, y estadísticas rediseñadas) ya están en la versión 1.3, en prueba cerrada en Google Play."
       },
       "transparency": {
         "eyebrow": "Transparencia",
         "h2": "Lo que Aura es y lo que no",
         "t1": "<strong>No es un método anticonceptivo.</strong> Las fechas son estimaciones y pueden fallar.",
-        "t2": "<strong>Estado:</strong> versión 1.2 en prueba cerrada en Google Play. Solo Android; todavía no hay versión pública en la tienda. Las funciones nuevas de esta página llegan en la próxima actualización.",
+        "t2": "<strong>Estado:</strong> versión 1.3 en prueba cerrada en Google Play. Solo Android; todavía no hay versión pública en la tienda.",
         "t3": "<strong>Es un proyecto personal de portafolio,</strong> en uso real, con el código abierto en GitHub.",
         "privacyLink": "Leer la política de privacidad",
         "repoLink": "Ver el repositorio",
@@ -575,10 +586,10 @@
         "page": "See the bot repository"
       },
       "aura": {
-        "status": "v1.2 · in development",
+        "status": "v1.3 · in closed testing",
         "headline": "<span class=\"num\">1,375</span><span class=\"cap\">tests · local-first, no account or server</span>",
         "problem": "<strong>Problem:</strong> I wanted a cycle-tracking app where health data never leaves the phone and where predictions are honest about their uncertainty.",
-        "solution": "<strong>Solution:</strong> an Android app in Flutter with no account, no server and no analytics: data lives on the phone and only leaves in an encrypted backup, as a file or, if the user turns it on, in their own Google Drive. It estimates the next period, ovulation and fertile window as a range with a confidence level, and shows the current phase. The next version adds pregnancy mode, a PDF summary for the doctor, a widget, dark theme and English.",
+        "solution": "<strong>Solution:</strong> an Android app in Flutter with no account, no server and no analytics: data lives on the phone and only leaves in an encrypted backup, as a file or, if the user turns it on, in their own Google Drive. It estimates the next period, ovulation and fertile window as a range with a confidence level, and shows the current phase. Version 1.3 adds pregnancy mode, a PDF summary for the doctor, a widget, dark theme and English.",
         "process": "<strong>Process:</strong> pure domain logic (cycle derivation, prediction and notification planning) kept separate from the UI and the database, validated with fixed-date tests and reviewed through audits and manual testing.",
         "evidenceTitle": "Behind the app",
         "evidence": [
@@ -709,16 +720,27 @@
           "text": "You create a backup file and choose where to save it, or turn on the daily automatic backup to your own Google Drive. It is encrypted on the phone with your password (AES-256-GCM, with the key derived using Argon2id), optional for the file and required for Drive. For file backups, Aura doesn't store the password and can't recover it; for Drive it keeps it sealed in the Android Keystore so it can back up every day."
         }
       },
+      "img": {
+        "inicio": "/assets/aura/inicio-en.webp",
+        "calendario": "/assets/aura/calendario-en.webp",
+        "registro": "/assets/aura/registro-en.webp",
+        "patrones": "/assets/aura/patrones-en.webp",
+        "datos": "/assets/aura/datos-en.webp",
+        "embarazo": "/assets/aura/embarazo-en.webp",
+        "temaOscuro": "/assets/aura/tema-oscuro-en.webp"
+      },
       "shots": {
         "eyebrow": "Screenshots",
         "h2": "What it looks like",
         "region": "Aura screenshots",
-        "note": "The screenshots are in Spanish and show version 1.2.",
-        "home": "Aura's Home screen: follicular phase, next estimated period with its range and estimated ovulation.",
+        "note": "The screenshots are in English and show version 1.3.0.",
+        "home": "Aura's Home screen: ovulatory phase, next estimated period with its range and estimated ovulation.",
         "calendar": "October 2026 calendar showing logged periods, and the estimated fertile window and ovulation.",
         "log": "Log day screen with date, bleeding day, flow, mood and symptoms.",
         "stats": "Statistics screen with typical cycle length, regularity, the next estimated period and the length of recent cycles.",
-        "data": "Settings screen with the usual period length, the fertile window and pregnancy mode."
+        "data": "Settings screen with the usual period length, the fertile window and pregnancy mode.",
+        "pregnancy": "Home screen in pregnancy mode showing weeks and days, and the estimated due date.",
+        "dark": "Home screen in dark theme: ovulatory phase, next estimated period with its range and estimated ovulation."
       },
       "features": {
         "eyebrow": "What it does",
@@ -733,13 +755,13 @@
         "f8": "<strong>Create a PDF summary for your doctor</strong> on the phone, with cycles, symptoms, mood, pregnancies and birth-control method, and share it from Android's share menu.",
         "f9": "<strong>See your cycle in a widget</strong> on the home screen: next period, period day, days late or pregnancy weeks. The discreet widget setting hides all data.",
         "f10": "<strong>Use it in Spanish or English</strong> (English if your phone is in English, Spanish otherwise) and with a light, dark or system theme.",
-        "note": "The new features (pregnancy mode, PDF summary, widget, dark theme, English, logging and birth-control reminders, and the redesigned statistics) are already in the code on GitHub and arrive in the next Google Play update."
+        "note": "The new features (pregnancy mode, PDF summary, widget, dark theme, English, logging and birth-control reminders, and the redesigned statistics) are already in version 1.3, in closed testing on Google Play."
       },
       "transparency": {
         "eyebrow": "Transparency",
         "h2": "What Aura is and what it isn't",
         "t1": "<strong>It is not a contraceptive method.</strong> Dates are estimates and can be wrong.",
-        "t2": "<strong>Status:</strong> version 1.2 in closed testing on Google Play. Android only; there is no public store release yet. The new features on this page arrive in the next update.",
+        "t2": "<strong>Status:</strong> version 1.3 in closed testing on Google Play. Android only; there is no public store release yet.",
         "t3": "<strong>It is a personal portfolio project,</strong> in real use, with the code open on GitHub.",
         "privacyLink": "Read the privacy policy",
         "repoLink": "View the repository",
