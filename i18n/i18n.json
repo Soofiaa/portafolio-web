@@ -86,10 +86,10 @@
       "frontend": "Frontend",
       "backend": "Backend",
       "petpal": {
-        "headline": "<span class=\"num\">+290</span><span class=\"cap\">tests automatizados</span>",
+        "headline": "<span class=\"num\">+370</span><span class=\"cap\">tests automatizados</span>",
         "evidenceTitle": "Qué hay detrás del número",
         "evidence": [
-          "<strong>+290 tests en 48 archivos.</strong> Hay pruebas para modelos, repositorios, providers y servicios, además de tests de widget en pantallas clave, así que un cambio que rompe algo se nota enseguida.",
+          "<strong>+370 tests en 68 archivos.</strong> Hay pruebas para modelos, repositorios, providers y servicios, además de tests de widget en pantallas clave, así que un cambio que rompe algo se nota enseguida.",
           "<strong>CI en cada push y pull request.</strong> GitHub Actions ejecuta flutter analyze y flutter test, con SQLite real instalado en el runner en vez de una simulación.",
           "<strong>250 notificaciones sin IDs repetidos.</strong> Un test programa 250 recordatorios a la vez (25 medicaciones × 2 horarios × 5 días) y comprueba que ninguno repita ID: si dos comparten, uno pisa al otro y el aviso se pierde. La app ya tuvo ese bug una vez.",
           "<strong>Riverpod en las 10 entidades.</strong> Cada una sigue el camino pantalla, provider, repository y base de datos, y esa lógica se prueba sin abrir la app."
@@ -97,7 +97,7 @@
         "status": "CI en cada push",
         "problem": "<strong>Problema:</strong> los dueños de mascotas pierden el control de vacunas, tratamientos y controles veterinarios — información que termina dispersa entre papeles, mensajes y la memoria, especialmente con más de una mascota.",
         "solution": "<strong>Solución:</strong> app móvil multi-mascota que centraliza el historial médico completo (vacunas, medicación, desparasitación, signos vitales), con recordatorios confiables y una ficha clínica exportable en PDF para la consulta veterinaria.",
-        "process": "<strong>Proceso:</strong> +290 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas",
+        "process": "<strong>Proceso:</strong> +370 tests automatizados · CI/CD con GitHub Actions · Arquitectura en capas",
         "page": "Ver la página de la app"
       },
       "appsLink": "Ver todas las apps",
@@ -126,9 +126,9 @@
       },
       "athena": {
         "status": "Desplegado y funcional",
-        "headline": "<span class=\"num\">10</span><span class=\"cap\">comandos slash · actualizaciones automáticas</span>",
+        "headline": "<span class=\"num\">13</span><span class=\"cap\">comandos slash · actualizaciones automáticas</span>",
         "problem": "<strong>Problema:</strong> los fans de Overwatch tienen que revisar manualmente la web oficial de Blizzard para enterarse de parches nuevos, y no hay forma rápida de consultar datos de héroes, mapas, perfiles o la tienda desde Discord.",
-        "solution": "<strong>Solución:</strong> bot de Discord que revisa cada 30 minutos la página de Blizzard y publica automáticamente las notas de parche nuevas en un canal. Además responde 10 comandos slash: consultas de héroes (fichas, habilidades, héroe al azar), mapas, modos de juego, perfiles de jugadores con rangos y estadísticas, composición sugerida de equipo, trivia y datos de meta (héroes más elegidos, con más victorias o más baneados). Usa la API OverFast para datos en vivo.",
+        "solution": "<strong>Solución:</strong> bot de Discord que revisa cada 30 minutos la página de Blizzard y publica automáticamente las notas de parche nuevas en un canal. Además responde 13 comandos slash: consultas de héroes (fichas, habilidades, biografía, héroe al azar), mapas, modos de juego, perfiles de jugadores con rangos y estadísticas, composición sugerida de equipo, trivia, datos de meta (héroes más elegidos, con más victorias o más baneados), la tienda y la última nota de parche, en español o inglés según el servidor. Usa la API OverFast para datos en vivo.",
         "evidenceTitle": "Cómo funciona",
         "evidence": [
           "<strong>Actualizaciones sin spam.</strong> Revisa cada 30 minutos, guarda los IDs de los parches ya enviados en un archivo de estado, y solo publica parches nuevos para que no se repitan al reiniciar.",
@@ -156,8 +156,8 @@
       "jobtracker": {
         "status": "850+ tests",
         "headline": "<span class=\"num\">97 %</span><span class=\"cap\">de 6.770 ofertas se descartan solas al clasificar</span>",
-        "problem": "<strong>Problema:</strong> buscar a mano en 15 portales es repetitivo, y la mayoría de los avisos no sirve para un perfil junior (prácticas, exigencia de 2 o más años, cargos comerciales con la palabra “desarrollador”).",
-        "solution": "<strong>Solución:</strong> una aplicación local en Python que junta 15 fuentes, clasifica cada oferta con reglas explícitas según mi perfil y usa IA (Groq) para estimar la compatibilidad (0–100) y marcar alertas. Incluye tablero Kanban de postulaciones, métricas de conversión y respaldos diarios verificados.",
+        "problem": "<strong>Problema:</strong> buscar a mano en 14 portales es repetitivo, y la mayoría de los avisos no sirve para un perfil junior (prácticas, exigencia de 2 o más años, cargos comerciales con la palabra “desarrollador”).",
+        "solution": "<strong>Solución:</strong> una aplicación local en Python que junta 14 fuentes, clasifica cada oferta con reglas explícitas según mi perfil y usa IA (Groq) para estimar la compatibilidad (0–100) y marcar alertas. Incluye tablero Kanban de postulaciones, métricas de conversión y respaldos diarios verificados.",
         "process": "<strong>Proceso:</strong> reglas auditables y deterministas (cada descarte tiene una razón legible), 9 corridas completas de 6 a 8 minutos, y construcción por fases con pruebas, respaldo verificado y reversión lista antes de desplegar.",
         "credit": "<strong>Qué es mío y qué no:</strong> Indeed y Glassdoor se obtienen con la librería JobSpy (MIT, © Cullen Watson), usada como dependencia sin modificar su código. La IA usa Groq (qwen3.8-27b) como API externa. Los lectores de los portales chilenos, el clasificador, la base de datos, el servidor, el tablero, los respaldos y la integración de IA los escribí yo. Parte de la idea de Jobbi, mi app anterior de seguimiento de postulaciones, pero es un proyecto distinto.",
         "evidenceTitle": "Qué hay detrás del número",
@@ -432,7 +432,7 @@
       "inside": {
         "eyebrow": "Por dentro",
         "h2": "Cómo está construida",
-        "text": "Flutter y Dart, con Riverpod y una base SQLite (sqflite). Las 10 entidades siguen el mismo camino: pantalla, provider, repositorio y base de datos; los efectos secundarios, como programar recordatorios o limpiar archivos, viven en el provider. Más de 290 tests automatizados corren con GitHub Actions en cada push y pull request."
+        "text": "Flutter y Dart, con Riverpod y una base SQLite (sqflite). Las 10 entidades siguen el mismo camino: pantalla, provider, repositorio y base de datos; los efectos secundarios, como programar recordatorios o limpiar archivos, viven en el provider. Más de 370 tests automatizados corren con GitHub Actions en cada push y pull request."
       }
     }
   },
@@ -523,10 +523,10 @@
       "frontend": "Frontend",
       "backend": "Backend",
       "petpal": {
-        "headline": "<span class=\"num\">+290</span><span class=\"cap\">automated tests</span>",
+        "headline": "<span class=\"num\">+370</span><span class=\"cap\">automated tests</span>",
         "evidenceTitle": "Behind the number",
         "evidence": [
-          "<strong>290+ tests across 48 files.</strong> There are tests for models, repositories, providers and services, plus widget tests on key screens, so a change that breaks something shows up right away.",
+          "<strong>370+ tests across 68 files.</strong> There are tests for models, repositories, providers and services, plus widget tests on key screens, so a change that breaks something shows up right away.",
           "<strong>CI on every push and pull request.</strong> GitHub Actions runs flutter analyze and flutter test, with a real SQLite installed on the runner instead of a simulation.",
           "<strong>250 notifications with no repeated IDs.</strong> A test schedules 250 reminders at once (25 medications × 2 times × 5 days) and checks that none repeats an ID: if two share one, one overwrites the other and the alert is lost. The app had that bug once.",
           "<strong>Riverpod across all 10 entities.</strong> Each one follows the path screen, provider, repository and database, and that logic is tested without opening the app."
@@ -534,7 +534,7 @@
         "status": "CI on every push",
         "problem": "<strong>Problem:</strong> pet owners lose track of vaccines, treatments, and vet checkups — information that ends up scattered across paper records, messages, and memory, especially with more than one pet.",
         "solution": "<strong>Solution:</strong> a multi-pet mobile app that centralizes the complete medical history (vaccines, medication, deworming, vital signs), with reliable reminders and an exportable PDF clinical record for the vet visit.",
-        "process": "<strong>Process:</strong> +290 automated tests · CI/CD with GitHub Actions · Layered architecture",
+        "process": "<strong>Process:</strong> +370 automated tests · CI/CD with GitHub Actions · Layered architecture",
         "page": "See the app page"
       },
       "appsLink": "See all apps",
@@ -563,9 +563,9 @@
       },
       "athena": {
         "status": "Deployed and live",
-        "headline": "<span class=\"num\">10</span><span class=\"cap\">slash commands · automatic updates</span>",
+        "headline": "<span class=\"num\">13</span><span class=\"cap\">slash commands · automatic updates</span>",
         "problem": "<strong>Problem:</strong> Overwatch fans must manually check Blizzard's website for patch notes, and there's no quick way to query hero data, maps, player profiles or the item shop from Discord.",
-        "solution": "<strong>Solution:</strong> a Discord bot that checks Blizzard's patch page every 30 minutes and automatically posts new patch notes to a channel. Plus 10 slash commands: hero queries (cards, abilities, random hero), maps, game modes, player profiles with ranks and stats, team composition suggestions, trivia and meta data (most-picked, highest win rate, most banned heroes). Uses OverFast API for live data.",
+        "solution": "<strong>Solution:</strong> a Discord bot that checks Blizzard's patch page every 30 minutes and automatically posts new patch notes to a channel. Plus 13 slash commands: hero queries (cards, abilities, lore, random hero), maps, game modes, player profiles with ranks and stats, team composition suggestions, trivia, meta data (most-picked, highest win rate, most banned heroes), the shop and the latest patch notes, in Spanish or English per server. Uses OverFast API for live data.",
         "evidenceTitle": "How it works",
         "evidence": [
           "<strong>Updates without spam.</strong> Checks every 30 minutes, saves patch IDs to state file, publishes only new ones so they don't repeat on restart.",
@@ -593,8 +593,8 @@
       "jobtracker": {
         "status": "850+ tests",
         "headline": "<span class=\"num\">97%</span><span class=\"cap\">of 6,770 job listings filtered out automatically when classified</span>",
-        "problem": "<strong>Problem:</strong> searching 15 job boards by hand is repetitive, and most listings don't fit a junior profile (internships, 2+ years required, sales roles that use the word “developer”).",
-        "solution": "<strong>Solution:</strong> a local Python app that gathers 15 sources, classifies every listing with explicit rules based on my profile, and uses AI (Groq) to score each listing's fit (0–100) and flag red flags. Includes a Kanban board for applications, conversion metrics and verified daily backups.",
+        "problem": "<strong>Problem:</strong> searching 14 job boards by hand is repetitive, and most listings don't fit a junior profile (internships, 2+ years required, sales roles that use the word “developer”).",
+        "solution": "<strong>Solution:</strong> a local Python app that gathers 14 sources, classifies every listing with explicit rules based on my profile, and uses AI (Groq) to score each listing's fit (0–100) and flag red flags. Includes a Kanban board for applications, conversion metrics and verified daily backups.",
         "process": "<strong>Process:</strong> auditable, deterministic rules (every discard has a readable reason), 9 full runs of 6 to 8 minutes, and phased development with tests, a verified backup and a rollback ready before each deployment.",
         "credit": "<strong>What is mine and what isn't:</strong> Indeed and Glassdoor come from the JobSpy library (MIT, © Cullen Watson), used as a dependency without modifying its code. The AI uses Groq (qwen3.8-27b) as an external API. The Chilean job-board readers, the classifier, the database, the server, the board, the backups and the AI integration are my own code. It grew out of the idea behind Jobbi, my earlier application-tracking app, but it is a different project.",
         "evidenceTitle": "Behind the number",
@@ -869,7 +869,7 @@
       "inside": {
         "eyebrow": "Under the hood",
         "h2": "How it's built",
-        "text": "Flutter and Dart, with Riverpod and a SQLite database (sqflite). All 10 entities follow the same path: screen, provider, repository and database; side effects, such as scheduling reminders or cleaning up files, live in the provider. More than 290 automated tests run on GitHub Actions on every push and pull request."
+        "text": "Flutter and Dart, with Riverpod and a SQLite database (sqflite). All 10 entities follow the same path: screen, provider, repository and database; side effects, such as scheduling reminders or cleaning up files, live in the provider. More than 370 automated tests run on GitHub Actions on every push and pull request."
       }
     }
   }
