@@ -50,7 +50,7 @@ test('el botón de Google Play de PetPal está deshabilitado y no es un enlace n
     expect(await page.evaluate(() => document.activeElement.classList.contains('btn-store'))).toBe(false);
   }
 
-  await store.click({ force: true });
+  await store.dispatchEvent('click');
   await expect(page).toHaveURL(/\/apps\/petpal\/$/);
 
   await page.click('.lang-btn[data-lang="en"]');

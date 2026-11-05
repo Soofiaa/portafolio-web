@@ -73,7 +73,7 @@ test('el botón de Google Play está deshabilitado y no es un enlace navegable',
     expect(await page.evaluate(() => document.activeElement.classList.contains('btn-store'))).toBe(false);
   }
 
-  await store.click({ force: true });
+  await store.dispatchEvent('click');
   await expect(page).toHaveURL(/\/apps\/aura\/$/);
 
   await page.click('.lang-btn[data-lang="en"]');
