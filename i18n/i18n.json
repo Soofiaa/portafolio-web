@@ -64,13 +64,13 @@
       "m1": { "date": "2019", "title": "Inicio Ingeniería en Ejecución Informática", "desc": "Pontificia Universidad Católica de Valparaíso (PUCV)." },
       "m2": { "date": "Ene – Feb 2025", "title": "Práctica profesional — Dental Laval", "desc": "Análisis funcional, documentación UML, SQL sobre ERP Softland y automatización en Python." },
       "m3": { "date": "Julio 2025", "title": "Titulación", "desc": "Ingeniera en Ejecución Informática, PUCV." },
-      "m4": { "date": "2025 — hoy", "title": "Portafolio propio & búsqueda activa", "desc": "POS para cervecería entregado a cliente real, más proyectos personales. En búsqueda de mi primer rol formal en informática." }
+      "m4": { "date": "2025 — hoy", "title": "Portafolio propio & búsqueda activa", "desc": "Mi POS entregado a cliente real, más proyectos personales. En búsqueda de mi primer rol formal en informática." }
     },
     "experience": {
       "eyebrow": "Experiencia",
       "h2": "Trayectoria",
       "roleMeta": "Práctica profesional · Ene – Feb 2025",
-      "pos": {"meta": "Proyecto freelance · Nov 2025 – hoy", "title": "Punto de venta para una cervecería artesanal", "bullets": ["Levanté los requisitos directamente con el cliente y desarrollé el sistema completo: un punto de venta de escritorio (Python, PySide6, SQLite) con tickets abiertos, productos, control de stock y reportes de caja diaria.", "Definí reglas de negocio para no perder información: baja lógica de productos con historial, descuento de stock en la misma transacción del cobro y venta con stock negativo con aviso en vez de bloqueo.", "Separé la lógica de negocio de la interfaz y la cubrí con 24 tests con pytest en las rutas donde un error cuesta dinero (cobro, reportes, historial), con criterio explícito de qué no se testea y por qué.", "Entregué la app lista para instalar (PyInstaller) y doy soporte al cliente."]},
+      "pos": {"meta": "Proyecto freelance · Nov 2025 – hoy", "title": "Mi POS", "bullets": ["Levanté los requisitos directamente con el cliente y desarrollé el sistema completo: un punto de venta de escritorio (Python, PySide6, SQLite) con tickets abiertos, productos, control de stock y reportes de caja diaria.", "Definí reglas de negocio para no perder información: baja lógica de productos con historial, descuento de stock en la misma transacción del cobro y venta con stock negativo con aviso en vez de bloqueo.", "Separé la lógica de negocio de la interfaz y la cubrí con 24 tests con pytest en las rutas donde un error cuesta dinero (cobro, reportes, historial), con criterio explícito de qué no se testea y por qué.", "Migré la interfaz a Flet, con 170 tests, reportes, 6 temas y empaquetado para Windows probado en vivo.", "Entregué la app lista para instalar (PyInstaller) y doy soporte al cliente."]},
       "bullets": [
         "Realicé análisis funcional de procesos administrativos internos.",
         "Validé datos mediante consultas SQL sobre el ERP Softland.",
@@ -113,7 +113,7 @@
         "headline": "Cliente real, entregado",
         "meta": "Entregado a cliente real · con soporte",
         "problem": "<strong>Problema:</strong> negocios pequeños necesitan un punto de venta simple, sin la complejidad de un sistema comercial.",
-        "solution": "<strong>Solución:</strong> sistema de punto de venta liviano para gestionar ventas e inventario.",
+        "solution": "<strong>Solución:</strong> punto de venta de escritorio genérico para cualquier negocio (almacenes, supermercados, botillerías, cafeterías y más). Nació para una cervecería artesanal en Python + PySide6 + SQLite, y hoy está migrado a Flet con 170 tests, reportes, 6 temas y empaquetado para Windows probado en vivo.",
         "process": "<strong>Proceso:</strong> cobertura de tests dirigida por riesgo de negocio, con criterio explícito de qué NO testear y por qué · Entregado a cliente real, con soporte",
         "status": "Entregado a cliente"
       },
@@ -139,7 +139,7 @@
       },
       "aura": {
         "status": "v1.3 · en prueba cerrada",
-        "headline": "<span class=\"num\">1.375</span><span class=\"cap\">tests · local primero, sin cuenta ni servidor</span>",
+        "headline": "<span class=\"num\">1.414</span><span class=\"cap\">tests · local primero, sin cuenta ni servidor</span>",
         "problem": "<strong>Problema:</strong> quería una app de seguimiento de ciclo donde los datos de salud nunca salieran del teléfono y donde la predicción fuera honesta sobre su incertidumbre.",
         "solution": "<strong>Solución:</strong> app Android en Flutter, sin cuenta, sin servidor y sin analítica: los datos viven en el teléfono y solo salen en un respaldo cifrado, en un archivo o, si la usuaria lo activa, en su propio Google Drive. Estima próximo período, ovulación y ventana fértil como un rango con nivel de confianza, y muestra la fase actual. La versión 1.3 suma modo embarazo, resumen en PDF para el médico, widget, tema oscuro y la app en inglés.",
         "process": "<strong>Proceso:</strong> lógica de dominio pura (derivación de ciclos, predicción y planificación de notificaciones) separada de la interfaz y de la base de datos, validada con tests de fechas fijas y revisada con auditorías y pruebas manuales.",
@@ -148,7 +148,7 @@
           "<strong>Predicción con incertidumbre explícita.</strong> Promedio ponderado de los últimos 6 ciclos y un rango con confianza baja, media o alta; si pasan más de 60 días sin datos, avisa en vez de inventar una fecha.",
           "<strong>Ciclos derivados, no almacenados.</strong> Solo se guardan los días de sangrado, y un ciclo nuevo empieza tras 7 días de separación. Una única fuente de verdad: editar un día recalcula todo de forma consistente.",
           "<strong>Fechas sin errores de zona horaria.</strong> Cada día se guarda como texto yyyy-MM-dd y se opera en UTC; en Chile el cambio de hora ocurre a medianoche y la medianoche local a veces no existe.",
-          "<strong>Calidad más allá de los tests.</strong> 1.375 tests; las auditorías y las pruebas manuales destaparon errores que los tests iniciales no cubrían, y cada corrección quedó con su prueba."
+          "<strong>Calidad más allá de los tests.</strong> 1.414 tests; las auditorías y las pruebas manuales destaparon errores que los tests iniciales no cubrían, y cada corrección quedó con su prueba."
         ],
         "page": "Ver ficha"
       },
@@ -165,7 +165,7 @@
           "<strong>Clasificación explicable y análisis IA.</strong> Reglas explícitas en filtros.py más un análisis por IA que devuelve compatibilidad, resumen, puntos fuertes y alertas. Cada oferta sale con categoría, razón legible y una recomendación de compatibilidad; tú siempre decides si postular.",
           "<strong>Más de 850 pruebas y métricas de conversión.</strong> pytest más pruebas de la interfaz; un tablero Kanban sigue cada postulación desde el envío hasta la oferta o el cierre, con métricas de conversión y notas en cada etapa.",
           "<strong>Datos que no se pierden.</strong> Respaldos con la API de SQLite, huella sha256 e integrity_check; el despliegue se prueba primero sobre una copia de solo lectura y deja la imagen anterior lista para volver atrás.",
-          "<strong>Cortesía con los sitios.</strong> Los lectores propios respetan robots.txt, esperan de 3 a 5 segundos entre pedidos y se detienen ante un bloqueo o un CAPTCHA: un bloqueo nunca se esquiva."
+          "<strong>Cortesía con los sitios.</strong> Los lectores propios respetan robots.txt y esperan de 3 a 5 segundos entre pedidos, con dos excepciones activas por decisión explícita: LinkedIn y Chumi, que se consultan pese a sus restricciones, con aviso visible."
         ]
       }
     },
@@ -328,13 +328,13 @@
         "req": "<strong>Requisitos y casos de uso:</strong> 19 funcionales y 15 no funcionales, con reglas de negocio y diagramas.",
         "arch": "<strong>Arquitectura y modelo de datos:</strong> capas, arranque, migraciones y formato de respaldo.",
         "priv": "<strong>Permisos y privacidad:</strong> qué sale del teléfono, modelo de amenazas y lo que Aura no protege.",
-        "qa": "<strong>Calidad y pruebas:</strong> estrategia, trazabilidad de requisito a prueba, 1.375 tests aprobados y brechas declaradas.",
+        "qa": "<strong>Calidad y pruebas:</strong> estrategia, trazabilidad de requisito a prueba, 1.414 tests aprobados y brechas declaradas.",
         "dec": "<strong>Registro de decisiones:</strong> qué se decidió, por qué y a qué costo."
       },
       "inside": {
         "eyebrow": "Por dentro",
         "h2": "Cómo está construida",
-        "text": "Flutter y Dart con una base SQLite (drift). La lógica de ciclos, la predicción y los recordatorios viven en un dominio puro, separado de la interfaz y de la base de datos, y están cubiertos por 1.375 tests."
+        "text": "Flutter y Dart con una base SQLite (drift). La lógica de ciclos, la predicción y los recordatorios viven en un dominio puro, separado de la interfaz y de la base de datos, y están cubiertos por 1.414 tests."
       }
     },
     "store": {
@@ -512,13 +512,13 @@
       "m1": { "date": "2019", "title": "Started Computer Systems Engineering", "desc": "Pontificia Universidad Católica de Valparaíso (PUCV)." },
       "m2": { "date": "Jan – Feb 2025", "title": "Professional internship — Dental Laval", "desc": "Functional analysis, UML documentation, SQL against the Softland ERP, and Python automation." },
       "m3": { "date": "July 2025", "title": "Graduated", "desc": "Computer Systems Engineering, PUCV." },
-      "m4": { "date": "2025 — now", "title": "Own portfolio & active job search", "desc": "Point-of-sale system delivered to a real client, plus personal projects. Looking for my first formal role in IT." }
+      "m4": { "date": "2025 - now", "title": "Own portfolio & active job search", "desc": "Mi POS delivered to a real client, plus personal projects. Looking for my first formal role in IT." }
     },
     "experience": {
       "eyebrow": "Experience",
       "h2": "Track record",
       "roleMeta": "Professional internship · Jan – Feb 2025",
-      "pos": {"meta": "Freelance project · Nov 2025 – now", "title": "Point of sale for a craft brewery", "bullets": ["Gathered requirements directly with the client and built the whole system: a desktop point of sale (Python, PySide6, SQLite) with open tickets, products, stock control and daily cash reports.", "Defined business rules so no information is lost: soft deletion of products with sales history, stock deducted in the same transaction as the payment, and sales with negative stock allowed with a warning instead of blocked.", "Kept the business logic separate from the UI and covered it with 24 pytest tests on the paths where a bug costs money (payments, reports, history), with explicit reasoning for what is left untested and why.", "Delivered the app ready to install (PyInstaller) and provide ongoing support to the client."]},
+      "pos": {"meta": "Freelance project · Nov 2025 - now", "title": "Mi POS", "bullets": ["Gathered requirements directly with the client and built the whole system: a desktop point of sale (Python, PySide6, SQLite) with open tickets, products, stock control and daily cash reports.", "Defined business rules so no information is lost: soft deletion of products with sales history, stock deducted in the same transaction as the payment, and sales with negative stock allowed with a warning instead of blocked.", "Kept the business logic separate from the UI and covered it with 24 pytest tests on the paths where a bug costs money (payments, reports, history), with explicit reasoning for what is left untested and why.", "Migrated the interface to Flet, with 170 tests, reports, 6 themes and a Windows package tested live.", "Delivered the app ready to install (PyInstaller) and provide ongoing support to the client."]},
       "bullets": [
         "Performed functional analysis of internal administrative processes.",
         "Validated data through SQL queries against the Softland ERP.",
@@ -561,7 +561,7 @@
         "headline": "Real client, delivered",
         "meta": "Delivered to a real client · with ongoing support",
         "problem": "<strong>Problem:</strong> small businesses need a simple point-of-sale system, without the overhead of a full commercial platform.",
-        "solution": "<strong>Solution:</strong> a lightweight point-of-sale system for managing sales and inventory.",
+        "solution": "<strong>Solution:</strong> a generic desktop point of sale for any business (grocery shops, supermarkets, bottle shops, cafés and more). It started for a craft brewery in Python + PySide6 + SQLite, and is now migrated to Flet with 170 tests, reports, 6 themes and Windows packaging tested live.",
         "process": "<strong>Process:</strong> risk-driven test coverage, with explicit reasoning for what was deliberately left untested · Delivered to a real client, with ongoing support",
         "status": "Delivered to client"
       },
@@ -587,7 +587,7 @@
       },
       "aura": {
         "status": "v1.3 · in closed testing",
-        "headline": "<span class=\"num\">1,375</span><span class=\"cap\">tests · local-first, no account or server</span>",
+        "headline": "<span class=\"num\">1,414</span><span class=\"cap\">tests · local-first, no account or server</span>",
         "problem": "<strong>Problem:</strong> I wanted a cycle-tracking app where health data never leaves the phone and where predictions are honest about their uncertainty.",
         "solution": "<strong>Solution:</strong> an Android app in Flutter with no account, no server and no analytics: data lives on the phone and only leaves in an encrypted backup, as a file or, if the user turns it on, in their own Google Drive. It estimates the next period, ovulation and fertile window as a range with a confidence level, and shows the current phase. Version 1.3 adds pregnancy mode, a PDF summary for the doctor, a widget, dark theme and English.",
         "process": "<strong>Process:</strong> pure domain logic (cycle derivation, prediction and notification planning) kept separate from the UI and the database, validated with fixed-date tests and reviewed through audits and manual testing.",
@@ -596,7 +596,7 @@
           "<strong>Prediction with explicit uncertainty.</strong> A weighted average of the last 6 cycles and a range with low, medium or high confidence; after more than 60 days without data it says so instead of inventing a date.",
           "<strong>Derived cycles, not stored.</strong> Only bleeding days are saved, and a new cycle starts after a 7-day gap. A single source of truth: editing one day recomputes everything consistently.",
           "<strong>No time-zone bugs.</strong> Each day is stored as yyyy-MM-dd text and handled in UTC; in Chile the DST change happens at midnight, so local midnight sometimes doesn't exist.",
-          "<strong>Quality beyond the tests.</strong> 1,375 tests; audits and manual testing found bugs the initial tests had missed, and each fix came with a regression test."
+          "<strong>Quality beyond the tests.</strong> 1,414 tests; audits and manual testing found bugs the initial tests had missed, and each fix came with a regression test."
         ],
         "page": "View details"
       },
@@ -613,7 +613,7 @@
           "<strong>Explainable classification and AI analysis.</strong> Explicit rules in filtros.py plus AI analysis that returns fit score, summary, strengths and alerts. Every listing gets a category, a readable reason and a fit recommendation; you always decide whether to apply.",
           "<strong>850+ tests and conversion metrics.</strong> pytest plus interface tests; a Kanban board tracks applications from submission to offer/closure, with conversion metrics and notes at each stage.",
           "<strong>Data that doesn't get lost.</strong> Daily backups using the SQLite backup API with a sha256 fingerprint and integrity_check; each deployment is tried first on a read-only copy and keeps the previous image ready for rollback.",
-          "<strong>Courtesy toward the sites.</strong> The custom readers respect robots.txt, wait 3 to 5 seconds between requests and stop at a block or CAPTCHA: a block is never bypassed."
+          "<strong>Courtesy toward the sites.</strong> Our own readers respect robots.txt and wait 3 to 5 seconds between requests, with two explicit exceptions: LinkedIn and Chumi, which are queried despite their restrictions, with a visible notice."
         ]
       }
     },
@@ -776,13 +776,13 @@
         "req": "<strong>Requirements and use cases:</strong> 19 functional and 15 non-functional, with business rules and diagrams.",
         "arch": "<strong>Architecture and data model:</strong> layers, startup, migrations and backup format.",
         "priv": "<strong>Permissions and privacy:</strong> what leaves the phone, threat model and what Aura does not protect.",
-        "qa": "<strong>Quality and testing:</strong> strategy, requirement-to-test traceability, 1,375 passing tests and declared gaps.",
+        "qa": "<strong>Quality and testing:</strong> strategy, requirement-to-test traceability, 1,414 passing tests and declared gaps.",
         "dec": "<strong>Decision log:</strong> what was decided, why and at what cost."
       },
       "inside": {
         "eyebrow": "Under the hood",
         "h2": "How it's built",
-        "text": "Flutter and Dart with a SQLite database (drift). Cycle logic, prediction and reminders live in a pure domain layer, separate from the UI and the database, and are covered by 1,375 tests."
+        "text": "Flutter and Dart with a SQLite database (drift). Cycle logic, prediction and reminders live in a pure domain layer, separate from the UI and the database, and are covered by 1,414 tests."
       }
     },
     "store": {
