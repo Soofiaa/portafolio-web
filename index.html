@@ -918,7 +918,7 @@ li.chip-conceptual{
 <header class="site-header">
   <div class="wrap header-inner">
     <a href="#hero" class="mark">SM<svg class="mark-seal" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="var(--gold-fill)" stroke="var(--bg)" stroke-width="2"/><path d="M5.4 9.2l2.4 2.4 4.6-5.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <nav aria-label="Navegación principal">
+    <nav aria-label="Navegación principal" data-i18n-aria-label="nav.ariaLabel">
       <button type="button" id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="visually-hidden" data-i18n="nav.menu">Menú</span></button>
       <div class="nav-links" id="nav-links">
         <a href="#projects" data-i18n="nav.projects">Proyectos</a>
@@ -927,7 +927,7 @@ li.chip-conceptual{
         <a href="#about" data-i18n="nav.about">Sobre mí</a>
       </div>
       <a href="#contact" class="nav-cta" data-i18n="nav.contact">Contacto</a>
-      <div class="lang-toggle" role="group" aria-label="Selector de idioma">
+      <div class="lang-toggle" role="group" aria-label="Selector de idioma" data-i18n-aria-label="langToggle.ariaLabel">
         <button type="button" class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
         <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
       </div>
@@ -1042,13 +1042,13 @@ li.chip-conceptual{
         <p class="project-solution" data-i18n-html="projects.jobtracker.solution"><strong>Solución:</strong> una aplicación local en Python que junta 14 fuentes, clasifica cada oferta con reglas explícitas según mi perfil y usa IA (Groq) para estimar la compatibilidad (0–100) y marcar alertas. Incluye tablero Kanban de postulaciones, métricas de conversión y respaldos diarios verificados.</p>
         <p class="project-credit" data-i18n-html="projects.jobtracker.credit"><strong>Qué es mío y qué no:</strong> Indeed y Glassdoor se obtienen con la librería JobSpy (MIT, © Cullen Watson), usada como dependencia sin modificar su código. La IA usa Groq (qwen3.8-27b) como API externa. Los lectores de los portales chilenos, el clasificador, la base de datos, el servidor, el tablero, los respaldos y la integración de IA los escribí yo. Parte de la idea de Jobbi, mi app anterior de seguimiento de postulaciones, pero es un proyecto distinto.</p>
         <p class="project-evidence-title" data-i18n="projects.jobtracker.evidenceTitle">Qué hay detrás del número</p><ul class="project-evidence"><li data-i18n-html="projects.jobtracker.evidence.0"><strong>Clasificación explicable y análisis IA.</strong> Reglas explícitas en filtros.py más un análisis por IA que devuelve compatibilidad, resumen, puntos fuertes y alertas. Cada oferta sale con categoría, razón legible y una recomendación de compatibilidad; tú siempre decides si postular.</li><li data-i18n-html="projects.jobtracker.evidence.1"><strong>Más de 850 pruebas y métricas de conversión.</strong> pytest más pruebas de la interfaz; un tablero Kanban sigue cada postulación desde el envío hasta la oferta o el cierre, con métricas de conversión y notas en cada etapa.</li><li data-i18n-html="projects.jobtracker.evidence.2"><strong>Datos que no se pierden.</strong> Respaldos con la API de SQLite, huella sha256 e integrity_check; el despliegue se prueba primero sobre una copia de solo lectura y deja la imagen anterior lista para volver atrás.</li><li data-i18n-html="projects.jobtracker.evidence.3"><strong>Cortesía con los sitios.</strong> Los lectores propios respetan robots.txt y esperan de 3 a 5 segundos entre pedidos, con dos excepciones activas por decisión explícita: LinkedIn y Chumi, que se consultan pese a sus restricciones, con aviso visible.</li></ul>
-        <ul class="chips chips-mono"><li>Python</li><li>SQLite</li><li>Docker</li><li>pytest</li><li>Groq IA</li></ul>
+        <ul class="chips chips-mono"><li>Python</li><li>SQLite</li><li>Docker</li><li>pytest</li><li data-i18n="projects.jobtracker.chipAi">Groq IA</li></ul>
         <a href="https://github.com/Soofiaa/Buscador-de-empleos" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a>
       </article>
 
       <article class="project-card pc-4">
         <div class="project-top"><span class="ev">EV-04</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5.4 8.2l1.8 1.8 3.4-3.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.finance.status">Finalizado y aprobado</span></span></div>
-        <div class="project-head"><h3>Plataforma de finanzas personales</h3></div>
+        <div class="project-head"><h3 data-i18n="projects.finance.title">Plataforma de finanzas personales</h3></div>
         <p class="project-headline" data-i18n="projects.finance.headline">API REST desacoplada</p>
         <p class="project-meta" data-i18n="projects.finance.meta">Proyecto de título · Mar – Jul 2025</p>
         <p class="project-problem" data-i18n-html="projects.finance.problem"><strong>Problema:</strong> el seguimiento manual de ingresos y gastos personales es propenso a errores y poco visual.</p>
@@ -1282,7 +1282,7 @@ li.chip-conceptual{
         <svg class="stack-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
         <h3 data-i18n="personal.music.label">Disciplina creativa</h3>
         <p data-i18n-html="personal.music.text">La música pop (especialmente Ariana Grande) me inspira por su <strong>disciplina, evolución constante y atención al detalle</strong>. Cualidades que también busco en mi desarrollo profesional, donde la creatividad y la precisión van de la mano.</p>
-        <button type="button" class="spotify-facade" id="spotify-facade" aria-label="Reproducir petal de Ariana Grande en Spotify" data-embed-src="https://open.spotify.com/embed/album/2k4FmEtXR0WiDW0Ac2QArT?utm_source=generator" data-embed-title="Reproductor de Spotify: petal — Ariana Grande">
+        <button type="button" class="spotify-facade" id="spotify-facade" aria-label="Reproducir petal de Ariana Grande en Spotify" data-i18n-aria-label="personal.music.spotifyAria" data-embed-src="https://open.spotify.com/embed/album/2k4FmEtXR0WiDW0Ac2QArT?utm_source=generator" data-embed-title="Reproductor de Spotify: petal — Ariana Grande">
           <img class="spotify-facade-art" src="https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e028baf677ee2d8dda6cc9fcbd7" alt="" loading="lazy" width="64" height="64">
           <span class="spotify-facade-text">
             <span class="spotify-facade-title" data-i18n="personal.music.spotifyTitle">petal</span>

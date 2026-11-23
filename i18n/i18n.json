@@ -14,7 +14,8 @@
       "stack": "Stack",
       "certifications": "Certificaciones",
       "contact": "Contacto",
-      "menu": "Menú"
+      "menu": "Menú",
+      "ariaLabel": "Navegación principal"
     },
     "hero": {
       "badge": "Buscando oportunidad. Remoto o híbrido, en Viña del Mar, Valparaíso y Santiago.",
@@ -49,7 +50,8 @@
         "text": "La música pop (especialmente Ariana Grande) me inspira por su <strong>disciplina, evolución constante y atención al detalle</strong>. Cualidades que también busco en mi desarrollo profesional, donde la creatividad y la precisión van de la mano.",
         "imageAlt": "Foto relacionada con música",
         "spotifyTitle": "petal",
-        "spotifyArtist": "Ariana Grande · Spotify"
+        "spotifyArtist": "Ariana Grande · Spotify",
+        "spotifyAria": "Reproducir petal de Ariana Grande en Spotify"
       }
     },
     "about": {
@@ -102,6 +104,7 @@
       },
       "appsLink": "Ver todas las apps",
       "finance": {
+        "title": "Plataforma de finanzas personales",
         "headline": "API REST desacoplada",
         "status": "Finalizado y aprobado",
         "meta": "Proyecto de título · Mar – Jul 2025",
@@ -162,6 +165,7 @@
       "lead": "Cada proyecto abre con su evidencia: lo que se midió, lo que se probó y lo que no se hizo.",
       "jobtracker": {
         "status": "850+ tests",
+        "chipAi": "Groq IA",
         "headline": "<span class=\"num\">97 %</span><span class=\"cap\">de 6.770 ofertas se descartan solas al clasificar</span>",
         "problem": "<strong>Problema:</strong> buscar a mano en 14 portales es repetitivo, y la mayoría de los avisos no sirve para un perfil junior (prácticas, exigencia de 2 o más años, cargos comerciales con la palabra “desarrollador”).",
         "solution": "<strong>Solución:</strong> una aplicación local en Python que junta 14 fuentes, clasifica cada oferta con reglas explícitas según mi perfil y usa IA (Groq) para estimar la compatibilidad (0–100) y marcar alertas. Incluye tablero Kanban de postulaciones, métricas de conversión y respaldos diarios verificados.",
@@ -469,7 +473,8 @@
       "stack": "Stack",
       "certifications": "Certifications",
       "contact": "Contact",
-      "menu": "Menu"
+      "menu": "Menu",
+      "ariaLabel": "Main navigation"
     },
     "hero": {
       "badge": "Open to work. Remote or hybrid, in Viña del Mar, Valparaíso and Santiago.",
@@ -504,7 +509,8 @@
         "text": "Pop music (especially Ariana Grande) inspires me through its <strong>discipline, constant evolution, and attention to detail</strong>. Qualities I also seek in my professional development, where creativity and precision go hand in hand.",
         "imageAlt": "Music-related photo",
         "spotifyTitle": "petal",
-        "spotifyArtist": "Ariana Grande · Spotify"
+        "spotifyArtist": "Ariana Grande · Spotify",
+        "spotifyAria": "Play petal by Ariana Grande on Spotify"
       }
     },
     "about": {
@@ -557,6 +563,7 @@
       },
       "appsLink": "See all apps",
       "finance": {
+        "title": "Personal finance platform",
         "headline": "Decoupled REST API",
         "status": "Completed & approved",
         "meta": "Capstone project · Mar – Jul 2025",
@@ -617,6 +624,7 @@
       "lead": "Every project opens with its evidence: what was measured, what was tested and what was left out.",
       "jobtracker": {
         "status": "850+ tests",
+        "chipAi": "Groq AI",
         "headline": "<span class=\"num\">97%</span><span class=\"cap\">of 6,770 job listings filtered out automatically when classified</span>",
         "problem": "<strong>Problem:</strong> searching 14 job boards by hand is repetitive, and most listings don't fit a junior profile (internships, 2+ years required, sales roles that use the word “developer”).",
         "solution": "<strong>Solution:</strong> a local Python app that gathers 14 sources, classifies every listing with explicit rules based on my profile, and uses AI (Groq) to score each listing's fit (0–100) and flag red flags. Includes a Kanban board for applications, conversion metrics and verified daily backups.",
