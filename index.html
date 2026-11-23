@@ -560,6 +560,7 @@ li.chip-conceptual{
   .pc-4{ grid-column:1 / 4; }
   .pc-6{ grid-column:4 / 7; }
   .pc-7{ grid-column:1 / -1; }
+  .pc-8{ grid-column:1 / 4; }
 }
 .project-card{
   background:var(--card-bg);
@@ -1066,6 +1067,17 @@ li.chip-conceptual{
         <p class="project-process" data-i18n-html="projects.budgetdesk.process"><strong>Proceso:</strong> auditoría de código con hallazgos documentados y remediación aplicada</p>
         <ul class="chips chips-mono"><li>Python</li><li>CustomTkinter</li><li>SQLite</li><li>Matplotlib</li></ul>
         <a href="https://github.com/Soofiaa/BudgetDesk" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a>
+      </article>
+
+      <article class="project-card pc-8">
+        <div class="project-top"><span class="ev">EV-08</span><span class="seal project-status"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5.4 8.2l1.8 1.8 3.4-3.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="projects.minuta.status">Proyecto público</span></span></div>
+        <div class="project-head"><h3>Minuta</h3></div>
+        <p class="project-headline" data-i18n="projects.minuta.headline">Apuntes de reuniones desde una transcripción</p>
+        <p class="project-problem" data-i18n-html="projects.minuta.problem"><strong>Problema:</strong> tomar actas a mano consume la atención de quien debería participar en la reunión.</p>
+        <p class="project-solution" data-i18n-html="projects.minuta.solution"><strong>Solución:</strong> app full-stack que, a partir de una transcripción grabada con aviso a todas las personas, genera resumen, temas, decisiones, pendientes con responsable y fecha, y preguntas abiertas. Se puede editar, exportar a Markdown y guardar. Nunca graba llamadas: solo procesa material grabado con aviso.</p>
+        <p class="project-process" data-i18n-html="projects.minuta.process"><strong>Proceso:</strong> React + Vite en el frontend; Flask con SQLite local o Postgres en Supabase en el backend; transcripción con Groq Whisper large-v3-turbo; grabadora de escritorio en Electron; código público en GitHub</p>
+        <ul class="chips chips-mono"><li>React</li><li>Vite</li><li>Flask</li><li>SQLite</li><li>Postgres</li><li>Groq Whisper</li><li>Electron</li></ul>
+        <a href="https://github.com/Soofiaa/minuta" class="project-link" target="_blank" rel="noopener"><svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3.005.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.viewGithub">Ver en GitHub</span></a>
       </article>
 
     </div>

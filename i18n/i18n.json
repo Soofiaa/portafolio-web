@@ -124,6 +124,13 @@
         "process": "<strong>Proceso:</strong> auditoría de código con hallazgos documentados y remediación aplicada",
         "status": "Auditado y remediado"
       },
+      "minuta": {
+        "headline": "Apuntes de reuniones desde una transcripción",
+        "problem": "<strong>Problema:</strong> tomar actas a mano consume la atención de quien debería participar en la reunión.",
+        "solution": "<strong>Solución:</strong> app full-stack que, a partir de una transcripción grabada con aviso a todas las personas, genera resumen, temas, decisiones, pendientes con responsable y fecha, y preguntas abiertas. Se puede editar, exportar a Markdown y guardar. Nunca graba llamadas: solo procesa material grabado con aviso.",
+        "process": "<strong>Proceso:</strong> React + Vite en el frontend; Flask con SQLite local o Postgres en Supabase en el backend; transcripción con Groq Whisper large-v3-turbo; grabadora de escritorio en Electron; código público en GitHub",
+        "status": "Proyecto público"
+      },
       "athena": {
         "status": "Desplegado y funcional",
         "headline": "<span class=\"num\">13</span><span class=\"cap\">comandos slash · actualizaciones automáticas</span>",
@@ -571,6 +578,13 @@
         "solution": "<strong>Solution:</strong> a desktop app for managing personal finances (income and expenses), with automatic net balance calculation, visual statistics, and one-click Excel report exports.",
         "process": "<strong>Process:</strong> code audit with documented findings and applied remediation",
         "status": "Audited and remediated"
+      },
+      "minuta": {
+        "headline": "Meeting notes from a transcript",
+        "problem": "<strong>Problem:</strong> taking minutes by hand takes attention away from the people who should be taking part in the meeting.",
+        "solution": "<strong>Solution:</strong> a full-stack app that, from a recorded transcript with notice to everyone, generates a summary, topics, decisions, action items with owner and date, and open questions. You can edit it, export it to Markdown and save it. It never records calls: it only processes recorded material shared with notice.",
+        "process": "<strong>Process:</strong> React + Vite on the frontend; Flask with local SQLite or Postgres on Supabase on the backend; transcription with Groq Whisper large-v3-turbo; Electron desktop recorder; public code on GitHub",
+        "status": "Public project"
       },
       "athena": {
         "status": "Deployed and live",
